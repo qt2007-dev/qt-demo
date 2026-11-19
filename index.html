@@ -298,11 +298,11 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   <div class="cta"><a class="btn" href="#req">Запросить контроллер</a><a class="btn ghost" data-scroll="c-proto" href="#ctrl">Протокол BOX</a></div></div></div>
 <section><div class="wrap">
   <h2>Основной модуль и девять модулей расширения на одной рейке</h2>
-  <p class="sub">Настоящая 3D-модель. Вращайте мышью, щёлкните по крышке модуля или выберите модуль ниже: откроется крышка, и станет видна лицевая панель с экраном. Кнопка «Взрыв-схема» раздвигает модули и детали корпуса.</p>
+  <p class="sub">Настоящая 3D-модель. Вращайте мышью. Щёлкните по модулю или выберите его название ниже: модуль выдвинется вперёд, откроется крышка с лицевой панелью, а описание появится под моделью. Повторный щелчок возвращает модуль на место. Кнопка «Взрыв-схема» раздвигает модули и детали корпуса.</p>
   <div class="stage" id="stage">
     <canvas id="cv" aria-label="3D-модель контроллера на DIN-рейке"></canvas>
     <div class="tools"><div class="seg"><button id="bGlass" class="on">Прозрачные крышки</button><button id="bAll">Открыть все</button><button id="bExp">Взрыв-схема</button></div></div>
-    <div class="hint">Вращение: потяните. Крышка: щёлкните по ней.</div>
+    <div class="hint">Вращение: потяните. Модуль: щёлкните по нему.</div>
     <div class="ld" id="ld">Загрузка 3D-модели…</div>
   </div>
   <div class="chips" id="chips" role="group" aria-label="Модули"></div>
@@ -719,7 +719,7 @@ function makeInstance(raw,kind,key,zoff,yoff,glass){
   cover.matrixAutoUpdate=false;cover.matrix.copy(M0);
   const stk=makeSticker(kind,key);top.add(stk);
   const g=new THREE.Group();g.position.set(0,yoff,zoff);g.add(r);
-  const inst={g,z0:zoff,parts,coverOff,stk,stkOff,cover,M0,key,piv:new THREE.Vector3(F.piv[0],F.piv[1],0),ang:0,open:false};
+  const inst={g,y0:yoff,sl:0,sel:false,z0:zoff,parts,coverOff,stk,stkOff,cover,M0,key,piv:new THREE.Vector3(F.piv[0],F.piv[1],0),ang:0,open:false};
   setGlass(inst,glass);return inst;
 }
 function makeRail(len,z0){
@@ -737,7 +737,7 @@ async function viewer(canvas,host,o){
   scene.environment=new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(),0.04).texture;
   const key=new THREE.DirectionalLight(0xffffff,1.6);key.position.set(1,2,1.5);scene.add(key);
   const cam=new THREE.PerspectiveCamera(35,1,0.001,10);
-  const ctl=new OrbitControls(cam,canvas);ctl.enableDamping=true;ctl.enableZoom=false;ctl.enablePan=false;
+  const ctl=new OrbitControls(cam,canvas);ctl.enableDamping=true;ctl.enableZoom=false;ctl.enablePan=false;V.ctl=ctl;
   if(o.auto){ctl.autoRotate=true;ctl.autoRotateSpeed=o.auto;}
   let span=0.16,built=false;const th=Math.tan(THREE.MathUtils.degToRad(17.5));
   const place=()=>{if(!built)return;const d=Math.max(span*(1+0.6*V.exK)*1.14/(th*Math.min(cam.aspect,2)),0.22);const v=cam.position.clone().sub(ctl.target);if(v.lengthSq()<1e-9)v.set(...o.dist);v.normalize();cam.position.copy(ctl.target).addScaledVector(v,d);};
@@ -771,7 +771,7 @@ async function viewer(canvas,host,o){
       i.cover.matrix.copy(T).multiply(P).multiply(R).multiply(Pi).multiply(i.M0);i.cover.matrixWorldNeedsUpdate=true;
       i.parts.forEach(p=>p.o.position.copy(p.base).addScaledVector(p.off,e));
       i.stk.position.set(i.stkOff.x*e,i.stkOff.y*e,0);
-      i.g.position.z=i.z0+idx*0.02*e;
+      i.g.position.z=i.z0+idx*0.02*e;i.sl+=((i.sel?1:0)-i.sl)*0.12;i.g.position.y=i.y0+0.024*i.sl;
     });
     ctl.update();renderer.render(scene,cam);
   })();
@@ -782,7 +782,7 @@ async function viewer(canvas,host,o){
       if(!dn||Math.hypot(e.clientX-dn[0],e.clientY-dn[1])>5)return;
       const r=canvas.getBoundingClientRect();v.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(v,cam);
       const hits=ray.intersectObjects(V.insts.map(i=>i.cover),true);
-      if(hits.length){const t=hits[0].object;const idx=V.insts.findIndex(i=>{let f=false;i.cover.traverse(x=>{if(x===t)f=true;});return f;});if(idx>=0){V.insts[idx].open=!V.insts[idx].open;o.click(idx);}}
+      if(hits.length){const t=hits[0].object;const idx=V.insts.findIndex(i=>{let f=false;i.cover.traverse(x=>{if(x===t)f=true;});return f;});if(idx>=0){o.click(idx);}}
     });
   }
   return V;
@@ -795,14 +795,15 @@ function showInfo(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classLi
 window.initCtrl=async function(){
   if(ctrlStarted)return;ctrlStarted=true;
   let V;
-  ORDER.forEach((k,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=INFO[k][0];b.onclick=()=>{if(V)V.insts.forEach((m,j)=>{m.open=(j===i);});showInfo(i);};$('chips').appendChild(b);});
+  ORDER.forEach((k,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=INFO[k][0];b.onclick=()=>pick(i);$('chips').appendChild(b);});
+  function pick(i){if(!V){showInfo(i);return;}const was=V.insts[i].sel;V.insts.forEach((m,j)=>{m.sel=(j===i&&!was);m.open=m.sel;});V.ctl.autoRotate=!V.insts.some(m=>m.sel);showInfo(i);document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('on',!!(V.insts[j]&&V.insts[j].sel)));}
   showInfo(0);
   try{
-    V=await viewer($('cv'),$('stage'),{auto:0.5,dist:[0.10,0.15,0.40],glass:true,click:showInfo});
+    V=await viewer($('cv'),$('stage'),{auto:0.5,dist:[0.10,0.15,0.40],glass:true,click:pick});
     $('ld').remove();
     $('bGlass').onclick=e=>{V.glass=!V.glass;e.target.classList.toggle('on',V.glass);V.insts.forEach(i=>setGlass(i,V.glass));};
     $('bExp').onclick=e=>{const on=!e.target.classList.contains('on');e.target.classList.toggle('on',on);e.target.textContent=on?'Собрать':'Взрыв-схема';V.explode(on);};
-    $('bAll').onclick=e=>{const any=V.insts.some(i=>!i.open);V.insts.forEach(i=>i.open=any);e.target.textContent=any?'Закрыть все':'Открыть все';};
+    $('bAll').onclick=e=>{const any=V.insts.some(i=>!i.open);V.insts.forEach(i=>{i.open=any;i.sel=false;});V.ctl.autoRotate=true;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));e.target.textContent=any?'Закрыть все':'Открыть все';};
   }catch(e){$('ld').textContent='Не удалось загрузить 3D-модель.';}
   try{
     const V2=await viewer($('cfgCv'),$('cfgHost'),{auto:1,dist:[0.35,0.28,0.5],glass:true,keys:window.cfgList||['node']});
