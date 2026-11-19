@@ -93,7 +93,7 @@ thead th{font-size:15px}
 tbody th{color:var(--mute);font-weight:600;width:22%}
 tr:last-child th,tr:last-child td{border-bottom:0}
 .ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}}.aldw{border:1px solid var(--line);border-radius:16px;background:radial-gradient(900px 360px at 50% 30%,#13202b,#07090c);padding:14px 14px 16px;overflow:hidden}
-.aldw canvas{display:block;width:100%;aspect-ratio:2/1;border-radius:10px;background:#0a1118}
+.alhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:28px;align-items:start;margin:0 0 22px}.alk{margin:14px 0 0;padding-left:20px;color:#cdd6e0}.alk li{margin:6px 0}@media (max-width:860px){.alhead{grid-template-columns:1fr}}.aldw canvas{display:block;width:100%;aspect-ratio:2/1;border-radius:10px;background:#0a1118}
 .ald-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 8px}
 .ald-st div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute);background:rgba(15,22,29,.6);transition:background .2s,color .2s,border-color .2s}
 .ald-st div.on{color:#0a0c10;background:var(--gold);border-color:var(--gold);font-weight:700}
@@ -442,8 +442,8 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
 </div></section>
 <section><div class="wrap">
   <h2>Свои установки: атомно-слоевое осаждение</h2>
-  <p class="sub">Это одно из направлений, а не основной профиль. В отличие от производителей типовых установок, проектируем каждую под конкретного заказчика. Четыре изготовленные установки. Принцип процесса показан ниже, а на экране управления FUXA он идёт в реальном времени: <a href="#ctrl">смотреть в разделе SCADA</a>.</p>
-  <div class="aldw" style="max-width:560px;margin:4px 0 18px">
+  <div class="alhead"><div class="alt"><p class="sub" style="margin-top:0">Это одно из направлений, а не основной профиль. В отличие от производителей типовых установок, проектируем каждую под конкретного заказчика. Четыре изготовленные установки. Принцип процесса показан рядом, а на экране управления FUXA он идёт в реальном времени: <a href="#ctrl">смотреть в разделе SCADA</a>.</p>
+  <ul class="alk"><li>Один цикл добавляет слой толщиной около 0,1 нм</li><li>Толщина задаётся числом циклов</li><li>Плёнка ровно ложится даже на сложный рельеф</li></ul></div><div class="aldw">
     <canvas id="ald2Cv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
     <div class="ald-st" id="ald2St"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
     <div class="ald-cap" id="ald2Cap" aria-live="polite"></div>
@@ -453,7 +453,7 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
       <div class="seg"><button id="ald2Play" class="on">Пауза</button><button id="ald2Re">Сначала</button><button id="ald2S1" class="on">1×</button><button id="ald2S2">2×</button><button id="ald2S4">4×</button></div>
     </div>
     
-  </div>
+  </div></div>
   <div class="rbar"><button class="btn ghost sm" type="button" id="aldOpen">Развернуть все</button><button class="btn sm" type="button" id="aldClose">Свернуть все</button></div>
   <div id="ald"></div>
   <div class="need"><b>Нужно от вас:</b> фото установок, разрешение называть заказчиков и актуальный список. Названия взяты из вашего портфолио.</div>
@@ -929,8 +929,8 @@ function frame(t){
  requestAnimationFrame(frame);if(!vis)return;
  var dt=Math.min((t-last)/1000||0,.05);last=t;if(run)tick(dt*speed);draw()}
 reset();
-if(rm&&P!=='ald'){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.remove('on')}
-if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;
+if(false){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.remove('on')}
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;setInterval(function(){if(!vis&&cv.offsetParent!==null){var r=cv.getBoundingClientRect();vis=r.bottom>0&&r.top<innerHeight}},500);
 requestAnimationFrame(frame);
 $(P+'Play').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
 $(P+'Re').onclick=function(){reset()};window['aldGo_'+P]=function(){reset();run=true;$(P+'Play').textContent='Пауза';$(P+'Play').classList.add('on')};
