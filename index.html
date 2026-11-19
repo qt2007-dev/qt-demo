@@ -146,6 +146,7 @@ input[type=text],input[type=email],input[type=tel],select,textarea{padding:11px;
 .sc-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:10px 16px;background:#0f1a22;border-bottom:1px solid var(--line)}
 .sc-top .live{margin-left:auto;color:#7bd88f;font:12px var(--mono)}
 .sc-body{padding:18px;min-height:230px}
+@media (max-width:620px){.sc-body{min-height:493px}}
 .lrow{display:grid;grid-template-columns:150px 1fr 90px 60px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #16222c;font-size:14px}
 .lrow:last-child{border:0}
 .bulb{width:26px;height:26px;border-radius:50%;background:#f2bd3a;display:inline-block;vertical-align:middle;margin-right:8px;transition:opacity .3s,box-shadow .3s}
@@ -935,7 +936,9 @@ if(false){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.rem
 if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;setInterval(function(){if(!vis&&cv.offsetParent!==null){var r=cv.getBoundingClientRect();vis=r.bottom>0&&r.top<innerHeight}},500);
 requestAnimationFrame(frame);
 $(P+'Play').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
-$(P+'Re').onclick=function(){reset()};window['aldGo_'+P]=function(){reset();run=true;$(P+'Play').textContent='Пауза';$(P+'Play').classList.add('on')};
+$(P+'Re').onclick=function(){reset()};function fitCap(){var c=$(P+'Cap');if(!c)return;var cur=c.textContent;c.style.minHeight='0';var m=0;PH.forEach(function(p){c.textContent=p.t;m=Math.max(m,c.offsetHeight)});c.textContent=cur;if(m>0)c.style.minHeight=m+'px'}
+window.addEventListener('resize',fitCap);setTimeout(fitCap,300);
+window['aldGo_'+P]=function(){fitCap();reset();run=true;$(P+'Play').textContent='Пауза';$(P+'Play').classList.add('on')};
 [[P+'S1',1],[P+'S2',2],[P+'S4',4]].forEach(function(a){$(a[0]).onclick=function(){speed=a[1];[P+'S1',P+'S2',P+'S4'].forEach(function(i){$(i).classList.toggle('on',i===a[0])})}});
 }
 aldInit('ald');aldInit('ald2');;
