@@ -385,7 +385,17 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
   </table></div>
   <div class="need"><b>Лицензии уточняем:</b> FUXA (MIT) и OpenPLC (GPL v3) сверены с репозиториями проектов, остальные указаны по общеизвестным данным. Это техническая справка, не юридическое заключение. Перед поставкой проверим условия для каждой версии, особенно GPL при включении в изделие.</div>
   <h3 style="margin:26px 0 12px">Пример экрана SCADA</h3>
-  <div class="scada"><div class="sc-top"><b>FUXA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демо, значения симулируются</span></div><div class="sc-body" id="scBody"></div></div>
+  <div class="scada"><div class="sc-top"><b>FUXA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демо, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px"><div class="aldw" style="border:0;padding:0;background:none">
+    <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
+    <div class="ald-st" id="aldSt"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
+    <div class="ald-cap" id="aldCap" aria-live="polite"></div>
+    <div class="ald-bar">
+      <div class="ald-lg"><span><i style="background:#4aa8ff"></i>прекурсор A</span><span><i style="background:#ff7a9c"></i>прекурсор B</span><span><i style="background:#f2bd3a"></i>готовый слой</span><span><i style="background:#8fa0b2"></i>инертный газ и побочные продукты</span></div>
+      <div class="ald-ro" id="aldRo"></div>
+      <div class="seg"><button id="aldPlay" class="on">Пауза</button><button id="aldRe">Сначала</button><button id="aldS1" class="on">1×</button><button id="aldS2">2×</button><button id="aldS4">4×</button></div>
+    </div>
+    <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
+  </div></div></div>
   <div class="need"><b>Нужно от вас:</b> настоящие скриншоты FUXA с вашими мнемосхемами. Экран выше нарисован мной по возможностям модулей DALI, IO и EM, это не снимок реальной системы.</div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
@@ -418,32 +428,26 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
 <!-- ============ МИКРОЭЛЕКТРОНИКА ============ -->
 <div class="page" id="p-micro">
 <div class="pagehead"><div class="wrap"><div class="eyebrow">ОБОРУДОВАНИЕ ДЛЯ МИКРОЭЛЕКТРОНИКИ</div>
-  <h1>Установки под задачу заказчика и поставки оборудования</h1>
-  <p>Разрабатываем и изготавливаем технологическое оборудование для микроэлектроники, делаем вакуумные узлы, ремонтируем и восстанавливаем. Вместе с партнёрами в консорциуме поставляем и запускаем оборудование для полупроводниковых производств.</p>
+  <h1>Поставка и запуск оборудования для микроэлектроники</h1>
+  <p>Вместе с партнёрами в консорциуме подбираем, поставляем и запускаем технологическое и измерительное оборудование для полупроводниковых производств. Отдельно изготавливаем вакуумные узлы и установки под задачу заказчика, ремонтируем и восстанавливаем оборудование.</p>
   <div class="cta"><a class="btn" href="#micro-form" data-scroll="micro-form">Заполнить опросник</a></div></div></div>
-<section style="padding-bottom:0"><div class="wrap">
-  <h2>Как работает атомно-слоевое осаждение</h2>
-  <p class="sub">Плёнку наращивают слой за слоем. В камеру по очереди подают два реагента, между ними её продувают инертным газом. Каждый цикл добавляет один тонкий слой, поэтому толщину задаёт число циклов.</p>
-  <div class="aldw">
-    <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
-    <div class="ald-st" id="aldSt"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
-    <div class="ald-cap" id="aldCap" aria-live="polite"></div>
-    <div class="ald-bar">
-      <div class="ald-lg"><span><i style="background:#4aa8ff"></i>прекурсор A</span><span><i style="background:#ff7a9c"></i>прекурсор B</span><span><i style="background:#f2bd3a"></i>готовый слой</span><span><i style="background:#8fa0b2"></i>инертный газ и побочные продукты</span></div>
-      <div class="ald-ro" id="aldRo"></div>
-      <div class="seg"><button id="aldPlay" class="on">Пауза</button><button id="aldRe">Сначала</button><button id="aldS1" class="on">1×</button><button id="aldS2">2×</button><button id="aldS4">4×</button></div>
-    </div>
-    <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
+<section><div class="wrap">
+  <h2>Консорциум: поставка и запуск линий</h2>
+  <p class="sub">КвинтТех и партнёры поставляют и внедряют технологическое оборудование для микроэлектроники и радиотехники, включая проекты предприятий зеленоградского кластера.</p>
+  <div class="g2">
+    <div class="card"><h3>Что подтверждено опытом</h3><ul><li>Поставка технологического и измерительного оборудования разного класса</li><li>Технические требования и подготовка RFQ</li><li>Сопровождение на стороне производителей, включая FAT и SAT</li><li>Прямая работа с поставщиками из Европы, США, Японии, КНР и ЮВА, подбор обоснованных альтернатив</li><li>Новое и восстановленное оборудование с сохранением гарантии</li></ul></div>
+    <div class="card"><h3>Сопровождение линии целиком</h3><ul><li>Генеральный план производства</li><li>Технологические задания и маршрут обработки пластин</li><li>План размещения технологического и инженерного оборудования</li><li>Подбор оборудования, поставка, ввод в эксплуатацию</li><li>Сопровождение запуска технологического процесса</li></ul></div>
   </div>
+  <div class="need"><b>Нужно от вас:</b> подтверждённые цифры по объёму контрактов (в письме «более нескольких млрд ₽»), список партнёров консорциума и что можно называть публично.</div>
 </div></section>
 <section><div class="wrap">
-  <h2>Установки атомно-слоевого осаждения</h2>
-  <p class="sub">В отличие от производителей типовых установок, мы проектируем каждую под конкретного заказчика. Четыре изготовленные установки.</p>
+  <h2>Свои установки: атомно-слоевое осаждение</h2>
+  <p class="sub">Это одно из направлений, а не основной профиль. В отличие от производителей типовых установок, проектируем каждую под конкретного заказчика. Четыре изготовленные установки. Как идёт процесс, показано на экране управления: <a href="#ctrl">смотреть в разделе SCADA</a>.</p>
   <div class="rbar"><button class="btn ghost sm" type="button" id="aldOpen">Развернуть все</button><button class="btn sm" type="button" id="aldClose">Свернуть все</button></div>
   <div id="ald"></div>
   <div class="need"><b>Нужно от вас:</b> фото установок, разрешение называть заказчиков и актуальный список. Названия взяты из вашего портфолио.</div>
   <div class="g2" style="margin-top:16px">
-    <div class="gap"><h3>Эмулятор установки ALD</h3><p>Веб-интерфейс с симуляцией процесса: подача прекурсоров, циклы, температура. Ждём материалы.</p></div>
+    <div class="gap"><h3>Эмулятор установки ALD</h3><p>Анимация цикла осаждения уже показана на экране FUXA. Полный эмулятор с вашими параметрами сделаем по материалам.</p></div>
     <div class="gap"><h3>3D-модели установок</h3><p>Подключим после получения моделей.</p></div>
   </div>
 </div></section>
@@ -454,15 +458,6 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     <div class="card"><h3>Восстановление и ремонт</h3><p>Ремонт и восстановление технологического оборудования, отработка технологических процессов.</p></div>
     <div class="card"><h3>Нестандартные задачи</h3><p>Решаем инженерные задачи электронного машиностроения.</p></div>
   </div>
-</div></section>
-<section style="padding-top:0"><div class="wrap">
-  <h2>Консорциум: поставка и запуск линий</h2>
-  <p class="sub">КвинтТех и партнёры поставляют и внедряют технологическое оборудование для микроэлектроники и радиотехники, включая проекты предприятий зеленоградского кластера.</p>
-  <div class="g2">
-    <div class="card"><h3>Что подтверждено опытом</h3><ul><li>Поставка технологического и измерительного оборудования разного класса</li><li>Технические требования и подготовка RFQ</li><li>Сопровождение на стороне производителей, включая FAT и SAT</li><li>Прямая работа с поставщиками из Европы, США, Японии, КНР и ЮВА, подбор обоснованных альтернатив</li><li>Новое и восстановленное оборудование с сохранением гарантии</li></ul></div>
-    <div class="card"><h3>Сопровождение линии целиком</h3><ul><li>Генеральный план производства</li><li>Технологические задания и маршрут обработки пластин</li><li>План размещения технологического и инженерного оборудования</li><li>Подбор оборудования, поставка, ввод в эксплуатацию</li><li>Сопровождение запуска технологического процесса</li></ul></div>
-  </div>
-  <div class="need"><b>Нужно от вас:</b> подтверждённые цифры по объёму контрактов (в письме «более нескольких млрд ₽»), список партнёров консорциума и что можно называть публично.</div>
 </div></section>
 <section id="micro-form" style="padding-top:0"><div class="wrap"><div class="req"><div><h2>Опросник: оборудование и материалы для микроэлектроники</h2><p>Первичная информация для подбора оборудования, комплектующих и материалов. Заполните то, что знаете, остальное уточним по ходу.</p></div><div data-form="micro"></div></div><div class="need"><b>Нужно от вас:</b> финальный список вопросов опросника. Этот составлен мной по письму консорциума и типовому RFQ. Прежний опросник по установке ALD можно подключить отдельной ссылкой в карточке установок.</div></div></section>
 </div>
@@ -677,7 +672,6 @@ vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent=
   function renderH(){body.innerHTML='<canvas id="cvh" width="900" height="190"></canvas><div class="kpi"><div><b id="kpv">22 °C</b>температура</div><div><b id="kout">0 %</b>выход ПИД</div><div><label style="font-weight:600;color:var(--text)">Уставка <span id="spv">'+T.sp+' °C</span><input id="sp" type="range" min="30" max="120" value="'+T.sp+'" style="width:220px;accent-color:#f2bd3a"></label></div></div>';}
   function renderE(){body.innerHTML='<div class="bars" id="eb"></div><div class="kpi"><div><b id="ekw">0 кВт</b>мощность</div><div><b id="ekwh"></b>счётчик, кВт·ч</div></div>';}
   function tick(){
-    if(tab==='a')tickA();
     if(tab==='h'){var err=T.sp-T.pv;T.i=Math.max(-40,Math.min(40,T.i+err*.02));T.out=Math.max(0,Math.min(100,err*4+T.i));T.pv+=(T.out*.05-(T.pv-22)*.012);T.h.push([T.pv,T.sp]);if(T.h.length>150)T.h.shift();
       var c=$('cvh');if(c){var x=c.getContext('2d');x.clearRect(0,0,900,190);x.strokeStyle='#1f2933';for(var k=0;k<5;k++){x.beginPath();x.moveTo(0,k*47+5);x.lineTo(900,k*47+5);x.stroke()}
         [[1,'#f2bd3a',[6,5]],[0,'#2aa5e0',[]]].forEach(function(s){x.beginPath();x.setLineDash(s[2]);x.strokeStyle=s[1];x.lineWidth=2;T.h.forEach(function(p,j){var X=j*6,Y=185-(p[s[0]]-20)*1.65;j?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke()});x.setLineDash([]);}
@@ -686,8 +680,8 @@ vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent=
       var kw=E.ph.reduce(function(s,p){return s+p[0]*p[1]/1000},0);E.kwh+=kw/3600*5;
       $('eb').innerHTML=E.ph.map(function(p,i){return '<div class="bar"><b>L'+(i+1)+'</b><i style="width:'+Math.round(p[1]*5)+'%"></i><span class="mono">'+p[0].toFixed(0)+' В · '+p[1].toFixed(1)+' А</span></div>'}).join('');$('ekw').textContent=kw.toFixed(1)+' кВт';$('ekwh').textContent=E.kwh.toFixed(1);}
   }
-  $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});({a:renderA,l:renderL,h:renderH,e:renderE})[tab]();});
-  renderA();setInterval(tick,600);
+  $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;$('scAld').hidden=tab!=='a';body.hidden=tab==='a';this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});if(tab!=='a')({l:renderL,h:renderH,e:renderE})[tab]();});
+  setInterval(tick,600);
 })();
 route();
 </script>
