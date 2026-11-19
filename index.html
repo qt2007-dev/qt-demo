@@ -217,7 +217,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   <div class="g4">
     <a class="card dir" href="#dev"><h3>Разработка электроники</h3><p>Схемотехника, платы, встроенное ПО, прототипы и серия под ключ. Четыре модели сотрудничества.</p><span class="p">от 2 млн ₽ в месяц</span></a>
     <a class="card dir" href="#ctrl"><h3>Контроллер QT-BoX и SCADA</h3><p>Модульный программируемый контроллер автоматизации с MQTT Sparkplug B. Поддерживает FUXA, Node-RED, OpenPLC и другие открытые системы.</p><span class="p">Смотреть в 3D</span></a>
-    <a class="card dir" href="#micro"><h3>Оборудование для микроэлектроники</h3><p>Установки атомно-слоевого осаждения под заказ, вакуумные узлы, поставки оборудования консорциумом.</p><span class="p">Портфолио установок</span></a>
+    <a class="card dir" href="#micro"><h3>Оснащение предприятий микроэлектроники</h3><p>Установки атомно-слоевого осаждения под заказ, вакуумные узлы, поставки оборудования консорциумом.</p><span class="p">Портфолио установок</span></a>
     <a class="card dir" href="#rnd"><h3>НИОКР. Проработанные пакеты и заказные разработки</h3><p>Навигация, связь и радиолокация. Восемь проработанных направлений, условия обсуждаются индивидуально.</p><span class="p">Условия по запросу</span></a>
   </div>
   <div class="need"><b>Нужно от вас:</b> подтвердить порядок направлений на главной (какое основное по выручке) и дать фото или рендеры для карточек вместо текстовых.</div>
@@ -427,8 +427,8 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
 
 <!-- ============ МИКРОЭЛЕКТРОНИКА ============ -->
 <div class="page" id="p-micro">
-<div class="pagehead"><div class="wrap"><div class="eyebrow">ОБОРУДОВАНИЕ ДЛЯ МИКРОЭЛЕКТРОНИКИ</div>
-  <h1>Поставка и запуск оборудования для микроэлектроники</h1>
+<div class="pagehead"><div class="wrap"><div class="eyebrow">ПОСТАВКА И ЗАПУСК ОБОРУДОВАНИЯ</div>
+  <h1>Оснащение предприятий микроэлектроники</h1>
   <p>Вместе с партнёрами в консорциуме подбираем, поставляем и запускаем технологическое и измерительное оборудование для полупроводниковых производств. Отдельно изготавливаем вакуумные узлы и установки под задачу заказчика, ремонтируем и восстанавливаем оборудование.</p>
   <div class="cta"><a class="btn" href="#micro-form" data-scroll="micro-form">Заполнить опросник</a></div></div></div>
 <section><div class="wrap">
@@ -442,7 +442,18 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
 </div></section>
 <section><div class="wrap">
   <h2>Свои установки: атомно-слоевое осаждение</h2>
-  <p class="sub">Это одно из направлений, а не основной профиль. В отличие от производителей типовых установок, проектируем каждую под конкретного заказчика. Четыре изготовленные установки. Как идёт процесс, показано на экране управления: <a href="#ctrl">смотреть в разделе SCADA</a>.</p>
+  <p class="sub">Это одно из направлений, а не основной профиль. В отличие от производителей типовых установок, проектируем каждую под конкретного заказчика. Четыре изготовленные установки. Принцип процесса показан ниже, а на экране управления FUXA он идёт в реальном времени: <a href="#ctrl">смотреть в разделе SCADA</a>.</p>
+  <div class="aldw" style="max-width:560px;margin:4px 0 18px">
+    <canvas id="ald2Cv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
+    <div class="ald-st" id="ald2St"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
+    <div class="ald-cap" id="ald2Cap" aria-live="polite"></div>
+    <div class="ald-bar">
+      <div class="ald-lg"><span><i style="background:#4aa8ff"></i>прекурсор A</span><span><i style="background:#ff7a9c"></i>прекурсор B</span><span><i style="background:#f2bd3a"></i>готовый слой</span><span><i style="background:#8fa0b2"></i>инертный газ и побочные продукты</span></div>
+      <div class="ald-ro" id="ald2Ro"></div>
+      <div class="seg"><button id="ald2Play" class="on">Пауза</button><button id="ald2Re">Сначала</button><button id="ald2S1" class="on">1×</button><button id="ald2S2">2×</button><button id="ald2S4">4×</button></div>
+    </div>
+    
+  </div>
   <div class="rbar"><button class="btn ghost sm" type="button" id="aldOpen">Развернуть все</button><button class="btn sm" type="button" id="aldClose">Свернуть все</button></div>
   <div id="ald"></div>
   <div class="need"><b>Нужно от вас:</b> фото установок, разрешение называть заказчиков и актуальный список. Названия взяты из вашего портфолио.</div>
@@ -852,8 +863,8 @@ window.initCtrl=async function(){
 if(location.hash==='#ctrl')window.initCtrl();
 </script>
 <script>
-(function(){
-var cv=document.getElementById('aldCv');if(!cv)return;
+function aldInit(P){
+var cv=document.getElementById(P+'Cv');if(!cv)return;
 var cx=cv.getContext('2d'),W=800,H=400,X0=150,NS=50,SW=10,Y0=330,LH=9,AH=5,N=5,OUT=200;
 var COL={A:'#4aa8ff',B:'#ff7a9c',C:'#f2bd3a',C2:'#ffe08a',X:'#8fa0b2',P:'#6d7a88'};
 var PH=[{k:'A',d:2000,t:'Шаг 1. Импульс прекурсора A. Молекулы садятся на поверхность и занимают все свободные места. Занятое место других не принимает, поэтому лишнего слоя не набирается.'},
@@ -864,8 +875,8 @@ var sites,res,cyc,ph,pt,parts,acc,run=true,speed=1,hold=0,vis=false,last=0;
 var $=function(i){return document.getElementById(i)};
 var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 function reset(){sites=new Uint8Array(NS);res=new Uint8Array(NS);cyc=0;ph=0;pt=0;parts=[];acc=0;hold=0;info();}
-function info(){var st=$('aldSt').children;for(var i=0;i<4;i++)st[i].classList.toggle('on',i===ph);$('aldCap').textContent=PH[ph].t;
- var t=(cyc*0.1).toFixed(1).replace('.',',');$('aldRo').textContent='Цикл '+Math.min(cyc+1,N)+' из '+N+' · толщина около '+t+' нм';}
+function info(){var st=$(P+'St').children;for(var i=0;i<4;i++)st[i].classList.toggle('on',i===ph);$(P+'Cap').textContent=PH[ph].t;
+ var t=(cyc*0.1).toFixed(1).replace('.',',');$(P+'Ro').textContent='Цикл '+Math.min(cyc+1,N)+' из '+N+' · толщина около '+t+' нм';}
 function top(){return Y0-cyc*LH}
 function spawn(t){var y=70+Math.random()*80;parts.push({x:34,y:y,vx:(t==='P'?190:90)+Math.random()*50,vy:(Math.random()-.5)*30,t:t,hv:Math.random()*8-4,st:0})}
 function stepP(p,dt){
@@ -894,7 +905,7 @@ function tick(dt){
   if(k==='A'){for(var i=0;i<NS;i++)if(sites[i]===0&&!res[i])sites[i]=1}
   if(k==='B'){for(var i2=0;i2<NS;i2++)if(sites[i2]===1&&!res[i2])sites[i2]=2}
   pt=0;ph=(ph+1)%4;
-  if(ph===0){for(var q=0;q<NS;q++){sites[q]=0}cyc++;parts=parts.filter(function(p){return p.st!==1});if(cyc>=N){hold=2.6;ph=3;info();cyc=N;$('aldRo').textContent='Готово: '+N+' циклов, толщина около '+(N*0.1).toFixed(1).replace('.',',')+' нм';return}}
+  if(ph===0){for(var q=0;q<NS;q++){sites[q]=0}cyc++;parts=parts.filter(function(p){return p.st!==1});if(cyc>=N){hold=2.6;ph=3;info();cyc=N;$(P+'Ro').textContent='Готово: '+N+' циклов, толщина около '+(N*0.1).toFixed(1).replace('.',',')+' нм';return}}
   info()}
  parts=parts.filter(function(p){return stepP(p,dt)})}
 function draw(){
@@ -918,13 +929,14 @@ function frame(t){
  requestAnimationFrame(frame);if(!vis)return;
  var dt=Math.min((t-last)/1000||0,.05);last=t;if(run)tick(dt*speed);draw()}
 reset();
-if(rm){run=false;$('aldPlay').textContent='Пуск';$('aldPlay').classList.remove('on')}
+if(rm){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.remove('on')}
 if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;
 requestAnimationFrame(frame);
-$('aldPlay').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
-$('aldRe').onclick=function(){reset()};
-[['aldS1',1],['aldS2',2],['aldS4',4]].forEach(function(a){$(a[0]).onclick=function(){speed=a[1];['aldS1','aldS2','aldS4'].forEach(function(i){$(i).classList.toggle('on',i===a[0])})}});
-})();
+$(P+'Play').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
+$(P+'Re').onclick=function(){reset()};
+[[P+'S1',1],[P+'S2',2],[P+'S4',4]].forEach(function(a){$(a[0]).onclick=function(){speed=a[1];[P+'S1',P+'S2',P+'S4'].forEach(function(i){$(i).classList.toggle('on',i===a[0])})}});
+}
+aldInit('ald');aldInit('ald2');;
 </script>
 <div class="lbx" id="lbx" hidden role="dialog" aria-label="Схема подключения"><button class="lbc" type="button" aria-label="Закрыть" onclick="closeScheme()">×</button><div class="lbs" onclick="if(event.target===this)closeScheme()"><img id="lbi" alt="Схема подключения и характеристики модуля"><a id="lbo" target="_blank" rel="noopener">Открыть изображение отдельно</a></div></div>
 </body>
