@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 626" width="1100" height="626" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
 <rect width="1100" height="626" fill="#0a1118"/>
 <text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль STEP, шаговые двигатели</text>
-<text x="40" y="72" fill="#9aa6b4" font-size="14">Два канала управления двухфазными шаговыми двигателями, до 16 А, обратная связь с энкодеров ABZ.</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Два канала управления двухфазными шаговыми двигателями, обратная связь с энкодеров ABZ. Максимальное потребление 16 А.</text>
 <rect x="435" y="116" width="230" height="340" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
 <text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">STEP</text>
 <rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>

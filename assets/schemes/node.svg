@@ -5,8 +5,8 @@
 <rect x="435" y="116" width="230" height="239.0" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
 <text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">NODE</text>
 <rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
-<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Питание</text>
-<text x="669" y="106" fill="#9aa6b4" font-size="12">Сеть и порты</text>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Питание и Ethernet</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Порты и антенны</text>
 <path d="M340 208.0H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="208.0" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
 <path d="M340 280.0H373.25V234H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="280.0" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
 <path d="M760 208.0H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="208.0" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
@@ -26,7 +26,7 @@
 <text x="776" y="220.5" fill="#9aa6b4" font-size="12" font-weight="400">HDMI</text>
 <rect x="760" y="251.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
 <g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="270.0" width="28" height="20" rx="3"/></g>
-<text x="776" y="275.5" fill="#e9edf2" font-size="13" font-weight="700">Антенны</text>
+<text x="776" y="275.5" fill="#e9edf2" font-size="13" font-weight="700">Антенны: Wi-Fi/BT в базе,</text>
 <text x="776" y="292.5" fill="#9aa6b4" font-size="12" font-weight="400">опции LoRa, GNSS, GSM</text>
 <circle cx="435" cy="156" r="4.5" fill="#ff6b6b"/>
 <text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text>
@@ -52,8 +52,9 @@
 <text x="483" y="343.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="343.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
 <path d="M483 355.0V409.0" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 355.0V409.0" stroke="#8fa0b2" stroke-width="2.2"/>
 <rect x="415" y="409.0" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="436.0" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<text x="550.0" y="475.0" text-anchor="middle" fill="#9aa6b4" font-size="12">Контроллер питается от своего БП 24 В, не менее 20 Вт. Модули расширения: отдельный БП.</text>
 <path d="M685 431.0H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 424.0L787 431.0L775 438.0Z" fill="#f2bd3a"/>
 <text x="801" y="425.0" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="441.0" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="457.0" fill="#9aa6b4" font-size="12">к следующему модулю</text>
 <circle cx="40" cy="495.0" r="5" fill="#2aa5e0"/><text x="52" y="499.0" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="495.0" r="5" fill="#ff6b6b"/><text x="128" y="499.0" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="495.0" r="5" fill="#8fa0b2"/><text x="202" y="499.0" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
-<text x="1060" y="499.0" text-anchor="end" fill="#9aa6b4" font-size="12">Варианты сборки: основной, +LoRa/GNSS, +GSM/GNSS. Подробности: паспорт модуля.</text>
+<text x="1060" y="499.0" text-anchor="end" fill="#9aa6b4" font-size="12">Варианты сборки: основной, +LoRa/GNSS, +GSM/GNSS, +LoRa+GSM/GNSS. Подробности: паспорт модуля.</text>
 </svg>

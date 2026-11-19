@@ -30,7 +30,7 @@
 <rect x="760" y="161.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
 <g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="185.0" width="28" height="20" rx="3"/><path d="M970 199.0L976 190.0L982 199.0"/></g>
 <text x="776" y="190.5" fill="#e9edf2" font-size="13" font-weight="700">Термометр Pt100</text>
-<text x="776" y="207.5" fill="#9aa6b4" font-size="12" font-weight="400">2, 3 или 4 провода</text>
+<text x="776" y="207.5" fill="#9aa6b4" font-size="12" font-weight="400">2 или 3 провода</text>
 <rect x="760" y="265.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
 <g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="289.0" width="28" height="20" rx="3"/><path d="M970 303.0L976 294.0L982 303.0"/></g>
 <text x="776" y="294.5" fill="#e9edf2" font-size="13" font-weight="700">Термопара</text>
