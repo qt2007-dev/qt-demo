@@ -691,7 +691,7 @@ vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent=
       var kw=E.ph.reduce(function(s,p){return s+p[0]*p[1]/1000},0);E.kwh+=kw/3600*5;
       $('eb').innerHTML=E.ph.map(function(p,i){return '<div class="bar"><b>L'+(i+1)+'</b><i style="width:'+Math.round(p[1]*5)+'%"></i><span class="mono">'+p[0].toFixed(0)+' В · '+p[1].toFixed(1)+' А</span></div>'}).join('');$('ekw').textContent=kw.toFixed(1)+' кВт';$('ekwh').textContent=E.kwh.toFixed(1);}
   }
-  $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;$('scAld').hidden=tab!=='a';body.hidden=tab==='a';this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});if(tab!=='a')({l:renderL,h:renderH,e:renderE})[tab]();});
+  $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;$('scAld').hidden=tab!=='a';if(tab==='a'&&window.aldGo_ald)window.aldGo_ald();body.hidden=tab==='a';this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});if(tab!=='a')({l:renderL,h:renderH,e:renderE})[tab]();});
   setInterval(tick,600);
 })();
 route();
@@ -929,11 +929,11 @@ function frame(t){
  requestAnimationFrame(frame);if(!vis)return;
  var dt=Math.min((t-last)/1000||0,.05);last=t;if(run)tick(dt*speed);draw()}
 reset();
-if(rm){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.remove('on')}
+if(rm&&P!=='ald'){run=false;$(P+'Play').textContent='Пуск';$(P+'Play').classList.remove('on')}
 if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;
 requestAnimationFrame(frame);
 $(P+'Play').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
-$(P+'Re').onclick=function(){reset()};
+$(P+'Re').onclick=function(){reset()};window['aldGo_'+P]=function(){reset();run=true;$(P+'Play').textContent='Пауза';$(P+'Play').classList.add('on')};
 [[P+'S1',1],[P+'S2',2],[P+'S4',4]].forEach(function(a){$(a[0]).onclick=function(){speed=a[1];[P+'S1',P+'S2',P+'S4'].forEach(function(i){$(i).classList.toggle('on',i===a[0])})}});
 }
 aldInit('ald');aldInit('ald2');;
