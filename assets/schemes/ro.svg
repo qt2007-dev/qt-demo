@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 678" width="1100" height="678" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
+<rect width="1100" height="678" fill="#0a1118"/>
+<text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль RO, реле</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">2 механических реле NO/NC (250 В AC, до 5 А) и 6 твердотельных реле SSR.</text>
+<rect x="435" y="116" width="230" height="392" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
+<text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">RO</text>
+<rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Механические реле</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Твердотельные реле SSR</text>
+<path d="M340 260.8333333333333H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="260.8333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 285.1666666666667H435" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="285.1666666666667" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M760 164.33333333333334H726.75V156H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="164.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 188.66666666666666H734.75V182H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="188.66666666666666" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 263.3333333333333H726.75V260H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="263.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 282.6666666666667H734.75V286H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="282.6666666666667" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<rect x="90" y="236.5" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="124" cy="273.0" r="11"/><path d="M116 265.0L132 281.0M132 265.0L116 281.0"/></g>
+<text x="158" y="260.0" fill="#e9edf2" font-size="13" font-weight="700">Лампа, контактор</text>
+<text x="158" y="277.0" fill="#9aa6b4" font-size="12" font-weight="400">через контакт NO</text>
+<text x="158" y="294.0" fill="#9aa6b4" font-size="12" font-weight="400">(питание нагрузки внешнее)</text>
+<rect x="760" y="140" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="170.5" width="28" height="12"/></g>
+<text x="776" y="163.5" fill="#e9edf2" font-size="13" font-weight="700">Нагреватель</text>
+<text x="776" y="180.5" fill="#9aa6b4" font-size="12" font-weight="400">через SSR 0</text>
+<text x="776" y="197.5" fill="#9aa6b4" font-size="12" font-weight="400">(сеть до 500 В)</text>
+<rect x="760" y="244.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="265.0" width="28" height="16"/><path d="M962 281.0L990 265.0"/></g>
+<text x="776" y="268.5" fill="#e9edf2" font-size="13" font-weight="700">Контактор или реле</text>
+<text x="776" y="285.5" fill="#9aa6b4" font-size="12" font-weight="400">через SSR 3</text>
+<circle cx="435" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP2 NO</text>
+<circle cx="435" cy="182" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="186" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP2 COM</text>
+<circle cx="435" cy="208" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="212" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP2 COM</text>
+<circle cx="435" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="238" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP2 NC</text>
+<circle cx="435" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="264" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP1 NO</text>
+<circle cx="435" cy="286" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="290" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP1 COM</text>
+<circle cx="435" cy="312" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="316" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP1 COM</text>
+<circle cx="435" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="342" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">MP1 NC</text>
+<circle cx="665" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="160" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B1</text>
+<circle cx="665" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="186" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A1</text>
+<circle cx="665" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="212" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B0</text>
+<circle cx="665" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="238" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A0</text>
+<circle cx="665" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="264" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B3</text>
+<circle cx="665" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="290" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A3</text>
+<circle cx="665" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="316" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B2</text>
+<circle cx="665" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A2</text>
+<circle cx="665" cy="364" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="368" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B5</text>
+<circle cx="665" cy="390" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="394" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A5</text>
+<circle cx="665" cy="416" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="420" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B4</text>
+<circle cx="665" cy="442" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="446" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A4</text>
+<circle cx="483" cy="508" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="508" r="4.5" fill="#8fa0b2"/>
+<text x="483" y="496" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="496" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<path d="M483 508V562" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 508V562" stroke="#8fa0b2" stroke-width="2.2"/>
+<rect x="415" y="562" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="589" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<path d="M685 584H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 577L787 584L775 591Z" fill="#f2bd3a"/>
+<text x="801" y="578" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="594" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="610" fill="#9aa6b4" font-size="12">к следующему модулю</text>
+<circle cx="40" cy="648" r="5" fill="#2aa5e0"/><text x="52" y="652" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="648" r="5" fill="#ff6b6b"/><text x="128" y="652" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="648" r="5" fill="#8fa0b2"/><text x="202" y="652" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
+<text x="1060" y="652" text-anchor="end" fill="#9aa6b4" font-size="12">Схема-пример. Остальные каналы подключаются так же. Подробности: паспорт модуля.</text>
+</svg>

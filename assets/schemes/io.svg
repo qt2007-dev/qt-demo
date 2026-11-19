@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 645.0" width="1100" height="645.0" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
+<rect width="1100" height="645.0" fill="#0a1118"/>
+<text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль IO, 8 универсальных каналов</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Тип каждого канала (вход, выход, напряжение, ток, сопротивление) задаётся программно.</text>
+<rect x="435" y="116" width="230" height="359.0" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
+<text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">IO</text>
+<rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Каналы 0–3 (сторона А)</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Каналы 4–7 (сторона Б)</text>
+<path d="M340 159.33333333333334H373.25V156H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="159.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 178.66666666666666H381.25V182H435" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="178.66666666666666" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M340 231.33333333333334H373.25V208H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="231.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 250.66666666666666H381.25V234H435" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="250.66666666666666" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M340 308.3333333333333H373.25V260H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="308.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 332.6666666666667H381.25V286H435" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="332.6666666666667" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M340 390.3333333333333H373.25V312H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="390.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 409.6666666666667H381.25V338H435" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="409.6666666666667" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M760 159.33333333333334H726.75V156H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="159.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 178.66666666666666H734.75V182H665" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="178.66666666666666" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<path d="M760 231.33333333333334H726.75V208H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="231.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 250.66666666666666H734.75V234H665" stroke="#8fa0b2" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="250.66666666666666" r="3.5" fill="#0a1118" stroke="#8fa0b2" stroke-width="2"/>
+<rect x="90" y="140.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="159.0" width="28" height="20" rx="3"/><path d="M118 173.0L124 164.0L130 173.0"/></g>
+<text x="158" y="164.5" fill="#e9edf2" font-size="13" font-weight="700">Датчик с выходом 0–10 В</text>
+<text x="158" y="181.5" fill="#9aa6b4" font-size="12" font-weight="400">вход напряжения, 16 бит</text>
+<rect x="90" y="212.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="231.0" width="28" height="20" rx="3"/><path d="M118 245.0L124 236.0L130 245.0"/></g>
+<text x="158" y="236.5" fill="#e9edf2" font-size="13" font-weight="700">Датчик 0–25 мА</text>
+<text x="158" y="253.5" fill="#9aa6b4" font-size="12" font-weight="400">токовый вход, 16 бит</text>
+<rect x="90" y="284.0" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="314.5" width="28" height="12"/></g>
+<text x="158" y="307.5" fill="#e9edf2" font-size="13" font-weight="700">Терморезистор</text>
+<text x="158" y="324.5" fill="#9aa6b4" font-size="12" font-weight="400">измерение сопротивления</text>
+<text x="158" y="341.5" fill="#9aa6b4" font-size="12" font-weight="400">до 1 МОм</text>
+<rect x="90" y="371.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="392.0" width="28" height="16"/><path d="M110 408.0L138 392.0"/></g>
+<text x="158" y="395.5" fill="#e9edf2" font-size="13" font-weight="700">Клапан с входом 0–10 В</text>
+<text x="158" y="412.5" fill="#9aa6b4" font-size="12" font-weight="400">выход напряжения</text>
+<rect x="760" y="140.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M960 175.0H970M982 175.0H992M970 175.0L981 161.0"/></g>
+<text x="776" y="164.5" fill="#e9edf2" font-size="13" font-weight="700">Кнопка, контакт</text>
+<text x="776" y="181.5" fill="#9aa6b4" font-size="12" font-weight="400">дискретный вход до 20 кГц</text>
+<rect x="760" y="212.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="976" cy="241.0" r="11"/><path d="M968 233.0L984 249.0M984 233.0L968 249.0"/></g>
+<text x="776" y="236.5" fill="#e9edf2" font-size="13" font-weight="700">Лампа, реле до 500 мА</text>
+<text x="776" y="253.5" fill="#9aa6b4" font-size="12" font-weight="400">дискретный выход</text>
+<circle cx="435" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO0</text>
+<circle cx="435" cy="182" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="186" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM0</text>
+<circle cx="435" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="212" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO1</text>
+<circle cx="435" cy="234" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="238" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM1</text>
+<circle cx="435" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="264" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO2</text>
+<circle cx="435" cy="286" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="290" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM2</text>
+<circle cx="435" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="316" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO3</text>
+<circle cx="435" cy="338" r="4.5" fill="#8fa0b2"/>
+<text x="445" y="342" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM3</text>
+<circle cx="665" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="160" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO4</text>
+<circle cx="665" cy="182" r="4.5" fill="#8fa0b2"/>
+<text x="655" y="186" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM4</text>
+<circle cx="665" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="212" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO5</text>
+<circle cx="665" cy="234" r="4.5" fill="#8fa0b2"/>
+<text x="655" y="238" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM5</text>
+<circle cx="665" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="264" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO6</text>
+<circle cx="665" cy="286" r="4.5" fill="#8fa0b2"/>
+<text x="655" y="290" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM6</text>
+<circle cx="665" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="316" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IO7</text>
+<circle cx="665" cy="338" r="4.5" fill="#8fa0b2"/>
+<text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">COM7</text>
+<circle cx="483" cy="475.0" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="475.0" r="4.5" fill="#8fa0b2"/>
+<text x="483" y="463.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="463.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<path d="M483 475.0V529.0" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 475.0V529.0" stroke="#8fa0b2" stroke-width="2.2"/>
+<rect x="415" y="529.0" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="556.0" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<path d="M685 551.0H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 544.0L787 551.0L775 558.0Z" fill="#f2bd3a"/>
+<text x="801" y="545.0" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="561.0" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="577.0" fill="#9aa6b4" font-size="12">к следующему модулю</text>
+<circle cx="40" cy="615.0" r="5" fill="#2aa5e0"/><text x="52" y="619.0" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="615.0" r="5" fill="#ff6b6b"/><text x="128" y="619.0" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="615.0" r="5" fill="#8fa0b2"/><text x="202" y="619.0" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
+<text x="1060" y="619.0" text-anchor="end" fill="#9aa6b4" font-size="12">Изоляция цифровой части 5000 В. Подробности: паспорт модуля.</text>
+</svg>

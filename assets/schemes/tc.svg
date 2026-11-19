@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 590.0" width="1100" height="590.0" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
+<rect width="1100" height="590.0" fill="#0a1118"/>
+<text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль TC, терморегулирование</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Два твердотельных реле для нагревателей и два измерительных входа: Pt100 или термопара.</text>
+<rect x="435" y="116" width="230" height="304.0" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
+<text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">TC</text>
+<rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Твердотельные реле SSR</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Измерительные входы</text>
+<path d="M340 263.3333333333333H373.25V260H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="263.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 282.6666666666667H381.25V286H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="282.6666666666667" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 335.3333333333333H373.25V156H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="335.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 354.6666666666667H381.25V182H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="354.6666666666667" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 174.6H726.75V156H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="174.6" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 188.2H734.75V182H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="188.2" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 201.8H742.75V208H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="201.8" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 215.4H726.75V234H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="215.4" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 278.6H726.75V260H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="278.6" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 292.2H734.75V286H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="292.2" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 305.8H742.75V312H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="305.8" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 319.4H726.75V338H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="319.4" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<rect x="90" y="244.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="267.0" width="28" height="12"/></g>
+<text x="158" y="268.5" fill="#e9edf2" font-size="13" font-weight="700">Нагреватель через SSR</text>
+<text x="158" y="285.5" fill="#9aa6b4" font-size="12" font-weight="400">до 500 В, 0,18 А</text>
+<rect x="90" y="316.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="337.0" width="28" height="16"/><path d="M110 353.0L138 337.0"/></g>
+<text x="158" y="340.5" fill="#e9edf2" font-size="13" font-weight="700">Контактор или реле</text>
+<text x="158" y="357.5" fill="#9aa6b4" font-size="12" font-weight="400">через SSR</text>
+<rect x="760" y="161.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="185.0" width="28" height="20" rx="3"/><path d="M970 199.0L976 190.0L982 199.0"/></g>
+<text x="776" y="190.5" fill="#e9edf2" font-size="13" font-weight="700">Термометр Pt100</text>
+<text x="776" y="207.5" fill="#9aa6b4" font-size="12" font-weight="400">2, 3 или 4 провода</text>
+<rect x="760" y="265.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="962" y="289.0" width="28" height="20" rx="3"/><path d="M970 303.0L976 294.0L982 303.0"/></g>
+<text x="776" y="294.5" fill="#e9edf2" font-size="13" font-weight="700">Термопара</text>
+<text x="776" y="311.5" fill="#9aa6b4" font-size="12" font-weight="400">J, K, N, R, S, T, B</text>
+<circle cx="435" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B2</text>
+<circle cx="435" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="186" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A2</text>
+<circle cx="435" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="212" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B3</text>
+<circle cx="435" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="238" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A3</text>
+<circle cx="435" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="264" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B0</text>
+<circle cx="435" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="290" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A0</text>
+<circle cx="435" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="316" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR B1</text>
+<circle cx="435" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="342" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">SSR A1</text>
+<circle cx="665" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="160" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN1 IEXC4</text>
+<circle cx="665" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="186" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN1 IEXC3</text>
+<circle cx="665" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="212" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN1 IEXC2</text>
+<circle cx="665" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="238" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN1 IEXC1</text>
+<circle cx="665" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="264" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN2 IEXC4</text>
+<circle cx="665" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="290" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN2 IEXC3</text>
+<circle cx="665" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="316" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN2 IEXC2</text>
+<circle cx="665" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN2 IEXC1</text>
+<circle cx="483" cy="420.0" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="420.0" r="4.5" fill="#8fa0b2"/>
+<text x="483" y="408.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="408.0" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<path d="M483 420.0V474.0" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 420.0V474.0" stroke="#8fa0b2" stroke-width="2.2"/>
+<rect x="415" y="474.0" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="501.0" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<path d="M685 496.0H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 489.0L787 496.0L775 503.0Z" fill="#f2bd3a"/>
+<text x="801" y="490.0" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="506.0" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="522.0" fill="#9aa6b4" font-size="12">к следующему модулю</text>
+<circle cx="40" cy="560.0" r="5" fill="#2aa5e0"/><text x="52" y="564.0" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="560.0" r="5" fill="#ff6b6b"/><text x="128" y="564.0" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="560.0" r="5" fill="#8fa0b2"/><text x="202" y="564.0" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
+<text x="1060" y="564.0" text-anchor="end" fill="#9aa6b4" font-size="12">ПИД-регулятор встроен. Подробности: паспорт модуля.</text>
+</svg>

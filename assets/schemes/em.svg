@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 678" width="1100" height="678" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
+<rect width="1100" height="678" fill="#0a1118"/>
+<text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль EM, учёт электроэнергии</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Трёхфазный счётчик: напряжение фаз подаётся на вход, ток измеряется через трансформаторы.</text>
+<rect x="435" y="116" width="230" height="392" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
+<text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">EM</text>
+<rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Калибровка (оптопары)</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Измерительные входы</text>
+<path d="M340 159.33333333333334H373.25V156H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="159.33333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 178.66666666666666H381.25V182H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="178.66666666666666" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 174.6H726.75V156H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="174.6" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 188.2H734.75V182H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="188.2" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 201.8H742.75V208H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="201.8" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 215.4H726.75V234H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="215.4" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 278.6H726.75V260H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="278.6" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 292.2H734.75V286H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="292.2" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 305.8H742.75V312H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="305.8" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 319.4H726.75V338H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="319.4" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 381.1H726.75V364H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="381.1" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 395.7H734.75V390H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="395.7" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 410.3H742.75V416H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="410.3" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 424.9H726.75V442H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="424.9" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<rect x="90" y="140.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="159.0" width="28" height="20" rx="3"/></g>
+<text x="158" y="164.5" fill="#e9edf2" font-size="13" font-weight="700">Калибровочный выход</text>
+<text x="158" y="181.5" fill="#9aa6b4" font-size="12" font-weight="400">оптопара 1</text>
+<rect x="760" y="161.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="976" cy="195.0" r="11"/><circle cx="976" cy="195.0" r="5"/></g>
+<text x="776" y="190.5" fill="#e9edf2" font-size="13" font-weight="700">Трансформаторы тока</text>
+<text x="776" y="207.5" fill="#9aa6b4" font-size="12" font-weight="400">фаз A и B</text>
+<rect x="760" y="265.0" width="250" height="68" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="976" cy="299.0" r="11"/><circle cx="976" cy="299.0" r="5"/></g>
+<text x="776" y="294.5" fill="#e9edf2" font-size="13" font-weight="700">Трансформаторы тока</text>
+<text x="776" y="311.5" fill="#9aa6b4" font-size="12" font-weight="400">нейтрали и фазы C</text>
+<rect x="760" y="366.5" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M962 395.0H990M962 403.0H990M962 411.0H990"/></g>
+<text x="776" y="390.0" fill="#e9edf2" font-size="13" font-weight="700">Трёхфазная сеть</text>
+<text x="776" y="407.0" fill="#9aa6b4" font-size="12" font-weight="400">N, C, B, A</text>
+<text x="776" y="424.0" fill="#9aa6b4" font-size="12" font-weight="400">5…580 В, 45…65 Гц</text>
+<circle cx="435" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK1 C</text>
+<circle cx="435" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="186" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK1 E</text>
+<circle cx="435" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="212" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK2 C</text>
+<circle cx="435" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="238" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK2 E</text>
+<circle cx="435" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="264" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK3 C</text>
+<circle cx="435" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="290" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK3 E</text>
+<circle cx="435" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="316" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK4 C</text>
+<circle cx="435" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="342" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CLK4 E</text>
+<circle cx="665" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="160" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHB-</text>
+<circle cx="665" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="186" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHB+</text>
+<circle cx="665" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="212" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHA-</text>
+<circle cx="665" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="238" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHA+</text>
+<circle cx="665" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="264" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil Neut -</text>
+<circle cx="665" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="290" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil Neut +</text>
+<circle cx="665" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="316" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHC-</text>
+<circle cx="665" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">tr.coil PHC+</text>
+<circle cx="665" cy="364" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="368" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">Neutral</text>
+<circle cx="665" cy="390" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="394" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">Phase C</text>
+<circle cx="665" cy="416" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="420" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">Phase B</text>
+<circle cx="665" cy="442" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="446" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">Phase A</text>
+<circle cx="483" cy="508" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="508" r="4.5" fill="#8fa0b2"/>
+<text x="483" y="496" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="496" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<path d="M483 508V562" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 508V562" stroke="#8fa0b2" stroke-width="2.2"/>
+<rect x="415" y="562" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="589" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<path d="M685 584H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 577L787 584L775 591Z" fill="#f2bd3a"/>
+<text x="801" y="578" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="594" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="610" fill="#9aa6b4" font-size="12">к следующему модулю</text>
+<circle cx="40" cy="648" r="5" fill="#2aa5e0"/><text x="52" y="652" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="648" r="5" fill="#ff6b6b"/><text x="128" y="652" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="648" r="5" fill="#8fa0b2"/><text x="202" y="652" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
+<text x="1060" y="652" text-anchor="end" fill="#9aa6b4" font-size="12">Изоляция цифровой части 5000 В. Подробности: паспорт модуля.</text>
+</svg>

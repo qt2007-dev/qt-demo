@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 574" width="1100" height="574" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
+<rect width="1100" height="574" fill="#0a1118"/>
+<text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль IF, внешние интерфейсы</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Два канала RS-485, один RS-232 и один CAN. На клеммах сигналы продублированы парами.</text>
+<rect x="435" y="116" width="230" height="288" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
+<text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">IF</text>
+<rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
+<text x="431" y="106" text-anchor="end" fill="#9aa6b4" font-size="12">Клеммы стороны А</text>
+<text x="669" y="106" fill="#9aa6b4" font-size="12">Клеммы стороны Б</text>
+<path d="M340 169.83333333333334H373.25V156H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="169.83333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 194.16666666666666H381.25V208H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="194.16666666666666" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 273.8333333333333H373.25V260H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="273.8333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M340 298.1666666666667H381.25V312H435" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="340" cy="298.1666666666667" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 169.83333333333334H726.75V156H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="169.83333333333334" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 194.16666666666666H734.75V208H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="194.16666666666666" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 276.3333333333333H726.75V260H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="276.3333333333333" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<path d="M760 295.6666666666667H734.75V312H665" stroke="#2aa5e0" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="760" cy="295.6666666666667" r="3.5" fill="#0a1118" stroke="#2aa5e0" stroke-width="2"/>
+<rect x="90" y="145.5" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="110" y="172.0" width="28" height="20" rx="3"/></g>
+<text x="158" y="169.0" fill="#e9edf2" font-size="13" font-weight="700">Устройство RS-232</text>
+<text x="158" y="186.0" fill="#9aa6b4" font-size="12" font-weight="400">TX и RX</text>
+<text x="158" y="203.0" fill="#9aa6b4" font-size="12" font-weight="400">до 10 м, 460 кбит/с</text>
+<rect x="90" y="249.5" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M110 278.0H138M110 286.0H138M110 294.0H138"/></g>
+<text x="158" y="273.0" fill="#e9edf2" font-size="13" font-weight="700">Устройство CAN</text>
+<text x="158" y="290.0" fill="#9aa6b4" font-size="12" font-weight="400">CAN P и CAN N</text>
+<text x="158" y="307.0" fill="#9aa6b4" font-size="12" font-weight="400">до 1 Мбит/с</text>
+<rect x="760" y="145.5" width="250" height="73" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M962 174.0H990M962 182.0H990M962 190.0H990"/></g>
+<text x="776" y="169.0" fill="#e9edf2" font-size="13" font-weight="700">Счётчик, датчик RS-485</text>
+<text x="776" y="186.0" fill="#9aa6b4" font-size="12" font-weight="400">A и B, до 1000 м</text>
+<text x="776" y="203.0" fill="#9aa6b4" font-size="12" font-weight="400">до 255 устройств</text>
+<rect x="760" y="257.0" width="250" height="58" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/>
+<g fill="none" stroke="#e9edf2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M962 278.0H990M962 286.0H990M962 294.0H990"/></g>
+<text x="776" y="281.5" fill="#e9edf2" font-size="13" font-weight="700">Вторая линия RS-485</text>
+<text x="776" y="298.5" fill="#9aa6b4" font-size="12" font-weight="400">A и B</text>
+<circle cx="435" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="160" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS232-TX</text>
+<circle cx="435" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="186" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS232-TX</text>
+<circle cx="435" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="212" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS232-RX</text>
+<circle cx="435" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="238" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS232-RX</text>
+<circle cx="435" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="264" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CAN P</text>
+<circle cx="435" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="290" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CAN P</text>
+<circle cx="435" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="316" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CAN N</text>
+<circle cx="435" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="445" y="342" text-anchor="start" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">CAN N</text>
+<circle cx="665" cy="156" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="160" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(1)B</text>
+<circle cx="665" cy="182" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="186" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(1)B</text>
+<circle cx="665" cy="208" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="212" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(1)A</text>
+<circle cx="665" cy="234" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="238" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(1)A</text>
+<circle cx="665" cy="260" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="264" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(2)B</text>
+<circle cx="665" cy="286" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="290" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(2)B</text>
+<circle cx="665" cy="312" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="316" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(2)A</text>
+<circle cx="665" cy="338" r="4.5" fill="#2aa5e0"/>
+<text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">RS485(2)A</text>
+<circle cx="483" cy="404" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="404" r="4.5" fill="#8fa0b2"/>
+<text x="483" y="392" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="392" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<path d="M483 404V458" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 404V458" stroke="#8fa0b2" stroke-width="2.2"/>
+<rect x="415" y="458" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="485" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
+<path d="M685 480H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 473L787 480L775 487Z" fill="#f2bd3a"/>
+<text x="801" y="474" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="490" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="506" fill="#9aa6b4" font-size="12">к следующему модулю</text>
+<circle cx="40" cy="544" r="5" fill="#2aa5e0"/><text x="52" y="548" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="544" r="5" fill="#ff6b6b"/><text x="128" y="548" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="544" r="5" fill="#8fa0b2"/><text x="202" y="548" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
+<text x="1060" y="548" text-anchor="end" fill="#9aa6b4" font-size="12">Схема-пример. Остальные каналы подключаются так же. Подробности: паспорт модуля.</text>
+</svg>

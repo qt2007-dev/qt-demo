@@ -731,7 +731,7 @@ const SPEC={
  step:[['Каналы','2 канала управления двухфазными шаговыми двигателями'],['Обратная связь','2 энкодера ABZ, оптических или магнитных'],['Управление','векторное (FOC), контроль момента, скорости и положения'],['ШИМ','25–100 кГц'],['Максимальный ток','до 16 А'],['Изоляция цифровой части','2500 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
  tc:[['Выходы','2 твердотельных реле: 5–500 В, рабочий ток 0,18 А'],['Входы','2: Pt100 (−199,9…500 °C), термопары J, K, N, R, S, T, B'],['Регулятор','ПИД с программируемым диапазоном'],['Точность','±0,3 % диапазона + 1 цифра, выборка 0,5 с'],['Потребление','до 500 мА'],['Изоляция цифровой части','2500 В'],['Подключают','нагреватели, контакторы, лампы накаливания, двигатели']]
 };
-const SCH={node:'assets/schemes/node.webp',di:'assets/schemes/di.webp',do:'assets/schemes/do.webp',ro:'assets/schemes/ro.webp',io:'assets/schemes/io.webp',if:'assets/schemes/if.webp',dali:'assets/schemes/dali.webp',em:'assets/schemes/em.webp',step:'assets/schemes/step.webp',tc:'assets/schemes/tc.webp'};
+const SCH={node:'assets/schemes/node.svg',di:'assets/schemes/di.svg',do:'assets/schemes/do.svg',ro:'assets/schemes/ro.svg',io:'assets/schemes/io.svg',if:'assets/schemes/if.svg',dali:'assets/schemes/dali.svg',em:'assets/schemes/em.svg',step:'assets/schemes/step.svg',tc:'assets/schemes/tc.svg'};const PAS={node:'assets/schemes/node.webp',di:'assets/schemes/di.webp',do:'assets/schemes/do.webp',ro:'assets/schemes/ro.webp',io:'assets/schemes/io.webp',if:'assets/schemes/if.webp',dali:'assets/schemes/dali.webp',em:'assets/schemes/em.webp',step:'assets/schemes/step.webp',tc:'assets/schemes/tc.webp'};
 const ORI=new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0));
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 let models=null;
@@ -839,7 +839,7 @@ let ctrlStarted=false;
 function showInfo(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('on',j===i));const k=ORDER[i];
   $('chipInfo').innerHTML='<h3>'+INFO[k][0]+'</h3><p>'+INFO[k][1]+'</p><dl class="spec">'+SPEC[k].map(r=>'<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>').join('')+'</dl><button class="btn ghost sm sch" type="button">Схема подключения и паспорт модуля</button>';
   $('chipInfo').querySelector('.sch').onclick=()=>openScheme(k);}
-function openScheme(k){const b=$('lbx');$('lbi').src=SCH[k];$('lbo').href=SCH[k];b.hidden=false;document.body.style.overflow='hidden';b.querySelector('.lbc').focus();}
+function openScheme(k){const b=$('lbx');$('lbi').src=SCH[k];$('lbo').href=SCH[k];$('lbp').href=PAS[k];b.hidden=false;document.body.style.overflow='hidden';b.querySelector('.lbc').focus();}
 function closeScheme(){$('lbx').hidden=true;document.body.style.overflow='';}
 window.openScheme=openScheme;window.closeScheme=closeScheme;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeScheme()});
 window.initCtrl=async function(){
@@ -938,6 +938,6 @@ $(P+'Re').onclick=function(){reset()};window['aldGo_'+P]=function(){reset();run=
 }
 aldInit('ald');aldInit('ald2');;
 </script>
-<div class="lbx" id="lbx" hidden role="dialog" aria-label="Схема подключения"><button class="lbc" type="button" aria-label="Закрыть" onclick="closeScheme()">×</button><div class="lbs" onclick="if(event.target===this)closeScheme()"><img id="lbi" alt="Схема подключения и характеристики модуля"><a id="lbo" target="_blank" rel="noopener">Открыть изображение отдельно</a></div></div>
+<div class="lbx" id="lbx" hidden role="dialog" aria-label="Схема подключения"><button class="lbc" type="button" aria-label="Закрыть" onclick="closeScheme()">×</button><div class="lbs" onclick="if(event.target===this)closeScheme()"><img id="lbi" alt="Схема подключения и характеристики модуля"><a id="lbo" target="_blank" rel="noopener">Открыть схему отдельно</a> · <a id="lbp" target="_blank" rel="noopener">Паспорт модуля (страница из каталога)</a></div></div>
 </body>
 </html>
