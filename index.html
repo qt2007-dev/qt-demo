@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сайт КвинтТех</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Идея: тёмная «лаборатория» на фирменной подложке; видео в шапке главной, 3D-контроллер вращается рядом с заголовком */
+:root{
+  --ink:#07090c; --panel:#0f161d; --line:#1f2933; --text:#e9edf2; --mute:#9aa6b4;
+  --gold:#f2bd3a; --blue:#2aa5e0; --veil:rgba(7,9,12,.86);
+  --display:'Manrope',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--display);line-height:1.5}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(var(--veil),var(--veil)),url(assets/img/texture.jpg) center/cover}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+h4{font-size:15px}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--blue);margin-bottom:12px}
+header{position:sticky;top:0;z-index:20;background:rgba(7,9,12,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:10px 24px;max-width:1240px;margin:0 auto}
+.logo{display:flex;flex-direction:column;align-items:center;gap:3px;flex:none;white-space:nowrap;font-weight:800;font-size:17px;color:var(--text);text-decoration:none}
+.logo .mark{height:40px;width:auto;display:block;flex:none}.logo .lt{font-weight:800;font-size:13px;line-height:1;letter-spacing:.03em}
+nav{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;margin-right:auto}
+nav a{color:var(--mute);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--text)}
+nav a.on{color:var(--text);border-color:var(--gold)}
+.seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{border:0;cursor:pointer;padding:7px 13px;border-radius:999px;background:transparent;color:#cdd6e0;font:600 13px var(--display)}
+.seg button.on{background:var(--gold);color:#0a0c10}
+.btn{display:inline-block;background:var(--gold);color:#0a0c10;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:8px;border:0;cursor:pointer;font:800 14.5px var(--display)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid #33414f}
+.btn.sm{padding:8px 14px;font-size:13.5px}
+.legend{background:#1a1608;border-bottom:1px solid #4a3d16;font-size:13px;color:#e6d4a0}.legend .wrap{display:flex;gap:16px;justify-content:space-between;align-items:center;padding-top:8px;padding-bottom:8px}.legend .sw{display:inline-block;width:14px;height:10px;border:1.5px dashed #8a6c1b;vertical-align:middle;margin-right:4px}.legend button{background:none;border:1px solid #4a3d16;color:#e6d4a0;border-radius:999px;padding:3px 12px;cursor:pointer;font:600 12px var(--display);flex:none}.legend[hidden]{display:none}
+.page{display:none}.page.on{display:block}
+section{padding:60px 0}
+section h2{font-size:clamp(25px,3vw,36px);font-weight:800;margin-bottom:12px}
+.sub{color:var(--mute);max-width:760px;margin:0 0 28px;font-size:16.5px}
+.pagehead{padding:56px 0 20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(15,22,29,.7),transparent)}
+.pagehead h1{font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.1;max-width:900px}
+.pagehead p{color:#c3cdd8;max-width:760px;margin-top:14px;font-size:17.5px}
+.pagehead .cta{margin-top:22px}
+.card{background:rgba(15,22,29,.78);border:1px solid var(--line);border-radius:14px;padding:22px;backdrop-filter:blur(6px)}
+.card p,.card li{color:var(--mute);font-size:14.5px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card ul{margin:8px 0 0;padding-left:18px}
+.g2,.g3,.g4,.g6{display:grid;gap:16px}.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tag{display:inline-block;font:600 12px var(--mono);color:var(--gold);border:1px solid #4a3d16;border-radius:999px;padding:2px 10px;margin:0 6px 6px 0}
+.tag.b{color:var(--blue);border-color:#17435a}
+/* Hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;z-index:-2}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,9,12,.9) 0%,rgba(7,9,12,.6) 50%,rgba(7,9,12,.15) 100%)}
+.hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:center;padding-top:56px;padding-bottom:48px}
+.hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.06;font-weight:800}
+.hero p.lead{max-width:600px;font-size:17.5px;color:#c3cdd8;margin:18px 0 26px}
+.hero3d{position:relative;height:560px;margin:-20px 0}
+.hero3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.vctl{position:absolute;right:24px;bottom:12px;z-index:2}
+.vctl button{background:rgba(15,22,29,.8);border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:5px 12px;font:600 12px var(--display);cursor:pointer}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:34px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+.facts b{display:block;font:800 20px var(--display);color:var(--text)}
+.dir{display:flex;flex-direction:column;gap:12px;min-height:200px;text-decoration:none;color:var(--text)}
+.dir:hover{border-color:var(--gold)}
+.dir h3{font-size:19px;margin:0}
+.dir .p{margin-top:auto;font-weight:700;font-size:14px;color:var(--gold)}
+/* 3D */
+.stage{position:relative;height:560px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:radial-gradient(900px 400px at 50% 40%,#13202b,#07090c)}
+.stage canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+.stage .tools{position:absolute;left:14px;top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.stage .hint{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:12.5px;color:var(--mute)}
+.ld{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mute);transition:opacity .4s;pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.chip{border:1px solid var(--line);background:var(--panel);color:#cdd6e0;border-radius:999px;padding:8px 14px;font:600 13.5px var(--mono);cursor:pointer}
+.chip.on{background:var(--gold);color:#0a0c10;border-color:var(--gold)}
+#chipInfo{min-height:70px}
+pre{margin:14px 0 0;padding:16px 18px;border-radius:10px;background:#05080b;border:1px solid #1b2530;font:13px/1.6 var(--mono);color:#cfe3f3;overflow-x:auto}
+.tw.lic table{min-width:1040px}.tw.lic td,.tw.lic th{vertical-align:top}.tw.lic td:nth-child(2){width:20%}.tw.lic td:nth-child(3){width:14%}.tw.lic td:last-child{width:44%;font-size:13.5px;line-height:1.55}.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:rgba(15,22,29,.82)}
+table{border-collapse:collapse;width:100%;min-width:700px}
+th,td{padding:12px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:14px}
+thead th{font-size:15px}
+tbody th{color:var(--mute);font-weight:600;width:22%}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}}.rbar{position:sticky;top:64px;z-index:5;display:flex;gap:8px;justify-content:flex-end;padding:8px 0;background:linear-gradient(var(--bg,#0b1118) 70%,transparent)}
+details{border:1px solid var(--line);border-radius:12px;background:rgba(15,22,29,.78);padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:'+';color:var(--gold);font-size:20px;line-height:1}
+details[open] summary::after{content:'−'}
+details .in{padding:0 0 16px;color:var(--mute);font-size:14.5px}
+details .in h4{color:var(--text);margin:12px 0 4px}
+details .in ul{margin:0;padding-left:18px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.steps div{padding:16px;border-right:1px solid var(--line);background:rgba(15,22,29,.78)}
+.steps div:last-child{border:0}
+.steps b{display:block;color:var(--gold);margin-bottom:4px}
+.steps p{font-size:13.5px;color:var(--mute)}
+/* Пробелы */
+.need{border:1.5px dashed #8a6c1b;background:rgba(242,189,58,.07);border-radius:12px;padding:14px 18px;margin-top:20px;font-size:14px;color:#e6d4a0}
+.need b{color:var(--gold)}
+body.noneed .need{display:none}
+body.noneed .gap{display:none}
+.gap{border:1.5px dashed #8a6c1b;background:rgba(242,189,58,.05);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:6px;min-height:140px}
+.gap h3{font-size:17px}.gap p{color:#e6d4a0;font-size:14px}
+body[data-role=m] [data-r=e]{display:none!important}
+body[data-role=e] [data-r=m]{display:none!important}
+/* Формы */
+.req{background:var(--gold);color:#0a0c10;border-radius:18px;padding:34px;display:grid;grid-template-columns:1fr 1.4fr;gap:28px}
+.req h2{margin-bottom:10px}.req p{font-size:15.5px}
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:700}
+label.full,.full{grid-column:1/-1}
+input[type=text],input[type=email],input[type=tel],select,textarea{padding:11px;border-radius:8px;border:1px solid #6f5413;font:inherit;background:#fff;color:#0a0c10;width:100%}
+.chk{flex-direction:row;gap:10px;font-weight:500;font-size:12.5px}
+.req .btn{background:#0a0c10;color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fmsg{font-size:14px;font-weight:700}
+.req details{background:rgba(255,255,255,.35);border-color:#a8841f;color:#0a0c10;margin:0}
+.req details .in{color:#0a0c10}
+.req summary::after{color:#0a0c10}
+.dark-form{background:rgba(15,22,29,.85);color:var(--text);border:1px solid var(--line)}
+.scada{border:1px solid var(--line);border-radius:14px;background:#0a1117;overflow:hidden}
+.sc-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:10px 16px;background:#0f1a22;border-bottom:1px solid var(--line)}
+.sc-top .live{margin-left:auto;color:#7bd88f;font:12px var(--mono)}
+.sc-body{padding:18px;min-height:230px}
+.lrow{display:grid;grid-template-columns:150px 1fr 90px 60px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #16222c;font-size:14px}
+.lrow:last-child{border:0}
+.bulb{width:26px;height:26px;border-radius:50%;background:#f2bd3a;display:inline-block;vertical-align:middle;margin-right:8px;transition:opacity .3s,box-shadow .3s}
+.lrow input[type=range]{width:100%;accent-color:#f2bd3a}
+.mono{font-family:var(--mono);color:var(--mute);font-size:13px}
+.pipe{stroke:#2b3b48;stroke-width:5;fill:none}.pipe.on{stroke:#2aa5e0;stroke-dasharray:10 8;animation:flow .5s linear infinite}@keyframes flow{to{stroke-dashoffset:-18}}.valve{fill:#b3382c;stroke:#0a0c10;stroke-width:1.5}.valve.open{fill:#3ca55c}
+.sc-body canvas{width:100%;height:190px;display:block}
+.bars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bar{background:#101c26;border:1px solid var(--line);border-radius:10px;padding:12px}
+.bar i{display:block;height:8px;border-radius:4px;background:#2aa5e0;margin:8px 0}
+.kpi{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);color:var(--mute);font-size:13px}.kpi b{display:block;font:800 22px var(--display);color:var(--text)}
+@media (max-width:620px){.lrow{grid-template-columns:1fr 1fr;}.lrow input{grid-column:1/-1;order:3}.bars{grid-template-columns:1fr}}
+.cfg{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.cr{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(15,22,29,.78);margin-bottom:8px}
+.cr b{font-size:15px}.cr small{color:var(--mute);font-size:13px;grid-column:1}
+.cr .qty{grid-row:1/3;grid-column:2;display:flex;align-items:center;gap:8px}
+.qty button{width:32px;height:32px;border-radius:8px;border:1px solid #33414f;background:var(--panel);color:var(--text);font:700 18px var(--display);cursor:pointer}
+.qty button:hover{border-color:var(--gold)}
+.qty span{min-width:22px;text-align:center;font:700 16px var(--mono)}
+.rail3d{position:relative;height:280px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:radial-gradient(500px 220px at 50% 45%,#13202b,#07090c)}.rail3d canvas{width:100%;height:100%;display:block}
+.cfgside{position:sticky;top:90px;align-self:start;display:flex;flex-direction:column;gap:12px}
+.rail{display:flex;gap:3px;padding:14px 10px 18px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(15,22,29,.78) 80%,#aab3bd 80%,#aab3bd 86%,rgba(15,22,29,.78) 86%);overflow-x:auto;min-height:120px;align-items:flex-end}
+.mb{flex:none;border-radius:5px;background:#10202b;border:1px solid #2a4254;color:var(--gold);font:700 10px var(--mono);display:flex;align-items:flex-start;justify-content:center;padding-top:6px;height:84px;writing-mode:vertical-rl;transform:rotate(180deg)}
+.mb.n{width:54px;height:92px;background:#1c2d3a;border-color:var(--gold)}
+.mb.e{width:27px}
+.cfgsum{font-size:14px;color:var(--mute)}.cfgsum b{color:var(--text)}.cfgsum ul{margin:6px 0 0;padding-left:18px}
+.cfgwarn{font-size:13px;color:#e6d4a0}
+@media (max-width:900px){.cfg{grid-template-columns:1fr}.cfgside{position:static}}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;color:var(--mute);background:rgba(7,9,12,.75)}
+.ft{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+@media (max-width:980px){.g6{grid-template-columns:repeat(3,minmax(0,1fr))}.hero .wrap{grid-template-columns:1fr}.hero3d{height:400px;margin:0}.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.req{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.steps div{border-bottom:1px solid var(--line)}}
+@media (max-width:620px){.g2,.g3,.g4,.fm,.steps{grid-template-columns:1fr}.g6{grid-template-columns:repeat(2,minmax(0,1fr))}.hd{gap:8px 12px;padding:8px 16px}.logo .mark{height:32px}.logo .lt{font-size:11px}.logo{font-size:15px}nav{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;scrollbar-width:none;gap:16px}.seg button{padding:6px 10px;font-size:12px}.hero3d{height:340px}.vctl{right:8px}.wrap{padding:0 16px}.pagehead{padding-top:36px}.facts{gap:10px 20px}section{padding:44px 0}.stage .tools{flex-direction:column}.chip{padding:7px 11px}.stage{height:420px}.req{padding:22px}nav{order:5;width:100%}.hero .wrap{padding-top:36px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body data-role="e">
+<header><div class="hd">
+  <a class="logo" href="#home" aria-label="КвинтТех, на главную"><img class="mark" src="assets/img/logo.svg" alt="" width="58" height="40"><span class="lt">КвинтТех</span></a>
+  <nav aria-label="Разделы" id="nav">
+    <a href="#dev" data-p="dev">Разработка электроники</a><a href="#ctrl" data-p="ctrl">Контроллер QT-BoX</a><a href="#micro" data-p="micro">Микроэлектроника</a><a href="#rnd" data-p="rnd">НИОКР</a><a href="#about" data-p="about">О компании</a><a href="#req" data-p="req" style="color:var(--gold);font-weight:700">Запрос</a>
+  </nav>
+  <div class="seg" role="group" aria-label="Режим"><button id="rEng" class="on">Я инженер</button><button id="rMgr">Я руководитель</button></div>
+</div></header>
+
+<div id="legend" class="legend"><div class="wrap"><span><span class="sw"></span> Жёлтые пунктирные блоки показывают, чего в прототипе пока не хватает и что нужно от вас. На боевом сайте их не будет.</span><button id="lgx" type="button" aria-label="Закрыть подсказку">Скрыть</button></div></div>
+<main>
+<!-- ============ ГЛАВНАЯ ============ -->
+<div class="page" id="p-home">
+<div class="hero">
+  <video id="bgv" autoplay muted loop playsinline preload="auto" poster="assets/video/poster.jpg"><source src="assets/video/bg.webm" type="video/webm"></video>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">ООО НПО «КвинтТех» · Зеленоград</div>
+      <h1>Электроника под заказ, контроллеры и оборудование для микроэлектроники</h1>
+      <p class="lead">Разрабатываем платы и приборы, выпускаем модульные контроллеры QT-BoX, проектируем установки для микроэлектроники и ведём НИОКР по связи, навигации и радиолокации.</p>
+      <div class="cta"><a class="btn" href="#req">Запросить расчёт</a><a class="btn ghost" href="#ctrl">Контроллер в 3D</a></div>
+      <div class="facts"><div><b>от 2 млн ₽ в месяц</b>разработка электроники</div><div><b>4 направления</b>один инженерный центр</div><div><b>10 модулей</b>на одной DIN-рейке</div></div>
+    </div>
+    <div class="hero3d" id="heroHost"><canvas id="heroCv" aria-label="Контроллер QT-BoX, 3D-модель вращается"></canvas><div class="ld" id="heroLd">Загрузка 3D-модели…</div>
+      <div class="vctl"><button id="vidBtn" type="button">Остановить фон</button></div></div>
+  </div>
+</div>
+<section style="padding-bottom:0"><div class="wrap">
+  <div class="card" data-r="e"><h3>Режим «инженер»</h3><p>Показываем технику: протокол BOX и список модулей, характеристики установок и проектов НИОКР, что умеем по технологиям. <a href="#ctrl">Открыть контроллер</a></p></div>
+  <div class="card" data-r="m"><h3>Режим «руководитель»</h3><p>Показываем решения: модели сотрудничества, права на ИС, сроки и результаты, сравнение с аналогами. <a href="#dev">Открыть разработку электроники</a></p></div>
+</div></section>
+<section><div class="wrap">
+  <h2>Чем мы занимаемся</h2>
+  <p class="sub">Выберите свою задачу, и мы покажем только нужное. Переключатель «Я инженер» и «Я руководитель» в шапке меняет подачу: протоколы и характеристики или сроки, права и модели сотрудничества.</p>
+  <div class="g4">
+    <a class="card dir" href="#dev"><h3>Разработка электроники</h3><p>Схемотехника, платы, встроенное ПО, прототипы и серия под ключ. Четыре модели сотрудничества.</p><span class="p">от 2 млн ₽ в месяц</span></a>
+    <a class="card dir" href="#ctrl"><h3>Контроллер QT-BoX и SCADA</h3><p>Модульный программируемый контроллер автоматизации с MQTT Sparkplug B. Поддерживает FUXA, Node-RED, OpenPLC и другие открытые системы.</p><span class="p">Смотреть в 3D</span></a>
+    <a class="card dir" href="#micro"><h3>Оборудование для микроэлектроники</h3><p>Установки атомно-слоевого осаждения под заказ, вакуумные узлы, поставки оборудования консорциумом.</p><span class="p">Портфолио установок</span></a>
+    <a class="card dir" href="#rnd"><h3>НИОКР. Проработанные пакеты и заказные разработки</h3><p>Навигация, связь и радиолокация. Восемь проработанных направлений, условия обсуждаются индивидуально.</p><span class="p">Условия по запросу</span></a>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> подтвердить порядок направлений на главной (какое основное по выручке) и дать фото или рендеры для карточек вместо текстовых.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Нам доверяют</h2>
+  <div class="g6">
+    <div class="card" style="text-align:center;padding:16px">ГК АйТи</div><div class="card" style="text-align:center;padding:16px">КЭМЗ</div><div class="card" style="text-align:center;padding:16px">ЛЕД-Эффект</div><div class="card" style="text-align:center;padding:16px">X5 Group</div><div class="card" style="text-align:center;padding:16px">Selgros</div><div class="card" style="text-align:center;padding:16px">ISBC</div>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> подтвердить список и дать логотипы с разрешением на публикацию. Яндекс, ПепсиКо и «Световые технологии» на сайт не выводим.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="req" style="grid-template-columns:1fr auto;align-items:center"><div><h2>Расскажите о задаче</h2><p>Почта на сайте не публикуется. Запрос уходит через форму, отвечаем в рабочие дни.</p></div><a class="btn" href="#req">Отправить запрос</a></div>
+</div></section>
+</div>
+
+<!-- ============ РАЗРАБОТКА ЭЛЕКТРОНИКИ ============ -->
+<div class="page" id="p-dev">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">РАЗРАБОТКА ЭЛЕКТРОНИКИ</div>
+  <h1>От технического задания до серийного изделия</h1>
+  <p>Разрабатываем и производим радиоэлектронные устройства на заводах России и за рубежом: аналоги популярных зарубежных изделий на отечественной элементной базе и продукты без аналогов. Стоимость разработки от 2 млн ₽ в месяц.</p>
+  <div class="cta"><a class="btn" href="#dev-form" data-scroll="dev-form">Заполнить анкету</a><a class="btn ghost" data-r="m" href="#dev-ip" data-scroll="dev-ip">Права на ИС</a></div></div></div>
+<section data-r="m"><div class="wrap">
+  <div class="g4">
+    <div class="card"><h3>более 90 %</h3><p>соответствие себестоимости серии предпроектной оценке</p></div>
+    <div class="card"><h3>более 95 %</h3><p>соответствие сроков и бюджетов предпроектной оценке</p></div>
+    <div class="card"><h3>от 5 лет</h3><p>опыта у каждого сотрудника, все с высшим техническим образованием</p></div>
+    <div class="card"><h3>1 год</h3><p>поддержки и приоритетная доработка изделия</p></div>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> эти показатели взяты из портфолио 2014–2018 гг. Подтвердите, что они актуальны, или дайте свежие.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Как идёт проект</h2><p class="sub">Типовые блоки работ. Любой этап можно заказать отдельно.</p>
+  <div class="steps">
+    <div><b>Предпроект</b><p>Обсуждение задачи, ТЗ, выбор корпуса, блок-схема, технический проект, себестоимость.</p></div>
+    <div><b>Разработка</b><p>Закупка комплектующих, схемотехника, трассировка плат, встроенное и прикладное ПО.</p></div>
+    <div><b>Прототип</b><p>Макетирование, изготовление прототипов, техническая документация.</p></div>
+    <div><b>Испытания</b><p>Опытная эксплуатация, испытания, сертификация.</p></div>
+    <div><b>Производство</b><p>Выбор производителя, сопровождение серии, поддержка и доработки.</p></div>
+  </div>
+</div></section>
+<section data-r="e" style="padding-top:0"><div class="wrap">
+  <h2>Что умеем</h2>
+  <div class="g3">
+    <div class="card"><h3>Вычисления и ПО</h3><ul><li>ARM Cortex-M0…M7 и Cortex-A5…A5x</li><li>FreeRTOS, ThreadX, Linux</li><li>Обновление ПО по воздуху, шифрование, ЭЦП, VPN</li><li>Защита от сбоев, watchdog</li></ul></div>
+    <div class="card"><h3>Связь</h3><ul><li>Wi-Fi, Bluetooth и BLE, ZigBee, Thread, LoRa и LoRaWAN</li><li>GSM, 2G/3G/4G, LTE-M, NB-IoT</li><li>NFC и RFID, ГЛОНАСС/GPS/BeiDou</li><li>Ethernet, RS-485, Modbus, MQTT</li></ul></div>
+    <div class="card"><h3>Питание, свет, датчики</h3><ul><li>Питание AC/DC, PoE, аккумуляторы, солнечные батареи</li><li>Освещение: DALI, 0-10 В, 1-10 В, PWM</li><li>Датчики, включая MEMS, sensor fusion</li><li>Защита от перенапряжений, ЭМС</li></ul></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Примеры работ</h2><p class="sub">Устройства, которые мы разработали и довели до выпуска. Сроки указаны до готовой документации.</p>
+  <div class="g3" id="works"></div>
+  <div class="need"><b>Нужно от вас:</b> фото или рендеры каждого изделия, актуальные кейсы за 2019–2026 годы и разрешение называть заказчиков. Сейчас заказчики описаны обезличенно.</div>
+</div></section>
+<section data-r="m" style="padding-top:0"><div class="wrap">
+  <h2>Модели сотрудничества</h2>
+  <div class="g4">
+    <div class="card"><h3>Полное изготовление</h3><p>ТЗ, разработка, испытания, документация, поиск производителя, сопровождение серии, отладка партии.</p></div>
+    <div class="card"><h3>Разработка без производства</h3><p>ТЗ, разработка, испытания и вся документация. Производите сами или через подрядчика.</p></div>
+    <div class="card"><h3>Неэксклюзивная с роялти</h3><p>Стоимость разработки снижается до минимума, а мы получаем часть прибыли с продаж под вашей или совместной маркой.</p></div>
+    <div class="card"><h3>ODM-контракт</h3><p>Мы разрабатываем и производим устройство, вы продаёте под своей торговой маркой.</p></div>
+  </div>
+</div></section>
+<section id="dev-ip" data-r="m" style="padding-top:0"><div class="wrap">
+  <h2>Права на интеллектуальную собственность</h2>
+  <p class="sub">Кому принадлежит результат и чем отличаются варианты по стоимости и договору. Условия по каждому проекту фиксируем в договоре.</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th style="color:var(--blue)">1 · ИС заказчика</th><th style="color:var(--gold)">2 · ИС исполнителя</th><th style="color:#8fd18f">3 · Смешанная</th></tr></thead>
+    <tbody>
+      <tr><th>Кому принадлежит ИС</th><td>Заказчику</td><td>Исполнителю (КвинтТех)</td><td>Делится: совместно или по частям</td></tr>
+      <tr><th>Что получает заказчик</th><td>Документацию и права на результат</td><td>Изделие по договору поставки на согласованное ТЗ</td><td>Результат и права в оговорённых долях</td></tr>
+      <tr><th>Тип договора</th><td>НИОКР или разработка под заказ</td><td>Договор поставки</td><td>Смешанный</td></tr>
+      <tr><th>Стоимость для заказчика</th><td>Выше: оплачивает разработку целиком</td><td>Ниже: разработка окупается поставками</td><td>Между двумя вариантами</td></tr>
+      <tr><th>Когда выбирают</th><td>Нужна полная независимость</td><td>Нужно изделие, а не права на него</td><td>Хочется разделить затраты и права</td></tr>
+    </tbody></table></div>
+  <div class="need"><b>Нужно от вас:</b> юридически выверенные формулировки трёх моделей, диапазоны стоимости (если готовы показать) и какие модели вы реально предлагаете.</div>
+</div></section>
+<section id="dev-form" style="padding-top:0"><div class="wrap"><div class="req">
+  <div><h2>Анкета на разработку электроники</h2><p>Ответьте на вопросы, и мы подготовим предварительную оценку. Не знаете ответа, оставьте поле пустым.</p></div>
+  <div data-form="dev"></div></div>
+  <div class="need"><b>Нужно от вас:</b> финальный список вопросов анкеты. Сейчас он составлен по типовому брифу на электронику.</div>
+</div></section>
+</div>
+
+<!-- ============ КОНТРОЛЛЕР ============ -->
+<div class="page" id="p-ctrl">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">QT-BOX</div>
+  <h1>Модульный контроллер автоматизации на DIN-рейку</h1>
+  <p>Программируемый контроллер автоматизации (PAC) и шлюз пограничной сети. Данные модулей публикуются по MQTT Sparkplug B, управляет SCADA, сценарии работают на самом узле.</p>
+  <div class="cta"><a class="btn" href="#req">Запросить контроллер</a><a class="btn ghost" data-scroll="c-proto" href="#ctrl">Протокол BOX</a></div></div></div>
+<section><div class="wrap">
+  <h2>Основной модуль и девять модулей расширения на одной рейке</h2>
+  <p class="sub">Настоящая 3D-модель. Вращайте мышью, щёлкните по крышке модуля или выберите модуль ниже: откроется крышка, и станет видна лицевая панель с экраном. Кнопка «Взрыв-схема» раздвигает модули и детали корпуса.</p>
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="3D-модель контроллера на DIN-рейке"></canvas>
+    <div class="tools"><div class="seg"><button id="bGlass" class="on">Прозрачные крышки</button><button id="bAll">Открыть все</button><button id="bExp">Взрыв-схема</button></div></div>
+    <div class="hint">Вращение: потяните. Крышка: щёлкните по ней.</div>
+    <div class="ld" id="ld">Загрузка 3D-модели…</div>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Модули"></div>
+  <div class="card" id="chipInfo"></div>
+  <div class="g2" style="margin-top:16px">
+    <div class="gap"><h3>Версия без корпуса (embedded)</h3><p>Нужны фото, размеры, конструктив и отличия от корпусной версии.</p></div>
+    <div class="gap"><h3>Остальные 3D-модели</h3><p>Новые устройства для портфолио подключим после получения моделей. Файлы STEP не публикуем, только по запросу.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Где применяется</h2>
+  <div class="g4">
+    <div class="card"><h3>Офисное освещение, DALI</h3><p>Две независимые шины DALI по 64 устройства, встроенное питание шин, DALI Type 8 (RGB и изменяемая температура света).</p></div>
+    <div class="card"><h3>Уличное освещение, шкафы ШУНО</h3><p>Управление контакторами по 2G/3G/LTE/NB-IoT и Ethernet, счётчики по RS-485, учёт по каждой фазе.</p></div>
+    <div class="card"><h3>Базовая станция LoRa и Thread</h3><p>Офисное или всепогодное исполнение, до 1000 устройств, веб-интерфейс администрирования.</p></div>
+    <div class="card"><h3>Промышленная автоматизация, СКУД, умное здание</h3><p>Пограничный шлюз сети, телеком-оборудование, умный город.</p></div>
+  </div>
+</div></section>
+<section data-r="e" style="padding-top:0"><div class="wrap">
+  <h2>Модули</h2>
+  <div class="tw"><table><thead><tr><th>Модуль</th><th>Что делает</th></tr></thead><tbody>
+    <tr><th>NODE</th><td>Главный модуль: шлюз на Raspberry Pi 4, публикует данные в MQTT Sparkplug B, исполняет сценарии, события и расписание</td></tr>
+    <tr><th>DI</th><td>16 дискретных входов</td></tr><tr><th>DO</th><td>16 дискретных выходов</td></tr>
+    <tr><th>RO</th><td>2 реле и 6 твердотельных реле</td></tr><tr><th>IO</th><td>8 универсальных каналов с ПИД-регулированием</td></tr>
+    <tr><th>IF</th><td>RS-485 (сырой обмен) и DMX512</td></tr><tr><th>DALI</th><td>2 шины DALI</td></tr>
+    <tr><th>EM</th><td>Трёхфазный счётчик электроэнергии</td></tr><tr><th>STEP</th><td>2 шаговых двигателя</td></tr><tr><th>TC</th><td>2 канала термопар и терморегулирования</td></tr>
+    <tr><th>Wiegand</th><td>Подключение считывателей СКУД. В 3D-сборку пока не добавлен.</td></tr>
+  </tbody></table></div>
+  <div class="need"><b>Нужно от вас:</b> правила совместимости модулей для конфигуратора (сколько модулей каждого типа, питание, ограничения шины) и что из линейки серийное, а что в разработке.</div>
+  <h3 style="margin:28px 0 6px" id="cfgTop">Конфигуратор контроллера</h3>
+  <p class="sub" style="margin-bottom:14px">Соберите состав на одной DIN-рейке и отправьте его в запрос. Основной модуль NODE входит всегда.</p>
+  <div class="cfg"><div id="cfgRows"></div><div class="cfgside"><div class="rail3d" id="cfgHost"><canvas id="cfgCv" aria-label="3D-модель выбранной сборки"></canvas><div class="ld" id="cfgLd">Загрузка 3D-модели…</div></div><div id="cfgSum"></div><div class="cfgwarn" id="cfgWarn"></div><button class="btn" id="cfgSend" type="button">Добавить в запрос</button></div></div>
+  <div class="need"><b>Нужно от вас:</b> настоящие правила совместимости: сколько модулей каждого типа можно ставить, лимиты питания и шины, обязательные сочетания. Сейчас действует единственное ограничение: девять модулей расширения, как в 3D-сборке. Правила лежат в одном месте кода, подставим ваши.</div>
+</div></section>
+<section id="c-proto" style="padding-top:0"><div class="wrap">
+  <div data-r="e"><h2>Протокол BOX</h2>
+  <p class="sub">Модули общаются по Sparkplug B 3.0 поверх MQTT, полезная нагрузка кодируется в protobuf. Узел сообщает о появлении и состоянии устройств, принимает команды и события, исполняет сценарии, расписание и cron.</p>
+  <div class="g3">
+    <div class="card"><h3>Структура тем</h3><p>Темы Sparkplug: NBIRTH, DBIRTH, DDATA, DCMD, NDEATH. Метрики именуются по каналам модуля.</p></div>
+    <div class="card"><h3>События и сценарии</h3><p>Правила «если, то» на узле, расписание и cron, смена сервера без потери состояния.</p></div>
+    <div class="card"><h3>Документация</h3><p>Описание каждого модуля и схема protobuf. Интерактивная версия с эмулятором: ждём материалы.</p></div>
+  </div>
+  <pre>spBv1.0/box/DCMD/{nodeID}/{deviceID}
+out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
+  <div class="need"><b>Нужно от вас:</b> интерактивная документация и эмулятор (вы упоминали). Другие протоколы, такие как OSDP и SEMI SECS/GEM, подключаем по запросу, оформим отдельным блоком.</div></div>
+  <div data-r="m"><h2>Что это даёт заказчику</h2>
+  <div class="g3">
+    <div class="card"><h3>Открытые стандарты</h3><p>MQTT Sparkplug и Linux без зарубежных лицензионных ограничений. Данные может читать любая SCADA с поддержкой MQTT Sparkplug.</p></div>
+    <div class="card"><h3>Меньше простоев</h3><p>Диагностика и прогноз состояния оборудования прямо на контроллере.</p></div>
+    <div class="card"><h3>Версия на отечественной базе</h3><p>Отдельная линейка контроллера с долей отечественной элементной базы более 70 %. Изготавливаем по запросу.</p></div>
+  </div></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Поддерживаемые системы и лицензии</h2>
+  <p class="sub">Контроллер QT-BoX работает с этими системами по открытым протоколам. Мы не поставляем их как часть изделия: заказчик ставит нужную систему сам или заказывает у нас настройку. В правом столбце указано, что разрешает лицензия и как мы подключаем систему к контроллеру.</p>
+  <div class="tw lic"><table>
+    <thead><tr><th>Система</th><th>Что поддерживается</th><th>Лицензия</th><th>Ограничения и как встраиваем</th></tr></thead>
+    <tbody>
+      <tr><th>FUXA</th><td>Веб-SCADA: мнемосхемы, тренды, тревоги в браузере. Данные берёт из MQTT.</td><td>MIT</td><td>Ограничений почти нет: можно поставлять в составе изделия, в том числе в закрытом решении. Нужно сохранить текст лицензии и указание авторов, гарантий автор не даёт. Встраиваем как отдельное приложение (Docker или Node.js) на модуль NODE или на сервер заказчика. К контроллеру подключается по MQTT.</td></tr>
+      <tr><th>Node-RED</th><td>Потоки обработки данных и интеграции с внешними сервисами.</td><td>Apache 2.0</td><td>Поставлять можно, в том числе коммерчески. Сохраняем лицензию и уведомления об авторстве, свои изменения в коде самого Node-RED отмечаем. Встраиваем отдельным процессом на NODE. Наши потоки остаются нашими. Узлы из каталога имеют свои лицензии, проверяем каждый.</td></tr>
+      <tr><th>OpenPLC</th><td>Логика по МЭК 61131-3, исполняется на узле.</td><td>GPL v3 (среда исполнения)</td><td>Копилефт (GPL v3): при поставке изделия с OpenPLC передаём заказчику исходный код среды исполнения вместе с нашими правками. Закрытый код внутрь этого процесса добавлять нельзя. Встраиваем отдельным процессом, общаемся по Modbus или MQTT, закрытые части держим снаружи. У редактора лицензия другая (GPL v2, часть кода GPL v3 и LGPL). Условия для сгенерированного кода проверит юрист.</td></tr>
+      <tr><th>Jupyter</th><td>Аналитика и обучение моделей на данных контроллера.</td><td>BSD 3-Clause</td><td>Ограничений мало: сохраняем уведомление об авторстве, имя проекта в рекламе без разрешения не используем. Встраиваем как сервис на сервере или на NODE. Ноутбуки и модели заказчика остаются его собственностью. Библиотеки машинного обучения внутри имеют свои лицензии, проверяем отдельно.</td></tr>
+      <tr><th>Home Assistant</th><td>Умный дом, интеграция через MQTT.</td><td>Apache 2.0</td><td>Как у Node-RED: можно поставлять, сохраняя лицензию и авторство. Встраиваем отдельным приложением (Docker или собственная ОС проекта), обмен идёт через MQTT. Интеграции и дополнения из сторонних каталогов имеют свои лицензии.</td></tr>
+      <tr><th>MasterSCADA</th><td>Отечественная SCADA, подключение по MQTT.</td><td>Коммерческая, лицензия у разработчика</td><td>Встроить в наше изделие нельзя. Лицензию на неё заказчик покупает у разработчика, цена обычно зависит от числа тегов и рабочих мест. Мы поддерживаем только обмен данными по MQTT.</td></tr>
+      <tr><th>Linux на модуле NODE</th><td>Операционная система узла.</td><td>GPL v2 и другие, зависит от пакета</td><td>Ядро под GPL v2: при поставке образа отдаём исходники ядра и GPL-пакетов с нашими правками и перечень пакетов с их лицензиями. Образ собираем сами (Yocto или Buildroot). Свой прикладной код запускаем отдельными процессами, лицензия у него может быть любой. Статическую линковку с GPL-библиотеками не используем.</td></tr>
+      <tr><th>MQTT и Sparkplug B</th><td>Транспорт и формат данных между модулями и SCADA.</td><td>Открытые стандарты (OASIS, Eclipse, EPL 2.0)</td><td>На использование стандартов ограничений нет. Ограничения есть у реализаций: брокер Mosquitto и библиотека Eclipse Tahu под EPL 2.0 (слабый копилефт). Правки самого EPL-кода публикуем, свой код вокруг него закрытым оставить можно.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="need"><b>Лицензии уточняем:</b> FUXA (MIT) и OpenPLC (GPL v3) сверены с репозиториями проектов, остальные указаны по общеизвестным данным. Это техническая справка, не юридическое заключение. Перед поставкой проверим условия для каждой версии, особенно GPL при включении в изделие.</div>
+  <h3 style="margin:26px 0 12px">Пример экрана SCADA</h3>
+  <div class="scada"><div class="sc-top"><b>FUXA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демо, значения симулируются</span></div><div class="sc-body" id="scBody"></div></div>
+  <div class="need"><b>Нужно от вас:</b> настоящие скриншоты FUXA с вашими мнемосхемами. Экран выше нарисован мной по возможностям модулей DALI, IO и EM, это не снимок реальной системы.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Искусственный интеллект на контроллере</h2>
+  <p class="sub">Модуль управления работает на Linux, поэтому модели запускаются прямо на узле, без облака.</p>
+  <div class="g3">
+    <div class="card"><h3>Прогноз состояния оборудования</h3><p>По току, температуре и вибрации находит аномалии и предупреждает до отказа.</p></div>
+    <div class="card"><h3>Рекомендации оператору</h3><p>Не только прогноз, но и совет, что сделать и когда. Предписывающее обслуживание.</p></div>
+    <div class="card"><h3>Экономия энергии</h3><p>Освещение и нагрузки по присутствию и расписанию, на данных счётчика EM и датчиков DALI.</p></div>
+    <div class="card"><h3>Автонастройка ПИД</h3><p>Подбор коэффициентов для каналов IO и TC по реальной реакции объекта.</p></div>
+    <div class="card"><h3>Помощник наладчика</h3><p>Локальная модель отвечает по документации и журналам событий, данные не покидают объект.</p></div>
+    <div class="gap"><h3>Ваши идеи</h3><p>Это мои предложения по документации. Нужно выбрать, что оставить, и добавить реальные кейсы.</p></div>
+  </div>
+</div></section>
+<section data-r="m" style="padding-top:0"><div class="wrap">
+  <h2>Сравнение с аналогами</h2><p class="sub">Сопоставление по возможностям для промышленного интернета вещей.</p>
+  <div class="tw"><table><thead><tr><th></th><th style="color:var(--gold)">QT-BoX</th><th>ОВЕН ПЛК2xx</th><th>Серебрум IRIS</th><th>Opto 22 groov EPIC</th></tr></thead><tbody>
+    <tr><th>Тип</th><td>ПКА</td><td>ПКА</td><td>ПКА</td><td>ПКА</td></tr>
+    <tr><th>Полевая шина</th><td>CAN, Ethernet</td><td>Ethernet</td><td>YART BUS, RS-485</td><td>собственная</td></tr>
+    <tr><th>Отечественная ЭКБ более 70 %</th><td>Да, в отдельной линейке по запросу</td><td>Нет</td><td>Нет</td><td>Нет</td></tr>
+    <tr><th>MQTT Sparkplug</th><td>Да</td><td>Нет</td><td>Нет</td><td>Да</td></tr>
+    <tr><th>Прогнозное обслуживание</th><td>Да, на узле</td><td>Частично</td><td>Нет</td><td>Да, через Ignition</td></tr>
+    <tr><th>Открытая SCADA</th><td>Да (FUXA, Node-RED)</td><td>Нет</td><td>Нет</td><td>Да (Node-RED)</td></tr>
+  </tbody></table></div>
+  <div class="need"><b>Нужно от вас:</b> таблица собрана из вашего white paper 2021 года. Решите, публикуем ли названия конкурентов, и проверьте актуальность столбцов.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="req"><div><h2>Запрос на контроллер</h2><p>Расскажите, что нужно автоматизировать, и мы подберём состав модулей.</p></div><div data-form="ctrl"></div></div></div></section>
+</div>
+
+<!-- ============ МИКРОЭЛЕКТРОНИКА ============ -->
+<div class="page" id="p-micro">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">ОБОРУДОВАНИЕ ДЛЯ МИКРОЭЛЕКТРОНИКИ</div>
+  <h1>Установки под задачу заказчика и поставки оборудования</h1>
+  <p>Разрабатываем и изготавливаем технологическое оборудование для микроэлектроники, делаем вакуумные узлы, ремонтируем и восстанавливаем. Вместе с партнёрами в консорциуме поставляем и запускаем оборудование для полупроводниковых производств.</p>
+  <div class="cta"><a class="btn" href="#micro-form" data-scroll="micro-form">Заполнить опросник</a></div></div></div>
+<section><div class="wrap">
+  <h2>Установки атомно-слоевого осаждения</h2>
+  <p class="sub">В отличие от производителей типовых установок, мы проектируем каждую под конкретного заказчика. Четыре изготовленные установки.</p>
+  <div class="rbar"><button class="btn ghost sm" type="button" id="aldOpen">Развернуть все</button><button class="btn sm" type="button" id="aldClose">Свернуть все</button></div>
+  <div id="ald"></div>
+  <div class="need"><b>Нужно от вас:</b> фото установок, разрешение называть заказчиков и актуальный список. Названия взяты из вашего портфолио.</div>
+  <div class="g2" style="margin-top:16px">
+    <div class="gap"><h3>Эмулятор установки ALD</h3><p>Веб-интерфейс с симуляцией процесса: подача прекурсоров, циклы, температура. Ждём материалы.</p></div>
+    <div class="gap"><h3>3D-модели установок</h3><p>Подключим после получения моделей.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Узлы и услуги</h2>
+  <div class="g3">
+    <div class="card"><h3>Вакуумные узлы</h3><p>Камеры, шлюзы, затворы, клапаны и другие компоненты систем. Механообработка изделий.</p></div>
+    <div class="card"><h3>Восстановление и ремонт</h3><p>Ремонт и восстановление технологического оборудования, отработка технологических процессов.</p></div>
+    <div class="card"><h3>Нестандартные задачи</h3><p>Решаем инженерные задачи электронного машиностроения.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Консорциум: поставка и запуск линий</h2>
+  <p class="sub">КвинтТех и партнёры поставляют и внедряют технологическое оборудование для микроэлектроники и радиотехники, включая проекты предприятий зеленоградского кластера.</p>
+  <div class="g2">
+    <div class="card"><h3>Что подтверждено опытом</h3><ul><li>Поставка технологического и измерительного оборудования разного класса</li><li>Технические требования и подготовка RFQ</li><li>Сопровождение на стороне производителей, включая FAT и SAT</li><li>Прямая работа с поставщиками из Европы, США, Японии, КНР и ЮВА, подбор обоснованных альтернатив</li><li>Новое и восстановленное оборудование с сохранением гарантии</li></ul></div>
+    <div class="card"><h3>Сопровождение линии целиком</h3><ul><li>Генеральный план производства</li><li>Технологические задания и маршрут обработки пластин</li><li>План размещения технологического и инженерного оборудования</li><li>Подбор оборудования, поставка, ввод в эксплуатацию</li><li>Сопровождение запуска технологического процесса</li></ul></div>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> подтверждённые цифры по объёму контрактов (в письме «более нескольких млрд ₽»), список партнёров консорциума и что можно называть публично.</div>
+</div></section>
+<section id="micro-form" style="padding-top:0"><div class="wrap"><div class="req"><div><h2>Опросник: оборудование и материалы для микроэлектроники</h2><p>Первичная информация для подбора оборудования, комплектующих и материалов. Заполните то, что знаете, остальное уточним по ходу.</p></div><div data-form="micro"></div></div><div class="need"><b>Нужно от вас:</b> финальный список вопросов опросника. Этот составлен мной по письму консорциума и типовому RFQ. Прежний опросник по установке ALD можно подключить отдельной ссылкой в карточке установок.</div></div></section>
+</div>
+
+<!-- ============ НИОКР ============ -->
+<div class="page" id="p-rnd">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">НИОКР</div>
+  <h1>НИОКР. Проработанные пакеты и заказные разработки</h1>
+  <p>Восемь взаимосвязанных проектов на общей базе радиомодулей, антенных систем, контроллеров и SDR собственной разработки. На выходе изделия, пригодные к мелкосерийному и серийному производству. Стоимость и условия обсуждаем индивидуально.</p>
+  <div class="cta"><a class="btn" href="#rnd-form" data-scroll="rnd-form">Обсудить проект</a></div></div></div>
+<section><div class="wrap" id="rndList"></div>
+  <div class="wrap"><div class="need"><b>Нужно от вас:</b> ваш документ с тем, что можно публиковать. Я убрал из черновика ссылки на аналоги военного назначения, формулировки про целеуказание и вопросы к обсуждению. Тексты по проектам нужно согласовать до публикации.</div></div>
+</section>
+<section id="rnd-form" style="padding-top:0"><div class="wrap"><div class="req"><div><h2>Запрос по НИОКР</h2><p>Опишите задачу, и мы предложим состав работ и сроки.</p></div><div data-form="rnd"></div></div></div></section>
+</div>
+
+<!-- ============ О КОМПАНИИ ============ -->
+<div class="page" id="p-about">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">О КОМПАНИИ</div>
+  <h1>Инженерный центр в Зеленограде</h1>
+  <p>ООО НПО «КвинтТех» разрабатывает электронику, контроллеры и технологическое оборудование для микроэлектроники и участвует в научно-исследовательских проектах.</p></div></div>
+<section><div class="wrap">
+  <div class="g2">
+    <div class="card"><h3>Реквизиты</h3><p>ООО НПО «КвинтТех»<br>ОГРН 1077760630661, ИНН 7735533858<br>124498, Москва, Зеленоград, Георгиевский пр-т, д. 5, стр. 2<br>Банковские реквизиты и документы направляем по запросу.</p></div>
+    <div class="card"><h3>Поддержка инноваций</h3><p>Проекты компании поддерживает Фонд содействия инновациям.</p><p style="margin-top:10px"><a href="https://www.fasie.ru">fasie.ru</a></p></div>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> текст о компании (история, годы, масштаб), какие именно проекты поддерживал фонд, свидетельства и лицензии, фото офиса и производства. Раздел «Команда» не делаем, как договорились.</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Связаться</h2><p class="sub">Почту и телефоны на сайте не публикуем: так мы защищаемся от спама. Любой запрос уходит через форму.</p>
+  <div class="req"><div><h2>Задать вопрос</h2><p>Отвечаем в рабочие дни.</p></div><div data-form="gen"></div></div>
+</div></section>
+</div>
+
+<!-- ============ ЗАПРОС ============ -->
+<div class="page" id="p-req">
+<div class="pagehead"><div class="wrap"><div class="eyebrow">ЗАПРОС</div><h1>С чем к нам обращаются</h1><p>Выберите направление, форма подстроится.</p></div></div>
+<section><div class="wrap"><div class="req"><div><h2>Ваш запрос</h2><p>Стоимость разработки электроники от 2 млн ₽ в месяц. Условия НИОКР обсуждаем индивидуально.</p>
+  <label style="margin-top:14px">Направление<select id="kindSel"><option value="dev">Разработка электроники</option><option value="ctrl">Контроллер QT-BoX</option><option value="micro">Оборудование и материалы для микроэлектроники</option><option value="rnd">НИОКР</option><option value="gen">Другой вопрос</option></select></label></div>
+  <div id="reqHost"></div></div></div></section>
+</div>
+</main>
+
+<footer><div class="wrap ft">
+  <div>ООО НПО «КвинтТех»<br>ОГРН 1077760630661 · ИНН 7735533858<br>Москва, Зеленоград, Георгиевский пр-т, д. 5, стр. 2</div>
+  <div>Связаться: <a href="#req">через форму запроса</a><br><a href="#about">Политика обработки персональных данных</a> (текст нужен от вас)</div>
+  <div>При поддержке: <a href="https://www.fasie.ru">Фонд содействия инновациям (fasie.ru)</a></div>
+</div></footer>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script>
+var $=function(id){return document.getElementById(id)};
+/* ---------- данные ---------- */
+var WIMG=['assets/works/w1.webp','assets/works/w2.webp','assets/works/w3.webp','assets/works/w4.webp','assets/works/w5.webp','assets/works/w6.webp','assets/works/w7.webp','assets/works/w8.webp','assets/works/w9.webp','assets/works/w10.webp','assets/works/w11.webp','assets/works/w12.webp'];
+var WORKS=[
+ ['Контроллер уличного освещения 1-10 и DALI','6 мес · серия 5000 шт.','Управление по GPRS/2G/3G и MQTT, степень защиты IP67, питание DALI на 1–8 светильников. Вошёл в перечень инновационной продукции города Москвы.'],
+ ['Контроллер для шкафов уличного освещения (ШУНО)','6 мес · серия 1000 шт.','Шесть линий освещения, счётчики по RS-485, GPS/ГЛОНАСС, аварийное питание LiFePO4, работа в тяжёлых климатических условиях.'],
+ ['Модуль уличного освещения LoRa','3 мес · пилот 50 шт.','Совместимость с базовыми станциями LoRa, NFC для настройки и обновления, GPS/ГЛОНАСС.'],
+ ['Модуль уличного освещения 2G/EDGE и NB-IoT/Cat-M1','3 мес · пилот 100 шт.','Автопереключение сетей, встроенный SIM-чип, работает более чем в 100 странах.'],
+ ['Контроллер офисного освещения DALI','6 мес · опытная партия 200 шт.','Две независимые шины DALI по 64 устройства, DALI Type 8, Ethernet и MQTT, исполнение под DIN-рейку.'],
+ ['Модульный контроллер офисного освещения','6 мес · опытная партия 200 шт.','Сменные вычислительный и DALI-модули, модули 1-10 и реле, беспроводное управление.'],
+ ['Система автоматизации офисного освещения','4 мес · собственный проект','Контроллер 1-10, датчики присутствия и освещённости, беспроводные выключатели, до 16 светильников.'],
+ ['Коммуникационный модуль для СКУД','2 мес · пилот 50 шт.','Удалённое управление доступом по 2G/NB-IoT/Cat-M1, криптозащита, функция громкой связи.'],
+ ['Интеллектуальный контроллер «Умный город»','6 мес · собственный проект','Cortex-A53, связь 3G/4G, Ethernet, Wi-Fi, камеры до 24 Мп, питание 40 Вт с DALI, форм-фактор NEMA.'],
+ ['Устройство связи для экстремальных видов спорта','10 мес · собственный проект','Связь 6–8 человек на дальности 1–8 км без сотовых сетей, mesh, SOS, корпус IP67.'],
+ ['Стенды тестирования и программаторы','1 мес · собственные проекты','Функциональное тестирование силовых модулей и контроллеров, до 7 модулей одновременно, прошивка и отладка STM32.'],
+ ['Модуль беспроводной гарнитуры','1 мес · пилот 50 шт.','Bluetooth 2.1+, управление 12 кнопками, автономная работа до 48 часов.']
+];
+$('works').innerHTML=WORKS.map(function(w){return '<div class="card"><div class="ph"><img loading="lazy" src="'+WIMG[WORKS.indexOf(w)]+'" alt="'+w[0]+'"></div><span class="tag">'+w[1]+'</span><h3>'+w[0]+'</h3><p>'+w[2]+'</p></div>'}).join('');
+
+var ALD=[
+ ['НИУ МИЭТ','лабораторная','Две камеры: большая для пластин d100 мм в оснастке (внутренний d660 мм, высота 600 мм) и малая для одной пластины d200 мм или двух d100 мм. Нагрев 80–200 °C четырьмя ИК-нагревателями по 1 кВт, до трёх прекурсоров одновременно, до 1000 циклов.','Al₂O₃, ZnO, HfO₂','солнечные элементы, суперконденсаторы, микроэлектроника'],
+ ['ИСВЧПЭ РАН','лабораторная','Камера из титана без резиновых уплотнений для пластины d100 мм, нагрев 100–500 °C, защитная камера с азотом 1000–1500 Па, пневматический подъём.','Al₂O₃, ZnO, SiO₂, AlN, HfO₂, TiN','СВЧ-приборы, микроэлектроника'],
+ ['ЦНИИ «Циклон»','промышленная','Встраивается в многокамерную систему со своим блоком управления. Пластина d200 мм, нагрев 80 ±1 °C, давление загрузки 10⁻⁵ Па, три прекурсора, два термостабилизированы.','Al₂O₃, ZnO, HfO₂','OLED-дисплеи, герметизация'],
+ ['ИПХФ РАН','лабораторная','Изделия до 200 мм, 25–250 °C, газовые и жидкие прекурсоры, сменная верхняя крышка для подключения оборудования. Собственная система управления (Индустрия 4.0, IIoT) с удалённым доступом и журналом.','Al₂O₃, ZnO, TiO₂, TCO, TiN','солнечная энергетика, аккумуляторы, органическая электроника']
+];
+var AIMG=['assets/ald/a1.webp','assets/ald/a2.webp','assets/ald/a3.webp','assets/ald/a4.webp'];
+$('ald').innerHTML=ALD.map(function(a,i){return '<details><summary><span>'+a[0]+' <span class="tag b">'+a[1]+'</span></span></summary><div class="in alrow"><img class="aimg" loading="lazy" src="'+AIMG[i]+'" alt="Установка для '+a[0]+'"><div class="altx"><p data-r="e">'+a[2]+'</p><h4 data-r="e">Материалы</h4><p data-r="e">'+a[3]+'</p><h4>Применение</h4><p>'+a[4]+'</p><p data-r="m" style="margin-top:10px">Срок и стоимость определяются по техническому заданию. Для расчёта заполните опросник ниже.</p></div></div></details>'}).join('');
+
+var RND=[
+ ['Навигация и радионавигация',[
+  ['Помехозащищённая спутниковая навигация','Антенная решётка с управляемой диаграммой направленности (CRPA) подавляет источники помех и подмены сигнала GNSS, усиливает сигналы спутников. Даёт точные метки времени для синхронизации устройств.','4–16 элементов решётки · подавление 3–15 источников помех, не менее 90 дБ · GPS, Galileo, ГЛОНАСС, BeiDou · диапазоны E5/L5, L2, E6, E1/L1','Макет 8–12 нед. · прототип 16–24 нед. · опытный образец 28–36 нед.'],
+  ['Альтернативная навигация в группе','Определение взаимного положения приёмопередатчиков по времени прохождения сигнала на чипах Semtech LoRa. Координаты всех участников вычисляются по известному положению ведущего.','Погрешность 1,5–3 м в плане · дальность 5–5000 м · 150–960 МГц и 1,5–2,5 ГГц · нужно 3–5 приёмопередатчиков','Макет 8–10 нед. · прототип 14–18 нед. · опытный образец 25–30 нед.']]],
+ ['Связь',[
+  ['Помехозащищённая mesh-связь','Сеть на чипах LoRa и SDR с динамической сменой частоты, модуляции и мощности по помеховой обстановке. Протокол Reticulum, сильная криптография, задержки менее 10 мс.','Диапазон 50–6000 МГц · 2–4 радиомодуля · скорость 100–2000 бит/с · подавление помех 10–30 дБ в канале','Макет 10–14 нед. · прототип 20–28 нед. · опытный образец 40–52 нед.'],
+  ['Стабильная передача видео и данных','Система на SDR для видеопотока и высокоскоростного обмена командами между аппаратами и наземными станциями, с динамической сменой частоты, полосы и модуляции.','Видео 720p–4K, 30–120 к/с, задержка 32–100 мс · 800–6000 МГц · дальность до 30–50 км · до 50 Мбит/с','Макет 10–14 нед. · прототип 20–28 нед. · опытный образец 40–52 нед.'],
+  ['Носимая базовая станция LTE','Компактная станция LTE, которую переносит один человек. Быстро разворачивает связь на ограниченной территории для 20–50 пользователей на соту.','3GPP LTE Rel. 10 · до 200 Мбит/с вниз, 75 Мбит/с вверх · диапазоны B20/B8, B3, B1/B7 · вес до 2 кг, 200×190×50 мм (макет)','Макет 8–12 нед. · прототип 16–24 нед. · опытный образец 32–40 нед.'],
+  ['Сверхширокополосная (UWB) связь и навигация','Передача данных и определение положения модулей в диапазоне 3,5–8 ГГц на чипах Qorvo DW1000 и DW3000. Подходит для плотных групп, точной посадки и удержания координат.','Точность ±10 см по разности времени прихода, ±5° по углу · дальность до 30 м, до 300 м с усилителем · до 6,8 Мбит/с','Макет 10–13 нед. · прототип 22–27 нед. · опытный образец 32–40 нед.']]],
+ ['Радиолокация',[
+  ['Пассивная радиолокация','Используются излучения станций цифрового ТВ и других источников. Приёмники размещаются на столбах уличного освещения и определяют характеристики объектов в воздухе без собственного излучения.','Объекты от 25–50 см · высота от 20–30 м до 3–10 км · скорость 0–150 м/с · дальность до 50 км','Макет 10–14 нед. · прототип 23–30 нед. · опытный образец 37–48 нед.'],
+  ['Радиолокация с фазированной антенной решёткой','Радар X-диапазона с ЛЧМ-модуляцией, размером с ноутбук, массой 2,5–7 кг. Обнаружение и сопровождение объектов в воздухе, на земле и на воде.','Дальность от 25 м до 2 или 5 км (два варианта) · 16 каналов · скорость 0,5–200 м/с · разрешение по дальности для групп 1–1,5 м','Прототип 25–28 нед. · опытный образец 48–56 нед.']]]
+];
+var RIMG={'0-0':'assets/nioks/n11.webp','0-1':'assets/nioks/n12.webp','1-0':'assets/nioks/n21.webp','1-1':'assets/nioks/n22.webp','1-2':'assets/nioks/n23.webp','1-3':'assets/nioks/n24.webp','2-0':'assets/nioks/n31.webp','2-1':'assets/nioks/n32.webp'};
+$('rndList').innerHTML='<div class="rbar"><button class="btn ghost sm" type="button" id="rndOpen">Развернуть все</button><button class="btn sm" type="button" id="rndClose">Свернуть все</button></div>'+RND.map(function(g,gi){return '<h2 style="margin-top:24px;font-size:26px">'+g[0]+'</h2><div style="margin-top:12px">'+g[1].map(function(p,pi){var im=RIMG[gi+'-'+pi];return '<details><summary><span>'+p[0]+'</span></summary><div class="in">'+(im?'<img class="fig" loading="lazy" src="'+im+'" alt="">':'')+'<p>'+p[1]+'</p><h4 data-r="e">Характеристики</h4><p data-r="e">'+p[2]+'</p><h4>Сроки, от начала работ</h4><p>'+p[3]+'</p></div></details>'}).join('')+'</div>'}).join('');
+function rndAll(o){var d=$('rndList').querySelectorAll('details');for(var i=0;i<d.length;i++)d[i].open=o}
+function aldAll(o){var d=$('ald').querySelectorAll('details');for(var i=0;i<d.length;i++)d[i].open=o}
+$('aldOpen').onclick=function(){aldAll(true)};$('aldClose').onclick=function(){aldAll(false)};
+$('rndOpen').onclick=function(){rndAll(true)};$('rndClose').onclick=function(){rndAll(false)};
+
+/* ---------- формы ---------- */
+var MQ=[['Что нужно',[['Что требуется','s:Технологическое оборудование|Контрольно-измерительное оборудование|Вакуумные узлы и комплектующие|Материалы и расходные материалы|Ремонт и восстановление|Линия целиком'],['Новое или восстановленное','s:Не важно|Новое|Восстановленное'],['Допустимы ли альтернативы и аналоги','s:Да|Только указанное|Обсудим']]],
+ ['Оборудование',[['Тип оборудования и технологический процесс (осаждение, травление, литография, измерения и т.д.)','t'],['Производитель и модель, если известны','i'],['Размер подложек, мм','i'],['Требуемые характеристики','t'],['Количество, шт.','i'],['Интеграция в линию, роботы-манипуляторы, стыковка','i']]],
+ ['Материалы',[['Что нужно (мишени, прекурсоры, газы, химия, пластины, расходники)','t'],['Марка, чистота, стандарт','i'],['Объём и периодичность поставок','i']]],
+ ['Условия',[['Сроки поставки','i'],['Ориентировочный бюджет','i'],['Нужны ли пусконаладка, FAT и SAT, обучение','s:Да|Нет|Обсудим'],['Нужны ли гарантия и послегарантийное обслуживание','s:Да|Нет|Обсудим'],['Помещение: класс чистоты, коммуникации, ограничения по габаритам','t']]]];
+var DEVQ=[['Что за устройство и где применяется','t'],['Основные функции','t'],['Интерфейсы и связь (Ethernet, RS-485, LoRa, NB-IoT и др.)','t'],['Питание и условия эксплуатации','t'],['Объём серии, шт. в год','i'],['Желаемые сроки','s:до 3 месяцев|3–6 месяцев|больше 6 месяцев'],['Модель сотрудничества','s:Пока не знаю|Полное изготовление|Разработка без производства|Роялти|ODM'],['Права на ИС','s:Пока не знаю|У заказчика|У исполнителя|Смешанная']];
+function fld(id,l,t){if(t==='t')return '<label class="full">'+l+'<textarea id="'+id+'" rows="2"></textarea></label>';if(t&&t.indexOf('s:')===0)return '<label>'+l+'<select id="'+id+'">'+t.slice(2).split('|').map(function(o){return '<option>'+o+'</option>'}).join('')+'</select></label>';return '<label>'+l+'<input id="'+id+'" type="text"></label>'}
+var FORMN=0;
+function buildForm(kind){
+  var n='f'+(++FORMN),h='<form class="fm" data-k="'+kind+'" novalidate>';
+  h+='<label>Организация<input type="text" name="org" autocomplete="organization"></label><label>Рабочая почта<input type="email" name="mail" autocomplete="email"></label>';
+  h+='<label>Контактное лицо<input type="text" name="fio" autocomplete="name"></label><label>Телефон (по желанию)<input type="tel" name="tel" autocomplete="tel"></label>';
+  if(kind==='dev'){DEVQ.forEach(function(q,i){h+=fld(n+'d'+i,q[0],q[1])})}
+  else if(kind==='ctrl'){h+=fld(n+'c0','Что нужно автоматизировать','t')+fld(n+'c1','Какие сигналы и интерфейсы нужны (входы, выходы, DALI, RS-485 и т.д.)','t')+fld(n+'c2','Нужна ли SCADA и какая','i')+fld(n+'c3','Количество комплектов','i')}
+  else if(kind==='rnd'){h+=fld(n+'r0','Направление','s:Навигация|Связь|Радиолокация|Другое')+fld(n+'r1','Желаемый срок','i')+fld(n+'r2','Опишите задачу','t')}
+  else if(kind==='micro'){h+='<div class="full">'+MQ.map(function(g,gi){return '<details'+(gi===0?' open':'')+'><summary>'+g[0]+'</summary><div class="in" style="display:grid;gap:10px">'+g[1].map(function(q,qi){return fld(n+'m'+gi+'_'+qi,q[0],q[1])}).join('')+'</div></details>'}).join('')+'</div>'}
+  else{h+=fld(n+'g0','Ваш вопрос','t')}
+  h+='<div class="hp" aria-hidden="true"><label>Сайт<input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>';
+  h+='<label class="full chk"><input type="checkbox" name="ok"> Согласен на обработку персональных данных в соответствии с 152-ФЗ</label>';
+  h+='<button class="btn full" type="submit">Отправить запрос</button><div class="full fmsg" role="status"></div></form>';
+  return h;
+}
+function mountForms(){document.querySelectorAll('[data-form]').forEach(function(el){if(!el.firstChild)el.innerHTML=buildForm(el.dataset.form)})}
+mountForms();
+function mountReq(){$('reqHost').innerHTML=buildForm($('kindSel').value)}
+$('kindSel').onchange=mountReq;mountReq();
+document.addEventListener('submit',function(ev){
+  var f=ev.target.closest('form.fm');if(!f)return;ev.preventDefault();
+  var m=f.querySelector('.fmsg'),g=function(n){return f.querySelector('[name='+n+']')};
+  if(g('hp').value)return;
+  if(!g('org').value||!/^\S+@\S+\.\S+$/.test(g('mail').value)){m.textContent='Укажите организацию и рабочую почту.';return}
+  if(!g('ok').checked){m.textContent='Нужно согласие на обработку персональных данных.';return}
+  m.textContent='Прототип: на боевом сайте запрос уйдёт на сервер и придёт нам на почту. Здесь он не отправляется.';
+});
+
+/* ---------- маршрутизация, роли, пробелы ---------- */
+var PAGES=['home','dev','ctrl','micro','rnd','about','req'],viewers={};
+function route(){
+  var h=(location.hash||'#home').slice(1);if(PAGES.indexOf(h)<0)h='home';
+  PAGES.forEach(function(p){$('p-'+p).classList.toggle('on',p===h)});
+  document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.dataset.p===h)});
+  document.title='КвинтТех'+(h==='home'?'':' · '+(document.querySelector('#nav a[data-p='+h+']')||{textContent:'Запрос'}).textContent);
+  scrollTo(0,0);
+  if(h==='ctrl'&&window.initCtrl)window.initCtrl();
+}
+addEventListener('hashchange',route);
+document.addEventListener('click',function(e){var a=e.target.closest('[data-scroll]');if(a){e.preventDefault();var t=$(a.dataset.scroll);if(t)t.scrollIntoView({behavior:'smooth'})}});
+function setRole(r){document.body.dataset.role=r;$('rEng').classList.toggle('on',r==='e');$('rMgr').classList.toggle('on',r==='m')}
+$('rEng').onclick=function(){setRole('e')};$('rMgr').onclick=function(){setRole('m')};
+$('lgx').onclick=function(){$('legend').hidden=true};
+/* видео: играет всегда, пока человек сам не остановит */
+var bgv=$('bgv'),vb=$('vidBtn');
+function playBg(){var p=bgv.play();if(p&&p.catch)p.catch(function(){})}
+playBg();bgv.addEventListener('loadeddata',playBg);document.addEventListener('pointerdown',function once(){if(bgv.paused&&!bgv.dataset.off)playBg();document.removeEventListener('pointerdown',once)});
+vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent='Остановить фон'}else{bgv.dataset.off='1';bgv.pause();vb.textContent='Запустить фон'}};
+/* конфигуратор */
+(function(){
+  var RULES={maxExt:9};
+  var M=[['di','DI','16 дискретных входов',{di:16}],['do','DO','16 дискретных выходов',{dout:16}],['ro','RO','2 реле и 6 твердотельных реле',{relay:2,ssr:6}],['io','IO','8 универсальных каналов с ПИД',{io:8}],['if','IF','RS-485 и DMX512',{rs:1}],['dali','DALI','2 шины DALI',{dali:2}],['em','EM','Трёхфазный счётчик электроэнергии',{em:1}],['step','STEP','2 шаговых двигателя',{step:2}],['tc','TC','2 канала терморегулирования',{tc:2}]];
+  var C={};M.forEach(function(m){C[m[0]]=0});
+  var LB={di:'дискретных входов',dout:'дискретных выходов',relay:'реле',ssr:'твердотельных реле',io:'универсальных каналов с ПИД',rs:'интерфейс RS-485 и DMX512',dali:'шин DALI',em:'трёхфазный счётчик',step:'шаговых двигателей',tc:'каналов терморегулирования'};
+  function total(){return M.reduce(function(s,m){return s+C[m[0]]},0)}
+  function draw(){
+    $('cfgRows').innerHTML=M.map(function(m){return '<div class="cr"><b>'+m[1]+'</b><div class="qty"><button type="button" data-k="'+m[0]+'" data-d="-1" aria-label="Убрать '+m[1]+'">−</button><span>'+C[m[0]]+'</span><button type="button" data-k="'+m[0]+'" data-d="1" aria-label="Добавить '+m[1]+'">+</button></div><small>'+m[2]+'</small></div>'}).join('');
+    var list=['node'];M.forEach(function(m){for(var i=0;i<C[m[0]];i++)list.push(m[0])});window.cfgList=list;if(window.cfgSet)window.cfgSet(list);
+    var n=total(),sum={};M.forEach(function(m){for(var k in m[3])sum[k]=(sum[k]||0)+m[3][k]*C[m[0]]});
+    var items=Object.keys(sum).filter(function(k){return sum[k]}).map(function(k){return '<li><b>'+sum[k]+'</b> '+LB[k]+'</li>'}).join('');
+    $('cfgSum').innerHTML='<div class="cfgsum"><b>NODE + '+n+' '+(n===1?'модуль':'модулей')+' расширения</b>, ширина на рейке около '+(50+25*n)+' мм'+(items?'<ul>'+items+'</ul>':'')+'</div>';
+    $('cfgWarn').textContent=n>=RULES.maxExt?'Достигнут предел: '+RULES.maxExt+' модулей расширения.':'';
+  }
+  $('cfgRows').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=b.dataset.k,d=+b.dataset.d;if(d>0&&total()>=RULES.maxExt)return;if(d<0&&C[k]<=0)return;C[k]+=d;draw()});
+  $('cfgSend').onclick=function(){
+    var parts=['NODE'];M.forEach(function(m){if(C[m[0]])parts.push(m[1]+(C[m[0]]>1?' ×'+C[m[0]]:''))});
+    var f=document.querySelector('#p-ctrl [data-form=ctrl] textarea');if(f){f.value='Конфигурация на одной DIN-рейке: '+parts.join(', ')+'.\n'+(f.value||'')}
+    var q=document.querySelector('#p-ctrl [data-form=ctrl]');q.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  draw();
+})();
+/* демо SCADA */
+(function(){
+  var body=$('scBody'),tab='a',L=[['Коридор',60,1],['Open space',85,1],['Переговорная',0,2],['Улица (ШУНО)',40,2]],T={sp:60,pv:22,out:0,i:0,h:[]},E={ph:[[231,12],[229,9],[232,14]],kwh:1840};
+  var A={run:true,n:0,ph:0,tk:0,p:40,T:22,DUR:[2,3,2,3]};
+  function renderA(){
+    var pipes=[['p1',100,70],['p2',100,160],['p3',100,250]];
+    body.innerHTML='<svg viewBox="0 0 900 330" style="width:100%;height:auto;display:block" role="img" aria-label="Мнемосхема установки атомно-слоевого осаждения">'
+    +'<defs><linearGradient id="gh" x1="0" x2="1"><stop offset="0" stop-color="#8a3a10"/><stop offset=".5" stop-color="#ff8a2a"/><stop offset="1" stop-color="#8a3a10"/></linearGradient></defs>'
+    +[['ТМА · прекурсор 1',40],['H₂O · прекурсор 2',130],['N₂ · газ-носитель',220]].map(function(c){return '<rect x="24" y="'+c[1]+'" width="86" height="64" rx="8" fill="#101c26" stroke="#2a4254"/><text x="67" y="'+(c[1]+28)+'" text-anchor="middle" fill="#cdd6e0" font-size="12" font-family="Manrope,sans-serif">'+c[0].split(' · ')[0]+'</text><text x="67" y="'+(c[1]+46)+'" text-anchor="middle" fill="#9aa6b4" font-size="10" font-family="Manrope,sans-serif">'+c[0].split(' · ')[1]+'</text>'}).join('')
+    +'<path id="p1" class="pipe" d="M110 72H300V150H400"/><path id="p2" class="pipe" d="M110 162H300V162H400"/><path id="p3" class="pipe" d="M110 252H300V174H400"/>'
+    +[['v1',190,72],['v2',190,162],['v3',190,252]].map(function(v){return '<rect id="'+v[0]+'" x="'+(v[1]-9)+'" y="'+(v[2]-9)+'" width="18" height="18" rx="3" class="valve"/>'}).join('')
+    +'<rect x="400" y="70" width="230" height="190" rx="14" fill="#0e1a23" stroke="#3b5468" stroke-width="2"/><text x="515" y="94" text-anchor="middle" fill="#9aa6b4" font-size="12" font-family="Manrope,sans-serif">Реакционная камера, Ø200 мм</text>'
+    +'<rect id="gas" x="416" y="108" width="198" height="70" rx="6" fill="#2aa5e0" opacity="0"/><rect x="440" y="192" width="150" height="7" rx="2" fill="#cfd8e0"/><text x="515" y="188" text-anchor="middle" fill="#cdd6e0" font-size="11" font-family="Manrope,sans-serif">пластина</text>'
+    +'<rect id="heat" x="430" y="206" width="170" height="20" rx="4" fill="url(#gh)" opacity=".3"/><text x="515" y="246" text-anchor="middle" fill="#9aa6b4" font-size="11" font-family="Manrope,sans-serif">нагреватель</text>'
+    +'<path id="pv" class="pipe on" d="M630 165H690"/><rect id="v4" x="672" y="156" width="18" height="18" rx="3" class="valve open"/><path class="pipe on" d="M690 165H760"/>'
+    +'<circle cx="800" cy="165" r="38" fill="#101c26" stroke="#2a4254" stroke-width="2"/><text x="800" y="162" text-anchor="middle" fill="#cdd6e0" font-size="12" font-family="Manrope,sans-serif">Насос</text><text x="800" y="178" text-anchor="middle" fill="#9aa6b4" font-size="10" font-family="Manrope,sans-serif">вакуум</text>'
+    +'<text x="515" y="298" text-anchor="middle" fill="#9aa6b4" font-size="11" font-family="Manrope,sans-serif">цикл: импульс прекурсора 1, продувка, импульс прекурсора 2, продувка</text></svg>'
+    +'<div class="kpi"><div><b id="aP">40 Па</b>давление в камере</div><div><b id="aT">22 °C</b>температура</div><div><b id="aC">0 / 1000</b>цикл</div><div><b id="aPh">Импульс 1</b>фаза</div><div><button type="button" class="btn sm ghost" id="aRun" style="margin-top:6px">Остановить</button></div></div>';
+    $('aRun').onclick=function(){A.run=!A.run;this.textContent=A.run?'Остановить':'Запустить'};
+  }
+  function tickA(){
+    if(A.run){A.tk++;if(A.tk>=A.DUR[A.ph]){A.tk=0;A.ph=(A.ph+1)%4;if(A.ph===0&&A.n<1000)A.n++}}
+    var ph=A.ph,tgt=A.run?[120,70,110,70][ph]:30;A.p+=(tgt-A.p)*.5+(Math.random()-.5)*3;A.T+=((A.run?200:22)-A.T)*.12;
+    var on=A.run?[ph===0,ph===2,ph===1||ph===3]:[false,false,false];
+    ['1','2','3'].forEach(function(k,i){var p=$('p'+k),v=$('v'+k);if(!p)return;p.setAttribute('class','pipe'+(on[i]?' on':''));v.setAttribute('class','valve'+(on[i]?' open':''))});
+    var g=$('gas');if(g)g.setAttribute('opacity',on[0]||on[1]?.28:on[2]?.12:0);
+    var h=$('heat');if(h)h.setAttribute('opacity',Math.min(1,(A.T-22)/178*.8+.2));
+    $('aP').textContent=Math.round(A.p)+' Па';$('aT').textContent=Math.round(A.T)+' °C';$('aC').textContent=A.n+' / 1000';$('aPh').textContent=A.run?['Импульс 1','Продувка','Импульс 2','Продувка'][ph]:'Остановлено';
+  }
+  function renderL(){body.innerHTML=L.map(function(g,i){return '<div class="lrow"><div><span class="bulb" id="bb'+i+'"></span>'+g[0]+'</div><input type="range" min="0" max="100" value="'+g[1]+'" data-i="'+i+'" aria-label="Яркость: '+g[0]+'"><div class="mono" id="bp'+i+'"></div><div class="mono">DALI '+g[2]+'</div></div>'}).join('');L.forEach(function(g,i){upd(i)});}
+  function upd(i){var g=L[i],b=$('bb'+i);if(!b)return;b.style.opacity=.12+g[1]/115;b.style.boxShadow='0 0 '+(g[1]/4)+'px #f2bd3a';$('bp'+i).textContent=g[1]+' % · '+Math.round(g[1]*1.2)+' Вт';}
+  body.addEventListener('input',function(e){var r=e.target;if(r.dataset&&r.dataset.i!==undefined){L[r.dataset.i][1]=+r.value;upd(r.dataset.i)}if(r.id==='sp'){T.sp=+r.value;$('spv').textContent=T.sp+' °C'}});
+  function renderH(){body.innerHTML='<canvas id="cvh" width="900" height="190"></canvas><div class="kpi"><div><b id="kpv">22 °C</b>температура</div><div><b id="kout">0 %</b>выход ПИД</div><div><label style="font-weight:600;color:var(--text)">Уставка <span id="spv">'+T.sp+' °C</span><input id="sp" type="range" min="30" max="120" value="'+T.sp+'" style="width:220px;accent-color:#f2bd3a"></label></div></div>';}
+  function renderE(){body.innerHTML='<div class="bars" id="eb"></div><div class="kpi"><div><b id="ekw">0 кВт</b>мощность</div><div><b id="ekwh"></b>счётчик, кВт·ч</div></div>';}
+  function tick(){
+    if(tab==='a')tickA();
+    if(tab==='h'){var err=T.sp-T.pv;T.i=Math.max(-40,Math.min(40,T.i+err*.02));T.out=Math.max(0,Math.min(100,err*4+T.i));T.pv+=(T.out*.05-(T.pv-22)*.012);T.h.push([T.pv,T.sp]);if(T.h.length>150)T.h.shift();
+      var c=$('cvh');if(c){var x=c.getContext('2d');x.clearRect(0,0,900,190);x.strokeStyle='#1f2933';for(var k=0;k<5;k++){x.beginPath();x.moveTo(0,k*47+5);x.lineTo(900,k*47+5);x.stroke()}
+        [[1,'#f2bd3a',[6,5]],[0,'#2aa5e0',[]]].forEach(function(s){x.beginPath();x.setLineDash(s[2]);x.strokeStyle=s[1];x.lineWidth=2;T.h.forEach(function(p,j){var X=j*6,Y=185-(p[s[0]]-20)*1.65;j?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke()});x.setLineDash([]);}
+      $('kpv').textContent=T.pv.toFixed(1)+' °C';$('kout').textContent=Math.round(T.out)+' %';}
+    if(tab==='e'){E.ph.forEach(function(p){p[0]=Math.max(226,Math.min(234,p[0]+(Math.random()-.5)*1.4));p[1]=Math.max(4,Math.min(20,p[1]+(Math.random()-.5)*1.6))});
+      var kw=E.ph.reduce(function(s,p){return s+p[0]*p[1]/1000},0);E.kwh+=kw/3600*5;
+      $('eb').innerHTML=E.ph.map(function(p,i){return '<div class="bar"><b>L'+(i+1)+'</b><i style="width:'+Math.round(p[1]*5)+'%"></i><span class="mono">'+p[0].toFixed(0)+' В · '+p[1].toFixed(1)+' А</span></div>'}).join('');$('ekw').textContent=kw.toFixed(1)+' кВт';$('ekwh').textContent=E.kwh.toFixed(1);}
+  }
+  $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});({a:renderA,l:renderL,h:renderH,e:renderE})[tab]();});
+  renderA();setInterval(tick,600);
+})();
+route();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+const $=id=>document.getElementById(id);
+const GL={main:'assets/models/main.glb',ext:'assets/models/ext.glb'};
+const STK={node:'assets/stickers/node.jpg',di:'assets/stickers/di.jpg',do:'assets/stickers/do.jpg',ro:'assets/stickers/ro.jpg',io:'assets/stickers/io.jpg',if:'assets/stickers/if.jpg',dali:'assets/stickers/dali.jpg',em:'assets/stickers/em.jpg',step:'assets/stickers/step.jpg',tc:'assets/stickers/tc.jpg'};
+const ASP={node:390/802};
+const FACE={main:{y:106.3,z1:50,cover:'NAUO16',piv:[0.0476,0.1030],shift:0},ext:{y:112.9,z1:25,cover:'NAUO15',piv:[0.0476,0.1096],shift:0.0066}};
+const ORDER=['node','di','do','ro','io','if','dali','em','step','tc'];
+const INFO={
+ node:['NODE','Главный модуль: шлюз на Raspberry Pi 4. Принимает данные модулей и публикует их в MQTT (Sparkplug B). Сценарии, события и расписание работают на самом узле.'],
+ di:['DI','16 дискретных входов. Контроль состояния датчиков и контактов.'],
+ do:['DO','16 дискретных выходов для управления исполнительными устройствами.'],
+ ro:['RO','Релейный модуль: 2 реле и 6 твердотельных реле (SSR).'],
+ io:['IO','8 универсальных каналов с ПИД-регулированием.'],
+ if:['IF','Интерфейсный модуль: RS-485 (сырой обмен) и DMX512.'],
+ dali:['DALI','Два канала DALI для управления освещением.'],
+ em:['EM','Трёхфазный счётчик электроэнергии.'],
+ step:['STEP','Управление двумя шаговыми двигателями.'],
+ tc:['TC','Два канала терморегулирования.']
+};
+const ORI=new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0));
+const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+let models=null;
+const loadModels=()=>models||(models=(()=>{const l=new GLTFLoader();return Promise.all([l.loadAsync(GL.main),l.loadAsync(GL.ext)])})());
+
+function makeSticker(kind,key){
+  /* наклейка вписана с полем 3 мм по высоте, пропорции файла сохранены, по ширине по центру */
+  const f=FACE[kind],y=(f.y+0.15)/1000,H=0.094,W=H*(ASP[key]||179/802),zc=f.z1/2000;
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute([-H/2,y,zc-W/2,-H/2,y,zc+W/2,H/2,y,zc+W/2,H/2,y,zc-W/2],3));
+  g.setAttribute('uv',new THREE.Float32BufferAttribute([0,0,1,0,1,1,0,1],2));
+  g.setIndex([0,2,1,0,3,2]);
+  const t=new THREE.TextureLoader().load(STK[key]);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;
+  return new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:t,side:THREE.DoubleSide,toneMapped:false}));
+}
+function setGlass(inst,on){inst.cover.traverse(o=>{if(!o.isMesh)return;(Array.isArray(o.material)?o.material:[o.material]).forEach(x=>{x.transparent=on;x.opacity=on?0.18:1;x.depthWrite=!on;});});}
+function makeInstance(raw,kind,key,zoff,yoff,glass){
+  const r=raw.clone(true);
+  const top=r.children.length===1&&r.children[0].children.length?r.children[0]:r;
+  const F=FACE[kind];
+  const cover=top.children.find(c=>c.name===F.cover);
+  r.updateMatrixWorld(true);
+  const ctr=new THREE.Box3().setFromObject(r).getCenter(new THREE.Vector3());
+  const offOf=c=>new THREE.Vector3((c.x-ctr.x)*0.6,(c.y-ctr.y)*1.8,0);
+  const parts=top.children.filter(c=>c!==cover).map(c=>{const b=new THREE.Box3().setFromObject(c);return b.isEmpty()?null:{o:c,base:c.position.clone(),off:offOf(b.getCenter(new THREE.Vector3()))};}).filter(Boolean);
+  const cc=new THREE.Box3().setFromObject(cover).getCenter(new THREE.Vector3());cc.y=F.y/1000;
+  const coverOff=offOf(cc),stkOff=offOf(new THREE.Vector3(ctr.x,F.y/1000,0));
+  cover.traverse(o=>{if(o.isMesh){o.material=Array.isArray(o.material)?o.material.map(x=>x.clone()):o.material.clone();o.renderOrder=2;}});
+  const M0=new THREE.Matrix4().makeTranslation(0,F.shift,0);
+  cover.matrixAutoUpdate=false;cover.matrix.copy(M0);
+  const stk=makeSticker(kind,key);top.add(stk);
+  const g=new THREE.Group();g.position.set(0,yoff,zoff);g.add(r);
+  const inst={g,z0:zoff,parts,coverOff,stk,stkOff,cover,M0,key,piv:new THREE.Vector3(F.piv[0],F.piv[1],0),ang:0,open:false};
+  setGlass(inst,glass);return inst;
+}
+function makeRail(len,z0){
+  const k=0.001,pts=[[-17.5,6.6],[-13.5,6.6],[-13.5,-0.9],[13.5,-0.9],[13.5,6.6],[17.5,6.6],[17.5,5.6],[12.5,5.6],[12.5,0.1],[-12.5,0.1],[-12.5,5.6],[-17.5,5.6]];
+  const sh=new THREE.Shape();pts.forEach((p,i)=>i?sh.lineTo(p[0]*k,p[1]*k):sh.moveTo(p[0]*k,p[1]*k));
+  const m=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:len*k,bevelEnabled:false}),new THREE.MeshStandardMaterial({color:0xb8c0c8,metalness:0.85,roughness:0.35}));
+  m.position.z=z0*k;return m;
+}
+/* общая фабрика сцены: состав собирается функцией build, камера вписывает всю сборку при любом повороте */
+async function viewer(canvas,host,o){
+  const V={insts:[],glass:o.glass!==false,exK:0,exT:0};V.explode=on=>{V.exT=on?1:0;};
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  const scene=new THREE.Scene();
+  scene.environment=new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(),0.04).texture;
+  const key=new THREE.DirectionalLight(0xffffff,1.6);key.position.set(1,2,1.5);scene.add(key);
+  const cam=new THREE.PerspectiveCamera(35,1,0.001,10);
+  const ctl=new OrbitControls(cam,canvas);ctl.enableDamping=true;ctl.enableZoom=false;ctl.enablePan=false;
+  if(o.auto){ctl.autoRotate=true;ctl.autoRotateSpeed=o.auto;}
+  let span=0.16,built=false;const th=Math.tan(THREE.MathUtils.degToRad(17.5));
+  const place=()=>{if(!built)return;const d=Math.max(span*(1+0.6*V.exK)*1.14/(th*Math.min(cam.aspect,2)),0.22);const v=cam.position.clone().sub(ctl.target);if(v.lengthSq()<1e-9)v.set(...o.dist);v.normalize();cam.position.copy(ctl.target).addScaledVector(v,d);};
+  const resize=()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();place();};
+  new ResizeObserver(resize).observe(host);
+  const [a,b]=await loadModels();
+  let wrap=null;
+  V.build=keys=>{
+    if(wrap)scene.remove(wrap);
+    wrap=new THREE.Group();wrap.matrixAutoUpdate=false;wrap.matrix.copy(ORI);scene.add(wrap);
+    V.insts=[makeInstance(a.scene,'main','node',0,0.0066,V.glass)];
+    let z=0.050;keys.slice(1).forEach(k=>{V.insts.push(makeInstance(b.scene,'ext',k,z,0,V.glass));z+=0.025;});
+    V.insts.forEach(i=>wrap.add(i.g));wrap.add(makeRail(z*1000+30,-15));
+    const c=new THREE.Vector3(0,0.055,z/2).applyMatrix4(ORI);
+    span=z/2+0.02;
+    if(!built){cam.position.copy(c).add(new THREE.Vector3(...o.dist));}
+    else{const off=cam.position.clone().sub(ctl.target);cam.position.copy(c).add(off);}
+    ctl.target.copy(c);built=true;ctl.update();place();
+  };
+  V.build(o.keys||ORDER);resize();
+  const P=new THREE.Matrix4(),Pi=new THREE.Matrix4(),R=new THREE.Matrix4(),T=new THREE.Matrix4();
+  let vis=true;new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(host);
+  (function tick(){
+    requestAnimationFrame(tick);if(!vis)return;
+    const dk=V.exT-V.exK;if(Math.abs(dk)>0.0005){V.exK+=dk*0.07;place();}else V.exK=V.exT;
+    const e=V.exK;
+    V.insts.forEach((i,idx)=>{
+      i.ang+=((i.open?1.8:0)-i.ang)*0.1;
+      P.makeTranslation(i.piv.x,i.piv.y,0);Pi.makeTranslation(-i.piv.x,-i.piv.y,0);R.makeRotationZ(-i.ang);
+      T.makeTranslation(i.coverOff.x*e,i.coverOff.y*e,0);
+      i.cover.matrix.copy(T).multiply(P).multiply(R).multiply(Pi).multiply(i.M0);i.cover.matrixWorldNeedsUpdate=true;
+      i.parts.forEach(p=>p.o.position.copy(p.base).addScaledVector(p.off,e));
+      i.stk.position.set(i.stkOff.x*e,i.stkOff.y*e,0);
+      i.g.position.z=i.z0+idx*0.02*e;
+    });
+    ctl.update();renderer.render(scene,cam);
+  })();
+  if(o.click){
+    const ray=new THREE.Raycaster(),v=new THREE.Vector2();let dn=null;
+    canvas.addEventListener('pointerdown',e=>{dn=[e.clientX,e.clientY];});
+    canvas.addEventListener('pointerup',e=>{
+      if(!dn||Math.hypot(e.clientX-dn[0],e.clientY-dn[1])>5)return;
+      const r=canvas.getBoundingClientRect();v.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(v,cam);
+      const hits=ray.intersectObjects(V.insts.map(i=>i.cover),true);
+      if(hits.length){const t=hits[0].object;const idx=V.insts.findIndex(i=>{let f=false;i.cover.traverse(x=>{if(x===t)f=true;});return f;});if(idx>=0){V.insts[idx].open=!V.insts[idx].open;o.click(idx);}}
+    });
+  }
+  return V;
+}
+/* главная: модель вращается сама справа от заголовка */
+(async()=>{try{await viewer($('heroCv'),$('heroHost'),{auto:0.9,dist:[0.06,0.09,0.40],glass:true});$('heroLd').remove();}catch(e){$('heroLd').textContent='3D-модель не загрузилась.';}})();
+/* страница контроллера: интерактивная модель и 3D конфигуратора создаются при первом заходе */
+let ctrlStarted=false;
+function showInfo(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('on',j===i));const k=ORDER[i];$('chipInfo').innerHTML='<h3>'+INFO[k][0]+'</h3><p>'+INFO[k][1]+'</p>';}
+window.initCtrl=async function(){
+  if(ctrlStarted)return;ctrlStarted=true;
+  let V;
+  ORDER.forEach((k,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=INFO[k][0];b.onclick=()=>{if(V)V.insts.forEach((m,j)=>{m.open=(j===i);});showInfo(i);};$('chips').appendChild(b);});
+  showInfo(0);
+  try{
+    V=await viewer($('cv'),$('stage'),{auto:0.5,dist:[0.10,0.15,0.40],glass:true,click:showInfo});
+    $('ld').remove();
+    $('bGlass').onclick=e=>{V.glass=!V.glass;e.target.classList.toggle('on',V.glass);V.insts.forEach(i=>setGlass(i,V.glass));};
+    $('bExp').onclick=e=>{const on=!e.target.classList.contains('on');e.target.classList.toggle('on',on);e.target.textContent=on?'Собрать':'Взрыв-схема';V.explode(on);};
+    $('bAll').onclick=e=>{const any=V.insts.some(i=>!i.open);V.insts.forEach(i=>i.open=any);e.target.textContent=any?'Закрыть все':'Открыть все';};
+  }catch(e){$('ld').textContent='Не удалось загрузить 3D-модель.';}
+  try{
+    const V2=await viewer($('cfgCv'),$('cfgHost'),{auto:1,dist:[0.35,0.28,0.5],glass:true,keys:window.cfgList||['node']});
+    window.cfgSet=k=>V2.build(k);$('cfgLd').remove();
+  }catch(e){$('cfgLd').textContent='3D-модель не загрузилась.';}
+};
+if(location.hash==='#ctrl')window.initCtrl();
+</script>
+</body>
+</html>
