@@ -92,7 +92,19 @@ th,td{padding:12px 15px;text-align:left;vertical-align:top;border-bottom:1px sol
 thead th{font-size:15px}
 tbody th{color:var(--mute);font-weight:600;width:22%}
 tr:last-child th,tr:last-child td{border-bottom:0}
-.ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}}.rbar{position:sticky;top:64px;z-index:5;display:flex;gap:8px;justify-content:flex-end;padding:8px 0;background:linear-gradient(var(--bg,#0b1118) 70%,transparent)}
+.ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}}.aldw{border:1px solid var(--line);border-radius:16px;background:radial-gradient(900px 360px at 50% 30%,#13202b,#07090c);padding:14px 14px 16px;overflow:hidden}
+.aldw canvas{display:block;width:100%;aspect-ratio:2/1;border-radius:10px;background:#0a1118}
+.ald-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 8px}
+.ald-st div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute);background:rgba(15,22,29,.6);transition:background .2s,color .2s,border-color .2s}
+.ald-st div.on{color:#0a0c10;background:var(--gold);border-color:var(--gold);font-weight:700}
+.ald-cap{min-height:3.2em;margin:6px 0 10px;color:#cdd6e0;font-size:15px}
+.ald-bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.ald-lg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--mute)}
+.ald-lg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.ald-ro{font:600 13px var(--mono);color:#cdd6e0}
+@media (max-width:620px){.ald-st{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.spec{display:grid;grid-template-columns:minmax(120px,32%) 1fr;gap:0 18px;margin:14px 0 16px}.spec dt,.spec dd{margin:0;padding:8px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.45}.spec dt{color:var(--mute)}.spec dd{color:#dbe3ec}.sch{margin-top:2px}.lbx{position:fixed;inset:0;z-index:100;background:rgba(5,8,11,.94);display:flex;flex-direction:column}.lbx[hidden]{display:none}.lbs{flex:1;overflow:auto;padding:58px 16px 28px;text-align:center}.lbs img{display:block;margin:0 auto 14px;width:min(1700px,100%);min-width:min(100%,900px);background:#fff;border-radius:8px}.lbs a{color:var(--blue);font-size:14px}.lbc{position:fixed;top:12px;right:16px;z-index:101;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.rbar{position:sticky;top:64px;z-index:5;display:flex;gap:8px;justify-content:flex-end;padding:8px 0;background:linear-gradient(var(--bg,#0b1118) 70%,transparent)}
 details{border:1px solid var(--line);border-radius:12px;background:rgba(15,22,29,.78);padding:0 18px;margin-bottom:10px}
 summary{cursor:pointer;padding:14px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
 summary::after{content:'+';color:var(--gold);font-size:20px;line-height:1}
@@ -409,6 +421,21 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
   <h1>Установки под задачу заказчика и поставки оборудования</h1>
   <p>Разрабатываем и изготавливаем технологическое оборудование для микроэлектроники, делаем вакуумные узлы, ремонтируем и восстанавливаем. Вместе с партнёрами в консорциуме поставляем и запускаем оборудование для полупроводниковых производств.</p>
   <div class="cta"><a class="btn" href="#micro-form" data-scroll="micro-form">Заполнить опросник</a></div></div></div>
+<section style="padding-bottom:0"><div class="wrap">
+  <h2>Как работает атомно-слоевое осаждение</h2>
+  <p class="sub">Плёнку наращивают слой за слоем. В камеру по очереди подают два реагента, между ними её продувают инертным газом. Каждый цикл добавляет один тонкий слой, поэтому толщину задаёт число циклов.</p>
+  <div class="aldw">
+    <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
+    <div class="ald-st" id="aldSt"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
+    <div class="ald-cap" id="aldCap" aria-live="polite"></div>
+    <div class="ald-bar">
+      <div class="ald-lg"><span><i style="background:#4aa8ff"></i>прекурсор A</span><span><i style="background:#ff7a9c"></i>прекурсор B</span><span><i style="background:#f2bd3a"></i>готовый слой</span><span><i style="background:#8fa0b2"></i>инертный газ и побочные продукты</span></div>
+      <div class="ald-ro" id="aldRo"></div>
+      <div class="seg"><button id="aldPlay" class="on">Пауза</button><button id="aldRe">Сначала</button><button id="aldS1" class="on">1×</button><button id="aldS2">2×</button><button id="aldS4">4×</button></div>
+    </div>
+    <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
+  </div>
+</div></section>
 <section><div class="wrap">
   <h2>Установки атомно-слоевого осаждения</h2>
   <p class="sub">В отличие от производителей типовых установок, мы проектируем каждую под конкретного заказчика. Четыре изготовленные установки.</p>
@@ -676,7 +703,7 @@ const ASP={node:390/802};
 const FACE={main:{y:106.3,z1:50,cover:'NAUO16',piv:[0.0476,0.1030],shift:0},ext:{y:112.9,z1:25,cover:'NAUO15',piv:[0.0476,0.1096],shift:0.0066}};
 const ORDER=['node','di','do','ro','io','if','dali','em','step','tc'];
 const INFO={
- node:['NODE','Главный модуль: шлюз на Raspberry Pi 4. Принимает данные модулей и публикует их в MQTT (Sparkplug B). Сценарии, события и расписание работают на самом узле.'],
+ node:['NODE','Главный модуль: шлюз и контроллер верхнего уровня. Принимает данные модулей и публикует их в MQTT (Sparkplug B). Сценарии, события и расписание работают на самом узле.'],
  di:['DI','16 дискретных входов. Контроль состояния датчиков и контактов.'],
  do:['DO','16 дискретных выходов для управления исполнительными устройствами.'],
  ro:['RO','Релейный модуль: 2 реле и 6 твердотельных реле (SSR).'],
@@ -687,6 +714,19 @@ const INFO={
  step:['STEP','Управление двумя шаговыми двигателями.'],
  tc:['TC','Два канала терморегулирования.']
 };
+const SPEC={
+ node:[['Питание','24 В, ток до 2 А'],['Шина модулей','Ethernet 10BASE-T1S, CAN'],['Процессор','4 ядра ARM Cortex-A72, 1,5 ГГц, или Cortex-A55, 2,0 ГГц (два варианта процессорного модуля)'],['Память','eMMC от 16 ГБ до 512 ГБ, ОЗУ LPDDR4X 2–8 ГБ, зависит от варианта'],['Связь','Wi-Fi 2,4 и 5 ГГц, Bluetooth 5.0, NFC, Ethernet 1 Гбит ×2'],['Порты','USB-A ×2, USB-C, HDMI, NanoSIM, microSD'],['Опции','LoRa, GNSS, GSM: в нескольких вариантах сборки'],['Интерфейс пользователя','ЖК-дисплей и джойстик, часы реального времени с резервным питанием'],['Температура','0…+40 °C']],
+ di:[['Питание','24 В'],['Каналы','16 дискретных входов'],['Входное напряжение','0–35 В на канал'],['Ток канала','до 2,35 мА, до 78 мВт'],['Изоляция цифровой части','4000 В'],['Шина','Ethernet 10BASE-T1S, CAN'],['Подключают','кнопки и концевики, герконы, энкодеры, датчики, выходы внешних логических устройств'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ do:[['Питание','24 В'],['Каналы','8×2, всего 16 дискретных выходов'],['Ток канала','до 600 мА, ток короткого замыкания 0,7–1,9 А'],['Сопротивление канала','0,12 Ом'],['Время переключения','включение 17–22 мкс, выключение 22–40 мкс'],['ШИМ','до 20 кГц'],['Мощность на 8 каналов','до 5 Вт'],['Изоляция цифровой части','2000 В'],['Подключают','светодиоды и лампы, клапаны, соленоиды, реле, пьезоизлучатели, слаботочные двигатели']],
+ ro:[['Твердотельные реле','6 каналов SSR: коммутация 5–500 В, рабочий ток 0,18 А, пиковый до 1,1 А (не дольше 10 мс)'],['Механические реле','2 канала NO/NC: 250 В AC, максимум 400 В AC, ток до 5 А'],['Изоляция цифровой части','2500 В'],['Шина','Ethernet 10BASE-T1S, CAN'],['Подключают','контакторы и реле, нагреватели, лампы накаливания, двигатели постоянного и переменного тока'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ io:[['Питание','24 В, ток до 2,5 А'],['Каналы','8, тип каждого задаётся программно'],['Напряжение','вход 0–10 В (16 бит), выход 0–11 В (13 бит)'],['Ток','вход 0–25 мА (16 бит), выход 0–25 мА (13 бит)'],['Дискретные','вход 0–24 В до 20 кГц с программным порогом, выход 0–24 В до 500 мА'],['Сопротивление','измерение до 1 МОм'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ if:[['Питание','24 В, ток до 300 мА'],['RS-485 ×2','до 1000 м, до 500 кбит/с, до 255 устройств на шине, управляемый терминатор'],['RS-232 ×1','до 10 м, до 460 кбит/с'],['CAN ×1','до 1 Мбит/с, управляемый терминатор'],['Изоляция цифровой части','4000 В'],['Подключают','счётчики, датчики, внешние устройства контроля и управления'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ dali:[['Питание','24 В, ток до 1,2 А'],['Каналы','2 линии DALI-2, до 250 мА на линию'],['Устройства','до 128 на линию: 64 светильника и 64 датчика'],['Длина линии','до 300 м при сечении 1,5 мм²'],['Защита','от короткого замыкания'],['Изоляция цифровой части','3700 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ em:[['Напряжение','межфазное 5…400 В, фазное 5…580 В, 45…65 Гц'],['Ток','через измерительные трансформаторы, зависит от трансформатора'],['Погрешность энергии','активная и реактивная 0,1–0,2 %'],['Ток, напряжение, мощность','0,1–0,5 % и 0,2–0,5 %'],['Частота','разрешение 0,001 Гц'],['Каналы калибровки','2 (оптопары)'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ step:[['Каналы','2 канала управления двухфазными шаговыми двигателями'],['Обратная связь','2 энкодера ABZ, оптических или магнитных'],['Управление','векторное (FOC), контроль момента, скорости и положения'],['ШИМ','25–100 кГц'],['Максимальный ток','до 16 А'],['Изоляция цифровой части','2500 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ tc:[['Выходы','2 твердотельных реле: 5–500 В, рабочий ток 0,18 А'],['Входы','2: Pt100 (−199,9…500 °C), термопары J, K, N, R, S, T, B'],['Регулятор','ПИД с программируемым диапазоном'],['Точность','±0,3 % диапазона + 1 цифра, выборка 0,5 с'],['Потребление','до 500 мА'],['Изоляция цифровой части','2500 В'],['Подключают','нагреватели, контакторы, лампы накаливания, двигатели']]
+};
+const SCH={node:'assets/schemes/node.webp',di:'assets/schemes/di.webp',do:'assets/schemes/do.webp',ro:'assets/schemes/ro.webp',io:'assets/schemes/io.webp',if:'assets/schemes/if.webp',dali:'assets/schemes/dali.webp',em:'assets/schemes/em.webp',step:'assets/schemes/step.webp',tc:'assets/schemes/tc.webp'};
 const ORI=new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0));
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 let models=null;
@@ -791,7 +831,12 @@ async function viewer(canvas,host,o){
 (async()=>{try{await viewer($('heroCv'),$('heroHost'),{auto:0.9,dist:[0.06,0.09,0.40],glass:true});$('heroLd').remove();}catch(e){$('heroLd').textContent='3D-модель не загрузилась.';}})();
 /* страница контроллера: интерактивная модель и 3D конфигуратора создаются при первом заходе */
 let ctrlStarted=false;
-function showInfo(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('on',j===i));const k=ORDER[i];$('chipInfo').innerHTML='<h3>'+INFO[k][0]+'</h3><p>'+INFO[k][1]+'</p>';}
+function showInfo(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('on',j===i));const k=ORDER[i];
+  $('chipInfo').innerHTML='<h3>'+INFO[k][0]+'</h3><p>'+INFO[k][1]+'</p><dl class="spec">'+SPEC[k].map(r=>'<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>').join('')+'</dl><button class="btn ghost sm sch" type="button">Схема подключения и паспорт модуля</button>';
+  $('chipInfo').querySelector('.sch').onclick=()=>openScheme(k);}
+function openScheme(k){const b=$('lbx');$('lbi').src=SCH[k];$('lbo').href=SCH[k];b.hidden=false;document.body.style.overflow='hidden';b.querySelector('.lbc').focus();}
+function closeScheme(){$('lbx').hidden=true;document.body.style.overflow='';}
+window.openScheme=openScheme;window.closeScheme=closeScheme;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeScheme()});
 window.initCtrl=async function(){
   if(ctrlStarted)return;ctrlStarted=true;
   let V;
@@ -812,5 +857,81 @@ window.initCtrl=async function(){
 };
 if(location.hash==='#ctrl')window.initCtrl();
 </script>
+<script>
+(function(){
+var cv=document.getElementById('aldCv');if(!cv)return;
+var cx=cv.getContext('2d'),W=800,H=400,X0=150,NS=50,SW=10,Y0=330,LH=9,AH=5,N=5,OUT=200;
+var COL={A:'#4aa8ff',B:'#ff7a9c',C:'#f2bd3a',C2:'#ffe08a',X:'#8fa0b2',P:'#6d7a88'};
+var PH=[{k:'A',d:2000,t:'Шаг 1. Импульс прекурсора A. Молекулы садятся на поверхность и занимают все свободные места. Занятое место других не принимает, поэтому лишнего слоя не набирается.'},
+{k:'P',d:1400,t:'Шаг 2. Продувка. Инертный газ уносит несвязанные молекулы к насосу. На поверхности остаётся только прикрепившийся слой.'},
+{k:'B',d:2000,t:'Шаг 3. Импульс прекурсора B. Он реагирует с прикрепившимся слоем и превращает его в нужное вещество. Побочные продукты улетают.'},
+{k:'P',d:1400,t:'Шаг 4. Продувка. Камера снова чистая. Цикл добавил один слой, дальше он повторяется.'}];
+var sites,res,cyc,ph,pt,parts,acc,run=true,speed=1,hold=0,vis=false,last=0;
+var $=function(i){return document.getElementById(i)};
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function reset(){sites=new Uint8Array(NS);res=new Uint8Array(NS);cyc=0;ph=0;pt=0;parts=[];acc=0;hold=0;info();}
+function info(){var st=$('aldSt').children;for(var i=0;i<4;i++)st[i].classList.toggle('on',i===ph);$('aldCap').textContent=PH[ph].t;
+ var t=(cyc*0.1).toFixed(1).replace('.',',');$('aldRo').textContent='Цикл '+Math.min(cyc+1,N)+' из '+N+' · толщина около '+t+' нм';}
+function top(){return Y0-cyc*LH}
+function spawn(t){var y=70+Math.random()*80;parts.push({x:34,y:y,vx:(t==='P'?190:90)+Math.random()*50,vy:(Math.random()-.5)*30,t:t,hv:Math.random()*8-4,st:0})}
+function stepP(p,dt){
+ if(p.st===1){p.sp+=dt/0.2;var e=Math.min(p.sp,1);p.x=p.sx+(p.tx-p.sx)*e;p.y=p.sy+(p.ty-p.sy)*e;
+  if(p.sp>=1){sites[p.k]=p.need===0?1:2;res[p.k]=0;if(p.need===1){parts.push({x:p.tx,y:p.ty,vx:90+Math.random()*60,vy:-70,t:'X',hv:0,st:0})}return false}return true}
+ var ph_=PH[ph].k,carry=(ph_==='P'||p.t==='X'||p.t==='P'||ph_!==p.t);
+ p.vy+=(Math.random()-.5)*500*dt;
+ if(carry&&p.x>250){p.vx+=160*dt;p.vy+=(OUT-p.y)*5*dt-p.vy*1.6*dt}
+ else if(p.x>X0-60){p.vy+=(top()-10+p.hv-p.y)*2.4*dt-p.vy*1.3*dt}
+ else{p.vy+=(110-p.y)*.8*dt}
+ p.vx=Math.min(p.vx,300);p.x+=p.vx*dt;p.y+=p.vy*dt;
+ if(p.y<48){p.y=48;p.vy=Math.abs(p.vy)}
+ var fl=top()-6;if(p.y>fl){p.y=fl;p.vy=-Math.abs(p.vy)*.6}
+ if(p.x>770){if(Math.abs(p.y-OUT)<26)return false;p.x=770;p.vx=-Math.abs(p.vx)*.4}
+ if(p.x<34){p.x=34;p.vx=Math.abs(p.vx)}
+ if((p.t==='A'||p.t==='B')&&p.t===ph_&&p.x>X0&&p.x<X0+NS*SW&&p.y>top()-13){
+  var need=p.t==='A'?0:1,j=Math.floor((p.x-X0)/SW),k=-1,d;
+  for(d=0;d<9&&k<0;d++){var a=j+d,b=j-d;if(a<NS&&sites[a]===need+(need?0:0)&&!res[a]&&(need===0?sites[a]===0:sites[a]===1)){k=a}else if(b>=0&&!res[b]&&(need===0?sites[b]===0:sites[b]===1)){k=b}}
+  if(k>=0){res[k]=1;p.st=1;p.k=k;p.need=need;p.sp=0;p.sx=p.x;p.sy=p.y;p.tx=X0+k*SW+SW/2;p.ty=top()-(need===0?AH/2:AH)}}
+ return true}
+function tick(dt){
+ if(hold>0){hold-=dt;if(hold<=0)reset();return}
+ pt+=dt*1000;var k=PH[ph].k;
+ acc+=dt*(k==='P'?45:60);while(acc>=1){acc--;spawn(k)}
+ if(pt>=PH[ph].d){
+  if(k==='A'){for(var i=0;i<NS;i++)if(sites[i]===0&&!res[i])sites[i]=1}
+  if(k==='B'){for(var i2=0;i2<NS;i2++)if(sites[i2]===1&&!res[i2])sites[i2]=2}
+  pt=0;ph=(ph+1)%4;
+  if(ph===0){for(var q=0;q<NS;q++){sites[q]=0}cyc++;parts=parts.filter(function(p){return p.st!==1});if(cyc>=N){hold=2.6;ph=3;info();cyc=N;$('aldRo').textContent='Готово: '+N+' циклов, толщина около '+(N*0.1).toFixed(1).replace('.',',')+' нм';return}}
+  info()}
+ parts=parts.filter(function(p){return stepP(p,dt)})}
+function draw(){
+ var w=cv.clientWidth,dpr=Math.min(devicePixelRatio||1,2);if(!w)return;
+ if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(w*dpr/2)}
+ var s=cv.width/W;cx.setTransform(s,0,0,s,0,0);cx.clearRect(0,0,W,H);
+ cx.strokeStyle='#3b5468';cx.lineWidth=3;cx.fillStyle='#0d1822';
+ cx.beginPath();cx.roundRect?cx.roundRect(30,40,740,325,12):cx.rect(30,40,740,325);cx.fill();cx.stroke();
+ cx.fillStyle='#0a1118';cx.fillRect(0,106,30,38);cx.fillRect(770,OUT-26,30,52);cx.strokeStyle='#3b5468';cx.strokeRect(0,106,30,38);cx.strokeRect(770,OUT-26,30,52);
+ cx.fillStyle='#3b5468';cx.beginPath();cx.moveTo(8,118);cx.lineTo(22,125);cx.lineTo(8,132);cx.fill();cx.beginPath();cx.moveTo(778,OUT-8);cx.lineTo(792,OUT);cx.lineTo(778,OUT+8);cx.fill();
+ var g=cx.createLinearGradient(0,Y0,0,Y0+36);g.addColorStop(0,'#ff8a3c');g.addColorStop(1,'rgba(255,138,60,0)');cx.fillStyle='#1b2631';cx.fillRect(X0-30,Y0+4,NS*SW+60,22);cx.fillStyle=g;cx.fillRect(X0-30,Y0+26,NS*SW+60,8);
+ cx.fillStyle='#8896a4';cx.fillRect(X0,Y0,NS*SW,4);
+ for(var j=0;j<NS;j++){var x=X0+j*SW+.75,c,h;
+  for(c=0;c<cyc;c++){cx.fillStyle=c%2?'#e6ac25':COL.C;cx.fillRect(x,Y0-(c+1)*LH,SW-1.5,LH-1)}
+  if(sites[j]===1){cx.fillStyle=COL.A;cx.fillRect(x,Y0-cyc*LH-AH,SW-1.5,AH-.5)}
+  else if(sites[j]===2){cx.fillStyle=COL.C2;cx.fillRect(x,Y0-cyc*LH-LH,SW-1.5,LH-1)}}
+ for(var i=0;i<parts.length;i++){var p=parts[i],r=p.t==='P'?2.2:p.t==='X'?2.4:4;
+  cx.fillStyle=p.t==='A'?COL.A:p.t==='B'?COL.B:p.t==='X'?COL.X:COL.P;cx.beginPath();cx.arc(p.x,p.y,r,0,6.2832);cx.fill();
+  if(p.t==='A'||p.t==='B'){cx.strokeStyle='rgba(255,255,255,.35)';cx.lineWidth=1;cx.beginPath();cx.arc(p.x,p.y,r+1.6,0,6.2832);cx.stroke()}}}
+function frame(t){
+ requestAnimationFrame(frame);if(!vis)return;
+ var dt=Math.min((t-last)/1000||0,.05);last=t;if(run)tick(dt*speed);draw()}
+reset();
+if(rm){run=false;$('aldPlay').textContent='Пуск';$('aldPlay').classList.remove('on')}
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);else vis=true;
+requestAnimationFrame(frame);
+$('aldPlay').onclick=function(e){run=!run;e.target.textContent=run?'Пауза':'Пуск';e.target.classList.toggle('on',run)};
+$('aldRe').onclick=function(){reset()};
+[['aldS1',1],['aldS2',2],['aldS4',4]].forEach(function(a){$(a[0]).onclick=function(){speed=a[1];['aldS1','aldS2','aldS4'].forEach(function(i){$(i).classList.toggle('on',i===a[0])})}});
+})();
+</script>
+<div class="lbx" id="lbx" hidden role="dialog" aria-label="Схема подключения"><button class="lbc" type="button" aria-label="Закрыть" onclick="closeScheme()">×</button><div class="lbs" onclick="if(event.target===this)closeScheme()"><img id="lbi" alt="Схема подключения и характеристики модуля"><a id="lbo" target="_blank" rel="noopener">Открыть изображение отдельно</a></div></div>
 </body>
 </html>
