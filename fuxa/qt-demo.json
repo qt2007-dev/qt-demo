@@ -2031,44 +2031,30 @@
   "layout": {
    "start": "v_8f5b7f3f3e69",
    "navigation": {
-    "mode": "ver",
-    "type": "block",
+    "mode": "fix",
+    "type": "inline",
     "items": [
      {
-      "id": "v_8f5b7f3f3e69",
-      "text": "Освещение",
-      "link": "v_8f5b7f3f3e69",
+      "icon": "lightbulb",
       "view": "v_8f5b7f3f3e69",
-      "icon": "dashboard"
+      "link": "",
+      "text": "Освещение"
      },
      {
-      "id": "v_469b2ba8af0a",
-      "text": "Нагрев",
-      "link": "v_469b2ba8af0a",
+      "icon": "whatshot",
       "view": "v_469b2ba8af0a",
-      "icon": "dashboard"
+      "link": "",
+      "text": "Нагрев"
      },
      {
-      "id": "v_533aba1f7278",
-      "text": "Энергия",
-      "link": "v_533aba1f7278",
+      "icon": "bolt",
       "view": "v_533aba1f7278",
-      "icon": "dashboard"
+      "link": "",
+      "text": "Энергия"
      }
-    ],
-    "bkcolor": "#0f1820",
-    "fgcolor": "#cdd6e0",
-    "logo": null
+    ]
    },
-   "header": {
-    "title": "КвинтТех · QT-BoX",
-    "alignTitle": "left",
-    "bkcolor": "#0f1820",
-    "fgcolor": "#cdd6e0",
-    "enabled": true,
-    "items": []
-   },
-   "showdev": false
+   "header": {}
   }
  },
  "charts": [],
