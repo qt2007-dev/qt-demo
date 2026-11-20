@@ -3,7 +3,7 @@ const mqtt = require('mqtt');
 const c = mqtt.connect(process.env.MQTT_URL || 'mqtt://mosquitto:1883');
 const pub = (t, v) => c.publish(t, String(v), { retain: true });
 const L = { z1: 60, z2: 30, z3: 0 };
-let street = 1, T = { pv: 22, sp: 60, out: 0, run: 0 };
+let streetMode = 2; let street = 1, T = { pv: 22, sp: 60, out: 0, run: 0 };
 const ld = { kettle: 0, stove: 0, motor: 0, other: 1 };
 const P = { kettle: [2000, 0], stove: [3500, 1], motor: [2200, -1], other: [600, 2] };
 // установка ALD: цикл ТМА, продувка, H2O, продувка (секунды на шаг)
@@ -12,10 +12,11 @@ const DUR = [0, 2, 3, 2, 3];
 let kwh = 120.0, seq = 0, tick = 0;
 c.on('connect', () => {
   console.log('MQTT connected');
-  c.subscribe(['qt/light/+/set', 'qt/heat/sp/set', 'qt/ald/run/set']);
+  c.subscribe(['qt/light/+/set', 'qt/light/street/set', 'qt/heat/sp/set', 'qt/ald/run/set']);
 });
 c.on('message', (t, m) => {
   const v = parseFloat(m.toString()); if (Number.isNaN(v)) return;
+  if (t === 'qt/light/street/set') { streetMode = v > 1.5 ? 2 : (v > 0.5 ? 1 : 0); }
   let r = t.match(/qt\/light\/(z\d)\/set/);
   if (r) L[r[1]] = Math.max(0, Math.min(100, v));
   if (t === 'qt/heat/sp/set') T.sp = v;
@@ -24,7 +25,7 @@ c.on('message', (t, m) => {
 setInterval(() => {
   tick++;
   // освещение: уличный светильник по «времени суток»
-  street = (tick % 60) < 40 ? 1 : 0;
+  street = streetMode === 2 ? ((tick % 60) < 40 ? 1 : 0) : streetMode;
   for (const k in L) pub(`qt/light/${k}`, Math.round(L[k]));
   pub('qt/light/street', street);
   // нагрев: ПИД упрощённо
