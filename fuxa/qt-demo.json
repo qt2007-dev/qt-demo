@@ -2052,9 +2052,17 @@
       "link": "",
       "text": "Энергия"
      }
-    ]
+    ],
+    "bkcolor": "#0f1820",
+    "fgcolor": "#cdd6e0"
    },
-   "header": {}
+   "header": {
+    "title": "КвинтТех · QT-BoX",
+    "bkcolor": "#0f1820",
+    "fgcolor": "#cdd6e0",
+    "height": 46,
+    "fontSize": 15
+   }
   }
  },
  "charts": [],
