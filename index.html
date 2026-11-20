@@ -1133,7 +1133,7 @@ var PH=[{k:'A',d:2000,t:'Шаг 1. Импульс прекурсора A. Мол
 {k:'P',d:1400,t:'Шаг 2. Продувка. Инертный газ уносит несвязанные молекулы к насосу. На поверхности остаётся только прикрепившийся слой.'},
 {k:'B',d:2000,t:'Шаг 3. Импульс прекурсора B. Он реагирует с прикрепившимся слоем и превращает его в нужное вещество. Побочные продукты улетают.'},
 {k:'P',d:1400,t:'Шаг 4. Продувка. Камера снова чистая. Цикл добавил один слой, дальше он повторяется.'}];
-var sites,res,cyc,ph,pt,parts,acc,run=true,speed=1,hold=0,vis=false,last=0;
+var sites,res,cyc,ph,pt,parts,acc,run=true,speed=1,hold=0,vis=false,last=0,al=1;
 var $=function(i){return document.getElementById(i)};
 var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 function reset(){sites=new Uint8Array(NS);res=new Uint8Array(NS);cyc=0;ph=0;pt=0;parts=[];acc=0;hold=0;info();}
@@ -1160,7 +1160,8 @@ function stepP(p,dt){
   if(k>=0){res[k]=1;p.st=1;p.k=k;p.need=need;p.sp=0;p.sx=p.x;p.sy=p.y;p.tx=X0+k*SW+SW/2;p.ty=top()-(need===0?AH/2:AH)}}
  return true}
 function tick(dt){
- if(hold>0){hold-=dt;if(hold<=0)reset();return}
+ if(hold>0){hold-=dt;al=Math.max(0,Math.min(1,hold/0.8));parts=parts.filter(function(p){return stepP(p,dt)});if(hold<=0){reset();al=0}return}
+ al=Math.min(1,al+dt*2.5);
  pt+=dt*1000;var k=PH[ph].k;
  acc+=dt*(k==='P'?45:60);while(acc>=1){acc--;spawn(k)}
  if(pt>=PH[ph].d){
@@ -1180,13 +1181,15 @@ function draw(){
  cx.fillStyle='#3b5468';cx.beginPath();cx.moveTo(8,118);cx.lineTo(22,125);cx.lineTo(8,132);cx.fill();cx.beginPath();cx.moveTo(778,OUT-8);cx.lineTo(792,OUT);cx.lineTo(778,OUT+8);cx.fill();
  var g=cx.createLinearGradient(0,Y0,0,Y0+36);g.addColorStop(0,'#ff8a3c');g.addColorStop(1,'rgba(255,138,60,0)');cx.fillStyle='#1b2631';cx.fillRect(X0-30,Y0+4,NS*SW+60,22);cx.fillStyle=g;cx.fillRect(X0-30,Y0+26,NS*SW+60,8);
  cx.fillStyle='#8896a4';cx.fillRect(X0,Y0,NS*SW,4);
+ cx.globalAlpha=al;
  for(var j=0;j<NS;j++){var x=X0+j*SW+.75,c,h;
   for(c=0;c<cyc;c++){cx.fillStyle=c%2?'#e6ac25':COL.C;cx.fillRect(x,Y0-(c+1)*LH,SW-1.5,LH-1)}
   if(sites[j]===1){cx.fillStyle=COL.A;cx.fillRect(x,Y0-cyc*LH-AH,SW-1.5,AH-.5)}
   else if(sites[j]===2){cx.fillStyle=COL.C2;cx.fillRect(x,Y0-cyc*LH-LH,SW-1.5,LH-1)}}
  for(var i=0;i<parts.length;i++){var p=parts[i],r=p.t==='P'?2.2:p.t==='X'?2.4:4;
   cx.fillStyle=p.t==='A'?COL.A:p.t==='B'?COL.B:p.t==='X'?COL.X:COL.P;cx.beginPath();cx.arc(p.x,p.y,r,0,6.2832);cx.fill();
-  if(p.t==='A'||p.t==='B'){cx.strokeStyle='rgba(255,255,255,.35)';cx.lineWidth=1;cx.beginPath();cx.arc(p.x,p.y,r+1.6,0,6.2832);cx.stroke()}}}
+  if(p.t==='A'||p.t==='B'){cx.strokeStyle='rgba(255,255,255,.35)';cx.lineWidth=1;cx.beginPath();cx.arc(p.x,p.y,r+1.6,0,6.2832);cx.stroke()}}
+ cx.globalAlpha=1}
 function frame(t){
  requestAnimationFrame(frame);if(!vis)return;
  var dt=Math.min((t-last)/1000||0,.05);last=t;if(run)tick(dt*speed);draw()}
