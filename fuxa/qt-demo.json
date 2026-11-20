@@ -1,0 +1,2165 @@
+{
+ "version": "1.01",
+ "name": "QT-BoX demo",
+ "devices": {
+  "d_qt_mqtt": {
+   "id": "d_qt_mqtt",
+   "name": "QT-BoX MQTT",
+   "enabled": true,
+   "type": "MQTTclient",
+   "polling": 1000,
+   "property": {
+    "address": "mqtt://mosquitto:1883",
+    "clientId": "fuxa-demo",
+    "mode": "None"
+   },
+   "tags": {
+    "t_5c741ea7dd00": {
+     "id": "t_5c741ea7dd00",
+     "name": "Освещение зона 1",
+     "type": "raw",
+     "address": "qt/light/z1",
+     "memaddress": "qt/light/z1",
+     "options": {
+      "subs": [
+       "qt/light/z1"
+      ]
+     }
+    },
+    "t_0d0acd04e6ea": {
+     "id": "t_0d0acd04e6ea",
+     "name": "Задание зона 1",
+     "type": "raw",
+     "address": "qt/light/z1/set",
+     "memaddress": "qt/light/z1/set",
+     "options": {
+      "pubs": [],
+      "retain": false
+     }
+    },
+    "t_f624d6671c8a": {
+     "id": "t_f624d6671c8a",
+     "name": "Освещение зона 2",
+     "type": "raw",
+     "address": "qt/light/z2",
+     "memaddress": "qt/light/z2",
+     "options": {
+      "subs": [
+       "qt/light/z2"
+      ]
+     }
+    },
+    "t_0d739c5058a8": {
+     "id": "t_0d739c5058a8",
+     "name": "Задание зона 2",
+     "type": "raw",
+     "address": "qt/light/z2/set",
+     "memaddress": "qt/light/z2/set",
+     "options": {
+      "pubs": [],
+      "retain": false
+     }
+    },
+    "t_677d84602160": {
+     "id": "t_677d84602160",
+     "name": "Освещение зона 3",
+     "type": "raw",
+     "address": "qt/light/z3",
+     "memaddress": "qt/light/z3",
+     "options": {
+      "subs": [
+       "qt/light/z3"
+      ]
+     }
+    },
+    "t_7a0de8bc8b60": {
+     "id": "t_7a0de8bc8b60",
+     "name": "Задание зона 3",
+     "type": "raw",
+     "address": "qt/light/z3/set",
+     "memaddress": "qt/light/z3/set",
+     "options": {
+      "pubs": [],
+      "retain": false
+     }
+    },
+    "t_78cebd055105": {
+     "id": "t_78cebd055105",
+     "name": "Уличный светильник",
+     "type": "raw",
+     "address": "qt/light/street",
+     "memaddress": "qt/light/street",
+     "options": {
+      "subs": [
+       "qt/light/street"
+      ]
+     }
+    },
+    "t_df0ce4197e97": {
+     "id": "t_df0ce4197e97",
+     "name": "Температура",
+     "type": "raw",
+     "address": "qt/heat/pv",
+     "memaddress": "qt/heat/pv",
+     "options": {
+      "subs": [
+       "qt/heat/pv"
+      ]
+     }
+    },
+    "t_cbc2078258a2": {
+     "id": "t_cbc2078258a2",
+     "name": "Уставка",
+     "type": "raw",
+     "address": "qt/heat/sp",
+     "memaddress": "qt/heat/sp",
+     "options": {
+      "subs": [
+       "qt/heat/sp"
+      ]
+     }
+    },
+    "t_17becce43d11": {
+     "id": "t_17becce43d11",
+     "name": "Выход ПИД, %",
+     "type": "raw",
+     "address": "qt/heat/out",
+     "memaddress": "qt/heat/out",
+     "options": {
+      "subs": [
+       "qt/heat/out"
+      ]
+     }
+    },
+    "t_2e58cd981c77": {
+     "id": "t_2e58cd981c77",
+     "name": "Нагрев включён",
+     "type": "raw",
+     "address": "qt/heat/run",
+     "memaddress": "qt/heat/run",
+     "options": {
+      "subs": [
+       "qt/heat/run"
+      ]
+     }
+    },
+    "t_30aebb0b18ee": {
+     "id": "t_30aebb0b18ee",
+     "name": "Задание уставки",
+     "type": "raw",
+     "address": "qt/heat/sp/set",
+     "memaddress": "qt/heat/sp/set",
+     "options": {
+      "pubs": [],
+      "retain": false
+     }
+    },
+    "t_e79d7170cd7d": {
+     "id": "t_e79d7170cd7d",
+     "name": "U L1",
+     "type": "raw",
+     "address": "qt/em/v1",
+     "memaddress": "qt/em/v1",
+     "options": {
+      "subs": [
+       "qt/em/v1"
+      ]
+     }
+    },
+    "t_0a8471df29f6": {
+     "id": "t_0a8471df29f6",
+     "name": "I L1",
+     "type": "raw",
+     "address": "qt/em/a1",
+     "memaddress": "qt/em/a1",
+     "options": {
+      "subs": [
+       "qt/em/a1"
+      ]
+     }
+    },
+    "t_0c913e5374d4": {
+     "id": "t_0c913e5374d4",
+     "name": "U L2",
+     "type": "raw",
+     "address": "qt/em/v2",
+     "memaddress": "qt/em/v2",
+     "options": {
+      "subs": [
+       "qt/em/v2"
+      ]
+     }
+    },
+    "t_df9343e63b41": {
+     "id": "t_df9343e63b41",
+     "name": "I L2",
+     "type": "raw",
+     "address": "qt/em/a2",
+     "memaddress": "qt/em/a2",
+     "options": {
+      "subs": [
+       "qt/em/a2"
+      ]
+     }
+    },
+    "t_6436a483b033": {
+     "id": "t_6436a483b033",
+     "name": "U L3",
+     "type": "raw",
+     "address": "qt/em/v3",
+     "memaddress": "qt/em/v3",
+     "options": {
+      "subs": [
+       "qt/em/v3"
+      ]
+     }
+    },
+    "t_b16eb5a5a0c6": {
+     "id": "t_b16eb5a5a0c6",
+     "name": "I L3",
+     "type": "raw",
+     "address": "qt/em/a3",
+     "memaddress": "qt/em/a3",
+     "options": {
+      "subs": [
+       "qt/em/a3"
+      ]
+     }
+    },
+    "t_59c0b6bf97fb": {
+     "id": "t_59c0b6bf97fb",
+     "name": "Мощность, кВт",
+     "type": "raw",
+     "address": "qt/em/kw",
+     "memaddress": "qt/em/kw",
+     "options": {
+      "subs": [
+       "qt/em/kw"
+      ]
+     }
+    },
+    "t_53311b39279c": {
+     "id": "t_53311b39279c",
+     "name": "Энергия, кВт·ч",
+     "type": "raw",
+     "address": "qt/em/kwh",
+     "memaddress": "qt/em/kwh",
+     "options": {
+      "subs": [
+       "qt/em/kwh"
+      ]
+     }
+    },
+    "t_11c87d5c73b2": {
+     "id": "t_11c87d5c73b2",
+     "name": "kettle",
+     "type": "raw",
+     "address": "qt/em/load/kettle",
+     "memaddress": "qt/em/load/kettle",
+     "options": {
+      "subs": [
+       "qt/em/load/kettle"
+      ]
+     }
+    },
+    "t_2e1ee6ee5319": {
+     "id": "t_2e1ee6ee5319",
+     "name": "stove",
+     "type": "raw",
+     "address": "qt/em/load/stove",
+     "memaddress": "qt/em/load/stove",
+     "options": {
+      "subs": [
+       "qt/em/load/stove"
+      ]
+     }
+    },
+    "t_0d46d193094b": {
+     "id": "t_0d46d193094b",
+     "name": "motor",
+     "type": "raw",
+     "address": "qt/em/load/motor",
+     "memaddress": "qt/em/load/motor",
+     "options": {
+      "subs": [
+       "qt/em/load/motor"
+      ]
+     }
+    },
+    "t_1f4b3e14dab2": {
+     "id": "t_1f4b3e14dab2",
+     "name": "other",
+     "type": "raw",
+     "address": "qt/em/load/other",
+     "memaddress": "qt/em/load/other",
+     "options": {
+      "subs": [
+       "qt/em/load/other"
+      ]
+     }
+    }
+   }
+  }
+ },
+ "hmi": {
+  "views": [
+   {
+    "id": "v_8f5b7f3f3e69",
+    "name": "Освещение",
+    "profile": {
+     "width": 1200,
+     "height": 700,
+     "bkcolor": "#0a1117",
+     "align": "middle"
+    },
+    "items": {
+     "shape_18ce98dc214f5f1e": {
+      "id": "shape_18ce98dc214f5f1e",
+      "type": "svg-ext-shapes",
+      "name": "Окно Переговорная",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_d42fe5c7512d5b20": {
+      "id": "shape_d42fe5c7512d5b20",
+      "type": "svg-ext-shapes",
+      "name": "Окно Переговорная",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_a609117cf5015d4d": {
+      "id": "shape_a609117cf5015d4d",
+      "type": "svg-ext-shapes",
+      "name": "Окно Переговорная",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_c81f9f84efab5ec8": {
+      "id": "shape_c81f9f84efab5ec8",
+      "type": "svg-ext-shapes",
+      "name": "Окно Переговорная",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_683bc1593df4504a": {
+      "id": "shape_683bc1593df4504a",
+      "type": "svg-ext-shapes",
+      "name": "Окно Переговорная",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "VAL_a5b952a441f9573e": {
+      "id": "VAL_a5b952a441f9573e",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_677d84602160",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " %",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_9d92a931b99b5691": {
+      "id": "shape_9d92a931b99b5691",
+      "type": "svg-ext-shapes",
+      "name": "Окно Open space",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_2f5b9596dc6c5879": {
+      "id": "shape_2f5b9596dc6c5879",
+      "type": "svg-ext-shapes",
+      "name": "Окно Open space",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_de3bddb1ef245d3c": {
+      "id": "shape_de3bddb1ef245d3c",
+      "type": "svg-ext-shapes",
+      "name": "Окно Open space",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_c3a48055bfcf5f55": {
+      "id": "shape_c3a48055bfcf5f55",
+      "type": "svg-ext-shapes",
+      "name": "Окно Open space",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_792443023e835476": {
+      "id": "shape_792443023e835476",
+      "type": "svg-ext-shapes",
+      "name": "Окно Open space",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "VAL_930763a63aed55ff": {
+      "id": "VAL_930763a63aed55ff",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_f624d6671c8a",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " %",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_a51fe83eed8f590f": {
+      "id": "shape_a51fe83eed8f590f",
+      "type": "svg-ext-shapes",
+      "name": "Окно Коридор",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_0d4509ca053454e9": {
+      "id": "shape_0d4509ca053454e9",
+      "type": "svg-ext-shapes",
+      "name": "Окно Коридор",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_3be2facf9ee35219": {
+      "id": "shape_3be2facf9ee35219",
+      "type": "svg-ext-shapes",
+      "name": "Окно Коридор",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_62f7d88262025001": {
+      "id": "shape_62f7d88262025001",
+      "type": "svg-ext-shapes",
+      "name": "Окно Коридор",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_fef51cd64ec45693": {
+      "id": "shape_fef51cd64ec45693",
+      "type": "svg-ext-shapes",
+      "name": "Окно Коридор",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#161f28",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 33,
+         "color": "#6b5a22",
+         "stroke": "#8a7330"
+        },
+        {
+         "min": 33,
+         "max": 66,
+         "color": "#b8913a",
+         "stroke": "#d9ae45"
+        },
+        {
+         "min": 66,
+         "max": 1000,
+         "color": "#f2bd3a",
+         "stroke": "#ffe08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "VAL_9bd88a2f1e3c52bb": {
+      "id": "VAL_9bd88a2f1e3c52bb",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_5c741ea7dd00",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " %",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_d0098d37dc5c560c": {
+      "id": "shape_d0098d37dc5c560c",
+      "type": "svg-ext-shapes",
+      "name": "0 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "0",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_7a0de8bc8b60",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_701ffbff89305c2a": {
+      "id": "shape_701ffbff89305c2a",
+      "type": "svg-ext-shapes",
+      "name": "50 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "50",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_7a0de8bc8b60",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_3c91419ebf2f585b": {
+      "id": "shape_3c91419ebf2f585b",
+      "type": "svg-ext-shapes",
+      "name": "100 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "100",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_7a0de8bc8b60",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_e9706c502a4a54ef": {
+      "id": "shape_e9706c502a4a54ef",
+      "type": "svg-ext-shapes",
+      "name": "0 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "0",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d739c5058a8",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_878ed99d419e5977": {
+      "id": "shape_878ed99d419e5977",
+      "type": "svg-ext-shapes",
+      "name": "50 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "50",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d739c5058a8",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_ef7e760592b452d5": {
+      "id": "shape_ef7e760592b452d5",
+      "type": "svg-ext-shapes",
+      "name": "100 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "100",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d739c5058a8",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_0ec1861ea9a859af": {
+      "id": "shape_0ec1861ea9a859af",
+      "type": "svg-ext-shapes",
+      "name": "0 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "0",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d0acd04e6ea",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_cb70c56f66dd5516": {
+      "id": "shape_cb70c56f66dd5516",
+      "type": "svg-ext-shapes",
+      "name": "50 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "50",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d0acd04e6ea",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_8bb9c9b03a6259df": {
+      "id": "shape_8bb9c9b03a6259df",
+      "type": "svg-ext-shapes",
+      "name": "100 %",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "100",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_0d0acd04e6ea",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_13649a5a04bf5dc3": {
+      "id": "shape_13649a5a04bf5dc3",
+      "type": "svg-ext-shapes",
+      "name": "Фонарь",
+      "property": {
+       "events": [],
+       "variableId": "t_78cebd055105",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#ffe08a",
+         "stroke": "#f2bd3a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_a3a48114429a5ba7": {
+      "id": "shape_a3a48114429a5ba7",
+      "type": "svg-ext-shapes",
+      "name": "Конус света",
+      "property": {
+       "events": [],
+       "variableId": "t_78cebd055105",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#0c141b",
+         "stroke": "#0c141b"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#3d3a1c",
+         "stroke": "#3d3a1c"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_485ea6be105a5582": {
+      "id": "shape_485ea6be105a5582",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_78cebd055105",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#5fd08a",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     }
+    },
+    "variables": {},
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_5c756d349c93581b\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_bfebb28dd51259f0\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Освещение здания и улицы</text><text id=\"svg_8d080876ea085a34\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модули DALI, уровень 0–100 %</text><rect id=\"svg_c45d5fe4a645512d\" x=\"60\" y=\"110\" width=\"540\" height=\"520\" rx=\"6\" fill=\"#0f1820\" stroke=\"#32475a\" /><rect id=\"svg_07284caf47115972\" x=\"80\" y=\"120\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_fc92eba0d7cd51e1\" x=\"100\" y=\"146\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_18ce98dc214f5f1e\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_d42fe5c7512d5b20\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_a609117cf5015d4d\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c81f9f84efab5ec8\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_683bc1593df4504a\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_a5b952a441f9573e\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_4d45b932f9d15dd2\" x=\"560\" y=\"146\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_f78aa6d8d5ee5ccb\" x=\"80\" y=\"270\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_a5ff90d7dc2c5c1d\" x=\"100\" y=\"296\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_9d92a931b99b5691\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_2f5b9596dc6c5879\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_de3bddb1ef245d3c\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c3a48055bfcf5f55\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_792443023e835476\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_930763a63aed55ff\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_b0d1e134f3aa5a8d\" x=\"560\" y=\"296\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_05962de65e08536b\" x=\"80\" y=\"420\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_402d313935045d08\" x=\"100\" y=\"446\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_a51fe83eed8f590f\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_0d4509ca053454e9\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_3be2facf9ee35219\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_62f7d88262025001\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_fef51cd64ec45693\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_9bd88a2f1e3c52bb\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_2cf14658704455ee\" x=\"560\" y=\"446\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_e635e47b5b09509e\" x=\"650\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_d0098d37dc5c560c\" type=\"svg-ext-shapes\" x=\"650\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a130c62ae9195bff\" x=\"688.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_701ffbff89305c2a\" type=\"svg-ext-shapes\" x=\"734\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_6e2c7c53a1045de4\" x=\"772.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_3c91419ebf2f585b\" type=\"svg-ext-shapes\" x=\"818\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_d606b4c99480537e\" x=\"856.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><text id=\"svg_0408b7e94fb95f4a\" x=\"650\" y=\"300\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_e9706c502a4a54ef\" type=\"svg-ext-shapes\" x=\"650\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_cb205e67b6c85fea\" x=\"688.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_878ed99d419e5977\" type=\"svg-ext-shapes\" x=\"734\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_9f6a8f8c1ea15d03\" x=\"772.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_ef7e760592b452d5\" type=\"svg-ext-shapes\" x=\"818\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_c5b26e6e86ad5089\" x=\"856.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><text id=\"svg_57e0697347635ecd\" x=\"650\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_0ec1861ea9a859af\" type=\"svg-ext-shapes\" x=\"650\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_77ec89440375514b\" x=\"688.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_cb70c56f66dd5516\" type=\"svg-ext-shapes\" x=\"734\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_661514b14c355943\" x=\"772.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_8bb9c9b03a6259df\" type=\"svg-ext-shapes\" x=\"818\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_f7f4dfec48295888\" x=\"856.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><rect id=\"svg_4f5d6f46fee3576e\" x=\"930\" y=\"430\" width=\"250\" height=\"200\" rx=\"6\" fill=\"#0c141b\" stroke=\"#243241\" /><rect id=\"svg_2302839b244759ff\" x=\"930\" y=\"600\" width=\"250\" height=\"30\" fill=\"#18222c\" stroke=\"#243241\"/><rect id=\"svg_a6152ef290355e6f\" x=\"1050\" y=\"270\" width=\"8\" height=\"330\" fill=\"#6f8296\" stroke=\"none\"/><ellipse id=\"shape_13649a5a04bf5dc3\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1054\" cy=\"262\" rx=\"26\" ry=\"14\" stroke=\"#000\"/><polygon id=\"shape_a3a48114429a5ba7\" type=\"svg-ext-shapes\" fill=\"#0c141b\" points=\"1030,276 1078,276 1130,600 978,600\" stroke=\"none\"/><text id=\"svg_b9b214f0127c5979\" x=\"1055\" y=\"200\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Уличный светильник</text><circle id=\"shape_485ea6be105a5582\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1055\" cy=\"230\" r=\"9\" stroke=\"#000\"/></g></svg>"
+   },
+   {
+    "id": "v_469b2ba8af0a",
+    "name": "Нагрев",
+    "profile": {
+     "width": 1200,
+     "height": 700,
+     "bkcolor": "#0a1117",
+     "align": "middle"
+    },
+    "items": {
+     "VAL_7c5c6d70f1115ae6": {
+      "id": "VAL_7c5c6d70f1115ae6",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_df0ce4197e97",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " °C",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 1,
+         "max": 1,
+         "text": "1",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_ffaafafeb7415d8a": {
+      "id": "VAL_ffaafafeb7415d8a",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_cbc2078258a2",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " °C",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_87204f67310a5a7b": {
+      "id": "VAL_87204f67310a5a7b",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_17becce43d11",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " %",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_f884ef7476fe5f65": {
+      "id": "shape_f884ef7476fe5f65",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_2e58cd981c77",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#ff7a9c",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_b36edbb3d5f3514b": {
+      "id": "shape_b36edbb3d5f3514b",
+      "type": "svg-ext-shapes",
+      "name": "40 °C",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "40",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_30aebb0b18ee",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_6e2757f01ccb5e18": {
+      "id": "shape_6e2757f01ccb5e18",
+      "type": "svg-ext-shapes",
+      "name": "60 °C",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "60",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_30aebb0b18ee",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_0cf77e7a737a5f8c": {
+      "id": "shape_0cf77e7a737a5f8c",
+      "type": "svg-ext-shapes",
+      "name": "80 °C",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "80",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_30aebb0b18ee",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_0e21aa1090845fca": {
+      "id": "shape_0e21aa1090845fca",
+      "type": "svg-ext-shapes",
+      "name": "100 °C",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "100",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_30aebb0b18ee",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_82ad4df166d95dd5": {
+      "id": "shape_82ad4df166d95dd5",
+      "type": "svg-ext-shapes",
+      "name": "Нагреватель",
+      "property": {
+       "events": [],
+       "variableId": "t_2e58cd981c77",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#1b2a38",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#c0445f",
+         "stroke": "#ff7a9c"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     }
+    },
+    "variables": {},
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_4f6fbd448fde5d42\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_cb9349ac5af35ac2\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Термоконтроллер</text><text id=\"svg_bd295f6eaa1a52ed\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модуль IO, ПИД-регулятор</text><rect id=\"svg_c2d62d7f6a1d5944\" x=\"80\" y=\"120\" width=\"420\" height=\"420\" rx=\"14\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_c6df315b214255d0\" x=\"110\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Температура</text><g id=\"VAL_7c5c6d70f1115ae6\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_e8926d70bc175dae\" x=\"290\" y=\"260\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_f95124d895745720\" x=\"110\" y=\"330\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><g id=\"VAL_ffaafafeb7415d8a\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_ff957daf3bfc5789\" x=\"290\" y=\"390\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_bdbeee30b0af5d6d\" x=\"110\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Выход, %</text><g id=\"VAL_87204f67310a5a7b\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_c96ad7ba563b5bed\" x=\"290\" y=\"500\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_17e4394a9cac512e\" x=\"420\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">Нагрев</text><circle id=\"shape_f884ef7476fe5f65\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"470\" cy=\"155\" r=\"10\" stroke=\"#000\"/><text id=\"svg_7fd81641ec5d579d\" x=\"560\" y=\"160\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><rect id=\"shape_b36edbb3d5f3514b\" type=\"svg-ext-shapes\" x=\"560\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_36af535450c85135\" x=\"605.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">40 °C</text><rect id=\"shape_6e2757f01ccb5e18\" type=\"svg-ext-shapes\" x=\"660\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a199d41e665451cf\" x=\"705.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">60 °C</text><rect id=\"shape_0cf77e7a737a5f8c\" type=\"svg-ext-shapes\" x=\"760\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_39a7f6d864fc53f5\" x=\"805.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">80 °C</text><rect id=\"shape_0e21aa1090845fca\" type=\"svg-ext-shapes\" x=\"860\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_acdb76a9bcb95b90\" x=\"905.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 °C</text><text id=\"svg_69ceb0c487095888\" x=\"560\" y=\"290\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Нагреватель</text><rect id=\"shape_82ad4df166d95dd5\" type=\"svg-ext-shapes\" fill=\"#1b2a38\" x=\"560\" y=\"310\" width=\"380\" height=\"60\" rx=\"8\" stroke=\"#000\"/><text id=\"svg_9211ffb02aa75425\" x=\"750\" y=\"348\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">ТЭН</text></g></svg>"
+   },
+   {
+    "id": "v_533aba1f7278",
+    "name": "Энергия",
+    "profile": {
+     "width": 1200,
+     "height": 700,
+     "bkcolor": "#0a1117",
+     "align": "middle"
+    },
+    "items": {
+     "VAL_50cfbb05d02f5214": {
+      "id": "VAL_50cfbb05d02f5214",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_e79d7170cd7d",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " В",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_1ae259d220df5485": {
+      "id": "VAL_1ae259d220df5485",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_0a8471df29f6",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " А",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 1,
+         "max": 1,
+         "text": "1",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_e57dede0ed7350a0": {
+      "id": "VAL_e57dede0ed7350a0",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_0c913e5374d4",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " В",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_118c68e5991e5046": {
+      "id": "VAL_118c68e5991e5046",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_df9343e63b41",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " А",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 1,
+         "max": 1,
+         "text": "1",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_639c346562705e96": {
+      "id": "VAL_639c346562705e96",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_6436a483b033",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " В",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 0,
+         "max": 0,
+         "text": "0",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_d10dbdfa859d5c87": {
+      "id": "VAL_d10dbdfa859d5c87",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_b16eb5a5a0c6",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " А",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 1,
+         "max": 1,
+         "text": "1",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_780bb15ddb995cc2": {
+      "id": "VAL_780bb15ddb995cc2",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_59c0b6bf97fb",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " кВт",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 2,
+         "max": 2,
+         "text": "2",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_beaa4d3debc25331": {
+      "id": "VAL_beaa4d3debc25331",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_53311b39279c",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": "unit",
+         "min": 0,
+         "max": 0,
+         "text": " кВт·ч",
+         "textId": ""
+        },
+        {
+         "type": "digit",
+         "min": 1,
+         "max": 1,
+         "text": "1",
+         "textId": ""
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_d5e2906525745129": {
+      "id": "shape_d5e2906525745129",
+      "type": "svg-ext-shapes",
+      "name": "Чайник · 2 кВт, L1",
+      "property": {
+       "events": [],
+       "variableId": "t_11c87d5c73b2",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#ffd23a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_79fdfaaafdc6500b": {
+      "id": "shape_79fdfaaafdc6500b",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_11c87d5c73b2",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#ffd23a",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_b330008428b959a5": {
+      "id": "shape_b330008428b959a5",
+      "type": "svg-ext-shapes",
+      "name": "Плита · 3,5 кВт, L2",
+      "property": {
+       "events": [],
+       "variableId": "t_2e1ee6ee5319",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#5fd08a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_dd78b97249bf5cb1": {
+      "id": "shape_dd78b97249bf5cb1",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_2e1ee6ee5319",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#5fd08a",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_27e13b3a1f67518c": {
+      "id": "shape_27e13b3a1f67518c",
+      "type": "svg-ext-shapes",
+      "name": "Мотор · 2,2 кВт, 3 фазы",
+      "property": {
+       "events": [],
+       "variableId": "t_0d46d193094b",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_da71c8893b89539b": {
+      "id": "shape_da71c8893b89539b",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_0d46d193094b",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#4aa8ff",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_747ee8cce652581e": {
+      "id": "shape_747ee8cce652581e",
+      "type": "svg-ext-shapes",
+      "name": "Прочее · 0,6 кВт, L3",
+      "property": {
+       "events": [],
+       "variableId": "t_1f4b3e14dab2",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#ff7a9c"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_dc700add10b15533": {
+      "id": "shape_dc700add10b15533",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_1f4b3e14dab2",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#ff7a9c",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     }
+    },
+    "variables": {},
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_896d011bec3754d5\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_38d681d2e40c54d5\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Электроэнергия и нагрузки</text><text id=\"svg_6395bbf8e77d5304\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модуль EM, трёхфазный счётчик</text><rect id=\"svg_5345877dd5135846\" x=\"80\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_b872909e4e015623\" x=\"96\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#ffd23a\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L1</text><g id=\"VAL_50cfbb05d02f5214\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_5630bc92cf8a5f88\" x=\"200\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_1ae259d220df5485\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ffd23a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_dd428f42185c59ec\" x=\"200\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ffd23a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_8bf6503c71b054b6\" x=\"340\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_d2cea7b125a75787\" x=\"356\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#5fd08a\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L2</text><g id=\"VAL_e57dede0ed7350a0\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_1bc6d560581b5591\" x=\"460\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_118c68e5991e5046\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_ecd1a129d41759b3\" x=\"460\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_24259e26c9cf5be0\" x=\"600\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_effec098535854a0\" x=\"616\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#ff7a9c\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L3</text><g id=\"VAL_639c346562705e96\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_b35f753543c65240\" x=\"720\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_d10dbdfa859d5c87\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ff7a9c\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_9be1c7d57b625ccd\" x=\"720\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ff7a9c\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_9ef3dd8712565168\" x=\"880\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_682990de9cc95a1a\" x=\"896\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Всего</text><g id=\"VAL_780bb15ddb995cc2\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_5c7f075e74fd59ae\" x=\"1000\" y=\"208\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_beaa4d3debc25331\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_3611b0f8b2425c37\" x=\"1000\" y=\"262\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"shape_d5e2906525745129\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"80\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_eee2a0522efa5653\" x=\"202\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Чайник</text><text id=\"svg_28e02576413a5dd4\" x=\"202\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">2 кВт, L1</text><circle id=\"shape_79fdfaaafdc6500b\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"202\" cy=\"485\" r=\"9\" stroke=\"#000\"/><rect id=\"shape_b330008428b959a5\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"345\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_ac9b360adbfc5763\" x=\"467\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Плита</text><text id=\"svg_bd8bf43d5b365566\" x=\"467\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">3,5 кВт, L2</text><circle id=\"shape_dd78b97249bf5cb1\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"467\" cy=\"485\" r=\"9\" stroke=\"#000\"/><rect id=\"shape_27e13b3a1f67518c\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"610\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_d35f2ce99c3152f8\" x=\"732\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Мотор</text><text id=\"svg_7e9df1139c865a07\" x=\"732\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">2,2 кВт, 3 фазы</text><circle id=\"shape_da71c8893b89539b\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"732\" cy=\"485\" r=\"9\" stroke=\"#000\"/><rect id=\"shape_747ee8cce652581e\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"875\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_abf168b35c335c8b\" x=\"997\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Прочее</text><text id=\"svg_ff826206912157d5\" x=\"997\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0,6 кВт, L3</text><circle id=\"shape_dc700add10b15533\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"997\" cy=\"485\" r=\"9\" stroke=\"#000\"/><text id=\"svg_b1fa6cb1526550ab\" x=\"80\" y=\"570\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Нагрузки включаются и выключаются сами: меняются ток, мощность и энергия.</text></g></svg>"
+   }
+  ],
+  "layout": {
+   "start": "v_8f5b7f3f3e69",
+   "navigation": {
+    "mode": "ver",
+    "type": "block",
+    "items": [
+     {
+      "id": "v_8f5b7f3f3e69",
+      "text": "Освещение",
+      "link": "v_8f5b7f3f3e69",
+      "view": "v_8f5b7f3f3e69",
+      "icon": "dashboard"
+     },
+     {
+      "id": "v_469b2ba8af0a",
+      "text": "Нагрев",
+      "link": "v_469b2ba8af0a",
+      "view": "v_469b2ba8af0a",
+      "icon": "dashboard"
+     },
+     {
+      "id": "v_533aba1f7278",
+      "text": "Энергия",
+      "link": "v_533aba1f7278",
+      "view": "v_533aba1f7278",
+      "icon": "dashboard"
+     }
+    ],
+    "bkcolor": "#0f1820",
+    "fgcolor": "#cdd6e0",
+    "logo": null
+   },
+   "header": {
+    "title": "КвинтТех · QT-BoX",
+    "alignTitle": "left",
+    "bkcolor": "#0f1820",
+    "fgcolor": "#cdd6e0",
+    "enabled": true,
+    "items": []
+   },
+   "showdev": false
+  }
+ },
+ "charts": [],
+ "server": {
+  "id": "0",
+  "name": "Fuxa Server",
+  "type": "FuxaServer",
+  "property": {}
+ }
+}
