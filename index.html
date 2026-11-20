@@ -804,6 +804,7 @@ function show(i){tab=i;W=[];[].forEach.call(nav.children,function(b,j){b.classLi
   var ed=el('div','ope');ed.innerHTML='<div class="ope-tree"></div><div class="ope-mid"><div class="ope-tabs"><button type="button" class="on">qt_box_demo (ST)</button><button type="button">LD</button><button type="button">FBD</button><button type="button">Переменные</button></div><div class="ope-code"></div><div class="ope-vars" hidden></div></div>';main.appendChild(ed);
   var tr=ed.querySelector('.ope-tree'),cd=ed.querySelector('.ope-code'),vr=ed.querySelector('.ope-vars'),tb=ed.querySelectorAll('.ope-tabs button');
   tr.innerHTML='<div class="n0">Проект qt_box_demo</div><div class="n1">Types</div><div class="n1">Functions</div><div class="n1">Function Blocks</div><div class="n1">Programs</div><div class="n2 sel">qt_box_demo <em>ST</em></div><div class="n1">Configurations</div><div class="n2">Config0</div><div class="n3">Resource Res0</div><div class="n4">Task task0: T#100ms, приоритет 0</div><div class="n4">Instance instance0: qt_box_demo</div>';
+  var pr=tr.querySelector('.sel');pr.style.cursor='pointer';pr.onclick=function(){tb[0].click()};
   var lines=ST.split('\n'),ln='';for(var q=1;q<=lines.length;q++)ln+=q+'\n';
   cd.innerHTML='<pre class="ope-ln">'+ln+'</pre><pre class="ope-src">'+hl(ST)+'</pre>';
   var rows='<div class="opl-r h"><span>Имя</span><span>Класс</span><span>Тип</span><span>Адрес</span></div>';
