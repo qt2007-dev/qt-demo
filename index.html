@@ -95,6 +95,18 @@ tbody th{color:var(--mute);font-weight:600;width:22%}
 tr:last-child th,tr:last-child td{border-bottom:0}
 .ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.aimg.tall{height:380px;object-position:50% 60%}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}.aimg.tall{height:320px}}.aldw{border:1px solid var(--line);border-radius:16px;background:radial-gradient(900px 360px at 50% 30%,#13202b,#07090c);padding:14px 14px 16px;overflow:hidden}
 .alhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:32px;align-items:stretch;margin:0 0 22px}.alt{display:flex;flex-direction:column}.alt .ald-lg{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;font-size:14px}.alhead .aldw .ald-lg{display:none}.alhead .ald-cap{min-height:4.8em}#scAld .ald-cap{min-height:3.6em}.alk{margin:14px 0 0;padding-left:20px;color:#cdd6e0}.alk li{margin:6px 0}@media (max-width:860px){.alhead{grid-template-columns:1fr}.alhead .aldw .ald-lg{display:flex}.alt .ald-lg{display:none}.alhead .ald-cap{min-height:7.4em}}.aldw canvas{display:block;width:100%;aspect-ratio:2/1;border-radius:10px;background:#0a1118}
+.cmp{margin:22px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(15,22,29,.55)}
+.cmp .cmpr{display:grid;grid-template-columns:150px 1fr 1fr;border-top:1px solid var(--line)}
+.cmp .cmpr:first-child{border-top:0}
+.cmp .cmpr>div{padding:13px 16px;font-size:14.5px;color:var(--mute)}
+.cmp .cmpr>div+div{border-left:1px solid var(--line)}
+.cmp .cmph>div{font-weight:700;color:#e7edf3;font-size:15.5px;background:rgba(255,255,255,.03)}
+.cmp .cmph>div:last-child{color:#0a0c10!important;background:var(--gold)}
+.cmp .cmpl{color:#cdd6e0!important;font-weight:600}
+.cmp .cmpr>div:last-child{color:#cdd6e0}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 0}
+.shots div{aspect-ratio:16/10;border:1px dashed var(--line);border-radius:12px;background:#0b1118;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:var(--mute);font-size:13.5px}
+@media (max-width:760px){.cmp .cmpr{grid-template-columns:1fr}.cmp .cmpr>div+div{border-left:0;border-top:1px dashed var(--line)}.cmp .cmpl{background:rgba(255,255,255,.03)}.cmp .cmph{display:none}.cmp .cmpr>div:nth-child(2)::before{content:"Стандартная SCADA: ";color:#e7edf3;font-weight:700}.cmp .cmpr>div:nth-child(3)::before{content:"Свой интерфейс: ";color:var(--gold);font-weight:700}.shots{grid-template-columns:1fr}}
 #scAld .aldw{padding:0 4px!important}
 .ald-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 8px}
 .ald-st div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute);background:rgba(15,22,29,.6);transition:background .2s,color .2s,border-color .2s}
@@ -407,8 +419,8 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     </tbody>
   </table></div>
   <div class="need"><b>Лицензии уточняем:</b> FUXA (MIT) и OpenPLC (GPL v3) сверены с репозиториями проектов, остальные указаны по общеизвестным данным. Это техническая справка, не юридическое заключение. Перед поставкой проверим условия для каждой версии, особенно GPL при включении в изделие.</div>
-  <h3 style="margin:26px 0 12px">Пример экрана SCADA</h3>
-  <div class="scada"><div class="sc-top"><b>Пример экрана SCADA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демонстрация, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px 20px 26px"><div class="aldw" style="border:0;padding:0;background:none">
+  <h3 style="margin:26px 0 8px">Примеры интерфейсов</h3><p class="sub" style="margin:0 0 14px">Интерфейс можно собрать в стандартной SCADA или сделать свой экран под задачу. Ниже наш пример с анимацией (демонстрация, значения симулируются), а под ним те же экраны в FUXA и сравнение подходов.</p>
+  <div class="scada"><div class="sc-top"><b>Наш интерфейс · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демонстрация, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px 20px 26px"><div class="aldw" style="border:0;padding:0;background:none">
     <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
     <div class="ald-st" id="aldSt"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
     <div class="ald-cap" id="aldCap" aria-live="polite"></div>
@@ -419,7 +431,22 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     </div>
     <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
   </div></div></div>
-  <div class="need"><b>Что это за экран:</b> демонстрация, нарисованная по возможностям модулей DALI, IO и EM, а не снимок реальной системы. Такие экраны собирают в FUXA, Node-RED или любой SCADA с поддержкой MQTT Sparkplug. <b>Нужно от вас:</b> настоящие скриншоты FUXA с вашими мнемосхемами, покажем их рядом.</div>
+  <div class="need"><b>Что это за экран:</b> демонстрация, нарисованная по возможностям модулей DALI, IO и EM, а не снимок реальной системы. Такие экраны собирают в FUXA, Node-RED или любой SCADA с поддержкой MQTT Sparkplug.</div>
+  <div class="need"><b>Нужно от вас:</b> примеры ваших интерфейсов (скриншоты или запись экрана) и скриншоты стандартных экранов FUXA. Добавим их в этот раздел.</div>
+  <h3 style="margin:26px 0 6px">Два пути к экрану управления</h3>
+  <p class="sub" style="margin:0 0 4px">Стандартная SCADA быстро решает типовые задачи. Когда экран должен показывать процесс и быть частью продукта, делаем свой интерфейс.</p>
+  <div class="cmp">
+    <div class="cmpr cmph"><div></div><div>Стандартная SCADA (FUXA)</div><div>Свой интерфейс КвинтТех</div></div>
+    <div class="cmpr"><div class="cmpl">Как делается</div><div>Собирается в браузерном редакторе без программирования</div><div>Разрабатываем под задачу и оборудование</div></div>
+    <div class="cmpr"><div class="cmpl">Анимация</div><div>Набор действий: цвет по диапазону, показ и скрытие, мигание, поворот, перемещение</div><div>Любая: ход процесса, потоки, схема установки, как в примере выше</div></div>
+    <div class="cmpr"><div class="cmpl">Оформление</div><div>В рамках редактора и готовых виджетов</div><div>Любой стиль, под фирменный образ заказчика</div></div>
+    <div class="cmpr"><div class="cmpl">Данные</div><div>Обычный MQTT (текст, JSON); Sparkplug B подключается через мост</div><div>Подключаем к нужному источнику данных</div></div>
+    <div class="cmpr"><div class="cmpl">Старт и стоимость</div><div>Лицензия MIT, быстрый старт</div><div>Отдельная разработка, срок и бюджет оцениваем на предпроекте</div></div>
+    <div class="cmpr"><div class="cmpl">Когда выбирать</div><div>Значения, тренды, тревоги, кнопки управления</div><div>Наглядность процесса, экран как часть продукта</div></div>
+  </div>
+  <h3 style="margin:26px 0 6px">Те же экраны в стандартной SCADA</h3>
+  <p class="sub" style="margin:0 0 4px">Освещение, нагрев и счётчик электроэнергии, собранные в FUXA из тех же данных. Так видно, что даёт стандартный инструмент.</p>
+  <div class="shots"><div>Освещение в FUXA<br>скриншот будет здесь</div><div>Нагрев в FUXA<br>скриншот будет здесь</div><div>Энергия в FUXA<br>скриншот будет здесь</div></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <h2>Искусственный интеллект на контроллере</h2>
