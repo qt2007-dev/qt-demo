@@ -145,8 +145,21 @@ input[type=text],input[type=email],input[type=tel],select,textarea{padding:11px;
 .scada{border:1px solid var(--line);border-radius:14px;background:#0a1117;overflow:hidden}
 .sc-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:10px 16px;background:#0f1a22;border-bottom:1px solid var(--line)}
 .sc-top .live{margin-left:auto;color:#7bd88f;font:12px var(--mono)}
-.sc-body{padding:18px;min-height:230px}
-@media (max-width:620px){.sc-body{min-height:493px}}
+.sc-body{padding:18px;min-height:663px}
+@media (max-width:620px){.sc-body{min-height:692px}}
+.tcw{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:stretch}
+.tcp{background:#0b1219;border:2px solid #2a4254;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.tct{display:flex;justify-content:space-between;font:700 13px var(--display);color:#cdd6e0}.tct span{font:12px var(--mono);color:var(--mute)}
+.tcd{background:#04080b;border:1px solid #1f2933;border-radius:8px;padding:8px 12px}.tcd small,.tco small{font:11px var(--mono);color:var(--mute);display:block}
+.tcv{font:800 40px/1.1 var(--mono);letter-spacing:.02em;text-shadow:0 0 10px currentColor}.tcv.g{color:#5fd08a}.tcv.a{color:#f2bd3a;font-size:28px;margin-bottom:2px}
+.tco{display:grid;grid-template-columns:14px 1fr auto;gap:2px 10px;align-items:center}.tco small{grid-column:2/4}.tco .tcb{grid-column:2;height:8px;border-radius:4px;background:#16222c;overflow:hidden}.tco .tcb i{display:block;height:100%;width:0;background:#ff8a2a}.tco b{font:700 13px var(--mono);color:#e9edf2}
+.led{width:12px;height:12px;border-radius:50%;background:#3a2a14;box-shadow:inset 0 0 0 1px #5a4320;grid-row:1/3}.led.on{background:#ff8a2a;box-shadow:0 0 10px #ff8a2a}
+.tck{display:flex;gap:10px}.tcbtn{flex:1;font:700 16px var(--display);color:#e9edf2;background:#16222c;border:1px solid #2a4254;border-radius:8px;padding:8px 0;cursor:pointer}.tcbtn:hover{border-color:var(--gold)}
+.tcw canvas{height:250px}
+.busl{fill:none;stroke-width:3;opacity:.5}
+.wire{fill:none;stroke:#2b3b48;stroke-width:3}.wire.on{stroke:var(--c);stroke-dasharray:9 7;animation:flow .5s linear infinite}
+.ld{cursor:pointer}.ld .ic,.ld .lamp{fill:#2a3946;transition:fill .3s}.ld .steam{opacity:0}.ld.on .steam{opacity:1}.ld.on .ldbox{stroke:#f2bd3a}.ld.on .ic{fill:#c4772c}.ld.on .lamp{fill:#ffe08a}.ld.on .burner{fill:#c0392b;stroke:#ff8a6b}.ld.on .rot{animation:spin 1s linear infinite}.ld:focus-visible .ldbox{stroke:#fff;stroke-width:2.5}.ld:hover .ldbox{stroke:#5a7183}@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:760px){.tcw{grid-template-columns:1fr}}
 .lrow{display:grid;grid-template-columns:150px 1fr 90px 60px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #16222c;font-size:14px}
 .lrow:last-child{border:0}
 .bulb{width:26px;height:26px;border-radius:50%;background:#f2bd3a;display:inline-block;vertical-align:middle;margin-right:8px;transition:opacity .3s,box-shadow .3s}
@@ -342,7 +355,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <tr><th>NODE</th><td>Главный модуль: шлюз на процессорном модуле Cortex-A72 или A55, публикует данные в MQTT Sparkplug B, исполняет сценарии, события и расписание</td></tr>
     <tr><th>DI</th><td>16 дискретных входов</td></tr><tr><th>DO</th><td>16 дискретных выходов</td></tr>
     <tr><th>RO</th><td>2 реле и 6 твердотельных реле</td></tr><tr><th>IO</th><td>8 универсальных каналов с ПИД-регулированием</td></tr>
-    <tr><th>IF</th><td>2 × RS-485 (сырой обмен или DMX512), RS-232, CAN</td></tr><tr><th>DALI</th><td>2 канала DALI-2</td></tr>
+    <tr><th>IF</th><td>3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232, CAN</td></tr><tr><th>DALI</th><td>2 канала DALI-2</td></tr>
     <tr><th>EM</th><td>Трёхфазный счётчик электроэнергии</td></tr><tr><th>STEP</th><td>2 шаговых двигателя</td></tr><tr><th>TC</th><td>2 входа Pt100 или термопара, 2 SSR, ПИД</td></tr>
     <tr><th>Wiegand</th><td>Подключение считывателей СКУД. В 3D-сборку пока не добавлен.</td></tr>
   </tbody></table></div>
@@ -356,9 +369,14 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   <div data-r="e"><h2>Протокол BOX</h2>
   <p class="sub">Узел NODE публикует данные модулей по Sparkplug B 3.0 поверх MQTT: каждый модуль виден как отдельное устройство. Полезная нагрузка кодируется в protobuf. Узел сообщает о появлении и состоянии устройств, принимает команды и события, исполняет сценарии, расписание и cron.</p>
   <div class="g3">
-    <div class="card"><h3>Структура тем</h3><p>Типы сообщений Sparkplug: NBIRTH, NDEATH, DBIRTH, DDEATH, NDATA, DDATA, NCMD, DCMD. Тема: spBv1.0/группа/тип/узел/устройство. Метрики именуются по каналам модуля.</p></div>
-    <div class="card"><h3>События и сценарии</h3><p>Правила «если, то» на узле, расписание и cron, смена сервера без потери состояния.</p></div>
-    <div class="card"><h3>Документация</h3><p>Описание каждого модуля и схема protobuf. Интерактивная версия с эмулятором: ждём материалы.</p></div>
+    <div class="card"><h3>Структура тем</h3><p>Сообщения Sparkplug: NBIRTH, NDEATH, DBIRTH, DDEATH, NDATA, DDATA, NCMD, DCMD. Тема: spBv1.0/группа/тип/узел/устройство. Группы: box, plc, lc, ledef. Идентификаторы узла и устройства: 32-битное число в hex. Вместо идентификатора можно задать псевдоним группы.</p></div>
+    <div class="card"><h3>Выход узла в онлайн</h3><p>Узел не публикует birth, пока хост не объявит себя онлайн в теме STATE (JSON по Sparkplug 3.0). Когда хост уходит офлайн, узел публикует NDEATH и останавливает обмен, а при возвращении хоста повторяет birth.</p></div>
+    <div class="card"><h3>Метрики модулей</h3><p>Метрика задаётся по имени или по короткому псевдониму, у каждой есть признак доступа: чтение, запись, сохранение после перезагрузки. У всех устройств одинаковый набор служебных: перезагрузка, повторная публикация, тип и версия прошивки, температура процессора, последняя ошибка, обновление прошивки по сети. На узле можно добавлять виртуальные метрики.</p></div>
+    <div class="card"><h3>Сценарии</h3><p>Порядок действий на узле или скрипт на Python. Действие меняет метрику устройства, группы или узла, ждёт паузу или событие, запускает другой сценарий с повторами. Сценарии добавляют, включают, выключают, читают и запускают командами по MQTT. Для отладки узел отдаёт адрес среды разработки.</p></div>
+    <div class="card"><h3>События и расписание</h3><p>Событие: триггеры по метрикам устройств, логика и условия, пауза между срабатываниями, запуск сценария. Расписание: по времени, по метке времени или по cron-строке, с повторами и стартом в заданный день. Пример из документации: светильники DALI с ежегодным повтором.</p></div>
+    <div class="card"><h3>Состояние узла</h3><p>Узел сообщает напряжение и ток питания, модулей и шины, температуру, уровень сигнала сотовой сети, оператора и ICCID. Метрики передаются при изменении больше заданного порога. Время берётся по NTP, часовой пояс и координаты определяются автоматически, есть признак «день» и «ночь» для сценариев освещения.</p></div>
+    <div class="card"><h3>Связь и смена сервера</h3><p>Узел работает по Ethernet или через модем, при отказе DHCP использует статический адрес. Брокер MQTT меняют командой: адрес, порт, имя и пароль, TLS и взаимный TLS с сертификатами. Если новый сервер недоступен, узел возвращается к прежнему.</p></div>
+    <div class="card"><h3>Документация</h3><p>Профиль каждого типа устройства с примером birth: DI, DO, RO, IO, IF, DALI 2, EM, STEP, термоконтроллер, Wiegand. Схема protobuf. <a href="https://bitbucket.org/QuintTech/box-protocol" target="_blank" rel="noopener">Репозиторий протокола</a>. Интерактивная версия с эмулятором: ждём материалы.</p></div>
   </div>
   <pre>spBv1.0/box/DCMD/{nodeID}/{deviceID}
 out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
@@ -630,8 +648,8 @@ playBg();bgv.addEventListener('loadeddata',playBg);document.addEventListener('po
 vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent='Остановить фон'}else{bgv.dataset.off='1';bgv.pause();vb.textContent='Запустить фон'}};
 /* конфигуратор */
 (function(){
-  var RULES={maxExt:9};
-  var M=[['di','DI','16 дискретных входов',{di:16}],['do','DO','16 дискретных выходов',{dout:16}],['ro','RO','2 реле и 6 твердотельных реле',{relay:2,ssr:6}],['io','IO','8 универсальных каналов с ПИД',{io:8}],['if','IF','2 × RS-485, RS-232, CAN',{rs:2}],['dali','DALI','2 шины DALI',{dali:2}],['em','EM','Трёхфазный счётчик электроэнергии',{em:1}],['step','STEP','2 шаговых двигателя',{step:2}],['tc','TC','2 канала терморегулирования',{tc:2}]];
+  var RULES={maxExt:16};
+  var M=[['di','DI','16 дискретных входов',{di:16}],['do','DO','16 дискретных выходов',{dout:16}],['ro','RO','2 реле и 6 твердотельных реле',{relay:2,ssr:6}],['io','IO','8 универсальных каналов с ПИД',{io:8}],['if','IF','3 × RS-485, RS-232, CAN',{rs:3}],['dali','DALI','2 шины DALI',{dali:2}],['em','EM','Трёхфазный счётчик электроэнергии',{em:1}],['step','STEP','2 шаговых двигателя',{step:2}],['tc','TC','2 канала терморегулирования',{tc:2}]];
   var C={};M.forEach(function(m){C[m[0]]=0});
   var LB={di:'дискретных входов',dout:'дискретных выходов',relay:'реле',ssr:'твердотельных реле',io:'универсальных каналов с ПИД',rs:'линий RS-485',dali:'шин DALI',em:'трёхфазный счётчик',step:'шаговых двигателей',tc:'каналов терморегулирования'};
   function total(){return M.reduce(function(s,m){return s+C[m[0]]},0)}
@@ -653,7 +671,7 @@ vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent=
 })();
 /* демо SCADA */
 (function(){
-  var body=$('scBody'),tab='a',L=[['Коридор',60,1],['Open space',85,1],['Переговорная',0,2],['Улица (ШУНО)',40,2]],T={sp:60,pv:22,out:0,i:0,h:[]},E={ph:[[231,12],[229,9],[232,14]],kwh:1840};
+  var body=$('scBody'),tab='a',L=[['Коридор',60,1],['Open space',85,1],['Переговорная',0,2],['Улица (ШУНО)',40,2]],T={sp:60,pv:22,out:0,i:0,h:[]},E={v:[231,229,232],a:[0,0,0],kwh:1840,ld:{k:1,s:0,m:0,o:1},touch:0,cnt:0,seq:0};
   var A={run:true,n:0,ph:0,tk:0,p:40,T:22,DUR:[2,3,2,3]};
   function renderA(){
     var pipes=[['p1',100,70],['p2',100,160],['p3',100,250]];
@@ -680,19 +698,90 @@ vb.onclick=function(){if(bgv.paused){bgv.dataset.off='';playBg();vb.textContent=
     var h=$('heat');if(h)h.setAttribute('opacity',Math.min(1,(A.T-22)/178*.8+.2));
     $('aP').textContent=Math.round(A.p)+' Па';$('aT').textContent=Math.round(A.T)+' °C';$('aC').textContent=A.n+' / 1000';$('aPh').textContent=A.run?['Импульс 1','Продувка','Импульс 2','Продувка'][ph]:'Остановлено';
   }
-  function renderL(){body.innerHTML=L.map(function(g,i){return '<div class="lrow"><div><span class="bulb" id="bb'+i+'"></span>'+g[0]+'</div><input type="range" min="0" max="100" value="'+g[1]+'" data-i="'+i+'" aria-label="Яркость: '+g[0]+'"><div class="mono" id="bp'+i+'"></div><div class="mono">DALI '+g[2]+'</div></div>'}).join('');L.forEach(function(g,i){upd(i)});}
-  function upd(i){var g=L[i],b=$('bb'+i);if(!b)return;b.style.opacity=.12+g[1]/115;b.style.boxShadow='0 0 '+(g[1]/4)+'px #f2bd3a';$('bp'+i).textContent=g[1]+' % · '+Math.round(g[1]*1.2)+' Вт';}
-  body.addEventListener('input',function(e){var r=e.target;if(r.dataset&&r.dataset.i!==undefined){L[r.dataset.i][1]=+r.value;upd(r.dataset.i)}if(r.id==='sp'){T.sp=+r.value;$('spv').textContent=T.sp+' °C'}});
-  function renderH(){body.innerHTML='<canvas id="cvh" width="900" height="190"></canvas><div class="kpi"><div><b id="kpv">22 °C</b>температура</div><div><b id="kout">0 %</b>выход ПИД</div><div><label style="font-weight:600;color:var(--text)">Уставка <span id="spv">'+T.sp+' °C</span><input id="sp" type="range" min="30" max="120" value="'+T.sp+'" style="width:220px;accent-color:#f2bd3a"></label></div></div>';}
-  function renderE(){body.innerHTML='<div class="bars" id="eb"></div><div class="kpi"><div><b id="ekw">0 кВт</b>мощность</div><div><b id="ekwh"></b>счётчик, кВт·ч</div></div>';}
+  var LZ=[[0,208,'Коридор',6],[1,116,'Open space',5],[2,24,'Переговорная',3]];
+  function renderL(){
+    var s='<svg viewBox="0 0 900 312" style="width:100%;height:auto;display:block" role="img" aria-label="Здание с тремя этажами и уличный светильник: яркость задаётся ползунками">'
+    +'<defs><filter id="lgl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter><linearGradient id="lcone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2bd3a" stop-opacity=".7"/><stop offset="1" stop-color="#f2bd3a" stop-opacity="0"/></linearGradient></defs>'
+    +'<rect x="40" y="16" width="500" height="284" rx="6" fill="#0b1219" stroke="#2a4254" stroke-width="2"/>'
+    +'<path d="M30 16H550M52 10H528" stroke="#2a4254" stroke-width="3"/>';
+    LZ.forEach(function(z){var i=z[0],y=z[1]+8,g=L[i];
+      s+='<rect x="52" y="'+y+'" width="476" height="76" rx="4" fill="#101c26"/><rect id="zr'+i+'" x="52" y="'+y+'" width="476" height="76" rx="4" fill="#f2bd3a" opacity="0"/>';
+      for(var k=0;k<z[3];k++){var cx=52+476*(k+.5)/z[3];s+='<g class="zl'+i+'"><circle cx="'+cx+'" cy="'+(y+14)+'" r="8" fill="#ffe08a" filter="url(#lgl)"/><circle cx="'+cx+'" cy="'+(y+14)+'" r="4.5" fill="#fff4c9"/></g><path d="M'+cx+' '+(y+1)+'V'+(y+9)+'" stroke="#3b5468" stroke-width="2"/>'}
+      if(i===1){for(var d=0;d<4;d++){var dx=90+d*110;s+='<rect x="'+dx+'" y="'+(y+46)+'" width="76" height="9" rx="2" fill="#2a4254"/><rect x="'+(dx+26)+'" y="'+(y+30)+'" width="24" height="16" rx="2" fill="#16222c" stroke="#3b5468"/><path d="M'+(dx+8)+' '+(y+55)+'v15M'+(dx+68)+' '+(y+55)+'v15" stroke="#2a4254" stroke-width="3"/>'}}
+      if(i===2){s+='<ellipse cx="290" cy="'+(y+52)+'" rx="120" ry="13" fill="#2a4254"/>'+[160,220,290,360,420].map(function(cx){return '<rect x="'+(cx-9)+'" y="'+(y+30)+'" width="18" height="14" rx="3" fill="#1f2f3c"/>'}).join('')}
+      if(i===0){s+='<rect x="470" y="'+(y+14)+'" width="40" height="62" rx="3" fill="#16222c" stroke="#3b5468"/><circle cx="500" cy="'+(y+46)+'" r="2.5" fill="#9aa6b4"/><path d="M52 '+(y+70)+'H460" stroke="#1f2f3c" stroke-width="3"/>'}
+      s+='<text x="62" y="'+(y+68)+'" fill="#9aa6b4" font-size="12" font-family="Manrope,sans-serif">'+g[0]+' · DALI '+g[2]+'</text><text id="zp'+i+'" x="250" y="'+(y+68)+'" text-anchor="start" fill="#f2bd3a" font-size="13" font-weight="700" font-family="JetBrains Mono,monospace"></text>';
+    });
+    s+='<path d="M16 300H884" stroke="#2a4254" stroke-width="2"/>';
+    [[640,120],[800,150]].forEach(function(p,n){var x=p[0],y=p[1];
+      s+='<polygon id="zc'+n+'" points="'+(x+44)+','+(y+6)+' '+(x-30)+',300 '+(x+118)+',300" fill="url(#lcone)" opacity="0"/><ellipse class="zl3" cx="'+(x+44)+'" cy="298" rx="'+(n?58:70)+'" ry="6" fill="#f2bd3a" opacity="0" filter="url(#lgl)"/>'
+      +'<path d="M'+x+' 300V'+y+'Q'+x+' '+(y-14)+' '+(x+22)+' '+(y-14)+'H'+(x+44)+'" fill="none" stroke="#4a6579" stroke-width="5" stroke-linecap="round"/><rect x="'+(x+30)+'" y="'+(y-18)+'" width="30" height="9" rx="4" fill="#4a6579"/>'
+      +'<g class="zl3"><circle cx="'+(x+44)+'" cy="'+(y-6)+'" r="10" fill="#ffe08a" filter="url(#lgl)"/><circle cx="'+(x+44)+'" cy="'+(y-6)+'" r="5" fill="#fff4c9"/></g>'});
+    s+='<text x="720" y="60" text-anchor="middle" fill="#9aa6b4" font-size="12" font-family="Manrope,sans-serif">Уличное освещение · DALI '+L[3][2]+'</text><text id="zp3" x="720" y="80" text-anchor="middle" fill="#f2bd3a" font-size="13" font-weight="700" font-family="JetBrains Mono,monospace"></text></svg>';
+    body.innerHTML=s+L.map(function(g,i){return '<div class="lrow"><div><span class="bulb" id="bb'+i+'"></span>'+g[0]+'</div><input type="range" min="0" max="100" value="'+g[1]+'" data-i="'+i+'" aria-label="Яркость: '+g[0]+'"><div class="mono" id="bp'+i+'"></div><div class="mono">DALI '+g[2]+'</div></div>'}).join('');L.forEach(function(g,i){upd(i)});}
+  function upd(i){var g=L[i],b=$('bb'+i);if(!b)return;var v=g[1]/100;b.style.opacity=.12+g[1]/115;b.style.boxShadow='0 0 '+(g[1]/4)+'px #f2bd3a';$('bp'+i).textContent=g[1]+' % · '+Math.round(g[1]*1.2)+' Вт';
+    var r=$('zr'+i);if(r)r.setAttribute('opacity',(v*.5).toFixed(2));var pz=$('zp'+i);if(pz)pz.textContent=g[1]+' %';
+    body.querySelectorAll('.zl'+i).forEach(function(e){e.style.opacity=(v?.2+.8*v:0.06).toFixed(2)});
+    if(i===3){[0,1].forEach(function(n){var c=$('zc'+n);if(c)c.setAttribute('opacity',(v*.85).toFixed(2))})}}
+  body.addEventListener('input',function(e){var r=e.target;if(r.dataset&&r.dataset.i!==undefined){L[r.dataset.i][1]=+r.value;upd(r.dataset.i)}if(r.id==='sp'){setSp(+r.value)}});
+  body.addEventListener('click',function(e){var b=e.target.closest('[data-sp]');if(b)setSp(T.sp+(+b.dataset.sp));var l=e.target.closest('[data-ld]');if(l){E.touch=Date.now();togg(l.dataset.ld)}});
+  body.addEventListener('keydown',function(e){if(e.key!=='Enter'&&e.key!==' ')return;var l=e.target.closest&&e.target.closest('[data-ld]');if(l){e.preventDefault();E.touch=Date.now();togg(l.dataset.ld)}});
+  function setSp(v){T.sp=Math.max(30,Math.min(120,Math.round(v)));var a=$('spv');if(a)a.textContent=T.sp+' °C';var r=$('sp');if(r)r.value=T.sp;var c=$('tcsp');if(c)c.textContent=T.sp.toFixed(1)}
+  function renderH(){body.innerHTML='<div class="tcw"><div class="tcp" role="group" aria-label="Панель термоконтроллера"><div class="tct"><b>ТК · канал 1</b><span>Pt100</span></div>'
+    +'<div class="tcd"><small>ТЕКУЩАЯ, °C</small><div class="tcv g" id="tcpv">22.0</div><small>УСТАВКА, °C</small><div class="tcv a" id="tcsp">'+T.sp.toFixed(1)+'</div></div>'
+    +'<div class="tco"><span class="led" id="tcled"></span><small>ВЫХОД SSR, ПИД</small><div class="tcb"><i id="tcob"></i></div><b id="tcop">0 %</b></div>'
+    +'<div class="tck"><button type="button" class="tcbtn" data-sp="-5" aria-label="Уставка минус 5">▼</button><button type="button" class="tcbtn" data-sp="5" aria-label="Уставка плюс 5">▲</button></div></div>'
+    +'<canvas id="cvh" width="900" height="250"></canvas></div>'
+    +'<div class="kpi"><div><b id="kpv">22 °C</b>температура</div><div><b id="kout">0 %</b>выход ПИД</div><div><label style="font-weight:600;color:var(--text)">Уставка <span id="spv">'+T.sp+' °C</span><input id="sp" type="range" min="30" max="120" value="'+T.sp+'" style="width:220px;accent-color:#f2bd3a"></label></div></div>';}
+  var LD=[['k','Чайник',2000,[1,0,0]],['s','Плита',3500,[0,1,0]],['m','Двигатель',2200,[1,1,1]],['o','Освещение и розетки',600,[0,0,1]]],PC=['#f2bd3a','#5fd08a','#ff6b6b'];
+  function togg(k){E.ld[k]=E.ld[k]?0:1;ldDraw()}
+  function ldDraw(){LD.forEach(function(l,n){var on=E.ld[l[0]];var g=$('ld'+l[0]);if(!g)return;g.setAttribute('class','ld'+(on?' on':''));g.setAttribute('aria-pressed',on?'true':'false');var st=g.querySelector('.st');if(st){st.textContent=on?'ВКЛ':'ВЫКЛ';st.setAttribute('fill',on?'#7bd88f':'#6d7a88')}
+    [0,1,2].forEach(function(p){var w=$('lw'+l[0]+p);if(w)w.setAttribute('class','wire'+(on&&l[3][p]?' on':''))})})}
+  function ldIcon(l,y){var s='';
+    if(l[0]==='k')s+='<path d="M492 '+(y+16)+'h40l-6-30h-28z" fill="#9aa6b4" class="ic"/><path d="M532 '+(y-6)+'q14 0 14 10" fill="none" stroke="#9aa6b4" stroke-width="4"/><g class="steam"><path d="M502 '+(y-20)+'q-4-6 0-12M512 '+(y-20)+'q-4-6 0-12" fill="none" stroke="#cdd6e0" stroke-width="2"/></g>';
+    if(l[0]==='s')s+='<rect x="486" y="'+(y-22)+'" width="56" height="44" rx="5" fill="#2a3946" class="ic"/>'+[0,1].map(function(a){return [0,1].map(function(b){return '<circle class="burner" cx="'+(500+a*28)+'" cy="'+(y-10+b*20)+'" r="8" fill="#16222c" stroke="#5a7183" stroke-width="2"/>'}).join('')}).join('');
+    if(l[0]==='m')s+='<circle cx="514" cy="'+y+'" r="22" fill="#2a3946" class="ic"/><g class="rot" style="transform-origin:514px '+y+'px"><path d="M514 '+(y-16)+'V'+(y+16)+'M498 '+y+'H530" stroke="#9aa6b4" stroke-width="5" stroke-linecap="round"/></g>';
+    if(l[0]==='o')s+='<circle cx="500" cy="'+(y-4)+'" r="11" fill="#2a3946" class="lamp"/><rect x="522" y="'+(y-14)+'" width="22" height="26" rx="4" fill="#2a3946" class="ic"/><circle cx="530" cy="'+(y-4)+'" r="2" fill="#0b1219"/><circle cx="538" cy="'+(y-4)+'" r="2" fill="#0b1219"/>';
+    return s}
+  function renderEm(){
+    var s='<svg viewBox="0 0 400 476" style="width:100%;height:auto;display:block" role="group" aria-label="Подключение нагрузок к трёхфазному счётчику. Нажмите на нагрузку, чтобы включить или выключить">'
+    +'<rect x="8" y="8" width="384" height="132" rx="12" fill="#0f1a22" stroke="#3b5468" stroke-width="2"/><text x="200" y="34" text-anchor="middle" fill="#f2bd3a" font-size="16" font-weight="800" font-family="Manrope,sans-serif">EM · счётчик</text>';
+    [0,1,2].forEach(function(p){var cx=70+p*130;s+='<circle cx="'+(cx-34)+'" cy="58" r="5" fill="'+PC[p]+'"/><text x="'+(cx-24)+'" y="63" fill="#e9edf2" font-size="14" font-family="JetBrains Mono,monospace">L'+(p+1)+'</text><text id="ev'+p+'" x="'+cx+'" y="86" text-anchor="middle" fill="#cdd6e0" font-size="14" font-family="JetBrains Mono,monospace">230 В</text><text id="ea'+p+'" x="'+cx+'" y="108" text-anchor="middle" fill="#e9edf2" font-size="17" font-weight="700" font-family="JetBrains Mono,monospace">0,0 А</text>'});
+    s+='<text x="24" y="130" fill="#9aa6b4" font-size="12" font-family="Manrope,sans-serif">Мощность</text><text id="ekw2" x="376" y="130" text-anchor="end" fill="#e9edf2" font-size="15" font-weight="800" font-family="JetBrains Mono,monospace">0,0 кВт</text>';
+    [0,1,2].forEach(function(p){s+='<path class="busl" d="M'+(22+p*11)+' 140V470" stroke="'+PC[p]+'"/>'});
+    LD.forEach(function(l,n){var y=156+n*78,c=y+32,mult=l[3][0]+l[3][1]+l[3][2]>1,k=0;
+      [0,1,2].forEach(function(p){if(!l[3][p])return;var yy=mult?c-8+k*8:c;k++;s+='<path id="lw'+l[0]+p+'" class="wire" style="--c:'+PC[p]+'" d="M'+(22+p*11)+' '+yy+'H64"/>'});
+      s+='<g class="ld" id="ld'+l[0]+'" data-ld="'+l[0]+'" role="button" tabindex="0" aria-pressed="false" aria-label="'+l[1]+', '+(l[2]/1000).toFixed(1).replace('.',',')+' кВт"><rect x="64" y="'+y+'" width="328" height="64" rx="10" fill="#101c26" stroke="#2a4254" stroke-width="1.5" class="ldbox"/><g transform="translate(-420,0)">'+ldIcon(l,c)+'</g>'
+      +'<text x="150" y="'+(c-4)+'" fill="#e9edf2" font-size="15" font-weight="700" font-family="Manrope,sans-serif">'+l[1]+'</text><text x="150" y="'+(c+16)+'" fill="#9aa6b4" font-size="12" font-family="JetBrains Mono,monospace">'+(l[2]/1000).toFixed(1).replace('.',',')+' кВт · '+(mult?'3 фазы':'L'+(l[3].indexOf(1)+1))+'</text><text class="st" x="378" y="'+(c+5)+'" text-anchor="end" font-size="13" font-weight="700" font-family="JetBrains Mono,monospace"></text></g>'});
+    body.innerHTML=s+'</svg><div class="kpi"><div><b id="ekw">0 кВт</b>мощность</div><div><b id="ekwh"></b>счётчик, кВт·ч</div></div>';ldDraw();}
+  function renderE(){
+    if(window.innerWidth<=620)return renderEm();
+    var ys={k:58,s:128,m:200,o:268},s='<svg viewBox="0 0 900 312" style="width:100%;height:auto;display:block" role="group" aria-label="Подключение нагрузок к трёхфазному счётчику. Нажмите на нагрузку, чтобы включить или выключить">'
+    +'<rect x="20" y="24" width="230" height="264" rx="12" fill="#0f1a22" stroke="#3b5468" stroke-width="2"/><text x="135" y="52" text-anchor="middle" fill="#f2bd3a" font-size="16" font-weight="800" font-family="Manrope,sans-serif">EM · счётчик</text>';
+    [0,1,2].forEach(function(p){var y=96+p*46;s+='<circle cx="44" cy="'+(y-4)+'" r="6" fill="'+PC[p]+'"/><text x="60" y="'+y+'" fill="#e9edf2" font-size="14" font-family="JetBrains Mono,monospace">L'+(p+1)+'</text><text id="ev'+p+'" x="130" y="'+y+'" fill="#cdd6e0" font-size="14" font-family="JetBrains Mono,monospace">230 В</text><text id="ea'+p+'" x="196" y="'+y+'" fill="#e9edf2" font-size="14" font-weight="700" font-family="JetBrains Mono,monospace">0,0 А</text>'});
+    s+='<path d="M36 236H234" stroke="#1f2933"/><text x="36" y="262" fill="#9aa6b4" font-size="12" font-family="Manrope,sans-serif">Мощность</text><text id="ekw2" x="234" y="262" text-anchor="end" fill="#e9edf2" font-size="16" font-weight="800" font-family="JetBrains Mono,monospace">0,0 кВт</text>';
+    [0,1,2].forEach(function(p){s+='<path d="M250 '+(100+p*14)+'H300" stroke="'+PC[p]+'" stroke-width="3"/><path d="M300 '+(100+p*14)+'V'+(40+p*0)+'" stroke="none"/>'});
+    LD.forEach(function(l,n){var y=ys[l[0]];
+      [0,1,2].forEach(function(p){if(!l[3][p])return;var py=100+p*14,yy=l[3].filter(Boolean).length>1?y-10+p*10:y;
+        s+='<path id="lw'+l[0]+p+'" class="wire" style="--c:'+PC[p]+'" d="M300 '+py+'H'+(330+p*14)+'V'+yy+'H470"/>'});
+      s+='<g class="ld" id="ld'+l[0]+'" data-ld="'+l[0]+'" role="button" tabindex="0" aria-pressed="false" aria-label="'+l[1]+', '+(l[2]/1000).toFixed(1).replace('.',',')+' кВт"><rect x="470" y="'+(y-34)+'" width="410" height="68" rx="10" fill="#101c26" stroke="#2a4254" stroke-width="1.5" class="ldbox"/>';
+      if(l[0]==='k')s+='<path d="M492 '+(y+16)+'h40l-6-30h-28z" fill="#9aa6b4" class="ic"/><path d="M532 '+(y-6)+'q14 0 14 10" fill="none" stroke="#9aa6b4" stroke-width="4"/><g class="steam"><path d="M502 '+(y-20)+'q-4-6 0-12M512 '+(y-20)+'q-4-6 0-12" fill="none" stroke="#cdd6e0" stroke-width="2"/></g>';
+      if(l[0]==='s')s+='<rect x="486" y="'+(y-22)+'" width="56" height="44" rx="5" fill="#2a3946" class="ic"/>'+[0,1].map(function(a){return [0,1].map(function(b){return '<circle class="burner" cx="'+(500+a*28)+'" cy="'+(y-10+b*20)+'" r="8" fill="#16222c" stroke="#5a7183" stroke-width="2"/>'}).join('')}).join('');
+      if(l[0]==='m')s+='<circle cx="514" cy="'+y+'" r="22" fill="#2a3946" class="ic"/><g class="rot" style="transform-origin:514px '+y+'px"><path d="M514 '+(y-16)+'V'+(y+16)+'M498 '+y+'H530" stroke="#9aa6b4" stroke-width="5" stroke-linecap="round"/></g>';
+      if(l[0]==='o')s+='<circle cx="500" cy="'+(y-4)+'" r="11" fill="#2a3946" class="lamp"/><rect x="522" y="'+(y-14)+'" width="22" height="26" rx="4" fill="#2a3946" class="ic"/><circle cx="530" cy="'+(y-4)+'" r="2" fill="#0b1219"/><circle cx="538" cy="'+(y-4)+'" r="2" fill="#0b1219"/>';
+      s+='<text x="566" y="'+(y-4)+'" fill="#e9edf2" font-size="15" font-weight="700" font-family="Manrope,sans-serif">'+l[1]+'</text><text x="566" y="'+(y+16)+'" fill="#9aa6b4" font-size="12" font-family="JetBrains Mono,monospace">'+(l[2]/1000).toFixed(1).replace('.',',')+' кВт · '+(l[3][0]+l[3][1]+l[3][2]>1?'3 фазы':'L'+(l[3].indexOf(1)+1))+'</text><text class="st" x="866" y="'+(y+5)+'" text-anchor="end" font-size="13" font-weight="700" font-family="JetBrains Mono,monospace"></text></g>'});
+    body.innerHTML=s+'</svg><div class="kpi"><div><b id="ekw">0 кВт</b>мощность</div><div><b id="ekwh"></b>счётчик, кВт·ч</div></div>';ldDraw();}
   function tick(){
     if(tab==='h'){var err=T.sp-T.pv;T.i=Math.max(-40,Math.min(40,T.i+err*.02));T.out=Math.max(0,Math.min(100,err*4+T.i));T.pv+=(T.out*.05-(T.pv-22)*.012);T.h.push([T.pv,T.sp]);if(T.h.length>150)T.h.shift();
-      var c=$('cvh');if(c){var x=c.getContext('2d');x.clearRect(0,0,900,190);x.strokeStyle='#1f2933';for(var k=0;k<5;k++){x.beginPath();x.moveTo(0,k*47+5);x.lineTo(900,k*47+5);x.stroke()}
+      var c=$('cvh');if(c){var x=c.getContext('2d');x.setTransform(1,0,0,250/190,0,0);x.clearRect(0,0,900,190);x.strokeStyle='#1f2933';for(var k=0;k<5;k++){x.beginPath();x.moveTo(0,k*47+5);x.lineTo(900,k*47+5);x.stroke()}
         [[1,'#f2bd3a',[6,5]],[0,'#2aa5e0',[]]].forEach(function(s){x.beginPath();x.setLineDash(s[2]);x.strokeStyle=s[1];x.lineWidth=2;T.h.forEach(function(p,j){var X=j*6,Y=185-(p[s[0]]-20)*1.65;j?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke()});x.setLineDash([]);}
-      $('kpv').textContent=T.pv.toFixed(1)+' °C';$('kout').textContent=Math.round(T.out)+' %';}
-    if(tab==='e'){E.ph.forEach(function(p){p[0]=Math.max(226,Math.min(234,p[0]+(Math.random()-.5)*1.4));p[1]=Math.max(4,Math.min(20,p[1]+(Math.random()-.5)*1.6))});
-      var kw=E.ph.reduce(function(s,p){return s+p[0]*p[1]/1000},0);E.kwh+=kw/3600*5;
-      $('eb').innerHTML=E.ph.map(function(p,i){return '<div class="bar"><b>L'+(i+1)+'</b><i style="width:'+Math.round(p[1]*5)+'%"></i><span class="mono">'+p[0].toFixed(0)+' В · '+p[1].toFixed(1)+' А</span></div>'}).join('');$('ekw').textContent=kw.toFixed(1)+' кВт';$('ekwh').textContent=E.kwh.toFixed(1);}
+      $('kpv').textContent=T.pv.toFixed(1)+' °C';$('kout').textContent=Math.round(T.out)+' %';var pv=$('tcpv');if(pv){pv.textContent=T.pv.toFixed(1);$('tcsp').textContent=T.sp.toFixed(1);$('tcob').style.width=Math.round(T.out)+'%';$('tcop').textContent=Math.round(T.out)+' %';$('tcled').className='led'+(T.out>5?' on':'')}}
+    if(tab==='e'){
+      if(Date.now()-E.touch>9000&&++E.cnt%5===0){togg(['s','m','k'][E.seq%3]);E.seq++}
+      var tg=[.25,.25,.25];LD.forEach(function(l){if(E.ld[l[0]]){var n=l[3][0]+l[3][1]+l[3][2];for(var p=0;p<3;p++)if(l[3][p])tg[p]+=l[2]/n/230}});
+      var kw=0;for(var p=0;p<3;p++){E.a[p]+=(tg[p]-E.a[p])*.5+(Math.random()-.5)*.12;if(E.a[p]<0)E.a[p]=0;E.v[p]=Math.max(226,Math.min(234,E.v[p]+(Math.random()-.5)*1.4-(E.a[p]>10?.3:0)));kw+=E.v[p]*E.a[p]/1000;
+        var ev=$('ev'+p),ea=$('ea'+p);if(ev)ev.textContent=E.v[p].toFixed(0)+' В';if(ea)ea.textContent=E.a[p].toFixed(1).replace('.',',')+' А'}
+      E.kwh+=kw/3600*5;var k2=$('ekw2');if(k2)k2.textContent=kw.toFixed(1).replace('.',',')+' кВт';$('ekw').textContent=kw.toFixed(1)+' кВт';$('ekwh').textContent=E.kwh.toFixed(1);}
   }
   $('scTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;tab=b.dataset.t;$('scAld').hidden=tab!=='a';if(tab==='a'&&window.aldGo_ald)window.aldGo_ald();body.hidden=tab==='a';this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});if(tab!=='a')({l:renderL,h:renderH,e:renderE})[tab]();});
   setInterval(tick,600);
@@ -716,7 +805,7 @@ const INFO={
  do:['DO','16 дискретных выходов для управления исполнительными устройствами.'],
  ro:['RO','Релейный модуль: 2 реле и 6 твердотельных реле (SSR).'],
  io:['IO','8 универсальных каналов с ПИД-регулированием.'],
- if:['IF','Интерфейсный модуль: 2 × RS-485 (сырой обмен или DMX512), RS-232 и CAN.'],
+ if:['IF','Интерфейсный модуль: 3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232 и CAN.'],
  dali:['DALI','Два канала DALI-2 для управления освещением, до 128 устройств на канал.'],
  em:['EM','Трёхфазный счётчик электроэнергии.'],
  step:['STEP','Управление двумя шаговыми двигателями.'],
@@ -724,11 +813,11 @@ const INFO={
 };
 const SPEC={
  node:[['Питание','24 В, ток до 2 А'],['Шина модулей','Ethernet 10BASE-T1S, CAN'],['Процессор','4 ядра ARM Cortex-A72, 1,5 ГГц, или Cortex-A55, 2,0 ГГц (два варианта процессорного модуля)'],['Память','eMMC от 16 ГБ до 512 ГБ, ОЗУ LPDDR4X 2–8 ГБ, зависит от варианта'],['Связь','Wi-Fi 2,4 и 5 ГГц, Bluetooth 5.0, NFC, Ethernet 1 Гбит ×2'],['Порты','USB-A ×2, USB-C, HDMI, NanoSIM, microSD'],['Опции','LoRa, GNSS, GSM: в нескольких вариантах сборки'],['Интерфейс пользователя','ЖК-дисплей и джойстик, часы реального времени с резервным питанием'],['Температура','0…+40 °C']],
- di:[['Питание','24 В'],['Каналы','16 дискретных входов'],['Входное напряжение','0–35 В на канал'],['Ток канала','до 2,35 мА, до 78 мВт'],['Изоляция цифровой части','4000 В'],['Шина','Ethernet 10BASE-T1S, CAN'],['Подключают','кнопки и концевики, герконы, энкодеры, датчики, выходы внешних логических устройств'],['Температура','0…+40 °C, есть OLED-дисплей']],
- do:[['Питание','24 В'],['Каналы','8×2, всего 16 дискретных выходов'],['Ток канала','до 600 мА, ток короткого замыкания 0,7–1,9 А'],['Сопротивление канала','0,12 Ом'],['Время переключения','включение 17–22 мкс, выключение 22–40 мкс'],['ШИМ','до 20 кГц'],['Рассеиваемая мощность','5 Вт на 8 каналов'],['Изоляция цифровой части','2000 В'],['Подключают','светодиоды и лампы, клапаны, соленоиды, реле, пьезоизлучатели, слаботочные двигатели']],
+ di:[['Питание','24 В; логика питается по шине, датчикам нужен отдельный внешний блок питания 24 В'],['Каналы','16 дискретных входов'],['Входное напряжение','−35…+35 В на канал'],['Пороги переключения','вверх при 11 В, вниз при 5 В'],['Частота сигнала','до 200 кГц на канал'],['Ток канала','до 2,35 мА, до 78 мВт'],['Развязка','входы от вычислительной части: да, 5000 В; между каналами: нет'],['Потребление модуля','1,5–2 Вт'],['Подключают','кнопки и концевики, герконы, импульсные выходы счётчиков, энкодеры, датчики с выходом на «плюс» или «минус», контакты реле'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
+ do:[['Питание','24 В; логика питается по шине, нагрузке нужен отдельный внешний блок питания'],['Каналы','16 дискретных выходов'],['Рабочее напряжение канала','10,5…45 В'],['Ток канала','до 700 мА, ток короткого замыкания 0,7–1,9 А'],['Сопротивление открытого канала','0,12 Ом'],['Время переключения','включение 17–22 мкс, выключение 22–40 мкс (0,5 А, нагрузка 48 Ом)'],['Частота','до 25 кГц на канал'],['Энергия импульса на канал','1,8 Дж мгновенная, 0,35 Дж продолжительная'],['Защита','от короткого замыкания, перегрева и скачков напряжения на каждом канале'],['Развязка','от вычислительной части: да, 2000 В; между каналами: нет'],['Потребление модуля','1,5–2 Вт'],['Подключают','светодиоды и лампы, электромеханические и оптоэлектронные реле, клапаны, двигатели, трансформаторы, нагреватели, ключи N и P типа (типовые схемы есть в брошюре модуля)'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
  ro:[['Твердотельные реле','6 каналов SSR: коммутация 5–500 В, рабочий ток 0,18 А, пиковый до 1,1 А (не дольше 10 мс)'],['Механические реле','2 канала NO/NC: 250 В AC, максимум 400 В AC, ток до 5 А'],['Изоляция цифровой части','2500 В'],['Шина','Ethernet 10BASE-T1S, CAN'],['Подключают','контакторы и реле, нагреватели, лампы накаливания, двигатели постоянного и переменного тока'],['Температура','0…+40 °C, есть OLED-дисплей']],
  io:[['Питание','24 В, ток до 2,5 А'],['Каналы','8, тип каждого задаётся программно'],['Напряжение','вход 0–10 В (16 бит), выход 0–11 В (13 бит)'],['Ток','вход 0–25 мА (16 бит), выход 0–25 мА (13 бит)'],['Дискретные','вход 0–24 В до 20 кГц с программным порогом, выход 0–24 В до 500 мА'],['Сопротивление','измерение до 1 МОм'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
- if:[['Питание','24 В, ток до 300 мА'],['RS-485 ×2','до 1000 м, до 500 кбит/с, до 255 устройств на шине, управляемый терминатор'],['RS-232 ×1','до 10 м, до 460 кбит/с'],['CAN ×1','до 1 Мбит/с, управляемый терминатор'],['Изоляция цифровой части','4000 В'],['Подключают','счётчики, датчики, внешние устройства контроля и управления'],['Температура','0…+40 °C, есть OLED-дисплей']],
+ if:[['Питание','от шины модулей, потребляемая мощность 8 Вт'],['RS-485 ×3','до 1000 м, до 500 кбит/с, до 255 устройств на линии, терминатор 120 Ом включается программно; Modbus RTU, OSDP, DMX512'],['RS-232 ×1','до 15 м, до 460 кбит/с; Modbus RTU, Binary, ASCII'],['CAN ×1','1–5 Мбит/с в зависимости от протокола'],['Развязка','все интерфейсы изолированы от вычислительной части, 5000 В'],['Защита','по току 100 мА на каждую линию'],['Готовность','5 с после подачи питания'],['Подключают','счётчики, датчики, считыватели, светильники DMX512, операторские панели, внешние устройства контроля и управления'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
  dali:[['Питание','24 В, ток до 1,2 А'],['Каналы','2 линии DALI-2, до 250 мА на линию'],['Устройства','до 128 на линию: 64 светильника и 64 датчика'],['Длина линии','до 300 м при сечении 1,5 мм²'],['Защита','от короткого замыкания'],['Изоляция цифровой части','3700 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
  em:[['Напряжение','межфазное 5…400 В, фазное 5…580 В, 45…65 Гц'],['Ток','через измерительные трансформаторы, зависит от трансформатора'],['Разрешающая способность: энергия','активная и реактивная 0,1–0,2 %'],['Разрешающая способность: ток, напряжение, мощность','0,1–0,5 % и 0,2–0,5 %'],['Частота','разрешение 0,001 Гц'],['Каналы калибровки','2 (оптопары)'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
  step:[['Каналы','2 канала управления двухфазными шаговыми двигателями'],['Обратная связь','2 энкодера ABZ, оптических или магнитных'],['Управление','векторное (FOC), контроль момента, скорости и положения'],['ШИМ','25–100 кГц'],['Максимальное потребление','16 А'],['Изоляция цифровой части','2500 В'],['Температура','0…+40 °C, есть OLED-дисплей']],

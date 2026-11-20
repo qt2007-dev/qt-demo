@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 603" width="1100" height="603" font-family="Manrope,'Helvetica Neue',Arial,sans-serif">
 <rect width="1100" height="603" fill="#0a1118"/>
 <text x="40" y="46" fill="#e9edf2" font-size="24" font-weight="800">Схема подключения: модуль DI, 16 дискретных входов</text>
-<text x="40" y="72" fill="#9aa6b4" font-size="14">Входное напряжение 0–35 В, ток до 2,35 мА на канал. Показаны четыре примера подключения.</text>
+<text x="40" y="72" fill="#9aa6b4" font-size="14">Вход −35…+35 В, порог 11 В вверх и 5 В вниз, до 200 кГц, ток до 2,35 мА. Четыре примера подключения.</text>
 <rect x="435" y="116" width="230" height="317" rx="12" fill="#0f161d" stroke="#3b5468" stroke-width="2"/>
 <text x="550.0" y="146" text-anchor="middle" fill="#f2bd3a" font-size="20" font-weight="800">DI</text>
 <rect x="536.0" y="158" width="28" height="50" rx="4" fill="#0a1118" stroke="#3b5468"/><path d="M542.0 170h16M542.0 180h12" stroke="#2aa5e0" stroke-width="2"/>
@@ -65,10 +65,10 @@
 <circle cx="665" cy="338" r="4.5" fill="#2aa5e0"/>
 <text x="655" y="342" text-anchor="end" fill="#e9edf2" font-size="12" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">IN15</text>
 <circle cx="483" cy="433" r="4.5" fill="#ff6b6b"/><circle cx="617" cy="433" r="4.5" fill="#8fa0b2"/>
-<text x="483" y="421" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="421" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">PWR COM</text>
+<text x="483" y="421" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">+24 В</text><text x="617" y="421" text-anchor="middle" fill="#e9edf2" font-size="11" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace">GND</text>
 <path d="M483 433V487" stroke="#ff6b6b" stroke-width="2.2"/><path d="M617 433V487" stroke="#8fa0b2" stroke-width="2.2"/>
 <rect x="415" y="487" width="270" height="44" rx="10" fill="#0f161d" stroke="#3b5468" stroke-width="1.5"/><text x="550.0" y="514" text-anchor="middle" fill="#e9edf2" font-size="13" font-weight="700">Блок питания 24 В</text>
-<text x="550.0" y="553" text-anchor="middle" fill="#9aa6b4" font-size="12">Общий провод для всех входов: PWR COM</text>
+<text x="550.0" y="553" text-anchor="middle" fill="#9aa6b4" font-size="12">Общий провод для всех входов: GND</text>
 <path d="M685 509H775" stroke="#f2bd3a" stroke-width="3"/><path d="M775 502L787 509L775 516Z" fill="#f2bd3a"/>
 <text x="801" y="503" fill="#f2bd3a" font-size="12" font-weight="700">Шина модулей</text><text x="801" y="519" fill="#9aa6b4" font-size="12">Ethernet 10BASE-T1S, CAN, питание</text><text x="801" y="535" fill="#9aa6b4" font-size="12">к следующему модулю</text>
 <circle cx="40" cy="573" r="5" fill="#2aa5e0"/><text x="52" y="577" fill="#9aa6b4" font-size="12">сигнал</text><circle cx="116" cy="573" r="5" fill="#ff6b6b"/><text x="128" y="577" fill="#9aa6b4" font-size="12">+24 В</text><circle cx="190" cy="573" r="5" fill="#8fa0b2"/><text x="202" y="577" fill="#9aa6b4" font-size="12">общий провод, PWR COM</text>
