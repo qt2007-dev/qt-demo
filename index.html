@@ -105,7 +105,7 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 .cmp .cmpl{color:#cdd6e0!important;font-weight:600}
 .cmp .cmpr>div:last-child{color:#cdd6e0}
 .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 0}
-.shots div{aspect-ratio:16/10;border:1px dashed var(--line);border-radius:12px;background:#0b1118;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:var(--mute);font-size:13.5px}
+.shots figure{margin:0}.shots img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0b1118}.shots figcaption{margin:8px 2px 0;color:var(--mute);font-size:13.5px}
 @media (max-width:760px){.cmp .cmpr{grid-template-columns:1fr}.cmp .cmpr>div+div{border-left:0;border-top:1px dashed var(--line)}.cmp .cmpl{background:rgba(255,255,255,.03)}.cmp .cmph{display:none}.cmp .cmpr>div:nth-child(2)::before{content:"Стандартная SCADA: ";color:#e7edf3;font-weight:700}.cmp .cmpr>div:nth-child(3)::before{content:"Свой интерфейс: ";color:var(--gold);font-weight:700}.shots{grid-template-columns:1fr}}
 #scAld .aldw{padding:0 4px!important}
 .ald-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 8px}
@@ -432,7 +432,7 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
   </div></div></div>
   <div class="need"><b>Что это за экран:</b> демонстрация, нарисованная по возможностям модулей DALI, IO и EM, а не снимок реальной системы. Такие экраны собирают в FUXA, Node-RED или любой SCADA с поддержкой MQTT Sparkplug.</div>
-  <div class="need"><b>Нужно от вас:</b> примеры ваших интерфейсов (скриншоты или запись экрана) и скриншоты стандартных экранов FUXA. Добавим их в этот раздел.</div>
+  <div class="need"><b>Нужно от вас:</b> примеры ваших интерфейсов (скриншоты или запись экрана). Добавим их в этот раздел рядом с примерами выше.</div>
   <h3 style="margin:26px 0 6px">Два пути к экрану управления</h3>
   <p class="sub" style="margin:0 0 4px">Стандартная SCADA быстро решает типовые задачи. Когда экран должен показывать процесс и быть частью продукта, делаем свой интерфейс.</p>
   <div class="cmp">
@@ -445,8 +445,8 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     <div class="cmpr"><div class="cmpl">Когда выбирать</div><div>Значения, тренды, тревоги, кнопки управления</div><div>Наглядность процесса, экран как часть продукта</div></div>
   </div>
   <h3 style="margin:26px 0 6px">Те же экраны в стандартной SCADA</h3>
-  <p class="sub" style="margin:0 0 4px">Освещение, нагрев и счётчик электроэнергии, собранные в FUXA из тех же данных. Так видно, что даёт стандартный инструмент.</p>
-  <div class="shots"><div>Освещение в FUXA<br>скриншот будет здесь</div><div>Нагрев в FUXA<br>скриншот будет здесь</div><div>Энергия в FUXA<br>скриншот будет здесь</div></div>
+  <p class="sub" style="margin:0 0 4px">Освещение, нагрев и счётчик электроэнергии в настоящей FUXA, с теми же данными. Снимки сделаны в работающей системе, значения симулируются. Так видно, что даёт стандартный инструмент.</p>
+  <div class="shots"><figure><img loading="lazy" src="assets/fuxa/light.png" alt="Экран «Освещение» в стандартной SCADA FUXA"><figcaption>Освещение</figcaption></figure><figure><img loading="lazy" src="assets/fuxa/heat.png" alt="Экран «Нагрев» в стандартной SCADA FUXA"><figcaption>Нагрев</figcaption></figure><figure><img loading="lazy" src="assets/fuxa/energy.png" alt="Экран «Энергия» в стандартной SCADA FUXA"><figcaption>Энергия</figcaption></figure></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <h2>Искусственный интеллект на контроллере</h2>
