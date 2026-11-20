@@ -537,18 +537,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " %",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -778,18 +772,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " %",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1019,18 +1007,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " %",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1344,7 +1326,7 @@
      }
     },
     "variables": {},
-    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_5c756d349c93581b\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_bfebb28dd51259f0\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Освещение здания и улицы</text><text id=\"svg_8d080876ea085a34\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модули DALI, уровень 0–100 %</text><rect id=\"svg_c45d5fe4a645512d\" x=\"60\" y=\"110\" width=\"540\" height=\"520\" rx=\"6\" fill=\"#0f1820\" stroke=\"#32475a\" /><rect id=\"svg_07284caf47115972\" x=\"80\" y=\"120\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_fc92eba0d7cd51e1\" x=\"100\" y=\"146\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_18ce98dc214f5f1e\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_d42fe5c7512d5b20\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_a609117cf5015d4d\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c81f9f84efab5ec8\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_683bc1593df4504a\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_a5b952a441f9573e\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_4d45b932f9d15dd2\" x=\"560\" y=\"146\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_f78aa6d8d5ee5ccb\" x=\"80\" y=\"270\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_a5ff90d7dc2c5c1d\" x=\"100\" y=\"296\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_9d92a931b99b5691\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_2f5b9596dc6c5879\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_de3bddb1ef245d3c\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c3a48055bfcf5f55\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_792443023e835476\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_930763a63aed55ff\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_b0d1e134f3aa5a8d\" x=\"560\" y=\"296\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_05962de65e08536b\" x=\"80\" y=\"420\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_402d313935045d08\" x=\"100\" y=\"446\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_a51fe83eed8f590f\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_0d4509ca053454e9\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_3be2facf9ee35219\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_62f7d88262025001\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_fef51cd64ec45693\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_9bd88a2f1e3c52bb\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_2cf14658704455ee\" x=\"560\" y=\"446\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_e635e47b5b09509e\" x=\"650\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_d0098d37dc5c560c\" type=\"svg-ext-shapes\" x=\"650\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a130c62ae9195bff\" x=\"688.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_701ffbff89305c2a\" type=\"svg-ext-shapes\" x=\"734\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_6e2c7c53a1045de4\" x=\"772.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_3c91419ebf2f585b\" type=\"svg-ext-shapes\" x=\"818\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_d606b4c99480537e\" x=\"856.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><text id=\"svg_0408b7e94fb95f4a\" x=\"650\" y=\"300\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_e9706c502a4a54ef\" type=\"svg-ext-shapes\" x=\"650\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_cb205e67b6c85fea\" x=\"688.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_878ed99d419e5977\" type=\"svg-ext-shapes\" x=\"734\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_9f6a8f8c1ea15d03\" x=\"772.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_ef7e760592b452d5\" type=\"svg-ext-shapes\" x=\"818\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_c5b26e6e86ad5089\" x=\"856.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><text id=\"svg_57e0697347635ecd\" x=\"650\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_0ec1861ea9a859af\" type=\"svg-ext-shapes\" x=\"650\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_77ec89440375514b\" x=\"688.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0 %</text><rect id=\"shape_cb70c56f66dd5516\" type=\"svg-ext-shapes\" x=\"734\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_661514b14c355943\" x=\"772.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">50 %</text><rect id=\"shape_8bb9c9b03a6259df\" type=\"svg-ext-shapes\" x=\"818\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_f7f4dfec48295888\" x=\"856.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 %</text><rect id=\"svg_4f5d6f46fee3576e\" x=\"930\" y=\"430\" width=\"250\" height=\"200\" rx=\"6\" fill=\"#0c141b\" stroke=\"#243241\" /><rect id=\"svg_2302839b244759ff\" x=\"930\" y=\"600\" width=\"250\" height=\"30\" fill=\"#18222c\" stroke=\"#243241\"/><rect id=\"svg_a6152ef290355e6f\" x=\"1050\" y=\"270\" width=\"8\" height=\"330\" fill=\"#6f8296\" stroke=\"none\"/><ellipse id=\"shape_13649a5a04bf5dc3\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1054\" cy=\"262\" rx=\"26\" ry=\"14\" stroke=\"#000\"/><polygon id=\"shape_a3a48114429a5ba7\" type=\"svg-ext-shapes\" fill=\"#0c141b\" points=\"1030,276 1078,276 1130,600 978,600\" stroke=\"none\"/><text id=\"svg_b9b214f0127c5979\" x=\"1055\" y=\"200\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Уличный светильник</text><circle id=\"shape_485ea6be105a5582\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1055\" cy=\"230\" r=\"9\" stroke=\"#000\"/></g></svg>"
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_5c756d349c93581b\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_bfebb28dd51259f0\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Освещение здания и улицы</text><text id=\"svg_8d080876ea085a34\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модули DALI, уровень 0–100 %</text><rect id=\"svg_c45d5fe4a645512d\" x=\"60\" y=\"110\" width=\"540\" height=\"520\" rx=\"6\" fill=\"#0f1820\" stroke=\"#32475a\" /><rect id=\"svg_07284caf47115972\" x=\"80\" y=\"120\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_fc92eba0d7cd51e1\" x=\"100\" y=\"146\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_18ce98dc214f5f1e\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_d42fe5c7512d5b20\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_a609117cf5015d4d\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c81f9f84efab5ec8\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_683bc1593df4504a\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"162\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_a5b952a441f9573e\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_4d45b932f9d15dd2\" x=\"560\" y=\"146\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_f78aa6d8d5ee5ccb\" x=\"80\" y=\"270\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_a5ff90d7dc2c5c1d\" x=\"100\" y=\"296\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_9d92a931b99b5691\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_2f5b9596dc6c5879\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_de3bddb1ef245d3c\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_c3a48055bfcf5f55\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_792443023e835476\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"312\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_930763a63aed55ff\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_b0d1e134f3aa5a8d\" x=\"560\" y=\"296\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><rect id=\"svg_05962de65e08536b\" x=\"80\" y=\"420\" width=\"500\" height=\"130\" rx=\"0\" fill=\"#111c26\" stroke=\"#32475a\" /><text id=\"svg_402d313935045d08\" x=\"100\" y=\"446\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_a51fe83eed8f590f\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"110\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_0d4509ca053454e9\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"202\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_3be2facf9ee35219\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"294\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_62f7d88262025001\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"386\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><rect id=\"shape_fef51cd64ec45693\" type=\"svg-ext-shapes\" fill=\"#161f28\" x=\"478\" y=\"462\" width=\"70\" height=\"70\" rx=\"3\"/><g id=\"VAL_9bd88a2f1e3c52bb\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_2cf14658704455ee\" x=\"560\" y=\"446\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_e635e47b5b09509e\" x=\"650\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Переговорная</text><rect id=\"shape_d0098d37dc5c560c\" type=\"svg-ext-shapes\" x=\"650\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a130c62ae9195bff\" x=\"688.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">0 %</text><rect id=\"shape_701ffbff89305c2a\" type=\"svg-ext-shapes\" x=\"734\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_6e2c7c53a1045de4\" x=\"772.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">50 %</text><rect id=\"shape_3c91419ebf2f585b\" type=\"svg-ext-shapes\" x=\"818\" y=\"164\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_d606b4c99480537e\" x=\"856.0\" y=\"187.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">100 %</text><text id=\"svg_0408b7e94fb95f4a\" x=\"650\" y=\"300\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Open space</text><rect id=\"shape_e9706c502a4a54ef\" type=\"svg-ext-shapes\" x=\"650\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_cb205e67b6c85fea\" x=\"688.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">0 %</text><rect id=\"shape_878ed99d419e5977\" type=\"svg-ext-shapes\" x=\"734\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_9f6a8f8c1ea15d03\" x=\"772.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">50 %</text><rect id=\"shape_ef7e760592b452d5\" type=\"svg-ext-shapes\" x=\"818\" y=\"314\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_c5b26e6e86ad5089\" x=\"856.0\" y=\"337.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">100 %</text><text id=\"svg_57e0697347635ecd\" x=\"650\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Коридор</text><rect id=\"shape_0ec1861ea9a859af\" type=\"svg-ext-shapes\" x=\"650\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_77ec89440375514b\" x=\"688.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">0 %</text><rect id=\"shape_cb70c56f66dd5516\" type=\"svg-ext-shapes\" x=\"734\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_661514b14c355943\" x=\"772.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">50 %</text><rect id=\"shape_8bb9c9b03a6259df\" type=\"svg-ext-shapes\" x=\"818\" y=\"464\" width=\"76\" height=\"36\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_f7f4dfec48295888\" x=\"856.0\" y=\"487.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">100 %</text><rect id=\"svg_4f5d6f46fee3576e\" x=\"930\" y=\"430\" width=\"250\" height=\"200\" rx=\"6\" fill=\"#0c141b\" stroke=\"#243241\" /><rect id=\"svg_2302839b244759ff\" x=\"930\" y=\"600\" width=\"250\" height=\"30\" fill=\"#18222c\" stroke=\"#243241\"/><rect id=\"svg_a6152ef290355e6f\" x=\"1050\" y=\"270\" width=\"8\" height=\"330\" fill=\"#6f8296\" stroke=\"none\"/><ellipse id=\"shape_13649a5a04bf5dc3\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1054\" cy=\"262\" rx=\"26\" ry=\"14\" stroke=\"#000\"/><polygon id=\"shape_a3a48114429a5ba7\" type=\"svg-ext-shapes\" fill=\"#0c141b\" points=\"1030,276 1078,276 1130,600 978,600\" stroke=\"none\"/><text id=\"svg_b9b214f0127c5979\" x=\"1055\" y=\"200\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Уличный светильник</text><circle id=\"shape_485ea6be105a5582\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1055\" cy=\"230\" r=\"9\" stroke=\"#000\"/></g></svg>"
    },
    {
     "id": "v_469b2ba8af0a",
@@ -1370,18 +1352,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " °C",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 1,
-         "max": 1,
-         "text": "1",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 1
         }
        ]
       },
@@ -1401,18 +1377,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " °C",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1432,18 +1402,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " %",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1607,7 +1571,7 @@
      }
     },
     "variables": {},
-    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_4f6fbd448fde5d42\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_cb9349ac5af35ac2\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Термоконтроллер</text><text id=\"svg_bd295f6eaa1a52ed\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модуль IO, ПИД-регулятор</text><rect id=\"svg_c2d62d7f6a1d5944\" x=\"80\" y=\"120\" width=\"420\" height=\"420\" rx=\"14\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_c6df315b214255d0\" x=\"110\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Температура</text><g id=\"VAL_7c5c6d70f1115ae6\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_e8926d70bc175dae\" x=\"290\" y=\"260\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_f95124d895745720\" x=\"110\" y=\"330\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><g id=\"VAL_ffaafafeb7415d8a\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_ff957daf3bfc5789\" x=\"290\" y=\"390\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_bdbeee30b0af5d6d\" x=\"110\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Выход, %</text><g id=\"VAL_87204f67310a5a7b\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_c96ad7ba563b5bed\" x=\"290\" y=\"500\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_17e4394a9cac512e\" x=\"420\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">Нагрев</text><circle id=\"shape_f884ef7476fe5f65\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"470\" cy=\"155\" r=\"10\" stroke=\"#000\"/><text id=\"svg_7fd81641ec5d579d\" x=\"560\" y=\"160\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><rect id=\"shape_b36edbb3d5f3514b\" type=\"svg-ext-shapes\" x=\"560\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_36af535450c85135\" x=\"605.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">40 °C</text><rect id=\"shape_6e2757f01ccb5e18\" type=\"svg-ext-shapes\" x=\"660\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a199d41e665451cf\" x=\"705.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">60 °C</text><rect id=\"shape_0cf77e7a737a5f8c\" type=\"svg-ext-shapes\" x=\"760\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_39a7f6d864fc53f5\" x=\"805.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">80 °C</text><rect id=\"shape_0e21aa1090845fca\" type=\"svg-ext-shapes\" x=\"860\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_acdb76a9bcb95b90\" x=\"905.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">100 °C</text><text id=\"svg_69ceb0c487095888\" x=\"560\" y=\"290\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Нагреватель</text><rect id=\"shape_82ad4df166d95dd5\" type=\"svg-ext-shapes\" fill=\"#1b2a38\" x=\"560\" y=\"310\" width=\"380\" height=\"60\" rx=\"8\" stroke=\"#000\"/><text id=\"svg_9211ffb02aa75425\" x=\"750\" y=\"348\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">ТЭН</text></g></svg>"
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_4f6fbd448fde5d42\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_cb9349ac5af35ac2\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Термоконтроллер</text><text id=\"svg_bd295f6eaa1a52ed\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модуль IO, ПИД-регулятор</text><rect id=\"svg_c2d62d7f6a1d5944\" x=\"80\" y=\"120\" width=\"420\" height=\"420\" rx=\"14\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_c6df315b214255d0\" x=\"110\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Температура</text><g id=\"VAL_7c5c6d70f1115ae6\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_e8926d70bc175dae\" x=\"290\" y=\"260\" font-family=\"sans-serif\" font-size=\"72\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_f95124d895745720\" x=\"110\" y=\"330\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><g id=\"VAL_ffaafafeb7415d8a\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_ff957daf3bfc5789\" x=\"290\" y=\"390\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_bdbeee30b0af5d6d\" x=\"110\" y=\"450\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Выход, %</text><g id=\"VAL_87204f67310a5a7b\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_c96ad7ba563b5bed\" x=\"290\" y=\"500\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><text id=\"svg_17e4394a9cac512e\" x=\"420\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">Нагрев</text><circle id=\"shape_f884ef7476fe5f65\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"470\" cy=\"155\" r=\"10\" stroke=\"#000\"/><text id=\"svg_7fd81641ec5d579d\" x=\"560\" y=\"160\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Уставка</text><rect id=\"shape_b36edbb3d5f3514b\" type=\"svg-ext-shapes\" x=\"560\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_36af535450c85135\" x=\"605.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">40 °C</text><rect id=\"shape_6e2757f01ccb5e18\" type=\"svg-ext-shapes\" x=\"660\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_a199d41e665451cf\" x=\"705.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">60 °C</text><rect id=\"shape_0cf77e7a737a5f8c\" type=\"svg-ext-shapes\" x=\"760\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_39a7f6d864fc53f5\" x=\"805.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">80 °C</text><rect id=\"shape_0e21aa1090845fca\" type=\"svg-ext-shapes\" x=\"860\" y=\"180\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_acdb76a9bcb95b90\" x=\"905.0\" y=\"207.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">100 °C</text><text id=\"svg_69ceb0c487095888\" x=\"560\" y=\"290\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Нагреватель</text><rect id=\"shape_82ad4df166d95dd5\" type=\"svg-ext-shapes\" fill=\"#1b2a38\" x=\"560\" y=\"310\" width=\"380\" height=\"60\" rx=\"8\" stroke=\"#000\"/><text id=\"svg_9211ffb02aa75425\" x=\"750\" y=\"348\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">ТЭН</text></g></svg>"
    },
    {
     "id": "v_533aba1f7278",
@@ -1633,18 +1597,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " В",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1664,18 +1622,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " А",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 1,
-         "max": 1,
-         "text": "1",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 1
         }
        ]
       },
@@ -1695,18 +1647,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " В",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1726,18 +1672,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " А",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 1,
-         "max": 1,
-         "text": "1",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 1
         }
        ]
       },
@@ -1757,18 +1697,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " В",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 0,
-         "max": 0,
-         "text": "0",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 0
         }
        ]
       },
@@ -1788,18 +1722,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " А",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 1,
-         "max": 1,
-         "text": "1",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 1
         }
        ]
       },
@@ -1819,18 +1747,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " кВт",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 2,
-         "max": 2,
-         "text": "2",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 2
         }
        ]
       },
@@ -1850,18 +1772,12 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "unit",
+         "type": "output",
          "min": 0,
          "max": 0,
          "text": " кВт·ч",
-         "textId": ""
-        },
-        {
-         "type": "digit",
-         "min": 1,
-         "max": 1,
-         "text": "1",
-         "textId": ""
+         "textId": "",
+         "fractionDigits": 1
         }
        ]
       },
