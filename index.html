@@ -202,7 +202,7 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 html.bxlock,html.bxlock body{overflow:hidden}html.bxpop body>*:not(.bxw){display:none!important}
 @media (max-width:1000px){.bxw .bxg{grid-template-columns:1fr;gap:16px}.bxs{display:none}.bxl iframe{height:var(--bxh,640px)}.bxw.full .bxg{display:flex;flex-direction:column;overflow:auto}.bxw.full .bxl{flex:none;height:70vh}.bxw.full .bxr{overflow:visible}}
 
-.fxv{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a1117;margin:12px 0 0}.fxv svg{display:block;width:100%;height:auto}.fxv [role=button]{cursor:pointer}.fxv [role=button]:active{opacity:.7}.fxn{margin:10px 0 0;font-size:13px;color:var(--mute)}@media (max-width:760px){.fxv{overflow-x:auto;-webkit-overflow-scrolling:touch}.fxv svg{width:820px;max-width:none}}
+.fxv{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a1117;margin:12px 0 0}.fxv svg{display:block;width:100%;height:auto}.fxv [role=button]{cursor:pointer}.fxv [role=button]:active{opacity:.7}.fxn{margin:10px 0 0;font-size:13px;color:var(--mute)}@media (max-width:760px){.fxv{overflow-x:auto;-webkit-overflow-scrolling:touch}.fxv svg{width:100%;max-width:none}}
 .shots figure{margin:0}.shots img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0b1118}.shots figcaption{margin:8px 2px 0;color:var(--mute);font-size:13.5px}
 @media (max-width:760px){.cmp .cmpr{grid-template-columns:1fr}.cmp .cmpr>div+div{border-left:0;border-top:1px dashed var(--line)}.cmp .cmpl{background:rgba(255,255,255,.03)}.cmp .cmph{display:none}.cmp .cmpr>div:nth-child(2)::before{content:"Стандартная SCADA: ";color:#e7edf3;font-weight:700}.cmp .cmpr>div:nth-child(3)::before{content:"Свой интерфейс: ";color:var(--gold);font-weight:700}.shots{grid-template-columns:1fr}}
 #scAld .aldw{padding:0 4px!important}
@@ -575,7 +575,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <div class="cmpr"><div class="cmpl">Старт и стоимость</div><div>Лицензия MIT, быстрый старт</div><div>Отдельная разработка, срок и бюджет оцениваем на предпроекте</div></div>
     <div class="cmpr"><div class="cmpl">Когда выбирать</div><div>Значения, тренды, тревоги, кнопки управления</div><div>Наглядность процесса, экран как часть продукта</div></div>
   </div>
-  <details class="more-ex" id="more-ex"><summary>Другие примеры интеграций<span>FUXA, Node-RED, OpenPLC, ScadaBR, Home Assistant</span></summary>
+  <details class="more-ex" id="more-ex" open><summary>Другие примеры интеграций<span>FUXA, Node-RED, OpenPLC, ScadaBR, Home Assistant</span></summary>
   <h3 style="margin:18px 0 6px">Пример 1. Стандартная SCADA FUXA</h3>
   <p class="sub" style="margin:0 0 4px;max-width:none">Ниже экраны, собранные в готовой SCADA FUXA: освещение, нагрев, счётчик электроэнергии и установка ALD. Уличный светильник по умолчанию включается сам, как по расписанию, а кнопки «Вкл», «Выкл», «Авто» переключают его вручную. Переключайте экраны и нажимайте кнопки, так видно, что даёт стандартный инструмент и где у неё границы.</p>
   <div class="seg" id="fxTabs" style="margin-top:14px"></div>
