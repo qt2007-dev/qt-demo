@@ -528,7 +528,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <tr><th>OSDP</th><td>Контроль и управление доступом</td><td>Считыватели с протоколом OSDP</td><td>В контроллере</td><td data-r="e">Через RS-485 модуля IF</td></tr>
     <tr><th>CAN</th><td>Подключить устройства по шине CAN</td><td>Датчики, приводы и платы с CAN</td><td>В контроллере</td><td data-r="e">1–5 Мбит/с в зависимости от протокола</td></tr>
     <tr><th>FUXA, Node-RED</th><td>Экраны оператора (свой редактор интерфейсов), потоки обработки данных</td><td>Открытые системы, которые читают MQTT</td><td>Поддерживается</td><td data-r="e">Лицензии и способы подключения в таблице выше</td></tr>
-    <tr><th>OpenPLC</th><td>Логика по МЭК 61131-3 на узле. Собственного редактора экранов нет: интерфейсы делают в ScadaBR или во внешней SCADA по Modbus/TCP</td><td>Программа на узле, экраны во внешней системе</td><td>Поддерживается</td><td data-r="e">Лицензия и способ подключения в таблице выше</td></tr>
+    <tr><th>OpenPLC</th><td>Логика по МЭК 61131-3 на узле. У среды исполнения (v4) нет веб-интерфейса, программу загружают из OpenPLC Editor (есть веб-версия). Собственного редактора экранов нет: интерфейсы делают в ScadaBR или во внешней SCADA по Modbus/TCP</td><td>Программа на узле, экраны во внешней системе</td><td>Поддерживается</td><td data-r="e">Лицензия и способ подключения в таблице выше</td></tr>
     <tr><th>SEMI SECS/GEM</th><td>Установки для микроэлектроники: связь оборудования с заводской системой</td><td>Хост-системы производства</td><td>По запросу</td><td data-r="e">Состав сообщений согласуем на предпроекте</td></tr>
     <tr><th>MES</th><td>Передавать выпуск, состояние и события оборудования в систему управления производством</td><td>MES предприятия</td><td>По запросу</td><td data-r="e">Способ подключения (MQTT Sparkplug B, SECS/GEM, свой интерфейс) выбираем на предпроекте</td></tr>
     <tr><th>Другие системы</th><td>Своя SCADA, ERP, облако, внутренние сервисы</td><td>Система заказчика</td><td>По запросу</td><td data-r="e">Обсуждаем на предпроекте</td></tr>
@@ -744,7 +744,7 @@ if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0
 document.addEventListener('visibilitychange',run);
 })();</script>
   <h3 style="margin:30px 0 6px">Пример 3. OpenPLC: логика на языке ST</h3>
-  <p class="sub" style="margin:0 0 4px;max-width:none">OpenPLC исполняет программу по МЭК 61131-3 прямо на узле. Ниже его веб-интерфейс: состояние, текст программы на ST, мониторинг переменных и карта Modbus. Включайте нагрузки, меняйте задания и уставку, запускайте цикл ALD на вкладке Monitoring: программа реагирует, как на команды от SCADA.</p>
+  <p class="sub" style="margin:0 0 4px;max-width:none">OpenPLC исполняет программу по МЭК 61131-3 прямо на узле. В версии 4 у среды исполнения (Runtime) нет собственного веб-интерфейса: программу пишут и загружают в контроллер из OpenPLC Editor, у которого есть веб-версия. Ниже проект в редакторе, переменные и карта Modbus. Включайте нагрузки, меняйте задания и уставку, запускайте цикл ALD на вкладке «Переменные»: программа реагирует, как на команды от SCADA.</p>
   <div class="oplv" id="oplView" aria-label="Интерактивный интерфейс OpenPLC: значения симулируются по тексту программы"></div>
   <p class="fxn">Программа qt_box_demo на ST проверена компилятором OpenPLC и закрывает три задачи: уровни освещения и уличный светильник, регулятор нагрева, цикл ALD из четырёх шагов. Значения симулируются в браузере по тем же правилам. Собственных экранов оператора у OpenPLC нет, поэтому SCADA (FUXA, Node-RED, ScadaBR) подключается к нему по Modbus по этой карте.</p>
   <script>(function(){
@@ -776,13 +776,13 @@ function step(dt){if(!X.run)return;X.scans++;
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.innerHTML=h;return e}
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function hl(s){return esc(s).replace(/(\(\*[\s\S]*?\*\))|\b(PROGRAM|END_PROGRAM|VAR|END_VAR|IF|THEN|ELSIF|ELSE|END_IF|CASE|OF|END_CASE|AT|AND|NOT|CONFIGURATION|END_CONFIGURATION|RESOURCE|ON|END_RESOURCE|TASK|WITH|INTERVAL|PRIORITY)\b|\b(BOOL|INT|REAL|TIME|TON|TRUE|FALSE)\b|(%[A-Z]+[0-9.]+)|(T#\w+)/g,function(m,c,k,t,l,tm){return c?'<i class="c">'+c+'</i>':k?'<i class="k">'+k+'</i>':t?'<i class="t">'+t+'</i>':l?'<i class="l">'+l+'</i>':'<i class="n">'+tm+'</i>'})}
-root.innerHTML='<div class="opl-side"><div class="opl-logo"><b>OpenPLC</b><span>Runtime</span></div><div class="opl-nav"></div></div><div class="opl-main"></div>';
+root.innerHTML='<div class="opl-side"><div class="opl-logo"><b>OpenPLC</b><span>Editor v4</span></div><div class="opl-nav"></div></div><div class="opl-main"></div>';
 var nav=root.querySelector('.opl-nav'),main=root.querySelector('.opl-main'),tab=0,W=[];
-var TABS=['Dashboard','Programs','Monitoring','Modbus','Editor'];
-TABS.forEach(function(n,i){var b=el('button','',n);b.onclick=function(){show(i)};nav.appendChild(b)});
+var TABS=[['Editor',4],['Переменные',2],['Карта Modbus',3]];
+TABS.forEach(function(n){var b=el('button','',n[0]);b.onclick=function(){show(n[1])};nav.appendChild(b)});
 function fmt(p){var v=V[p[0]];if(p[1]==='BOOL')return v?'TRUE':'FALSE';if(p[0]==='heat_pv')return (v/10).toFixed(1)+' ('+v+')';return String(v)}
 function write(p,val){V[p[0]]=val;if(p[0]==='ald_start'&&!val){}paint()}
-function show(i){tab=i;W=[];[].forEach.call(nav.children,function(b,j){b.classList.toggle('on',j===i)});main.innerHTML='';
+function show(i){tab=i;W=[];[].forEach.call(nav.children,function(b,j){b.classList.toggle('on',TABS[j][1]===i)});main.innerHTML='';
  if(i===0){main.appendChild(el('h4','','Dashboard'));
   var st=el('div','opl-st','<span class="dot"></span><b></b>');main.appendChild(st);
   var info=el('div','opl-kv','<div><span>Program</span><b>qt_box_demo</b></div><div><span>Description</span><b>QT-BoX demo: освещение, нагрев, нагрузки, ALD</b></div><div><span>File</span><b>qt_box_demo.st</b></div><div><span>Runtime</span><b>OpenPLC v3 на узле NODE</b></div><div><span>Scan</span><b class="sc"></b></div>');main.appendChild(info);
@@ -790,7 +790,7 @@ function show(i){tab=i;W=[];[].forEach.call(nav.children,function(b,j){b.classLi
   main.appendChild(el('p','opl-n','OpenPLC исполняет логику на узле. Экранов оператора у него нет: интерфейс собирают в FUXA, Node-RED или ScadaBR и подключают по Modbus.'));
   W.push(function(){var d=st.querySelector('.dot'),b=st.querySelector('b');d.className='dot'+(X.run?' on':'');b.textContent='Status: '+(X.run?'Running':'Stopped');info.querySelector('.sc').textContent=X.run?'100 ms, циклов: '+X.scans:'остановлен';s1.disabled=!!X.run;s2.disabled=!X.run})}
  else if(i===1){main.appendChild(el('h4','','Programs · qt_box_demo.st'));main.appendChild(el('pre','opl-code',hl(ST)))}
- else if(i===2){main.appendChild(el('h4','','Monitoring'));main.appendChild(el('p','opl-n','Значения читаются по Modbus. Нажмите на BOOL, чтобы переключить, или введите число в поле: запись идёт в программу, как команда от SCADA. Поля без записи считает сама программа.'));
+ else if(i===2){main.appendChild(el('h4','','Переменные'));main.appendChild(el('p','opl-n','Значения читаются по Modbus. Нажмите на BOOL, чтобы переключить, или введите число в поле: запись идёт в программу, как команда от SCADA. Поля без записи считает сама программа.'));
   var tb=el('div','opl-tb');tb.appendChild(el('div','opl-r h','<span>Point</span><span>Type</span><span>Location</span><span>Value</span>'));
   PTS.forEach(function(p){var r=el('div','opl-r','<span>'+p[0]+'<em>'+p[4]+'</em></span><span>'+p[1]+'</span><span>'+p[2]+'</span><span class="v"></span>'),c=r.querySelector('.v');
    var wr=p[3].indexOf('input')<0&&(p[1]==='BOOL'||p[5]);
@@ -835,11 +835,11 @@ function show(i){tab=i;W=[];[].forEach.call(nav.children,function(b,j){b.classLi
   W.push(function(){NET.forEach(function(n,i){n.a.forEach(function(a,j){if(V[a[1]]!==undefined){var t=fbp.querySelector('#fv'+i+'_'+j);t.textContent=a[1]+' = '+V[a[1]]}});fbp.querySelector('#fo'+i).textContent=n.o+' = '+V[n.o]})});
   tb.forEach(function(b,k){b.onclick=function(){tb.forEach(function(x,j){x.classList.toggle('on',j===k)});cd.hidden=k!==0;ldp.hidden=k!==1;fbp.hidden=k!==2;vr.hidden=k!==3;paint()}});
   var bar=el('div','ope-bar','<button type="button">Компилировать</button><button type="button">Загрузить в контроллер</button>'),con=el('pre','ope-con','Готово к компиляции.');bar.querySelectorAll('button')[0].onclick=function(){con.textContent='Компиляция qt_box_demo.st (matiec, МЭК 61131-3)...';setTimeout(function(){con.textContent='Компиляция qt_box_demo.st (matiec, МЭК 61131-3)...\nОшибок нет, предупреждений нет.\nСгенерирован код на C, программа готова к загрузке.'},700)};
-  bar.querySelectorAll('button')[1].onclick=function(){X.run=1;con.textContent='Программа qt_box_demo передана в контроллер и запущена (период 100 мс).\nПроверьте значения на вкладке Monitoring.';paint()};
-  main.appendChild(bar);main.appendChild(con);main.appendChild(el('p','opl-n','Редактор OpenPLC Editor работает на компьютере инженера: здесь можно писать на ST, LD, FBD, SFC и IL. Готовая программа загружается в контроллер, где её исполняет Runtime. Ниже показан тот же проект: дерево, текст программы, таблица переменных и результат компиляции.'))}
+  bar.querySelectorAll('button')[1].onclick=function(){X.run=1;con.textContent='Программа qt_box_demo передана в контроллер и запущена (период 100 мс).\nПроверьте значения на вкладке «Переменные».';paint()};
+  main.appendChild(bar);main.appendChild(con);main.appendChild(el('p','opl-n','OpenPLC Editor запускается на компьютере инженера или в браузере (веб-версия): здесь можно писать на ST, LD, FBD, SFC и IL. Готовая программа загружается в контроллер, где её исполняет Runtime без собственного веб-интерфейса. Ниже показан тот же проект: дерево, текст программы, таблица переменных и результат компиляции.'))}
  paint()}
 function paint(){W.forEach(function(f){f()})}
-show(0);root.__tab=show;
+show(4);root.__tab=show;
 var tm=null,vis=false;function run(){var on=vis&&!document.hidden;if(on&&!tm)tm=setInterval(function(){for(var k=0;k<2;k++)step(.1);paint()},200);if(!on&&tm){clearInterval(tm);tm=null}}
 if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting;run()}).observe(root);else{vis=true;run()}
 document.addEventListener('visibilitychange',run);
