@@ -1693,7 +1693,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-blink",
+         "type": "blink",
          "options": {
           "fillA": "#c0445f",
           "fillB": "#ff8aa6",
@@ -1734,7 +1734,7 @@
           "min": 20,
           "max": 100
          },
-         "type": "shapes.action-moveByTags",
+         "type": "moveByTags",
          "options": {
           "axis": "y",
           "valueMin": 20,
@@ -1776,7 +1776,7 @@
           "min": 20,
           "max": 100
          },
-         "type": "shapes.action-moveByTags",
+         "type": "moveByTags",
          "options": {
           "axis": "y",
           "valueMin": 20,
@@ -2107,7 +2107,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-blink",
+         "type": "blink",
          "options": {
           "strokeA": "#ffd23a",
           "strokeB": "#16222d",
@@ -2208,7 +2208,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-blink",
+         "type": "blink",
          "options": {
           "strokeA": "#5fd08a",
           "strokeB": "#16222d",
@@ -2309,7 +2309,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-blink",
+         "type": "blink",
          "options": {
           "strokeA": "#4aa8ff",
           "strokeB": "#16222d",
@@ -2343,7 +2343,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-clockwise",
+         "type": "clockwise",
          "options": {}
         },
         {
@@ -2353,7 +2353,7 @@
           "min": -1,
           "max": 0.5
          },
-         "type": "shapes.action-stop",
+         "type": "stop",
          "options": {}
         }
        ]
@@ -2448,7 +2448,7 @@
           "min": 0.5,
           "max": 1000000000.0
          },
-         "type": "shapes.action-blink",
+         "type": "blink",
          "options": {
           "strokeA": "#ff7a9c",
           "strokeB": "#16222d",
