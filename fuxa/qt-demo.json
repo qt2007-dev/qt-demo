@@ -537,7 +537,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " %",
@@ -772,7 +772,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " %",
@@ -1007,7 +1007,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " %",
@@ -1352,7 +1352,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " °C",
@@ -1377,7 +1377,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " °C",
@@ -1402,7 +1402,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " %",
@@ -1597,7 +1597,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " В",
@@ -1622,7 +1622,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " А",
@@ -1647,7 +1647,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " В",
@@ -1672,7 +1672,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " А",
@@ -1697,7 +1697,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " В",
@@ -1722,7 +1722,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " А",
@@ -1747,7 +1747,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " кВт",
@@ -1772,7 +1772,7 @@
        "alarmColor": "",
        "ranges": [
         {
-         "type": "output",
+         "type": 1,
          "min": 0,
          "max": 0,
          "text": " кВт·ч",
