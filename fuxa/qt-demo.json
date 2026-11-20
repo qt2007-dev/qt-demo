@@ -309,6 +309,155 @@
        "qt/em/load/other"
       ]
      }
+    },
+    "t_5d85905341f9": {
+     "id": "t_5d85905341f9",
+     "name": "ALD шаг",
+     "type": "raw",
+     "address": "qt/ald/step",
+     "memaddress": "qt/ald/step",
+     "options": {
+      "subs": [
+       "qt/ald/step"
+      ]
+     }
+    },
+    "t_d6ad4bfbd7aa": {
+     "id": "t_d6ad4bfbd7aa",
+     "name": "ALD клапан ТМА",
+     "type": "raw",
+     "address": "qt/ald/v1",
+     "memaddress": "qt/ald/v1",
+     "options": {
+      "subs": [
+       "qt/ald/v1"
+      ]
+     }
+    },
+    "t_d113b8cebbfb": {
+     "id": "t_d113b8cebbfb",
+     "name": "ALD клапан N2 (после ТМА)",
+     "type": "raw",
+     "address": "qt/ald/v2",
+     "memaddress": "qt/ald/v2",
+     "options": {
+      "subs": [
+       "qt/ald/v2"
+      ]
+     }
+    },
+    "t_33de76400f08": {
+     "id": "t_33de76400f08",
+     "name": "ALD клапан H2O",
+     "type": "raw",
+     "address": "qt/ald/v3",
+     "memaddress": "qt/ald/v3",
+     "options": {
+      "subs": [
+       "qt/ald/v3"
+      ]
+     }
+    },
+    "t_4b51b8506696": {
+     "id": "t_4b51b8506696",
+     "name": "ALD клапан N2 (после H2O)",
+     "type": "raw",
+     "address": "qt/ald/v4",
+     "memaddress": "qt/ald/v4",
+     "options": {
+      "subs": [
+       "qt/ald/v4"
+      ]
+     }
+    },
+    "t_a723b365ca84": {
+     "id": "t_a723b365ca84",
+     "name": "ALD температура",
+     "type": "raw",
+     "address": "qt/ald/temp",
+     "memaddress": "qt/ald/temp",
+     "options": {
+      "subs": [
+       "qt/ald/temp"
+      ]
+     }
+    },
+    "t_9a522c733b4e": {
+     "id": "t_9a522c733b4e",
+     "name": "ALD давление",
+     "type": "raw",
+     "address": "qt/ald/press",
+     "memaddress": "qt/ald/press",
+     "options": {
+      "subs": [
+       "qt/ald/press"
+      ]
+     },
+     "daq": {
+      "enabled": true,
+      "interval": 1,
+      "changed": false,
+      "restored": true
+     }
+    },
+    "t_eef155e25009": {
+     "id": "t_eef155e25009",
+     "name": "ALD цикл",
+     "type": "raw",
+     "address": "qt/ald/cycle",
+     "memaddress": "qt/ald/cycle",
+     "options": {
+      "subs": [
+       "qt/ald/cycle"
+      ]
+     }
+    },
+    "t_3b3fc179546e": {
+     "id": "t_3b3fc179546e",
+     "name": "ALD толщина",
+     "type": "raw",
+     "address": "qt/ald/thick",
+     "memaddress": "qt/ald/thick",
+     "options": {
+      "subs": [
+       "qt/ald/thick"
+      ]
+     }
+    },
+    "t_c8a6272b6a46": {
+     "id": "t_c8a6272b6a46",
+     "name": "ALD работа",
+     "type": "raw",
+     "address": "qt/ald/run",
+     "memaddress": "qt/ald/run",
+     "options": {
+      "subs": [
+       "qt/ald/run"
+      ]
+     }
+    },
+    "t_7c156f1cb2fb": {
+     "id": "t_7c156f1cb2fb",
+     "name": "ALD заданное число циклов",
+     "type": "raw",
+     "address": "qt/ald/target",
+     "memaddress": "qt/ald/target",
+     "options": {
+      "subs": [
+       "qt/ald/target"
+      ]
+     }
+    },
+    "t_6b43a4cc3eb4": {
+     "id": "t_6b43a4cc3eb4",
+     "name": "ALD команда",
+     "type": "raw",
+     "address": "qt/ald/run/set",
+     "memaddress": "qt/ald/run/set",
+     "options": {
+      "pubs": [],
+      "retain": false
+     }
     }
    }
   }
@@ -2634,6 +2783,816 @@
     },
     "variables": {},
     "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_896d011bec3754d5\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_38d681d2e40c54d5\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Электроэнергия и нагрузки</text><text id=\"svg_6395bbf8e77d5304\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Модуль EM, трёхфазный счётчик</text><rect id=\"svg_5345877dd5135846\" x=\"80\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_b872909e4e015623\" x=\"96\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#ffd23a\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L1</text><g id=\"VAL_50cfbb05d02f5214\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_5630bc92cf8a5f88\" x=\"200\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_1ae259d220df5485\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ffd23a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_dd428f42185c59ec\" x=\"200\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ffd23a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_8bf6503c71b054b6\" x=\"340\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_d2cea7b125a75787\" x=\"356\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#5fd08a\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L2</text><g id=\"VAL_e57dede0ed7350a0\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_1bc6d560581b5591\" x=\"460\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_118c68e5991e5046\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_ecd1a129d41759b3\" x=\"460\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_24259e26c9cf5be0\" x=\"600\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_effec098535854a0\" x=\"616\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#ff7a9c\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Фаза L3</text><g id=\"VAL_639c346562705e96\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_b35f753543c65240\" x=\"720\" y=\"215\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_d10dbdfa859d5c87\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ff7a9c\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_9be1c7d57b625ccd\" x=\"720\" y=\"265\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#ff7a9c\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"svg_9ef3dd8712565168\" x=\"880\" y=\"120\" width=\"240\" height=\"170\" rx=\"10\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_682990de9cc95a1a\" x=\"896\" y=\"150\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Всего</text><g id=\"VAL_780bb15ddb995cc2\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_5c7f075e74fd59ae\" x=\"1000\" y=\"208\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#f2bd3a\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><g id=\"VAL_beaa4d3debc25331\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\"><text id=\"VAL_3611b0f8b2425c37\" x=\"1000\" y=\"262\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"middle\">0</text></g><rect id=\"shape_d5e2906525745129\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"80\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_eee2a0522efa5653\" x=\"202\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Чайник</text><text id=\"svg_28e02576413a5dd4\" x=\"202\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">2 кВт, L1</text><circle id=\"shape_79fdfaaafdc6500b\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"202\" cy=\"485\" r=\"9\" stroke=\"#000\"/><line id=\"shape_b330008428b959a5\" type=\"svg-ext-shapes\" fill=\"#32475a\" x1=\"202\" y1=\"320\" x2=\"202\" y2=\"360\" stroke-width=\"4\"/><line id=\"shape_ac9b360adbfc5763\" type=\"svg-ext-shapes\" x1=\"202\" y1=\"320\" x2=\"202\" y2=\"360\" stroke=\"#ffd23a\" stroke-width=\"5\" stroke-dasharray=\"4 8\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"24\" to=\"0\" dur=\"0.5s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_bd8bf43d5b365566\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"345\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_dd78b97249bf5cb1\" x=\"467\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Плита</text><text id=\"svg_27e13b3a1f67518c\" x=\"467\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">3,5 кВт, L2</text><circle id=\"shape_d35f2ce99c3152f8\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"467\" cy=\"485\" r=\"9\" stroke=\"#000\"/><line id=\"shape_7e9df1139c865a07\" type=\"svg-ext-shapes\" fill=\"#32475a\" x1=\"467\" y1=\"320\" x2=\"467\" y2=\"360\" stroke-width=\"4\"/><line id=\"shape_da71c8893b89539b\" type=\"svg-ext-shapes\" x1=\"467\" y1=\"320\" x2=\"467\" y2=\"360\" stroke=\"#5fd08a\" stroke-width=\"5\" stroke-dasharray=\"4 8\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"24\" to=\"0\" dur=\"0.5s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_747ee8cce652581e\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"610\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_abf168b35c335c8b\" x=\"732\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Мотор</text><text id=\"svg_ff826206912157d5\" x=\"732\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">2,2 кВт, 3 фазы</text><circle id=\"shape_dc700add10b15533\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"732\" cy=\"485\" r=\"9\" stroke=\"#000\"/><line id=\"shape_b1fa6cb1526550ab\" type=\"svg-ext-shapes\" fill=\"#32475a\" x1=\"732\" y1=\"320\" x2=\"732\" y2=\"360\" stroke-width=\"4\"/><line id=\"shape_805640ec78965caa\" type=\"svg-ext-shapes\" x1=\"732\" y1=\"320\" x2=\"732\" y2=\"360\" stroke=\"#4aa8ff\" stroke-width=\"5\" stroke-dasharray=\"4 8\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"24\" to=\"0\" dur=\"0.5s\" repeatCount=\"indefinite\"/></line><g id=\"shape_23a14002ee815f5f\" type=\"svg-ext-shapes\" transform=\"translate(815,440)\" stroke=\"#4aa8ff\" fill=\"#4aa8ff\" fill-opacity=\"0.35\"><path d=\"M0 0 Q14 -8 0 -30 Q-14 -8 0 0Z\" transform=\"rotate(0)\" /><path d=\"M0 0 Q14 -8 0 -30 Q-14 -8 0 0Z\" transform=\"rotate(90)\" /><path d=\"M0 0 Q14 -8 0 -30 Q-14 -8 0 0Z\" transform=\"rotate(180)\" /><path d=\"M0 0 Q14 -8 0 -30 Q-14 -8 0 0Z\" transform=\"rotate(270)\" /></g><rect id=\"shape_21dd3ab49bfd5286\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"875\" y=\"360\" width=\"245\" height=\"150\" rx=\"12\"/><text id=\"svg_e0a0dad8c1675e01\" x=\"997\" y=\"420\" font-family=\"sans-serif\" font-size=\"24\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Прочее</text><text id=\"svg_66e1d425069754bb\" x=\"997\" y=\"455\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">0,6 кВт, L3</text><circle id=\"shape_a5ff340daf675e98\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"997\" cy=\"485\" r=\"9\" stroke=\"#000\"/><line id=\"shape_e45f00d4125f5beb\" type=\"svg-ext-shapes\" fill=\"#32475a\" x1=\"997\" y1=\"320\" x2=\"997\" y2=\"360\" stroke-width=\"4\"/><line id=\"shape_70467095f1fa5542\" type=\"svg-ext-shapes\" x1=\"997\" y1=\"320\" x2=\"997\" y2=\"360\" stroke=\"#ff7a9c\" stroke-width=\"5\" stroke-dasharray=\"4 8\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"24\" to=\"0\" dur=\"0.5s\" repeatCount=\"indefinite\"/></line><line id=\"svg_20cd3f80253b57dd\" x1=\"200\" y1=\"320\" x2=\"1000\" y2=\"320\" stroke=\"#32475a\" stroke-width=\"4\"/><line id=\"svg_cc47c0b55c035afd\" x1=\"600\" y1=\"290\" x2=\"600\" y2=\"320\" stroke=\"#32475a\" stroke-width=\"4\"/><text id=\"svg_0e20477d1ddd5bcc\" x=\"80\" y=\"570\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Нагрузки включаются и выключаются сами: меняются ток, мощность и энергия.</text></g></svg>"
+   },
+   {
+    "id": "v_f2e28a8bd8e9",
+    "name": "ALD",
+    "profile": {
+     "width": 1200,
+     "height": 700,
+     "bkcolor": "#0a1117",
+     "align": "middle"
+    },
+    "items": {
+     "shape_675c4049df3a5e6d": {
+      "id": "shape_675c4049df3a5e6d",
+      "type": "svg-ext-shapes",
+      "name": "Камера",
+      "property": {
+       "events": [],
+       "variableId": "t_5d85905341f9",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1.5,
+         "color": "#3a2f12",
+         "stroke": "#f2bd3a"
+        },
+        {
+         "min": 1.5,
+         "max": 2.5,
+         "color": "#13283c",
+         "stroke": "#4aa8ff"
+        },
+        {
+         "min": 2.5,
+         "max": 3.5,
+         "color": "#3a1a26",
+         "stroke": "#ff7a9c"
+        },
+        {
+         "min": 3.5,
+         "max": 9,
+         "color": "#13283c",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_7febf6aa8cfa5026": {
+      "id": "shape_7febf6aa8cfa5026",
+      "type": "svg-ext-shapes",
+      "name": "Пластина",
+      "property": {
+       "events": [],
+       "variableId": "t_3b3fc179546e",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#5b6b7b",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 4,
+         "color": "#7a8ea3",
+         "stroke": "#000"
+        },
+        {
+         "min": 4,
+         "max": 8,
+         "color": "#8aa6c8",
+         "stroke": "#000"
+        },
+        {
+         "min": 8,
+         "max": 1000000000.0,
+         "color": "#9fc2e8",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_fb99032486755c0c": {
+      "id": "shape_fb99032486755c0c",
+      "type": "svg-ext-shapes",
+      "name": "Поток ТМА",
+      "property": {
+       "events": [],
+       "variableId": "t_d6ad4bfbd7aa",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1000000000.0,
+         "max": 1000000000.0,
+         "color": "none",
+         "stroke": "#f2bd3a"
+        }
+       ],
+       "actions": [
+        {
+         "variableId": "t_d6ad4bfbd7aa",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "hide",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_4f29df1188a9557a": {
+      "id": "shape_4f29df1188a9557a",
+      "type": "svg-ext-shapes",
+      "name": "Клапан ТМА",
+      "property": {
+       "events": [],
+       "variableId": "t_d6ad4bfbd7aa",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#f2bd3a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_20dc1b656e63542c": {
+      "id": "shape_20dc1b656e63542c",
+      "type": "svg-ext-shapes",
+      "name": "Поток N₂",
+      "property": {
+       "events": [],
+       "variableId": "t_d113b8cebbfb",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1000000000.0,
+         "max": 1000000000.0,
+         "color": "none",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": [
+        {
+         "variableId": "t_d113b8cebbfb",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "hide",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_fe1122b7ec20548e": {
+      "id": "shape_fe1122b7ec20548e",
+      "type": "svg-ext-shapes",
+      "name": "Клапан N₂",
+      "property": {
+       "events": [],
+       "variableId": "t_d113b8cebbfb",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_47e00e0f54495cb9": {
+      "id": "shape_47e00e0f54495cb9",
+      "type": "svg-ext-shapes",
+      "name": "Поток H₂O",
+      "property": {
+       "events": [],
+       "variableId": "t_33de76400f08",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1000000000.0,
+         "max": 1000000000.0,
+         "color": "none",
+         "stroke": "#ff7a9c"
+        }
+       ],
+       "actions": [
+        {
+         "variableId": "t_33de76400f08",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "hide",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_80b4b5a4108655a2": {
+      "id": "shape_80b4b5a4108655a2",
+      "type": "svg-ext-shapes",
+      "name": "Клапан H₂O",
+      "property": {
+       "events": [],
+       "variableId": "t_33de76400f08",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#ff7a9c"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_167dc810bd145b29": {
+      "id": "shape_167dc810bd145b29",
+      "type": "svg-ext-shapes",
+      "name": "Поток N₂",
+      "property": {
+       "events": [],
+       "variableId": "t_4b51b8506696",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1000000000.0,
+         "max": 1000000000.0,
+         "color": "none",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": [
+        {
+         "variableId": "t_4b51b8506696",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "hide",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_ac3428e18b005056": {
+      "id": "shape_ac3428e18b005056",
+      "type": "svg-ext-shapes",
+      "name": "Клапан N₂",
+      "property": {
+       "events": [],
+       "variableId": "t_4b51b8506696",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#1d3a2c",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_b63fbaaf08bf5a5c": {
+      "id": "shape_b63fbaaf08bf5a5c",
+      "type": "svg-ext-shapes",
+      "name": "Откачка",
+      "property": {
+       "events": [],
+       "variableId": "t_c8a6272b6a46",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1000000000.0,
+         "max": 1000000000.0,
+         "color": "none",
+         "stroke": "#6fb3ff"
+        }
+       ],
+       "actions": [
+        {
+         "variableId": "t_c8a6272b6a46",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "hide",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_2f5258ba6c8b5ae0": {
+      "id": "shape_2f5258ba6c8b5ae0",
+      "type": "svg-ext-shapes",
+      "name": "Насос",
+      "property": {
+       "events": [],
+       "variableId": "t_c8a6272b6a46",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": [
+        {
+         "variableId": "t_c8a6272b6a46",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": 0.5,
+          "max": 1000000000.0
+         },
+         "type": "clockwise",
+         "options": {}
+        },
+        {
+         "variableId": "t_c8a6272b6a46",
+         "variableSrc": "d_qt_mqtt",
+         "range": {
+          "min": -1,
+          "max": 0.5
+         },
+         "type": "stop",
+         "options": {}
+        }
+       ]
+      },
+      "label": "Shapes"
+     },
+     "shape_61513948e426565e": {
+      "id": "shape_61513948e426565e",
+      "type": "svg-ext-shapes",
+      "name": "Шаг 1 · ТМА",
+      "property": {
+       "events": [],
+       "variableId": "t_5d85905341f9",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 0.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 0.5,
+         "max": 1.5,
+         "color": "#3a2f12",
+         "stroke": "#f2bd3a"
+        },
+        {
+         "min": 1.5,
+         "max": 99,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_17e1d1a7e24a5cb5": {
+      "id": "shape_17e1d1a7e24a5cb5",
+      "type": "svg-ext-shapes",
+      "name": "Шаг 2 · Продувка",
+      "property": {
+       "events": [],
+       "variableId": "t_5d85905341f9",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 1.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 1.5,
+         "max": 2.5,
+         "color": "#13283c",
+         "stroke": "#4aa8ff"
+        },
+        {
+         "min": 2.5,
+         "max": 99,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_2fb2314244dc5bf7": {
+      "id": "shape_2fb2314244dc5bf7",
+      "type": "svg-ext-shapes",
+      "name": "Шаг 3 · H₂O",
+      "property": {
+       "events": [],
+       "variableId": "t_5d85905341f9",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 2.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 2.5,
+         "max": 3.5,
+         "color": "#3a1a26",
+         "stroke": "#ff7a9c"
+        },
+        {
+         "min": 3.5,
+         "max": 99,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_0bd96cbe40eb5d43": {
+      "id": "shape_0bd96cbe40eb5d43",
+      "type": "svg-ext-shapes",
+      "name": "Шаг 4 · Продувка",
+      "property": {
+       "events": [],
+       "variableId": "t_5d85905341f9",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": -1,
+         "max": 3.5,
+         "color": "#111c26",
+         "stroke": "#32475a"
+        },
+        {
+         "min": 3.5,
+         "max": 9,
+         "color": "#13283c",
+         "stroke": "#4aa8ff"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "VAL_e7ce7b33dd1f5939": {
+      "id": "VAL_e7ce7b33dd1f5939",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_a723b365ca84",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": 1,
+         "min": 0,
+         "max": 0,
+         "text": " °C",
+         "textId": "",
+         "fractionDigits": 0
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_60f02c7341d15467": {
+      "id": "VAL_60f02c7341d15467",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_9a522c733b4e",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": 1,
+         "min": 0,
+         "max": 0,
+         "text": " Па",
+         "textId": "",
+         "fractionDigits": 0
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_2b3e1806abb95dfd": {
+      "id": "VAL_2b3e1806abb95dfd",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_eef155e25009",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": 1,
+         "min": 0,
+         "max": 0,
+         "text": "",
+         "textId": "",
+         "fractionDigits": 0
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_43f97554bfed58fc": {
+      "id": "VAL_43f97554bfed58fc",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_7c156f1cb2fb",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": 1,
+         "min": 0,
+         "max": 0,
+         "text": "",
+         "textId": "",
+         "fractionDigits": 0
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "VAL_486b67390e425cf7": {
+      "id": "VAL_486b67390e425cf7",
+      "type": "svg-ext-value",
+      "name": "v",
+      "property": {
+       "events": [],
+       "variableId": "t_3b3fc179546e",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "type": 1,
+         "min": 0,
+         "max": 0,
+         "text": " нм",
+         "textId": "",
+         "fractionDigits": 1
+        }
+       ]
+      },
+      "label": "Value"
+     },
+     "shape_d9070f2843535df6": {
+      "id": "shape_d9070f2843535df6",
+      "type": "svg-ext-shapes",
+      "name": "shape",
+      "property": {
+       "events": [],
+       "variableId": "t_c8a6272b6a46",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [
+        {
+         "min": 0,
+         "max": 0.5,
+         "color": "#27323d",
+         "stroke": "#000"
+        },
+        {
+         "min": 0.5,
+         "max": 1000000000.0,
+         "color": "#5fd08a",
+         "stroke": "#000"
+        }
+       ],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_d5e44791c7c75132": {
+      "id": "shape_d5e44791c7c75132",
+      "type": "svg-ext-shapes",
+      "name": "Старт",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "1",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_6b43a4cc3eb4",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "shape_cd6c6d56360c5b55": {
+      "id": "shape_cd6c6d56360c5b55",
+      "type": "svg-ext-shapes",
+      "name": "Стоп",
+      "property": {
+       "events": [
+        {
+         "type": "click",
+         "action": "onSetValue",
+         "actparam": "0",
+         "actoptions": {}
+        }
+       ],
+       "variableId": "t_6b43a4cc3eb4",
+       "variableSrc": "d_qt_mqtt",
+       "alarmId": "",
+       "alarmSrc": "",
+       "alarm": "",
+       "alarmColor": "",
+       "ranges": [],
+       "actions": []
+      },
+      "label": "Shapes"
+     },
+     "HXC_dac73722c576594d": {
+      "id": "HXC_dac73722c576594d",
+      "type": "svg-ext-html_chart",
+      "name": "Давление",
+      "label": "HtmlChart",
+      "property": {
+       "id": "c_ald",
+       "type": "realtime",
+       "variableIds": [
+        "t_9a522c733b4e"
+       ],
+       "variableSrc": "d_qt_mqtt",
+       "options": {
+        "title": "",
+        "colorBackground": "#0f1820",
+        "legendBackground": "#0f1820",
+        "axisLineColor": "#8fa0b2",
+        "axisLabelColor": "#cdd6e0",
+        "gridLineColor": "#243241",
+        "legendMode": "bottom",
+        "realtime": 5,
+        "loadOldValues": true,
+        "staticChart": false,
+        "fontFamily": "sans-serif",
+        "axisLabelFontSize": 11,
+        "legendFontSize": 11,
+        "decimalsPrecision": 0,
+        "width": 280,
+        "height": 150
+       }
+      }
+     }
+    },
+    "variables": {},
+    "svgcontent": "<svg width=\"1200\" height=\"700\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\"><g><title>Layer 1</title><rect id=\"svg_1be66e093bbf5af8\" x=\"0\" y=\"0\" width=\"1200\" height=\"700\" rx=\"0\" fill=\"#0a1117\" stroke=\"#0a1117\" /><text id=\"svg_31b9f4ce0d1d511e\" x=\"40\" y=\"50\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" text-anchor=\"start\" font-weight=\"bold\" stroke-width=\"0\">Установка ALD</text><text id=\"svg_bacec795bf595fcf\" x=\"40\" y=\"78\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Термическое осаждение Al₂O₃: ТМА и вода (демонстрационный цикл)</text><rect id=\"shape_675c4049df3a5e6d\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"560\" y=\"290\" width=\"260\" height=\"230\" rx=\"16\" stroke-width=\"2\"/><text id=\"svg_f503fcf9f9e85d0d\" x=\"690\" y=\"318\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">Реакционная камера</text><rect id=\"shape_7febf6aa8cfa5026\" type=\"svg-ext-shapes\" fill=\"#5b6b7b\" x=\"610\" y=\"440\" width=\"160\" height=\"14\" rx=\"3\" stroke=\"#000\"/><text id=\"svg_e386cde5e2e05901\" x=\"690\" y=\"475\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">пластина</text><line id=\"svg_6d0f6f4f2c905a61\" x1=\"150\" y1=\"330\" x2=\"560\" y2=\"330\" stroke=\"#32475a\" stroke-width=\"3\"/><line id=\"shape_fb99032486755c0c\" type=\"svg-ext-shapes\" x1=\"150\" y1=\"330\" x2=\"560\" y2=\"330\" stroke=\"#f2bd3a\" stroke-width=\"4\" stroke-dasharray=\"6 10\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"32\" to=\"0\" dur=\"0.6s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_4f29df1188a9557a\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"330\" y=\"316\" width=\"28\" height=\"28\" rx=\"5\" stroke-width=\"2\"/><text id=\"svg_fc337f7310265029\" x=\"130\" y=\"335\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#f2bd3a\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">ТМА</text><text id=\"svg_7882896739925024\" x=\"344\" y=\"308\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">клапан</text><line id=\"svg_6bdc8fbf7f03540e\" x1=\"150\" y1=\"380\" x2=\"560\" y2=\"380\" stroke=\"#32475a\" stroke-width=\"3\"/><line id=\"shape_20dc1b656e63542c\" type=\"svg-ext-shapes\" x1=\"150\" y1=\"380\" x2=\"560\" y2=\"380\" stroke=\"#4aa8ff\" stroke-width=\"4\" stroke-dasharray=\"6 10\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"32\" to=\"0\" dur=\"0.6s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_fe1122b7ec20548e\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"330\" y=\"366\" width=\"28\" height=\"28\" rx=\"5\" stroke-width=\"2\"/><text id=\"svg_a5411ce02f195e5c\" x=\"130\" y=\"385\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#4aa8ff\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">N₂</text><text id=\"svg_dbc6436a79fb52ca\" x=\"344\" y=\"358\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">клапан</text><line id=\"svg_831d11a6fe3e556f\" x1=\"150\" y1=\"430\" x2=\"560\" y2=\"430\" stroke=\"#32475a\" stroke-width=\"3\"/><line id=\"shape_47e00e0f54495cb9\" type=\"svg-ext-shapes\" x1=\"150\" y1=\"430\" x2=\"560\" y2=\"430\" stroke=\"#ff7a9c\" stroke-width=\"4\" stroke-dasharray=\"6 10\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"32\" to=\"0\" dur=\"0.6s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_80b4b5a4108655a2\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"330\" y=\"416\" width=\"28\" height=\"28\" rx=\"5\" stroke-width=\"2\"/><text id=\"svg_93cfd4814b935554\" x=\"130\" y=\"435\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#ff7a9c\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">H₂O</text><text id=\"svg_ccae6dd9edab5d30\" x=\"344\" y=\"408\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">клапан</text><line id=\"svg_7dc5a47d948554b9\" x1=\"150\" y1=\"480\" x2=\"560\" y2=\"480\" stroke=\"#32475a\" stroke-width=\"3\"/><line id=\"shape_167dc810bd145b29\" type=\"svg-ext-shapes\" x1=\"150\" y1=\"480\" x2=\"560\" y2=\"480\" stroke=\"#4aa8ff\" stroke-width=\"4\" stroke-dasharray=\"6 10\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"32\" to=\"0\" dur=\"0.6s\" repeatCount=\"indefinite\"/></line><rect id=\"shape_ac3428e18b005056\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"330\" y=\"466\" width=\"28\" height=\"28\" rx=\"5\" stroke-width=\"2\"/><text id=\"svg_802acc5c3bf35278\" x=\"130\" y=\"485\" font-family=\"sans-serif\" font-size=\"18\" fill=\"#4aa8ff\" text-anchor=\"end\" font-weight=\"normal\" stroke-width=\"0\">N₂</text><text id=\"svg_21867cbbbf4959a5\" x=\"344\" y=\"458\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#8fa0b2\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">клапан</text><line id=\"svg_57dcc4bc193652a5\" x1=\"690\" y1=\"520\" x2=\"690\" y2=\"600\" stroke=\"#32475a\" stroke-width=\"3\"/><line id=\"shape_b63fbaaf08bf5a5c\" type=\"svg-ext-shapes\" x1=\"690\" y1=\"520\" x2=\"690\" y2=\"600\" stroke=\"#6fb3ff\" stroke-width=\"4\" stroke-dasharray=\"6 10\" fill=\"none\"><animate attributeName=\"stroke-dashoffset\" from=\"0\" to=\"32\" dur=\"0.6s\" repeatCount=\"indefinite\"/></line><circle id=\"svg_52b1baf3b21b579e\" cx=\"690\" cy=\"625\" r=\"30\" fill=\"#111c26\" stroke=\"#32475a\" stroke-width=\"2\"/><g id=\"shape_2f5258ba6c8b5ae0\" type=\"svg-ext-shapes\" transform=\"translate(690,625)\" stroke=\"#4aa8ff\" fill=\"#4aa8ff\" fill-opacity=\"0.35\"><path d=\"M0 0 Q9 -5 0 -20 Q-9 -5 0 0Z\" transform=\"rotate(0)\"/><path d=\"M0 0 Q9 -5 0 -20 Q-9 -5 0 0Z\" transform=\"rotate(120)\"/><path d=\"M0 0 Q9 -5 0 -20 Q-9 -5 0 0Z\" transform=\"rotate(240)\"/></g><text id=\"svg_3fe0ddc7268c5e8f\" x=\"740\" y=\"630\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">насос</text><text id=\"svg_a21de2e576815fc5\" x=\"40\" y=\"160\" font-family=\"sans-serif\" font-size=\"16\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Шаг цикла</text><rect id=\"shape_61513948e426565e\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"40\" y=\"175\" width=\"130\" height=\"40\" rx=\"8\" stroke-width=\"2\"/><text id=\"svg_5ab6455dbcdf5311\" x=\"105\" y=\"201\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">1 · ТМА</text><rect id=\"shape_17e1d1a7e24a5cb5\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"180\" y=\"175\" width=\"130\" height=\"40\" rx=\"8\" stroke-width=\"2\"/><text id=\"svg_cc50ca85133c5651\" x=\"245\" y=\"201\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">2 · Продувка</text><rect id=\"shape_2fb2314244dc5bf7\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"320\" y=\"175\" width=\"130\" height=\"40\" rx=\"8\" stroke-width=\"2\"/><text id=\"svg_1b7df91505205c36\" x=\"385\" y=\"201\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">3 · H₂O</text><rect id=\"shape_0bd96cbe40eb5d43\" type=\"svg-ext-shapes\" fill=\"#111c26\" x=\"460\" y=\"175\" width=\"130\" height=\"40\" rx=\"8\" stroke-width=\"2\"/><text id=\"svg_a2a481beb0725623\" x=\"525\" y=\"201\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#cdd6e0\" text-anchor=\"middle\" font-weight=\"normal\" stroke-width=\"0\">4 · Продувка</text><rect id=\"svg_128e953075d85f7b\" x=\"880\" y=\"120\" width=\"280\" height=\"300\" rx=\"12\" fill=\"#0f1820\" stroke=\"#32475a\" /><text id=\"svg_dc248e3ec0a056c4\" x=\"900\" y=\"152\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Температура</text><g id=\"VAL_e7ce7b33dd1f5939\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#ff9a5c\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_35811414d3655342\" x=\"1140\" y=\"152\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#ff9a5c\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_ddcd5fe2930a5571\" x=\"900\" y=\"200\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Давление</text><g id=\"VAL_60f02c7341d15467\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_dd0cfa6765b75b10\" x=\"1140\" y=\"200\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#4aa8ff\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_6f111ec93737545e\" x=\"900\" y=\"248\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Цикл</text><g id=\"VAL_2b3e1806abb95dfd\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_83408681d9ba5e08\" x=\"1140\" y=\"248\" font-family=\"sans-serif\" font-size=\"26\" fill=\"#cdd6e0\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_eb6cc0d562b050c4\" x=\"900\" y=\"296\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Цель, циклов</text><g id=\"VAL_43f97554bfed58fc\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#8fa0b2\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_77a96a8ca7975a59\" x=\"1140\" y=\"296\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#8fa0b2\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_b5059f7c91765f7c\" x=\"900\" y=\"350\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Толщина плёнки</text><g id=\"VAL_486b67390e425cf7\" type=\"svg-ext-value\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"end\"><text id=\"VAL_374ea3a1fa285df9\" x=\"1140\" y=\"350\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#5fd08a\" stroke-width=\"0\" text-anchor=\"end\">0</text></g><text id=\"svg_269e9a4ebfbb5887\" x=\"900\" y=\"398\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Идёт процесс</text><circle id=\"shape_d9070f2843535df6\" type=\"svg-ext-shapes\" fill=\"#27323d\" cx=\"1140\" cy=\"392\" r=\"10\" stroke=\"#000\"/><rect id=\"shape_d5e44791c7c75132\" type=\"svg-ext-shapes\" x=\"880\" y=\"440\" width=\"130\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_ecdd3e88f46c56a4\" x=\"945.0\" y=\"467.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">Старт</text><rect id=\"shape_cd6c6d56360c5b55\" type=\"svg-ext-shapes\" x=\"1030\" y=\"440\" width=\"130\" height=\"44\" rx=\"8\" fill=\"#1b2a38\" stroke=\"#f2bd3a\" style=\"cursor:pointer\"/><text id=\"svg_5e7d016ba87c5c47\" x=\"1095.0\" y=\"467.0\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#cdd6e0\" text-anchor=\"middle\" stroke-width=\"0\" pointer-events=\"none\">Стоп</text><text id=\"svg_1d0dfd90cc4d5fd5\" x=\"880\" y=\"520\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Давление в камере</text><g id=\"HXC_dac73722c576594d\" type=\"svg-ext-html_chart\"><rect x=\"880\" y=\"530\" width=\"280\" height=\"150\" fill=\"#0f1820\" stroke=\"#32475a\"/><foreignObject x=\"880\" y=\"530\" width=\"280\" height=\"150\"><div xmlns=\"http://www.w3.org/1999/xhtml\" id=\"D-HXC_dac73722c576594d\" style=\"width:100%;height:100%\"></div></foreignObject></g><text id=\"svg_9e88db92c9fb5122\" x=\"40\" y=\"640\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#8fa0b2\" text-anchor=\"start\" font-weight=\"normal\" stroke-width=\"0\">Клапаны открываются по очереди: ТМА, продувка, вода, продувка. После каждого цикла плёнка растёт.</text></g></svg>"
    }
   ],
   "layout": {
@@ -2659,6 +3618,12 @@
       "view": "v_533aba1f7278",
       "link": "",
       "text": "Энергия"
+     },
+     {
+      "icon": "blur_on",
+      "view": "v_f2e28a8bd8e9",
+      "link": "",
+      "text": "ALD"
      }
     ],
     "bkcolor": "#0f1820",
@@ -2674,6 +3639,21 @@
   }
  },
  "charts": [
+  {
+   "id": "c_ald",
+   "name": "Давление",
+   "lines": [
+    {
+     "id": "t_9a522c733b4e",
+     "name": "Давление",
+     "device": "d_qt_mqtt",
+     "color": "#4aa8ff",
+     "label": "Давление, Па",
+     "yaxis": 1,
+     "spanGaps": true
+    }
+   ]
+  },
   {
    "id": "c_heat",
    "name": "Температура",
