@@ -327,8 +327,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
       <div class="eyebrow">ООО НПО «КвинтТех» · Зеленоград · с 2007 года</div>
       <h1>Электроника под заказ, контроллеры и оборудование для микроэлектроники</h1>
       <p class="lead">Разрабатываем платы и приборы, выпускаем модульные контроллеры QT-BoX, проектируем установки для микроэлектроники и ведём НИОКР по связи, навигации и радиолокации.</p>
-      <div class="cta"><a class="btn" href="#req">Запросить расчёт</a><a class="btn ghost" href="#ctrl">Контроллер в 3D</a></div>
-      <div class="facts"><div><b>от 2 млн ₽ в месяц</b>разработка электроники</div><div><b>4 направления</b>один инженерный центр</div><div><b>10 модулей</b>на одной DIN-рейке</div></div>
+      <div class="cta"><a class="btn" data-r="m" href="#req">Запросить расчёт</a><a class="btn ghost" data-r="m" href="#dev">Разработка электроники</a><a class="btn" data-r="e" href="#ctrl">Контроллер в 3D</a><a class="btn ghost" data-r="e" data-scroll="c-proto" href="#ctrl">Протокол BOX</a></div>
+      <div class="facts"><div data-r="m"><b>от 2 млн ₽ в месяц</b>разработка электроники</div><div data-r="m"><b>с 2007 года</b>инженерный центр в Зеленограде</div><div data-r="m"><b>4 направления</b>один исполнитель на весь цикл</div><div data-r="e"><b>MQTT Sparkplug B</b>данные и команды модулей</div><div data-r="e"><b>до 16 модулей</b>на одной DIN-рейке</div><div data-r="e"><b>FUXA, Node-RED, OpenPLC</b>открытые системы</div></div>
     </div>
     <div class="hero3d" id="heroHost"><canvas id="heroCv" aria-label="Контроллер QT-BoX, 3D-модель вращается"></canvas><div class="ld" id="heroLd">Загрузка 3D-модели…</div>
       <div class="vctl"><button id="vidBtn" type="button">Остановить фон</button></div></div>
@@ -337,6 +337,13 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
 <section style="padding-bottom:0"><div class="wrap">
   <div class="card" data-r="e"><h3>Режим «инженер»</h3><p>Показываем технику: протокол BOX и список модулей, характеристики установок и проектов НИОКР, что умеем по технологиям. <a href="#ctrl">Открыть контроллер</a></p></div>
   <div class="card" data-r="m"><h3>Режим «руководитель»</h3><p>Показываем решения: модели сотрудничества, права на ИС, сроки и результаты, сравнение с аналогами. <a href="#dev">Открыть разработку электроники</a></p></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2>Нам доверяют</h2>
+  <div class="g6">
+    <div class="card" style="text-align:center;padding:16px">ГК АйТи</div><div class="card" style="text-align:center;padding:16px">КЭМЗ</div><div class="card" style="text-align:center;padding:16px">ЛЕД-Эффект</div><div class="card" style="text-align:center;padding:16px">X5 Group</div><div class="card" style="text-align:center;padding:16px">Selgros</div><div class="card" style="text-align:center;padding:16px">ISBC</div>
+  </div>
+  <div class="need"><b>Нужно от вас:</b> подтвердить список и дать логотипы с разрешением на публикацию. Яндекс, ПепсиКо и «Световые технологии» на сайт не выводим.</div>
 </div></section>
 <section><div class="wrap">
   <h2>Чем мы занимаемся</h2>
@@ -348,13 +355,6 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <a class="card dir" href="#rnd"><h3>НИОКР. Проработанные пакеты и заказные разработки</h3><p>Навигация, связь и радиолокация. Восемь проработанных направлений, условия обсуждаются индивидуально.</p><span class="p">Условия по запросу</span></a>
   </div>
   <div class="need"><b>Нужно от вас:</b> подтвердить порядок направлений на главной (какое основное по выручке) и дать фото или рендеры для карточек вместо текстовых.</div>
-</div></section>
-<section style="padding-top:0"><div class="wrap">
-  <h2>Нам доверяют</h2>
-  <div class="g6">
-    <div class="card" style="text-align:center;padding:16px">ГК АйТи</div><div class="card" style="text-align:center;padding:16px">КЭМЗ</div><div class="card" style="text-align:center;padding:16px">ЛЕД-Эффект</div><div class="card" style="text-align:center;padding:16px">X5 Group</div><div class="card" style="text-align:center;padding:16px">Selgros</div><div class="card" style="text-align:center;padding:16px">ISBC</div>
-  </div>
-  <div class="need"><b>Нужно от вас:</b> подтвердить список и дать логотипы с разрешением на публикацию. Яндекс, ПепсиКо и «Световые технологии» на сайт не выводим.</div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="req" style="grid-template-columns:1fr auto;align-items:center"><div><h2>Расскажите о задаче</h2><p>Почта на сайте не публикуется. Запрос уходит через форму, отвечаем в рабочие дни.</p></div><a class="btn" href="#req">Отправить запрос</a></div>
@@ -438,7 +438,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   <p>Программируемый контроллер автоматизации (PAC) и шлюз пограничной сети. Данные модулей публикуются по MQTT Sparkplug B, управляет SCADA, сценарии работают на самом узле.</p>
   <div class="cta"><a class="btn" href="#req">Запросить контроллер</a><a class="btn ghost" data-scroll="c-proto" href="#ctrl">Протокол BOX</a></div></div></div>
 <section><div class="wrap">
-  <h2>Основной модуль и девять модулей расширения на одной рейке</h2>
+  <h2>Основной модуль и модули расширения на одной рейке</h2>
   <p class="sub">Настоящая 3D-модель. Вращайте мышью. Щёлкните по модулю или выберите его название ниже: модуль выдвинется вперёд, откроется крышка с лицевой панелью, а описание появится под моделью. Повторный щелчок возвращает модуль на место. Кнопка «Взрыв-схема» раздвигает модули и детали корпуса.</p>
   <div class="stage" id="stage">
     <canvas id="cv" aria-label="3D-модель контроллера на DIN-рейке"></canvas>
@@ -548,6 +548,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     </tbody>
   </table></div>
   <div class="need"><b>Лицензии уточняем:</b> FUXA (MIT) и OpenPLC (GPL v3) сверены с репозиториями проектов, остальные указаны по общеизвестным данным. Это техническая справка, не юридическое заключение. Перед поставкой проверим условия для каждой версии, особенно GPL при включении в изделие.</div>
+  <div data-r="e">
   <h3 style="margin:26px 0 8px">Примеры интерфейсов</h3><p class="sub" style="margin:0 0 14px">Интерфейс можно собрать в стандартной SCADA или сделать свой экран под задачу. Ниже наш пример с анимацией (демонстрация, значения симулируются), а под ним те же экраны в FUXA и сравнение подходов.</p>
   <div class="scada"><div class="sc-top"><b>Наш интерфейс · шкаф управления</b><div class="seg" id="scTabs"><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button><button class="on" data-t="a">Установка ALD</button></div><span class="live">● демонстрация, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px 20px 26px"><div class="aldw" style="border:0;padding:0;background:none">
     <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
@@ -562,12 +563,13 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   </div></div></div>
   <div class="need"><b>Что это за экран:</b> демонстрация, нарисованная по возможностям модулей DALI, IO и EM, а не снимок реальной системы. Такие экраны собирают в FUXA, Node-RED или любой SCADA с поддержкой MQTT Sparkplug.</div>
   <div class="need"><b>Нужно от вас:</b> примеры ваших интерфейсов (скриншоты или запись экрана). Добавим их в этот раздел рядом с примерами выше.</div>
+  </div>
   <h3 style="margin:26px 0 6px">Два пути к экрану управления</h3>
   <p class="sub" style="margin:0 0 4px;max-width:none">Стандартная SCADA быстро решает типовые задачи. Когда экран должен показывать процесс и быть частью продукта, делаем свой интерфейс.</p>
   <div class="cmp">
     <div class="cmpr cmph"><div></div><div>Стандартная SCADA (FUXA)</div><div>Свой интерфейс КвинтТех</div></div>
     <div class="cmpr"><div class="cmpl">Как делается</div><div>Собирается в браузерном редакторе без программирования</div><div>Разрабатываем под задачу и оборудование</div></div>
-    <div class="cmpr"><div class="cmpl">Анимация</div><div>Набор действий: цвет по диапазону, показ и скрытие, мигание, поворот, перемещение</div><div>Любая: ход процесса, потоки, схема установки, как в примере выше</div></div>
+    <div class="cmpr"><div class="cmpl">Анимация</div><div>Набор действий: цвет по диапазону, показ и скрытие, мигание, поворот, перемещение</div><div>Любая: ход процесса, потоки, схема установки, как в наших примерах</div></div>
     <div class="cmpr"><div class="cmpl">Оформление</div><div>Меню, шапка, кнопки и шрифты в рамках редактора, вид остаётся «SCADA-образным»</div><div>Любой стиль, под фирменный образ заказчика</div></div>
     <div class="cmpr"><div class="cmpl">Визуальные эффекты</div><div>Цвет по диапазону, поворот, перемещение, мигание. Свечение, плавные градиенты и прозрачность от значения штатно не задаются</div><div>Любые эффекты: свечение, частицы, плавные переходы, глубина и 3D</div></div>
     <div class="cmpr"><div class="cmpl">Своя графика</div><div>Свой SVG и готовые виджеты сообщества. Собственный HTML-блок встраивается через iframe, данные в него передаются только через адрес страницы</div><div>Любая графика и анимация, данные подключаются напрямую</div></div>
@@ -575,6 +577,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <div class="cmpr"><div class="cmpl">Старт и стоимость</div><div>Лицензия MIT, быстрый старт</div><div>Отдельная разработка, срок и бюджет оцениваем на предпроекте</div></div>
     <div class="cmpr"><div class="cmpl">Когда выбирать</div><div>Значения, тренды, тревоги, кнопки управления</div><div>Наглядность процесса, экран как часть продукта</div></div>
   </div>
+  <div data-r="e">
   <h3 style="margin:26px 0 6px">Пример 1. Стандартная SCADA FUXA</h3>
   <p class="sub" style="margin:0 0 4px;max-width:none">Ниже экраны, собранные в готовой SCADA FUXA: освещение, нагрев, счётчик электроэнергии и установка ALD. Уличный светильник по умолчанию включается сам, как по расписанию, а кнопки «Вкл», «Выкл», «Авто» переключают его вручную. Переключайте экраны и нажимайте кнопки, так видно, что даёт стандартный инструмент и где у неё границы.</p>
   <div class="seg" id="fxTabs" style="margin-top:14px"></div>
@@ -1165,6 +1168,7 @@ if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0
 document.addEventListener('visibilitychange',run);
 })();
 </script>
+  </div>
   <h3 style="margin:34px 0 6px">Что выбрать в вашем случае</h3>
   <p class="sub" style="margin:0 0 4px">Короткая подсказка: когда хватает стандартной SCADA, а когда лучше делать свой интерфейс.</p>
   <div class="g2" style="margin-top:14px">
@@ -1330,8 +1334,8 @@ document.addEventListener('visibilitychange',run);
 
 <!-- ============ ЗАПРОС ============ -->
 <div class="page" id="p-req">
-<div class="pagehead"><div class="wrap"><div class="eyebrow">ЗАПРОС</div><h1>С чем к нам обращаются</h1><p>Выберите направление, форма подстроится.</p></div></div>
-<section><div class="wrap"><div class="req"><div><h2>Ваш запрос</h2><p>Стоимость разработки электроники от 2 млн ₽ в месяц. Условия НИОКР обсуждаем индивидуально.</p>
+<div class="pagehead"><div class="wrap"><div class="eyebrow">ЗАПРОС</div><h1>Расскажите о задаче</h1><p>Выберите направление, форма подстроится.</p></div></div>
+<section><div class="wrap"><div class="req"><div><p>Стоимость разработки электроники от 2 млн ₽ в месяц. Условия НИОКР обсуждаем индивидуально.</p>
   <label style="margin-top:14px">Направление<select id="kindSel"><option value="dev">Разработка электроники</option><option value="ctrl">Контроллер QT-BoX</option><option value="micro">Оборудование и материалы для микроэлектроники</option><option value="rnd">НИОКР</option><option value="gen">Другой вопрос</option></select></label></div>
   <div id="reqHost"></div></div></div></section>
 </div>
