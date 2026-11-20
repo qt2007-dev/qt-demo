@@ -95,6 +95,7 @@ tbody th{color:var(--mute);font-weight:600;width:22%}
 tr:last-child th,tr:last-child td{border-bottom:0}
 .ph{height:176px;display:flex;align-items:center;justify-content:center;background:#0b1118;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;overflow:hidden}.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}.dimg{display:block;background:#0b1118;width:100%;max-width:440px;border-radius:10px;border:1px solid var(--line);margin:4px 0 12px}.fig{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0b1118;padding:10px;margin:4px 0 16px}.alrow{display:grid;grid-template-columns:280px 1fr;gap:6px 24px;align-items:start}.aimg{width:100%;height:230px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b1118;margin:2px 0 8px}.aimg.tall{height:380px;object-position:50% 60%}.altx>p:first-child{margin-top:0}@media (max-width:760px){.alrow{grid-template-columns:1fr}.aimg{height:200px}.aimg.tall{height:320px}}.aldw{border:1px solid var(--line);border-radius:16px;background:radial-gradient(900px 360px at 50% 30%,#13202b,#07090c);padding:14px 14px 16px;overflow:hidden}
 .alhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:32px;align-items:stretch;margin:0 0 22px}.alt{display:flex;flex-direction:column}.alt .ald-lg{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;font-size:14px}.alhead .aldw .ald-lg{display:none}.alhead .ald-cap{min-height:4.8em}#scAld .ald-cap{min-height:3.6em}.alk{margin:14px 0 0;padding-left:20px;color:#cdd6e0}.alk li{margin:6px 0}@media (max-width:860px){.alhead{grid-template-columns:1fr}.alhead .aldw .ald-lg{display:flex}.alt .ald-lg{display:none}.alhead .ald-cap{min-height:7.4em}}.aldw canvas{display:block;width:100%;aspect-ratio:2/1;border-radius:10px;background:#0a1118}
+#scAld .aldw{padding:0 4px!important}
 .ald-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 8px}
 .ald-st div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute);background:rgba(15,22,29,.6);transition:background .2s,color .2s,border-color .2s}
 .ald-st div.on{color:#0a0c10;background:var(--gold);border-color:var(--gold);font-weight:700}
@@ -356,7 +357,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
     <tr><th>NODE</th><td>Главный модуль: шлюз на процессорном модуле Cortex-A72 или A55, публикует данные в MQTT Sparkplug B, исполняет сценарии, события и расписание</td></tr>
     <tr><th>DI</th><td>16 дискретных входов</td></tr><tr><th>DO</th><td>16 дискретных выходов</td></tr>
     <tr><th>RO</th><td>2 реле и 6 твердотельных реле</td></tr><tr><th>IO</th><td>8 универсальных каналов с ПИД-регулированием</td></tr>
-    <tr><th>IF</th><td>3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232, CAN</td></tr><tr><th>DALI</th><td>2 канала DALI-2</td></tr>
+    <tr><th>IF</th><td>3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232, CAN (ревизия 1: 2 × RS-485)</td></tr><tr><th>DALI</th><td>2 канала DALI-2</td></tr>
     <tr><th>EM</th><td>Трёхфазный счётчик электроэнергии</td></tr><tr><th>STEP</th><td>2 шаговых двигателя</td></tr><tr><th>TC</th><td>2 входа Pt100 или термопара, 2 SSR, ПИД</td></tr>
     <tr><th>Wiegand</th><td>Подключение считывателей СКУД. В 3D-сборку пока не добавлен.</td></tr>
   </tbody></table></div>
@@ -407,7 +408,7 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
   </table></div>
   <div class="need"><b>Лицензии уточняем:</b> FUXA (MIT) и OpenPLC (GPL v3) сверены с репозиториями проектов, остальные указаны по общеизвестным данным. Это техническая справка, не юридическое заключение. Перед поставкой проверим условия для каждой версии, особенно GPL при включении в изделие.</div>
   <h3 style="margin:26px 0 12px">Пример экрана SCADA</h3>
-  <div class="scada"><div class="sc-top"><b>FUXA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демо, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px"><div class="aldw" style="border:0;padding:0;background:none">
+  <div class="scada"><div class="sc-top"><b>Пример экрана SCADA · шкаф управления</b><div class="seg" id="scTabs"><button class="on" data-t="a">Установка ALD</button><button data-t="l">Освещение</button><button data-t="h">Нагрев</button><button data-t="e">Энергия</button></div><span class="live">● демонстрация, значения симулируются</span></div><div class="sc-body" id="scBody" hidden></div><div id="scAld" style="padding:14px 20px 26px"><div class="aldw" style="border:0;padding:0;background:none">
     <canvas id="aldCv" aria-label="Анимация цикла атомно-слоевого осаждения в реакционной камере"></canvas>
     <div class="ald-st" id="aldSt"><div>1. Прекурсор A</div><div>2. Продувка</div><div>3. Прекурсор B</div><div>4. Продувка</div></div>
     <div class="ald-cap" id="aldCap" aria-live="polite"></div>
@@ -418,7 +419,7 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
     </div>
     <p class="sub" style="margin:12px 0 0;font-size:13px">Схема условная, размеры и число молекул не в масштабе. В примере прекурсор A: триметилалюминий, прекурсор B: вода, готовый слой: оксид алюминия, около 0,1 нм за цикл.</p>
   </div></div></div>
-  <div class="need"><b>Нужно от вас:</b> настоящие скриншоты FUXA с вашими мнемосхемами. Экран выше нарисован мной по возможностям модулей DALI, IO и EM, это не снимок реальной системы.</div>
+  <div class="need"><b>Что это за экран:</b> демонстрация, нарисованная по возможностям модулей DALI, IO и EM, а не снимок реальной системы. Такие экраны собирают в FUXA, Node-RED или любой SCADA с поддержкой MQTT Sparkplug. <b>Нужно от вас:</b> настоящие скриншоты FUXA с вашими мнемосхемами, покажем их рядом.</div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <h2>Искусственный интеллект на контроллере</h2>
@@ -492,7 +493,7 @@ out = [ Metric(deviceID, f'out/{i}') for i in range(16) ]</pre>
   <div id="ald"></div>
   <div class="need"><b>Нужно от вас:</b> фото установок, разрешение называть заказчиков и актуальный список. Названия взяты из вашего портфолио.</div>
   <div class="g2" style="margin-top:16px">
-    <div class="gap"><h3>Эмулятор установки ALD</h3><p>Анимация цикла осаждения уже показана на экране FUXA. Полный эмулятор с вашими параметрами сделаем по материалам.</p></div>
+    <div class="gap"><h3>Эмулятор установки ALD</h3><p>Анимация цикла осаждения уже показана на примере экрана SCADA. Полный эмулятор с вашими параметрами сделаем по материалам.</p></div>
     <div class="gap"><h3>3D-модели установок</h3><p>Подключим после получения моделей.</p></div>
   </div>
 </div></section>
@@ -646,9 +647,14 @@ function route(){
   PAGES.forEach(function(p){$('p-'+p).classList.toggle('on',p===h)});
   document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.dataset.p===h)});
   document.title='КвинтТех'+(h==='home'?'':' · '+(document.querySelector('#nav a[data-p='+h+']')||{textContent:'Запрос'}).textContent);
-  scrollTo(0,0);
+  if(!window.__bootDone){window.__bootDone=1;var sv=null;try{sv=JSON.parse(sessionStorage.getItem('qtscroll')||'null')}catch(e){}
+    if(sv&&sv.p===h&&sv.y>0){var tries=0,go=function(){scrollTo(0,sv.y);if(++tries<12&&Math.abs(scrollY-sv.y)>3)setTimeout(go,150)};go();addEventListener('load',function(){setTimeout(function(){scrollTo(0,sv.y)},200)})}else scrollTo(0,0)}
+  else scrollTo(0,0);
+  window.__pg=h;
   if(h==='ctrl'&&window.initCtrl)window.initCtrl();
 }
+try{history.scrollRestoration='manual'}catch(e){}
+var __st=0;addEventListener('scroll',function(){clearTimeout(__st);__st=setTimeout(function(){try{sessionStorage.setItem('qtscroll',JSON.stringify({p:window.__pg,y:Math.round(scrollY)}))}catch(e){}},120)},{passive:true});
 addEventListener('hashchange',route);
 document.addEventListener('click',function(e){var a=e.target.closest('[data-scroll]');if(a){e.preventDefault();var t=$(a.dataset.scroll);if(t)t.scrollIntoView({behavior:'smooth'})}});
 function setRole(r){document.body.dataset.role=r;$('rEng').classList.toggle('on',r==='e');$('rMgr').classList.toggle('on',r==='m')}
@@ -831,7 +837,7 @@ const INFO={
  do:['DO','16 дискретных выходов для управления исполнительными устройствами.'],
  ro:['RO','Релейный модуль: 2 реле и 6 твердотельных реле (SSR).'],
  io:['IO','8 универсальных каналов с ПИД-регулированием.'],
- if:['IF','Интерфейсный модуль: 3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232 и CAN.'],
+ if:['IF','Интерфейсный модуль: 3 × RS-485 (Modbus RTU, OSDP, DMX512), RS-232 и CAN. В ревизии 1 было 2 канала RS-485, в ревизии 2 их 3.'],
  dali:['DALI','Два канала DALI-2 для управления освещением, до 128 устройств на канал.'],
  em:['EM','Трёхфазный счётчик электроэнергии.'],
  step:['STEP','Управление двумя шаговыми двигателями.'],
@@ -843,7 +849,7 @@ const SPEC={
  do:[['Питание','24 В; логика питается по шине, нагрузке нужен отдельный внешний блок питания'],['Каналы','16 дискретных выходов'],['Рабочее напряжение канала','10,5…45 В'],['Ток канала','до 700 мА, ток короткого замыкания 0,7–1,9 А'],['Сопротивление открытого канала','0,12 Ом'],['Время переключения','включение 17–22 мкс, выключение 22–40 мкс (0,5 А, нагрузка 48 Ом)'],['Частота','до 25 кГц на канал'],['Энергия импульса на канал','1,8 Дж мгновенная, 0,35 Дж продолжительная'],['Защита','от короткого замыкания, перегрева и скачков напряжения на каждом канале'],['Развязка','от вычислительной части: да, 2000 В; между каналами: нет'],['Потребление модуля','1,5–2 Вт'],['Подключают','светодиоды и лампы, электромеханические и оптоэлектронные реле, клапаны, двигатели, трансформаторы, нагреватели, ключи N и P типа (типовые схемы есть в брошюре модуля)'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
  ro:[['Твердотельные реле','6 каналов SSR: коммутация 5–500 В, рабочий ток 0,18 А, пиковый до 1,1 А (не дольше 10 мс)'],['Механические реле','2 канала NO/NC: 250 В AC, максимум 400 В AC, ток до 5 А'],['Изоляция цифровой части','2500 В'],['Шина','Ethernet 10BASE-T1S, CAN'],['Подключают','контакторы и реле, нагреватели, лампы накаливания, двигатели постоянного и переменного тока'],['Температура','0…+40 °C, есть OLED-дисплей']],
  io:[['Питание','24 В, ток до 2,5 А'],['Каналы','8, тип каждого задаётся программно'],['Напряжение','вход 0–10 В (16 бит), выход 0–11 В (13 бит)'],['Ток','вход 0–25 мА (16 бит), выход 0–25 мА (13 бит)'],['Дискретные','вход 0–24 В до 20 кГц с программным порогом, выход 0–24 В до 500 мА'],['Сопротивление','измерение до 1 МОм'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
- if:[['Питание','от шины модулей, потребляемая мощность 8 Вт'],['RS-485 ×3','до 1000 м, до 500 кбит/с, до 255 устройств на линии, терминатор 120 Ом включается программно; Modbus RTU, OSDP, DMX512'],['RS-232 ×1','до 15 м, до 460 кбит/с; Modbus RTU, Binary, ASCII'],['CAN ×1','1–5 Мбит/с в зависимости от протокола'],['Развязка','все интерфейсы изолированы от вычислительной части, 5000 В'],['Защита','по току 100 мА на каждую линию'],['Готовность','5 с после подачи питания'],['Подключают','счётчики, датчики, считыватели, светильники DMX512, операторские панели, внешние устройства контроля и управления'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
+ if:[['Питание','от шины модулей, потребляемая мощность 8 Вт'],['RS-485 ×3 (ревизия 1: ×2)','до 1000 м, до 500 кбит/с, до 255 устройств на линии, терминатор 120 Ом включается программно; Modbus RTU, OSDP, DMX512'],['RS-232 ×1','до 15 м, до 460 кбит/с; Modbus RTU, Binary, ASCII'],['CAN ×1','1–5 Мбит/с в зависимости от протокола'],['Развязка','все интерфейсы изолированы от вычислительной части, 5000 В'],['Защита','по току 100 мА на каждую линию'],['Готовность','5 с после подачи питания'],['Подключают','счётчики, датчики, считыватели, светильники DMX512, операторские панели, внешние устройства контроля и управления'],['Условия','−40…+80 °C, влажность до 90 % без конденсата, IP20, срок службы 5 лет'],['Конструкция','DIN-рейка, зажимные контакты, 22,5 × 107 × 114 мм, 100 г, OLED-дисплей']],
  dali:[['Питание','24 В, ток до 1,2 А'],['Каналы','2 линии DALI-2, до 250 мА на линию'],['Устройства','до 128 на линию: 64 светильника и 64 датчика'],['Длина линии','до 300 м при сечении 1,5 мм²'],['Защита','от короткого замыкания'],['Изоляция цифровой части','3700 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
  em:[['Напряжение','межфазное 5…400 В, фазное 5…580 В, 45…65 Гц'],['Ток','через измерительные трансформаторы, зависит от трансформатора'],['Разрешающая способность: энергия','активная и реактивная 0,1–0,2 %'],['Разрешающая способность: ток, напряжение, мощность','0,1–0,5 % и 0,2–0,5 %'],['Частота','разрешение 0,001 Гц'],['Каналы калибровки','2 (оптопары)'],['Изоляция цифровой части','5000 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
  step:[['Каналы','2 канала управления двухфазными шаговыми двигателями'],['Обратная связь','2 энкодера ABZ, оптических или магнитных'],['Управление','векторное (FOC), контроль момента, скорости и положения'],['ШИМ','25–100 кГц'],['Максимальное потребление','16 А'],['Изоляция цифровой части','2500 В'],['Температура','0…+40 °C, есть OLED-дисплей']],
