@@ -305,7 +305,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
 @media (max-width:980px){.g6{grid-template-columns:repeat(3,minmax(0,1fr))}.hero .wrap{grid-template-columns:1fr}.hero3d{height:400px;margin:0}.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.req{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.steps div{border-bottom:1px solid var(--line)}}
 @media (max-width:620px){.g2,.g3,.g4,.fm,.steps{grid-template-columns:1fr}.g6{grid-template-columns:repeat(2,minmax(0,1fr))}.hd{gap:8px 12px;padding:8px 16px}.logo .mark{height:32px}.logo .lt{font-size:11px}.logo{font-size:15px}nav{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;scrollbar-width:none;gap:16px}.seg button{padding:6px 10px;font-size:12px}.hero3d{height:340px}.vctl{right:8px}.wrap{padding:0 16px}.pagehead{padding-top:36px}.facts{gap:10px 20px}section{padding:44px 0}.stage .tools{flex-direction:column}.chip{padding:7px 11px}.stage{height:420px}.req{padding:22px}nav{order:5;width:100%}.hero .wrap{padding-top:36px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.draft{border:1px dashed #f2bd3a;border-radius:14px;padding:18px 20px;margin:0 0 18px;background:rgba(242,189,58,.05)}.draftlab{display:inline-block;font-size:12px;color:#f2bd3a;border:1px solid #f2bd3a;border-radius:20px;padding:2px 10px;margin-bottom:10px}.draft h3{margin-top:0}.draft ul{margin:8px 0 0 18px;padding:0}.draft li{margin:4px 0}.more-ex{margin:26px 0 0;border:1px solid #2a3140;border-radius:14px;background:rgba(255,255,255,.02);padding:0 18px 4px}.more-ex>summary{display:block;position:relative;padding:16px 34px 16px 0}.more-ex>summary::after{position:absolute;right:2px;top:14px}.more-ex>summary span{display:block;font-weight:400;font-size:14px;color:#9aa5b1;margin-top:2px}.more-ex>summary::-webkit-details-marker{display:none}.more-ex>summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:8px}</style>
+.draft{border:1px dashed #f2bd3a;border-radius:14px;padding:18px 20px;margin:0 0 18px;background:rgba(242,189,58,.05)}.draftlab{display:inline-block;font-size:12px;color:#f2bd3a;border:1px solid #f2bd3a;border-radius:20px;padding:2px 10px;margin-bottom:10px}.draft h3{margin-top:0}.draft ul{margin:8px 0 0 18px;padding:0}.draft li{margin:4px 0}.more-ex{margin:26px 0 0;border:1px solid #2a3140;border-radius:14px;background:rgba(255,255,255,.02);padding:0 18px 4px}.more-ex>summary{display:block;position:relative;padding:16px 34px 16px 0}.more-ex>summary::after{position:absolute;right:2px;top:14px}.more-ex>summary span{display:block;font-weight:400;font-size:14px;color:#9aa5b1;margin-top:2px}.more-ex>summary::-webkit-details-marker{display:none}.more-ex>summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:8px}.ex-do{margin:14px 0 4px;border-left:3px solid var(--gold);padding:2px 0 2px 16px;max-width:760px}.ex-do p{margin:6px 0 8px;color:#c9d0da;font-size:15px}.ex-do pre{margin:0;white-space:pre-wrap;word-break:break-all}</style>
 </head>
 <body data-role="e">
 <header><div class="hd">
@@ -493,6 +493,10 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   </div>
   <h3 style="margin:26px 0 6px">Интерактивная документация с эмулятором</h3>
   <p class="sub" style="margin:0 0 4px;max-width:none">Слева живой интерфейс BOX Web, подключённый к эмулятору контроллера: узел и 9 модулей (счётчик, реле, дискретные входы и выходы, интерфейсы, IO, два DALI). Откройте «Устройство», выберите модуль и запишите метрику, например выход DO. Справа макет контроллера: индикаторы модулей и подключённые устройства отвечают на то, что происходит в интерфейсе. Для наглядности эмулятор сам гоняет «бегущий огонь» по выходам DO и переключает реле.</p>
+  <div class="ex-do"><b>Пример: записать значение в канал DO</b>
+  <p>Каналы цифровых выходов называются out/0 … out/15. Чтобы включить канал 10, отправьте в тему команды метрику со значением true. Попробуйте то же в эмуляторе ниже: во вкладке «Устройство» выберите модуль DO и запишите out/10.</p>
+  <pre>тема:    spBv1.0/box/DCMD/{nodeID}/{deviceID}
+метрика: out/10 = true</pre></div>
 <div class="bxw" id="bxW">
   <div class="bxt"><span>Мануал и 3D-макет работают вместе. Границу между ними можно двигать.</span><button type="button" id="bxFs" aria-expanded="false">Развернуть</button><button type="button" id="bxWin">В отдельном окне</button></div>
   <div class="bxg">
@@ -1449,12 +1453,20 @@ try{history.scrollRestoration='manual'}catch(e){}
 var __st=0;addEventListener('scroll',function(){clearTimeout(__st);__st=setTimeout(function(){try{sessionStorage.setItem('qtscroll',JSON.stringify({p:window.__pg,y:Math.round(scrollY)}))}catch(e){}},120)},{passive:true});
 addEventListener('hashchange',route);
 document.addEventListener('click',function(e){var a=e.target.closest('[data-scroll]');if(a){e.preventDefault();var t=$(a.dataset.scroll);if(t)t.scrollIntoView({behavior:'smooth'})}});
-function roleAnchor(){var W=innerWidth,H=innerHeight,ys=[];for(var y=110;y<H-20;y+=30)ys.push(y);
-  for(var i=0;i<ys.length;i++){var e=document.elementFromPoint(W/2,ys[i]);
-    while(e&&e!==document.body){if(e.closest&&e.closest('[data-r]'))break;if(e.querySelector&&e.querySelector('[data-r]')){e=e.parentElement;continue}if(e.tagName==='SECTION'||e.tagName==='P'||/^H[1-4]$/.test(e.tagName)||e.tagName==='TR'||e.tagName==='LI'||(e.className&&/card|g2|g3/.test(e.className))){return{el:e,top:e.getBoundingClientRect().top}}e=e.parentElement}}
+function roleAnchor(){var W=innerWidth,H=innerHeight;
+  var ys=[],y0=Math.round(H*0.3);for(var q=y0;q<H-20;q+=30)ys.push(q);for(var q2=y0-30;q2>=110;q2-=30)ys.push(q2);
+  for(var k=0;k<ys.length;k++){var y=ys[k],e=document.elementFromPoint(W/2,y);
+    if(!e||e===document.body||e===document.documentElement||!e.closest('main')||e.closest('[data-r],#more-ex'))continue;
+    while(e&&e!==document.body&&e.querySelector&&e.querySelector('[data-r]'))e=e.parentElement;
+    if(e&&e!==document.body)return{el:e,top:e.getBoundingClientRect().top}}
   return null}
-function setRole(r){if(document.body.dataset.role===r)return;var an=roleAnchor();document.body.dataset.role=r;if(an&&an.el.isConnected){var d=an.el.getBoundingClientRect().top-an.top;if(d)scrollBy({top:d,behavior:'instant'})}
+function setRole(r){if(document.body.dataset.role===r)return;var an=roleAnchor(),mx=$('more-ex'),inx=false;
+  if(mx&&mx.open){var q=mx.getBoundingClientRect();inx=q.top<0&&q.bottom>innerHeight*0.3}
+  document.body.dataset.role=r;if(mx&&!mx.dataset.u)mx.open=(r==='e');
+  if(inx&&!mx.open&&!an){mx.scrollIntoView({block:'center',behavior:'instant'})}
+  if(an&&an.el.isConnected){var d=an.el.getBoundingClientRect().top-an.top;if(d)scrollBy({top:d,behavior:'instant'})}
 $('rEng').classList.toggle('on',r==='e');$('rMgr').classList.toggle('on',r==='m')}
+var mxd=$('more-ex');if(mxd)mxd.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('summary'))mxd.dataset.u='1'});
 $('rEng').onclick=function(){setRole('e')};$('rMgr').onclick=function(){setRole('m')};
 $('lgx').onclick=function(){$('legend').hidden=true};
 /* видео: играет всегда, пока человек сам не остановит */
