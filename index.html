@@ -7,6 +7,12 @@
 <title>Сайт КвинтТех</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script>(function(){var t='auto';try{t=localStorage.getItem('qtTheme')||'auto'}catch(e){}
+var mq=window.matchMedia?matchMedia('(prefers-color-scheme: light)'):null;
+function eff(){return t==='light'||(t==='auto'&&mq&&mq.matches)?'light':'dark'}
+function apply(){var d=document.documentElement;d.dataset.theme=t;d.dataset.eff=eff();var b=document.getElementById('thBtn');if(b){var L={auto:'Авто',light:'Светлая',dark:'Тёмная'};b.innerHTML={auto:'<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 2a7 7 0 0 1 0 14z" fill="currentColor"/></svg>',light:'<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="3.6" fill="currentColor"/><path d="M9 1.5v2M9 14.5v2M1.5 9h2M14.5 9h2M3.7 3.7l1.4 1.4M12.9 12.9l1.4 1.4M3.7 14.3l1.4-1.4M12.9 5.1l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',dark:'<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M14 11.6A6.2 6.2 0 0 1 6.4 4a6.2 6.2 0 1 0 7.6 7.6z" fill="currentColor"/></svg>'}[t];b.title='Тема: '+L[t];b.setAttribute('aria-label','Тема оформления: '+L[t]+'. Нажмите, чтобы переключить')}}
+window.qtTheme={cycle:function(){t=t==='auto'?'light':t==='light'?'dark':'auto';try{localStorage.setItem('qtTheme',t)}catch(e){}apply()},apply:apply,get:function(){return t}};
+if(mq&&mq.addEventListener)mq.addEventListener('change',apply);apply()})();</script>
 <style>
 /* Идея: тёмная «лаборатория» на фирменной подложке; видео в шапке главной, 3D-контроллер вращается рядом с заголовком */
 :root{
@@ -310,6 +316,72 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
 .dlrow{display:flex;flex-wrap:wrap;gap:8px 12px;margin:14px 0 0}.dlrow a,.wdl{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;color:#cdd6e0;text-decoration:none;background:rgba(15,22,29,.6)}.dlrow a:hover,.wdl:hover{border-color:var(--gold);color:var(--gold)}.wdl{margin-top:12px;font-size:13px}.dgrp{margin:34px 0 0}.dgrp h2{margin-bottom:14px}.dcard{display:flex;flex-direction:column;gap:8px}.dcard h3{margin:0}.dcard p{margin:0}.dcard .dact{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}.dcard .dsrc{font-size:12.5px;color:var(--mute)}
 .alph{min-width:0}.uif{margin:10px 0 8px}.uif img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#0b1118}.uif figcaption{font-size:12.5px;color:var(--mute);margin-top:6px}.fund .card .tag{margin-bottom:8px;display:inline-block}
 .csubnav{background:rgba(10,12,16,.92);border-bottom:1px solid var(--line)}.csubnav .wrap{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}.csubnav a{flex:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:#cdd6e0;text-decoration:none;white-space:nowrap}.csubnav a.on{background:var(--gold);border-color:var(--gold);color:#0a0c10;font-weight:700}.csub{display:none}.csub.on{display:block}.cmain.off{display:none}.case dl{margin:10px 0 0}.case dt{font-size:12.5px;color:var(--mute);margin-top:10px}.case dd{margin:2px 0 0;color:#cdd6e0;font-size:14.5px}.case .tag{display:inline-block;margin-bottom:8px}.ctz .card{display:flex;flex-direction:column;gap:8px;text-decoration:none}.ctz .card h3,.ctz .card p{margin:0}.ctz .tag{align-self:flex-start}
+
+html[data-eff=light]{--ink:#f4f6f9;--panel:#ffffff;--line:#d3dae3;--text:#141a21;--mute:#556372;--gold:#9a6200;--blue:#0b6fa4;--veil:rgba(244,246,249,.95);color-scheme:light}
+html[data-eff=light] header{background:rgba(255,255,255,.92)}
+html[data-eff=light] .csubnav{background:rgba(255,255,255,.92)}
+html[data-eff=light] .card{background:rgba(255,255,255,.92)}
+html[data-eff=light] .legend,html[data-eff=light] .need,html[data-eff=light] .gap{background:#fff6dc;border-color:#c9a23a;color:#5a4400}
+html[data-eff=light] .need b,html[data-eff=light] .gap b{color:#7a5200}
+html[data-eff=light] .dlrow a,html[data-eff=light] .wdl{background:#fff;color:#2b3640}
+html[data-eff=light] .btn{background:#f2bd3a;color:#0a0c10}
+html[data-eff=light] .btn.ghost{background:transparent;color:var(--text);border-color:#9aa8b6}
+.thbtn{font:inherit;font-size:13px;border:1px solid var(--line);background:transparent;color:var(--text);border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.thbtn:hover{border-color:var(--gold)}
+
+html[data-eff=light] :is(.hero,.fxv,.nrd,.oplv,#sbrView,.hav,.bxw,.scada,.aldw,.stage,.cfg,.rail3d,.bx3,.hero3d,.tcp){--ink:#07090c;--panel:#0f161d;--line:#1f2933;--text:#e9edf2;--mute:#9aa6b4;--gold:#f2bd3a;--blue:#2aa5e0;color:var(--text)}
+html[data-eff=light] .seg button{color:var(--text)}html[data-eff=light] .seg button.on{color:#0a0c10}
+html[data-eff=light] .pagehead{background:linear-gradient(180deg,rgba(255,255,255,.7),transparent)}html[data-eff=light] .pagehead p,html[data-eff=light] .pricebar p{color:var(--mute)}
+html[data-eff=light] .tag.b{border-color:#9fc9de}html[data-eff=light] .chip{color:var(--text)}html[data-eff=light] .chip.on{color:#0a0c10}
+html[data-eff=light] .tw,html[data-eff=light] .cmp,html[data-eff=light] .tw.stk tr,html[data-eff=light] details,html[data-eff=light] .steps div,html[data-eff=light] .cr,html[data-eff=light] .dark-form,html[data-eff=light] footer{background:rgba(255,255,255,.92)}
+html[data-eff=light] .cmp .cmph>div{color:var(--text);background:rgba(0,0,0,.04)}html[data-eff=light] .cmp .cmph>div:last-child{color:#0a0c10!important}html[data-eff=light] .cmp .cmpl,html[data-eff=light] .cmp .cmpr>div:last-child{color:var(--text)!important}html[data-eff=light] .cmp .cmpr>div:nth-child(2)::before{color:var(--text)}
+html[data-eff=light] .alk,html[data-eff=light] .aihl p,html[data-eff=light] .aihl .cols div,html[data-eff=light] .ex-do p,html[data-eff=light] .msl,html[data-eff=light] .case dd,html[data-eff=light] .csubnav a,html[data-eff=light] .spec dd{color:var(--text)}html[data-eff=light] .csubnav a.on{color:#0a0c10}
+html[data-eff=light] .aihl .cols div{background:rgba(255,255,255,.75)}html[data-eff=light] .aihl .ex{background:#f3efe2;color:#5a4400}
+html[data-eff=light] .tw.stk tbody th{color:var(--text)}html[data-eff=light] .tw.stk td[data-label]::before,html[data-eff=light] .mh,html[data-eff=light] .more-ex>summary span{color:var(--mute)}
+html[data-eff=light] .gap p{color:#5a4400}html[data-eff=light] .cfgwarn{color:#7a5200}html[data-eff=light] .legend button{color:#5a4400;border-color:#c9a23a}html[data-eff=light] .legend .sw{border-color:#c9a23a}
+html[data-eff=light] .rbar{background:linear-gradient(var(--ink) 70%,transparent)}
+
+html[data-eff=light] .hero{background:#07090c}html[data-eff=light] .cfg{background:#0b1118;border-radius:16px;padding:14px}
+html[data-eff=light] .draftlab{color:#7a5200;border-color:#c9a23a}html[data-eff=light] .draft{background:rgba(242,189,58,.12)}
+html[data-eff=light] th[style*="8fd18f"]{color:#1f7a3a!important}html[data-eff=light] th[style*="#8fa0b2"],html[data-eff=light] th[style*="#9aa5b1"]{color:var(--mute)!important}
+
+html[data-eff=light] .bxw{background:#0b1118}html[data-eff=light] :is(.cfg,.bxw,.scada,.hero) .card{background:rgba(15,22,29,.78)}html[data-eff=light] :is(.cfg,.bxw,.scada,.hero) :is(details,.tw){background:rgba(15,22,29,.82)}
+
+.thbtn{width:36px;height:36px;padding:0;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+html[data-eff=light] .seg button.on,html[data-eff=light] .csubnav a.on{background:#f2bd3a;border-color:#f2bd3a}
+
+.seg .thbtn{width:auto;height:auto;border:0;border-radius:999px;padding:7px 10px;margin-left:2px;display:inline-flex;align-items:center}
+
+dialog#prDlg{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);padding:22px;max-width:460px;width:calc(100% - 32px)}
+dialog#prDlg::backdrop{background:rgba(0,0,0,.55)}
+dialog#prDlg h3{margin:0 0 8px}dialog#prDlg p{color:var(--mute);font-size:14px;margin:0 0 12px}
+dialog#prDlg label{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 8px;font-size:14px;cursor:pointer}
+dialog#prDlg label input{margin-top:3px}dialog#prDlg label small{display:block;color:var(--mute);font-size:12.5px;margin-top:2px}
+dialog#prDlg .cta{display:flex;gap:10px;margin-top:14px}
+@media print{
+ @page{size:A4;margin:14mm 12mm}
+ html,body{background:#fff!important}
+ body::before,.legend,header,.csubnav,.rbar,.thbtn,video,#bgv,.vctl,.hero::after,.need,.gap,.req,[data-form],dialog,#heroCv,#bx3Cv,#cfgCv,.stage,.rail3d,.bx3,.hero3d,.cfg,.bxw{display:none!important}
+ .page{display:none!important}.page.on{display:block!important}
+ .csub{display:none!important}.csub.on{display:block!important}.cmain.off{display:none!important}
+ .hero{min-height:0!important;padding:10px 0!important}
+ section{padding:12px 0!important}
+ .card,.case,.dcard,tr,li,figure,.steps div,.cr,.mcard,.cmpr,details,.tw.stk tr,pre,.dlrow,.alrow,.aimg,.uif,.fund .card{break-inside:avoid;page-break-inside:avoid}
+ h1,h2,h3,h4,summary{break-after:avoid;page-break-after:avoid}
+ .tw{overflow:visible!important}table{width:100%}thead{display:table-header-group}
+ .g2,.g3,.g4,.alhead{display:grid}
+ .alhead{grid-template-columns:1fr!important}
+ *{animation:none!important;transition:none!important;backdrop-filter:none!important}
+ html[data-print=plain] *{-webkit-print-color-adjust:economy;print-color-adjust:economy;text-shadow:none!important;box-shadow:none!important}
+ html[data-print=plain] .fxv,html[data-print=plain] .nrd,html[data-print=plain] .oplv,html[data-print=plain] #sbrView,html[data-print=plain] .hav,html[data-print=plain] .scada,html[data-print=plain] .aldw{display:none!important}
+ html[data-print=plain] .hero{background:none!important;--text:#141a21;--mute:#556372;--gold:#9a6200;--blue:#0b6fa4;color:#141a21}
+ html[data-print=plain] a{color:#141a21;text-decoration:underline}
+ html[data-print=bg] *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ html[data-print=bg],html[data-print=bg] body{background:var(--ink)!important}
+ html:not([data-print]) .fxv,html:not([data-print]) .nrd,html:not([data-print]) .oplv,html:not([data-print]) #sbrView,html:not([data-print]) .hav,html:not([data-print]) .scada,html:not([data-print]) .aldw{display:none!important}
+}
+
+@media print{.sub,.pagehead p{break-after:avoid;page-break-after:avoid}footer,.ft>div{break-inside:avoid;page-break-inside:avoid}.sub+.tw,.sub+.cmp,.sub+.g2,.sub+.g3{break-before:avoid}}
 </style>
 </head>
 <body data-role="e">
@@ -318,7 +390,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:13.5px;col
   <nav aria-label="Разделы" id="nav">
     <a href="#dev" data-p="dev">Разработка электроники</a><a href="#ctrl" data-p="ctrl">Контроллер QT-BoX</a><a href="#micro" data-p="micro">Микроэлектроника</a><a href="#rnd" data-p="rnd">НИОКР</a><a href="#docs" data-p="docs">Материалы</a><a href="#about" data-p="about">О компании</a><a href="#req" data-p="req" style="color:var(--gold);font-weight:700">Запрос</a>
   </nav>
-  <div class="seg" role="group" aria-label="Режим"><button id="rEng" class="on">Я инженер</button><button id="rMgr">Я руководитель</button></div>
+  <div class="seg" role="group" aria-label="Режим"><button id="rEng" class="on">Я инженер</button><button id="rMgr">Я руководитель</button><button id="thBtn" class="thbtn" type="button" aria-label="Тема оформления"></button></div>
 </div></header>
 
 <div id="legend" class="legend"><div class="wrap"><span><span class="sw"></span> Жёлтые пунктирные блоки показывают, чего в прототипе пока не хватает и что нужно от вас. На боевом сайте их не будет.</span><button id="lgx" type="button" aria-label="Закрыть подсказку">Скрыть</button></div></div>
@@ -1417,15 +1489,20 @@ document.addEventListener('visibilitychange',run);
 
 <footer><div class="wrap ft">
   <div>ООО НПО «КвинтТех», 2007–2026<br>ОГРН 1077760630661 · ИНН 7735533858<br>Москва, Зеленоград, Георгиевский пр-т, д. 5, стр. 2</div>
-  <div>Связаться: <a href="#req">через форму запроса</a><br><a href="#about">Политика обработки персональных данных</a> (текст нужен от вас)</div>
+  <div>Связаться: <a href="#req">через форму запроса</a><br><a href="#" id="prBtn">Версия для печати</a><br><a href="#about">Политика обработки персональных данных</a> (текст нужен от вас)</div>
   <div>При поддержке: <a href="https://www.fasie.ru">Фонд содействия инновациям (fasie.ru)</a></div>
 </div></footer>
 
+<dialog id="prDlg"><form method="dialog"><h3>Печать страницы</h3><p>Печатается текущая страница. Свёрнутые блоки раскрываются, карточки и строки таблиц не разрезаются границей листа.</p>
+<label><input type="radio" name="prm" value="plain" checked><span>Без подложки<small>Светлый фон и тёмный текст: читается лучше и экономит тонер. Интерактивные макеты не печатаются.</small></span></label>
+<label><input type="radio" name="prm" value="bg"><span>С подложкой<small>Оформление как на экране. В окне печати включите «Фоновая графика», иначе фон не напечатается.</small></span></label>
+<div class="cta"><button class="btn" value="print">Печать</button><button class="btn ghost" value="cancel">Отмена</button></div></form></dialog>
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
 </script>
 <script>
 var $=function(id){return document.getElementById(id)};
+if($('thBtn')){$('thBtn').onclick=function(){qtTheme.cycle()};qtTheme.apply()}
 /* ---------- данные ---------- */
 var WIMG=['assets/works/w1.webp','assets/works/w2.webp','assets/works/w3.webp','assets/works/w4.webp','assets/works/w5.webp','assets/works/w6.webp','assets/works/w7.webp','assets/works/w8.webp','assets/works/w9.webp','assets/works/w10.webp','assets/works/w11.webp','assets/works/w12.webp'];
 var WORKS=[
@@ -1516,6 +1593,18 @@ var DOCS=[["Контроллер QT-BoX", [["Схема подключения �
  var host=d[2]?(d[2].indexOf('qtsolar.com')>0?'qtsolar.com':'Dropbox'):'';
  h+='<div class="card dcard"><h3>'+d[0]+'</h3><p>'+d[1]+'</p><div class="dact">'+(d[2]?'<a class="btn sm" href="'+d[2]+'" target="_blank" rel="noopener">Открыть PDF</a><span class="dsrc">'+host+'</span>':'<a class="btn ghost sm" href="#req">Запросить файл</a><span class="tag b">в переработке</span>')+'</div></div>'});
  h+='</div></div>'});$('docsList').innerHTML=h})();
+
+/* ---------- печать ---------- */
+(function(){var mode=null,prev=null,opened=[];
+function start(m){var d=document.documentElement;mode=m||mode||'plain';prev=d.dataset.eff;d.dataset.print=mode;if(mode==='plain')d.dataset.eff='light';
+ opened=[].slice.call(document.querySelectorAll('details')).map(function(x){var o=x.open;x.open=true;return [x,o]})}
+function end(){var d=document.documentElement;delete d.dataset.print;if(prev)d.dataset.eff=prev;opened.forEach(function(a){a[0].open=a[1]});opened=[];mode=null}
+window.qtPrint={start:start,end:end};
+addEventListener('beforeprint',function(){if(!document.documentElement.dataset.print)start()});addEventListener('afterprint',end);
+var dlg=$('prDlg'),btn=$('prBtn');
+if(btn&&dlg){btn.onclick=function(e){e.preventDefault();if(dlg.showModal)dlg.showModal();else window.print()};
+ dlg.addEventListener('close',function(){if(dlg.returnValue==='print'){var r=dlg.querySelector('input[name=prm]:checked');mode=r?r.value:'plain';setTimeout(function(){window.print()},80)}dlg.returnValue=''})}
+})();
 /* ---------- маршрутизация, роли, пробелы ---------- */
 var PAGES=['home','dev','ctrl','micro','rnd','docs','about','req'],viewers={};
 function route(){
