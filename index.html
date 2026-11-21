@@ -382,7 +382,7 @@ dialog#prDlg .cta{display:flex;gap:10px;margin-top:14px}
 }
 
 @media print{.sub,.pagehead p{break-after:avoid;page-break-after:avoid}footer,.ft>div{break-inside:avoid;page-break-inside:avoid}.sub+.tw,.sub+.cmp,.sub+.g2,.sub+.g3{break-before:avoid}}
-</style>
+.csubnav{position:sticky;top:var(--hh,64px);z-index:19;backdrop-filter:blur(10px)}html{scroll-padding-top:calc(var(--hh,64px) + var(--sh,0px) + 6px)}</style>
 </head>
 <body data-role="e">
 <header><div class="hd">
@@ -1627,6 +1627,7 @@ function ctrlSub(s){var ok=['cases','modules','protocol','integr','ai','compare'
   setTimeout(function(){dispatchEvent(new Event('resize'))},60)}
 try{history.scrollRestoration='manual'}catch(e){}
 var __st=0;addEventListener('scroll',function(){clearTimeout(__st);__st=setTimeout(function(){try{sessionStorage.setItem('qtscroll',JSON.stringify({p:window.__pg,y:Math.round(scrollY)}))}catch(e){}},120)},{passive:true});
+(function(){function v(){var h=document.querySelector('header'),n=document.querySelector('#p-ctrl.on .csubnav'),r=document.documentElement.style;r.setProperty('--hh',(h?h.offsetHeight:64)+'px');r.setProperty('--sh',(n?n.offsetHeight:0)+'px')}window.qtSticky=v;addEventListener('resize',v);addEventListener('load',v);addEventListener('hashchange',function(){setTimeout(v,0)});v();setTimeout(v,300)})();
 addEventListener('hashchange',route);
 document.addEventListener('click',function(e){var a=e.target.closest('[data-scroll]');if(a){e.preventDefault();var id=a.dataset.scroll,t=$(id);if(t&&t.offsetParent!==null){t.scrollIntoView({behavior:'smooth'});return}
   if(t){var pg=t.closest('.page'),sb=t.closest('.csub'),want='#'+pg.id.slice(2)+(sb?'/'+sb.dataset.sub:'');window.__pend=id;if(location.hash===want)route();else location.hash=want}}});
