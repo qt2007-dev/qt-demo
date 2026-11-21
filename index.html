@@ -1595,15 +1595,16 @@ var DOCS=[["Контроллер QT-BoX", [["Схема подключения �
  h+='</div></div>'});$('docsList').innerHTML=h})();
 
 /* ---------- печать ---------- */
-(function(){var mode=null,prev=null,opened=[];
-function start(m){var d=document.documentElement;mode=m||mode||'plain';prev=d.dataset.eff;d.dataset.print=mode;if(mode==='plain')d.dataset.eff='light';
+(function(){var mode=null,prev=null,opened=[],keepY=null;
+function restoreY(){if(keepY===null)return;var y=keepY;[0,60,250,700].forEach(function(t){setTimeout(function(){scrollTo({top:y,left:0,behavior:'instant'})},t)})}
+function start(m){var d=document.documentElement;if(keepY===null)keepY=window.pageYOffset;d.style.overflowAnchor='none';mode=m||mode||'plain';prev=d.dataset.eff;d.dataset.print=mode;if(mode==='plain')d.dataset.eff='light';
  opened=[].slice.call(document.querySelectorAll('details')).map(function(x){var o=x.open;x.open=true;return [x,o]})}
-function end(){var d=document.documentElement;delete d.dataset.print;if(prev)d.dataset.eff=prev;opened.forEach(function(a){a[0].open=a[1]});opened=[];mode=null}
+function end(){var d=document.documentElement;delete d.dataset.print;if(prev)d.dataset.eff=prev;opened.forEach(function(a){a[0].open=a[1]});opened=[];mode=null;d.style.overflowAnchor='';restoreY();setTimeout(function(){keepY=null},900)}
 window.qtPrint={start:start,end:end};
 addEventListener('beforeprint',function(){if(!document.documentElement.dataset.print)start()});addEventListener('afterprint',end);
 var dlg=$('prDlg'),btn=$('prBtn');
-if(btn&&dlg){btn.onclick=function(e){e.preventDefault();if(dlg.showModal)dlg.showModal();else window.print()};
- dlg.addEventListener('close',function(){if(dlg.returnValue==='print'){var r=dlg.querySelector('input[name=prm]:checked');mode=r?r.value:'plain';setTimeout(function(){window.print()},80)}dlg.returnValue=''})}
+if(btn&&dlg){btn.onclick=function(e){e.preventDefault();e.stopPropagation();keepY=window.pageYOffset;if(dlg.showModal)dlg.showModal();else window.print()};
+ dlg.addEventListener('close',function(){restoreY();if(dlg.returnValue!=='print')setTimeout(function(){keepY=null},900);if(dlg.returnValue==='print'){var r=dlg.querySelector('input[name=prm]:checked');mode=r?r.value:'plain';setTimeout(function(){window.print()},80)}dlg.returnValue=''})}
 })();
 /* ---------- маршрутизация, роли, пробелы ---------- */
 var PAGES=['home','dev','ctrl','micro','rnd','docs','about','req'],viewers={};
