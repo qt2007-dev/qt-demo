@@ -449,7 +449,7 @@ dialog#prDlg .cta{display:flex;gap:10px;margin-top:14px}
   <div class="g4">
     <div class="card"><h3>более 90 %</h3><p>соответствие себестоимости серии предпроектной оценке</p></div>
     <div class="card"><h3>более 95 %</h3><p>соответствие сроков и бюджетов предпроектной оценке</p></div>
-    <div class="card"><h3>от 5 лет</h3><p>опыта у каждого сотрудника, все с высшим техническим образованием</p></div>
+    <div class="card"><h3>от 10 лет</h3><p>опыта у каждого сотрудника, все с высшим техническим образованием</p></div>
     <div class="card"><h3>1 год</h3><p>поддержки и приоритетная доработка изделия</p></div>
   </div>
   <p style="margin-top:14px">Компания основана в 2007 году.</p>
@@ -1593,7 +1593,20 @@ document.addEventListener('submit',function(ev){
   if(g('hp').value)return;
   if(!g('org').value||!/^\S+@\S+\.\S+$/.test(g('mail').value)){m.textContent='Укажите организацию и рабочую почту.';return}
   if(!g('ok').checked){m.textContent='Нужно согласие на обработку персональных данных.';return}
-  m.textContent='Прототип: на боевом сайте запрос уйдёт на сервер и придёт нам на почту. Здесь он не отправляется.';
+  if(!window.QT_FORM_URL){m.textContent='Прототип: на боевом сайте запрос уйдёт на сервер и придёт нам на почту. Здесь он не отправляется.';return}
+  var btn=f.querySelector('button[type=submit]'),fields=[];
+  [].forEach.call(f.querySelectorAll('input,textarea,select'),function(c){
+    if(c.name==='hp'||c.name==='ok'||c.name==='org'||c.name==='mail'||c.name==='fio'||c.name==='tel'||c.type==='checkbox'||!c.value)return;
+    var lb=c.closest('label'),q=lb?[].filter.call(lb.childNodes,function(n){return n.nodeType===3}).map(function(n){return n.data}).join('').trim():(c.name||'');
+    var det=c.closest('details'),sm=det&&det.querySelector('summary');
+    fields.push({q:(sm?sm.textContent.trim()+': ':'')+q,a:c.value})});
+  var data={kind:f.dataset.k||'',org:g('org').value,mail:g('mail').value,fio:g('fio').value,tel:g('tel').value,fields:fields,consent:true,page:location.pathname+location.hash,hp:''};
+  if(btn)btn.disabled=true;m.textContent='Отправляем…';
+  fetch(window.QT_FORM_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(){f.reset();m.textContent='Запрос отправлен. Мы ответим на указанную почту.'})
+    .catch(function(){m.textContent='Не удалось отправить запрос. Попробуйте ещё раз позже.'})
+    .then(function(){if(btn)btn.disabled=false});
 });
 
 
@@ -1623,6 +1636,7 @@ function route(){
   PAGES.forEach(function(p){$('p-'+p).classList.toggle('on',p===h)});
   document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.dataset.p===h)});
   document.title='КвинтТех'+(h==='home'?'':' · '+(document.querySelector('#nav a[data-p='+h+']')||{textContent:'Запрос'}).textContent);
+  if(window.qtMeta)window.qtMeta(hs);
   if(!window.__bootDone){window.__bootDone=1;var sv=null;try{sv=JSON.parse(sessionStorage.getItem('qtscroll')||'null')}catch(e){}
     if(sv&&sv.p===hs&&sv.y>0){var tries=0,go=function(){scrollTo(0,sv.y);if(++tries<12&&Math.abs(scrollY-sv.y)>3)setTimeout(go,150)};go();addEventListener('load',function(){setTimeout(function(){scrollTo(0,sv.y)},200)})}else scrollTo(0,0)}
   else scrollTo(0,0);
